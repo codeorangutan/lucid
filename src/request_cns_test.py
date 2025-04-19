@@ -1,4 +1,6 @@
 import logging
+import random
+import time
 from playwright.sync_api import Playwright, sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 # Configure logging
@@ -11,6 +13,12 @@ logging.basicConfig(
     ]
 )
 
+def stealth_delay(min_delay=0.8, max_delay=2.2):
+    """Wait for a random period between min_delay and max_delay seconds."""
+    delay = random.uniform(min_delay, max_delay)
+    logging.debug(f"Stealth delay: sleeping for {delay:.2f} seconds.")
+    time.sleep(delay)
+
 def request_cns_remote_test(playwright: Playwright, subject: str, dob_year: str, email: str):
     browser = None
     context = None
@@ -21,30 +29,52 @@ def request_cns_remote_test(playwright: Playwright, subject: str, dob_year: str,
         page = context.new_page()
         page.goto("https://www.cnsvs.com/")
         logging.info("Navigated to CNSVS homepage.")
+        stealth_delay()
         page.get_by_text("Sign In").click()
+        stealth_delay()
         page.get_by_text("Generate Remote Test Code").click()
+        stealth_delay()
         page.locator("#input_user").click()
+        stealth_delay()
         page.locator("#input_user").fill("LucidCognitiveTesting@gmail.com")
+        stealth_delay()
         page.locator("#input_passwd").click()
+        stealth_delay()
         page.locator("#input_passwd").fill("pD4,V:#_SOfS")
+        stealth_delay()
         page.get_by_role("button", name="Login").click()
         logging.info("Logged in as LucidCognitiveTesting.")
+        stealth_delay()
         page.get_by_role("combobox").select_option("english_uk")
+        stealth_delay()
         page.get_by_role("button", name="Initial ADHD").click()
+        stealth_delay()
         page.locator("#input_subject").click()
+        stealth_delay()
         page.locator("#input_subject").fill(subject)
+        stealth_delay()
         page.locator("#dob_year").click()
+        stealth_delay()
         page.locator("#dob_year").fill(dob_year)
+        stealth_delay()
         page.locator("#dob_month").click()
+        stealth_delay()
         page.locator("#dob_month").fill("Jan")
+        stealth_delay()
         page.locator("#dob_day").click()
+        stealth_delay()
         page.locator("#dob_day").fill("1")
+        stealth_delay()
         page.get_by_role("button", name="Add New Remote Test Code").click()
         logging.info(f"Requested remote test for subject={subject}, dob_year={dob_year}")
+        stealth_delay()
         page.once("dialog", lambda dialog: dialog.dismiss())
         logging.info("Dismissed dialog if present.")
+        stealth_delay()
         page.locator("button[name=\"SHFNHJWBB\"]").click()
+        stealth_delay()
         page.once("dialog", lambda dialog: dialog.dismiss())
+        stealth_delay()
         page.goto(f"https://sync.cnsvs.com/sync.php?menu=remote_test&email_code=HFNHJWBB&email_to={email}")
         logging.info(f"Sent remote test to {email}")
     except PlaywrightTimeoutError as te:

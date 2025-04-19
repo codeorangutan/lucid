@@ -36,6 +36,22 @@ docker run --rm -it -v %cd%/src:/app/src lucid-app bash
 
 Replace the default CMD in the Dockerfile with your main script (e.g., `src/main.py`) as you develop.
 
+## Stealth Automation
+
+- Added a single `stealth_delay()` function to introduce random delays between browser actions for stealthier automation.
+- All browser interactions now include a random delay (default 0.8–2.2s) to mimic human behavior and reduce detection risk.
+- Added automated test for delay logic in `tests/test_stealth_delay.py`.
+
+## How to Test Delays
+
+Run:
+
+```
+pytest tests/test_stealth_delay.py
+```
+
+This will verify that the delay is randomized and within the expected range.
+
 ## Progress Log
 
 ### 2025-04-19
