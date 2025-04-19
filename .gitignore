@@ -10,3 +10,5 @@ venv/
 .DS_Store
 .idea/
 .vscode/
+lucid_data_encrypted.db
+config.ini

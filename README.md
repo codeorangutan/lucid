@@ -1,65 +1,73 @@
-# Lucid
-Cognitive testing automation tool for healthcare.
+# Lucid Cognitive Testing Email Automation
 
-## Project Structure
-- `src/` : Source code
-- `tests/` : Test scripts
-- `data/` : Database and reports
+## Overview
+This application automates the secure receipt, parsing, and processing of cognitive testing referrals via Gmail. It extracts patient and referrer details, logs them in an encrypted database, and supports robust modular workflows.
 
-## Setup Steps
-1. Python 3.11+ required.
-2. Set up a virtual environment.
-3. Install dependencies with `pip install -r requirements.txt`.
-4. Install Playwright browsers with `playwright install`.
+## Features
+- Gmail API integration (OAuth2, secure scopes)
+- Regex-based parsing for mobile, email, DOB, ID, etc.
+- Filters for "Referral" or "Cognitive Testing" emails
+- Automatic reply to referrer
+- Secure logging to SQLCipher-encrypted SQLite database
+- Modular architecture for easy extension (test triggers, reporting, etc.)
+- Docker-ready for deployment
 
-## Description
-Lucid automates cognitive test requests, report handling, and secure communications, with privacy and modularity as core principles.
+## Requirements
+- Python 3.10 (required for SQLCipher support)
+- Docker (optional, for containerized deployment)
 
-## Docker Usage
-
-To build and run Lucid in Docker:
-
-1. Build the Docker image:
-   ```sh
-   docker build -t lucid-app .
-   ```
-2. Run the container:
-   ```sh
-   docker run --rm -it lucid-app
-   ```
-
-If you want to run your scripts interactively or mount your code for development, add:
-
+### Python Dependencies
+Install with:
 ```sh
-docker run --rm -it -v %cd%/src:/app/src lucid-app bash
+pip install -r requirements.txt
 ```
 
-Replace the default CMD in the Dockerfile with your main script (e.g., `src/main.py`) as you develop.
+Key packages:
+- pysqlcipher3
+- sqlalchemy
+- google-auth, google-auth-oauthlib, google-auth-httplib2, google-api-python-client
+- pytest (for testing)
 
-## Stealth Automation
+### System Dependencies (for SQLCipher)
+- On Linux/Docker: `libsqlcipher-dev`, `gcc`
+- On Windows: Use Python 3.10 and install `pysqlcipher3` via pip
 
-- Added a single `stealth_delay()` function to introduce random delays between browser actions for stealthier automation.
-- All browser interactions now include a random delay (default 0.8–2.2s) to mimic human behavior and reduce detection risk.
-- Added automated test for delay logic in `tests/test_stealth_delay.py`.
+## Usage
+1. **Configure Gmail API credentials** in the `credentials/` folder.
+2. **Set SQLCipher DB password** (recommended):
+   - Windows: `$env:LUCID_DB_PASSWORD="your-strong-password"`
+   - Linux/Mac: `export LUCID_DB_PASSWORD="your-strong-password"`
+3. **Run the receiver:**
+   ```sh
+   python src/run_email_receiver.py
+   ```
+4. **Check logs:**
+   - All actions and parsed data are logged to `lucid_email_receiver.log`.
+   - Referrals are stored in `lucid_data_encrypted.db` (not tracked by git).
 
-## How to Test Delays
-
-Run:
-
+## Docker
+Build and run with:
+```sh
+docker build -t lucid-email .
+docker run -e LUCID_DB_PASSWORD=your-strong-password lucid-email
 ```
-pytest tests/test_stealth_delay.py
+
+## Security Notes
+- The database file is encrypted and excluded from git.
+- Never log sensitive data in plaintext outside the encrypted DB.
+- Use strong passwords and rotate them as needed.
+
+## Modular Design
+- All database logic in `src/db.py`
+- Email logic in `src/email_receiver.py`
+- Easily extendable for test triggers, reporting, and more
+
+## Testing
+Run tests with:
+```sh
+pytest
 ```
 
-This will verify that the delay is randomized and within the expected range.
+---
 
-## Progress Log
-
-### 2025-04-19
-- Project initialized with Python, virtual environment, and Docker support.
-- Test-driven development (TDD) framework set up with pytest and a basic environment test.
-- Playwright installed and tested for browser automation.
-- Playwright script refactored into a modular function that takes subject, DOB year, and email as arguments.
-- Robust error handling and logging added (logs to both console and lucid_request.log).
-- All major steps and exceptions are now logged for audit and debugging purposes.
-
-Next: Expand modularity, write automated tests for the Playwright function, and continue workflow integration.
+For further setup or extension, see comments in the code or contact the maintainer.
