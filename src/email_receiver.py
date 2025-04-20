@@ -1,7 +1,6 @@
 import logging
 import os
 import pickle
-import imaplib
 import email
 from typing import List, Dict
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -10,7 +9,6 @@ from google.auth.transport.requests import Request
 import re
 import base64
 from datetime import datetime
-from db import save_referral
 
 # Robust logger setup
 log_path = os.path.join(os.path.dirname(__file__), '..', 'lucid_email_receiver.log')
@@ -104,14 +102,18 @@ def send_reply_email(service, original_msg, reply_to):
         service.users().messages().send(userId='me', body={'raw': raw}).execute()
         logger.info(f"Sent reply to {reply_to} for message {original_msg['id']}")
     except Exception as e:
-        logger.error(f"Failed to send reply: {e}")
+        logger.error(f"Failed to send reply email: {e}")
 
 def list_unread_emails_gmail_api(max_results: int = 10) -> List[Dict]:
-    """Fetch unread emails from Gmail API, mark them as read, parse body, filter by subject, and send reply."""
+    """Fetch unread emails from Gmail API, mark them as read, parse body, filter by subject."""
     service = get_gmail_service()
-    results = service.users().messages().list(userId='me', labelIds=['UNREAD'], maxResults=max_results).execute()
+    results = service.users().messages().list(userId='me', labelIds=['INBOX', 'UNREAD'], maxResults=max_results).execute()
     messages = results.get('messages', [])
-    emails = []
+    processed_emails = []
+
+    if not messages:
+        logger.info("No unread messages found in Gmail API.")
+
     for msg in messages:
         msg_data = service.users().messages().get(userId='me', id=msg['id'], format='full').execute()
         payload = msg_data.get('payload', {})
@@ -122,90 +124,29 @@ def list_unread_emails_gmail_api(max_results: int = 10) -> List[Dict]:
         snippet = msg_data.get('snippet', '')
         body = get_email_body(msg_data)
         parsed = parse_email_body(body)
-        # extract referrer and referrer_email from 'from_' header
-        if '<' in from_:
-            referrer = from_.split('<')[0].strip()
-            referrer_email = from_.split('<')[1].replace('>', '').strip()
-        else:
-            referrer = from_
-            referrer_email = from_
-        referral_received_time = datetime.now()
-        if subject_matches(subject):
-            required_fields = ['email', 'id_number']  # Add more if needed
-            missing = [f for f in required_fields if not parsed.get(f)]
-            if missing:
-                logger.warning(f"Skipping referral: missing required fields {missing}. Subject: {subject}")
-                continue
-            emails.append({
-                'subject': subject,
-                'from': from_,
-                'date': date_,
-                'snippet': snippet,
-                'id': msg['id'],
-                'body': body,
-                'parsed': parsed,
-                'referrer': referrer,
-                'referrer_email': referrer_email,
-                'referral_received_time': referral_received_time.isoformat()
-            })
-            # Log parsed data
-            logger.info(f"Parsed data for email {msg['id']}: {parsed}")
-            logger.info(f"Referral received at {referral_received_time.isoformat()} from {referrer_email}")
-            # Save to database
-            save_referral(parsed, subject, body, referrer, referrer_email, referral_received_time)
-            # Send reply
-            reply_to = referrer_email
-            send_reply_email(service, msg_data, reply_to)
-        # Mark as read
-        try:
-            service.users().messages().modify(
-                userId='me',
-                id=msg['id'],
-                body={'removeLabelIds': ['UNREAD']}
-            ).execute()
-            logger.info(f"Marked email {msg['id']} as read.")
-        except Exception as e:
-            logger.error(f"Failed to mark email {msg['id']} as read: {e}")
-    logger.info(f"Fetched {len(emails)} relevant unread emails from Gmail API.")
-    return emails
+        logger.info(f"Parsed email ID {msg['id']} from {from_}: {parsed}")
 
-def list_unread_emails(imap_host: str, email_user: str, email_pass: str, mailbox: str = 'INBOX') -> List[Dict]:
-    """
-    Connects to the IMAP server and returns a list of unread email headers.
-    Returns: list of dicts: [{subject, from, date, uid}, ...]
-    """
-    emails = []
-    mail = None
-    try:
-        mail = imaplib.IMAP4_SSL(imap_host)
-        mail.login(email_user, email_pass)
-        mail.select(mailbox)
-        status, data = mail.search(None, 'UNSEEN')
-        if status != 'OK':
-            logger.warning(f"No unread emails found.")
-            return emails
-        for num in data[0].split():
-            status, msg_data = mail.fetch(num, '(RFC822)')
-            if status != 'OK':
-                continue
-            msg = email.message_from_bytes(msg_data[0][1])
-            subject = email.header.decode_header(msg['Subject'])[0][0]
-            if isinstance(subject, bytes):
-                subject = subject.decode(errors='replace')
-            from_ = msg.get('From', '')
-            date_ = msg.get('Date', '')
-            emails.append({'subject': subject, 'from': from_, 'date': date_, 'uid': num.decode()})
-        logger.info(f"Fetched {len(emails)} unread emails.")
-        return emails
-    except Exception as e:
-        logger.exception(f"Error fetching unread emails: {e}")
-        return emails
-    finally:
-        if mail:
-            try:
-                mail.logout()
-            except Exception:
-                pass
+        # Collect data instead of saving
+        referral_data = {
+            'parsed': parsed,
+            'subject': subject,
+            'body': body,
+            'referrer_email': from_,  # Assuming 'From' is the referrer email
+            'referral_received_time': datetime.now()  # Or parse from date_str if needed
+            # Add other relevant fields extracted from headers/body if necessary
+        }
+        processed_emails.append(referral_data)
+
+        # Mark as read after successful parsing
+        service.users().messages().modify(
+            userId='me',
+            id=msg['id'],
+            body={'removeLabelIds': ['UNREAD']}
+        ).execute()
+        logger.info(f"Marked email {msg['id']} as read.")
+
+    logger.info(f"Processed {len(processed_emails)} relevant unread emails from Gmail API.")
+    return processed_emails
 
 def list_resend_link_requests(max_results: int = 10):
     """
@@ -241,14 +182,11 @@ def list_resend_link_requests(max_results: int = 10):
                 resend_requests.append(patient_id)
                 logger.info(f"Detected resend link request: {patient_id} from {from_}")
         # Mark as read
-        try:
-            service.users().messages().modify(
-                userId='me',
-                id=msg['id'],
-                body={'removeLabelIds': ['UNREAD']}
-            ).execute()
-            logger.info(f"Marked email {msg['id']} as read (resend link request).")
-        except Exception as e:
-            logger.error(f"Failed to mark email {msg['id']} as read: {e}")
+        service.users().messages().modify(
+            userId='me',
+            id=msg['id'],
+            body={'removeLabelIds': ['UNREAD']}
+        ).execute()
+        logger.info(f"Marked email {msg['id']} as read (resend link request).")
     logger.info(f"Fetched {len(resend_requests)} resend link requests from Gmail API.")
     return resend_requests
