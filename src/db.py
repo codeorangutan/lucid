@@ -36,6 +36,8 @@ class Referral(Base):
     report_unprocessed = Column(Boolean, default=True)
     report_processed = Column(Boolean, default=False)
     report_sent_date = Column(DateTime)
+    test_resent = Column(Boolean, default=False)
+    test_resent_time = Column(DateTime, nullable=True)
 
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)

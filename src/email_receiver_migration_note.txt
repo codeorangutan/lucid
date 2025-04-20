@@ -1,1 +1,0 @@
-Gmail API OAuth2 integration and unread email fetching logic from gmail_integration.py have been migrated into email_receiver.py. The IMAP logic is still present for compatibility. The standalone gmail_integration.py can now be deleted.
