@@ -10,5 +10,11 @@ venv/
 .DS_Store
 .idea/
 .vscode/
+venv310/
+*.log
+credentials/
+__pycache__/
+*.pyc
+reports/
 lucid_data_encrypted.db
 config.ini

@@ -29,6 +29,8 @@ COPY . .
 # Set environment variable for SQLCipher password (override in production!)
 ENV LUCID_DB_PASSWORD=lucid_default_password
 
-# Default command: run pytest to check environment
-# CMD ["pytest", "tests/test_environment.py"]
-CMD ["python", "src/run_email_receiver.py"]
+# Expose the Flask dashboard port
+EXPOSE 5000
+
+# Default command: run the dashboard (which includes the scheduler and orchestrator)
+CMD ["python", "src/dashboard.py"]
