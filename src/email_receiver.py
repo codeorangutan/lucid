@@ -131,6 +131,11 @@ def list_unread_emails_gmail_api(max_results: int = 10) -> List[Dict]:
             referrer_email = from_
         referral_received_time = datetime.now()
         if subject_matches(subject):
+            required_fields = ['email', 'id_number']  # Add more if needed
+            missing = [f for f in required_fields if not parsed.get(f)]
+            if missing:
+                logger.warning(f"Skipping referral: missing required fields {missing}. Subject: {subject}")
+                continue
             emails.append({
                 'subject': subject,
                 'from': from_,
