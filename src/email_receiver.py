@@ -206,3 +206,49 @@ def list_unread_emails(imap_host: str, email_user: str, email_pass: str, mailbox
                 mail.logout()
             except Exception:
                 pass
+
+def list_resend_link_requests(max_results: int = 10):
+    """
+    Fetch unread emails from Gmail API that are likely 'link expired' or 'resend link' requests.
+    Returns a list of dicts: [{'email': ..., 'id_number': ...}, ...]
+    """
+    service = get_gmail_service()
+    results = service.users().messages().list(userId='me', labelIds=['INBOX', 'UNREAD'], maxResults=max_results).execute()
+    messages = results.get('messages', [])
+    resend_requests = []
+    KEYWORDS = [
+        'link expired', 'resend link', 'test expired', 'need new link', 'cannot access test',
+        'link not working', 'test link expired', 'send new link'
+    ]
+    for msg in messages:
+        msg_data = service.users().messages().get(userId='me', id=msg['id']).execute()
+        payload = msg_data.get('payload', {})
+        headers = payload.get('headers', [])
+        subject = next((h['value'] for h in headers if h['name'] == 'Subject'), '')
+        from_ = next((h['value'] for h in headers if h['name'] == 'From'), '')
+        body = get_email_body(msg_data)
+        # Check for resend keywords in subject or body
+        text = f"{subject}\n{body}".lower()
+        if any(keyword in text for keyword in KEYWORDS):
+            parsed = parse_email_body(body)
+            # At minimum, try to get email or id_number
+            patient_id = {}
+            if parsed.get('email'):
+                patient_id['email'] = parsed['email']
+            if parsed.get('id_number'):
+                patient_id['id_number'] = parsed['id_number']
+            if patient_id:
+                resend_requests.append(patient_id)
+                logger.info(f"Detected resend link request: {patient_id} from {from_}")
+        # Mark as read
+        try:
+            service.users().messages().modify(
+                userId='me',
+                id=msg['id'],
+                body={'removeLabelIds': ['UNREAD']}
+            ).execute()
+            logger.info(f"Marked email {msg['id']} as read (resend link request).")
+        except Exception as e:
+            logger.error(f"Failed to mark email {msg['id']} as read: {e}")
+    logger.info(f"Fetched {len(resend_requests)} resend link requests from Gmail API.")
+    return resend_requests

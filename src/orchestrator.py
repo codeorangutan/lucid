@@ -5,6 +5,16 @@ LUCID Orchestrator Script (Polling Model)
 - This script is the central polling controller for the LUCID workflow.
 - Each stage is modular, idempotent, and robustly logged.
 - Run every 10 minutes via cron or Task Scheduler.
+
+# Orchestration Stage Flags (set as environment variables):
+#   ORCH_STAGE_INTAKE=0           # Disable Intake: Process New Referrals
+#   ORCH_STAGE_TEST_REQUEST=0     # Disable Test Request: Initiate CNS Test
+#   ORCH_STAGE_REPORT_MONITOR=0   # Disable Report Monitoring: Detect Test Completion
+#   ORCH_STAGE_REPORT_PROCESS=0   # Disable Report Processing: Reformat and Save
+#   ORCH_STAGE_REPORT_DELIVERY=0  # Disable Report Delivery: Email to Referrer
+#   ORCH_STAGE_REMINDERS=0        # Disable Reminders: Nagging for Incomplete Tests
+#   ORCH_STAGE_RESEND_LINKS=0     # Disable Resend Link Requests
+# All are enabled by default (set to 1 or unset)
 """
 import logging
 import sys
@@ -15,6 +25,12 @@ from datetime import datetime
 # from email_receiver import ...
 # from process_existing_reports import ...
 # from db import ...
+
+def is_stage_enabled(env_var, default=True):
+    val = os.environ.get(env_var)
+    if val is None:
+        return default
+    return val.strip() not in ('0', 'false', 'False', '')
 
 # Logging setup
 log_path = os.path.join(os.path.dirname(__file__), '..', 'lucid_orchestrator.log')
@@ -189,16 +205,76 @@ def enforce_safety_limits():
     except Exception as e:
         logger.exception(f"Error in safety limits enforcement: {e}")
 
+def process_resend_link_requests():
+    """Detects and processes 'resend link' requests for expired test links."""
+    logger.info("[STAGE] Processing resend test link requests...")
+    from db import Session, Referral
+    from datetime import datetime, timedelta
+    try:
+        # TODO: Replace with actual email parsing logic for 'resend link' requests
+        from email_receiver import list_resend_link_requests
+        resend_requests = list_resend_link_requests(max_results=10)
+        with Session() as session:
+            for req in resend_requests:
+                # req should contain a patient identifier (email or id_number)
+                patient = session.query(Referral).filter(
+                    (Referral.email == req['email']) | (Referral.id_number == req['id_number']),
+                    Referral.test_completed == False
+                ).first()
+                if not patient:
+                    logger.info(f"No matching patient found for resend request: {req}")
+                    continue
+                if patient.test_request_time and (datetime.now() - patient.test_request_time).days >= 7:
+                    # Trigger new test order
+                    from request_cns_test import request_cns_remote_test
+                    request_cns_remote_test(
+                        None,  # playwright instance if needed
+                        subject=patient.id_number or str(patient.id),
+                        dob_year=str(patient.dob).split("-")[0] if patient.dob else "2000",
+                        email=patient.email,
+                        headless=True
+                    )
+                    patient.test_resent = True
+                    patient.test_resent_time = datetime.now()
+                    session.commit()
+                    logger.info(f"Test resent for patient {patient.id_number} at {patient.test_resent_time}")
+                else:
+                    logger.info(f"Patient {patient.id_number} not eligible for resend (not enough time elapsed)")
+    except Exception as e:
+        logger.exception(f"Error processing resend link requests: {e}")
+
 def main():
     logger.info("--- LUCID Orchestration Cycle Start ---")
     try:
-        process_new_referrals()
-        request_tests_for_pending_patients()
-        process_new_reports()
-        reformat_and_save_reports()
-        send_reports_to_referrers()
-        send_reminders()
-        enforce_safety_limits()
+        if is_stage_enabled('ORCH_STAGE_INTAKE'):
+            process_new_referrals()
+        else:
+            logger.info('[SKIP] Intake: Process New Referrals')
+        if is_stage_enabled('ORCH_STAGE_TEST_REQUEST'):
+            request_tests_for_pending_patients()
+        else:
+            logger.info('[SKIP] Test Request: Initiate CNS Test')
+        if is_stage_enabled('ORCH_STAGE_REPORT_MONITOR'):
+            process_new_reports()
+        else:
+            logger.info('[SKIP] Report Monitoring: Detect Test Completion')
+        if is_stage_enabled('ORCH_STAGE_REPORT_PROCESS'):
+            reformat_and_save_reports()
+        else:
+            logger.info('[SKIP] Report Processing: Reformat and Save')
+        if is_stage_enabled('ORCH_STAGE_REPORT_DELIVERY'):
+            send_reports_to_referrers()
+        else:
+            logger.info('[SKIP] Report Delivery: Email to Referrer')
+        if is_stage_enabled('ORCH_STAGE_REMINDERS'):
+            send_reminders()
+        else:
+            logger.info('[SKIP] Reminders: Nagging for Incomplete Tests')
+        if is_stage_enabled('ORCH_STAGE_RESEND_LINKS'):
+            process_resend_link_requests()
+        else:
+            logger.info('[SKIP] Resend Link Requests')
+        enforce_safety_limits()  # Always enforce safety limits
     except Exception as e:
         logger.exception(f"Orchestration error: {e}")
     logger.info("--- LUCID Orchestration Cycle End ---\n")
