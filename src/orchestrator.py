@@ -19,10 +19,13 @@ LUCID Orchestrator Script (Polling Model)
 import logging
 import sys
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
-# TODO: Import your actual modules here as you migrate logic
-# from email_receiver import ...
+# Import necessary DB components
+from db import Session, Referral, save_referral
+
+# TODO: Import other modules as needed
+# from email_receiver import ... # Moved import inside function to avoid circular dependency if email_receiver imports orchestrator components later
 # from process_existing_reports import ...
 # from db import ...
 
@@ -49,14 +52,75 @@ logger.info('Orchestrator started.')
 
 # --- Pipeline Stage Functions ---
 def process_new_referrals():
-    """Intake: Detect new referrals, parse, and save to DB."""
+    """Intake: Detect new referrals via email, validate, and save to DB."""
     logger.info("[STAGE] Processing new referrals...")
+    saved_count = 0
     try:
+        # Import the function that now returns data
         from email_receiver import list_unread_emails_gmail_api
-        emails = list_unread_emails_gmail_api(max_results=10)
-        logger.info(f"Processed {len(emails)} new referral(s).")
+        # Get the list of potential referrals
+        potential_referrals = list_unread_emails_gmail_api(max_results=10) # Fetch data
+        logger.info(f"Fetched {len(potential_referrals)} potential referral email(s).")
+
+        if not potential_referrals:
+            return
+
+        # Process each potential referral
+        # Use a single session for this batch to be efficient
+        with Session() as session:
+            for data in potential_referrals:
+                parsed = data.get('parsed', {})
+                subject = data.get('subject', '')
+                body = data.get('body', '')
+                referrer_email = data.get('referrer_email', '') # Extracted 'From' address
+                received_time = data.get('referral_received_time')
+
+                # --- Validation Logic ---
+                # 1. Check for essential data (e.g., patient email)
+                patient_email = parsed.get('email')
+                if not patient_email:
+                    logger.warning(f"Skipping referral from {referrer_email} - missing patient email. Subject: {subject}")
+                    continue # Skip this referral
+
+                # 2. Optional: Check for recent duplicates for the same patient email
+                # Look for referrals with the same email received in the last hour (adjust timeframe as needed)
+                # time_threshold = datetime.now() - timedelta(hours=1)
+                # existing = session.query(Referral).filter(
+                #     Referral.email == patient_email,
+                #     Referral.referral_received_time >= time_threshold
+                # ).first()
+                # if existing:
+                #     logger.info(f"Skipping potentially duplicate referral for {patient_email} received recently.")
+                #     continue # Skip this duplicate
+                # --- End Validation ---
+
+                # If validation passes, save the referral
+                try:
+                    # Call the save function from db module
+                    save_referral(
+                        parsed=parsed,
+                        subject=subject,
+                        body=body,
+                        # Extract referrer name if available, otherwise use email
+                        referrer=referrer_email.split('<')[0].strip() if '<' in referrer_email else referrer_email,
+                        referrer_email=referrer_email.split('<')[-1].replace('>', '').strip() if '<' in referrer_email else referrer_email,
+                        referral_received_time=received_time,
+                        # Add referral_confirmed_time if applicable/available from email_receiver data
+                        # referral_confirmed_time=data.get('referral_confirmed_time')
+                    )
+                    saved_count += 1
+                    logger.info(f"Successfully saved referral for patient email: {patient_email}")
+                except Exception as db_err:
+                    # Log error but continue processing other referrals
+                    logger.error(f"Failed to save referral for patient email {patient_email} from {referrer_email}: {db_err}")
+                    # Consider more sophisticated error handling if needed (e.g., rollback)
+
+        logger.info(f"Attempted to save {len(potential_referrals)} referrals, successfully saved {saved_count}.")
+
     except Exception as e:
-        logger.exception(f"Error processing new referrals: {e}")
+        # Catch errors during email fetching or general processing
+        logger.exception(f"Error in 'process_new_referrals' stage: {e}")
+
 
 def request_tests_for_pending_patients(headless=True):
     """Trigger Playwright automation for pending test requests."""
