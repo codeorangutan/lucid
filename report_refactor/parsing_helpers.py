@@ -162,12 +162,14 @@ def parse_epworth(text, patient_id):
     try:
         # Only match lines for questions 1–8
         pattern = re.findall(r"^\s*([1-8])\s+(.+?)\s+(\d)\s*-\s*(.+)$", text, re.MULTILINE)
-        final_total = 0
-        for match in pattern:
-            q_num, situation, score, description = match
-            score = int(score)
-            responses.append((patient_id, int(q_num), situation.strip(), score, description.strip()))
-            final_total += score
+        # Only process the first 8 Epworth questions
+        for match in pattern[:8]:
+            question_number = int(match[0])
+            situation = match[1].strip()
+            score = int(match[2])
+            description = match[3].strip()
+            responses.append((patient_id, question_number, situation, score, description))
+        final_total = sum([r[3] for r in responses]) if responses else 0
         interpretation = ""
         if final_total is not None:
             if final_total <= 5:

@@ -1,0 +1,1034 @@
+2025-03-28 04:25:26,430 - INFO - Connected to database: G:\My Drive\Programming\Report_Reformat\SQL_Data Extractor_from_PDF\data\cognitive_analysis.db
+2025-03-28 04:25:26,523 - INFO - Successfully created DSM-5 tables
+2025-03-28 04:25:26,526 - INFO - Processing patient 6888
+2025-03-28 04:25:26,560 - INFO - Successfully processed patient 6888
+2025-03-28 04:25:26,561 - INFO - Progress: 1/171 patients processed
+2025-03-28 04:25:26,561 - INFO - Processing patient 11111
+2025-03-28 04:25:26,594 - INFO - Successfully processed patient 11111
+2025-03-28 04:25:26,594 - INFO - Progress: 2/171 patients processed
+2025-03-28 04:25:26,595 - INFO - Processing patient 15277
+2025-03-28 04:25:26,631 - INFO - Successfully processed patient 15277
+2025-03-28 04:25:26,632 - INFO - Progress: 3/171 patients processed
+2025-03-28 04:25:26,632 - INFO - Processing patient 16618
+2025-03-28 04:25:26,667 - INFO - Successfully processed patient 16618
+2025-03-28 04:25:26,668 - INFO - Progress: 4/171 patients processed
+2025-03-28 04:25:26,668 - INFO - Processing patient 17221
+2025-03-28 04:25:26,705 - INFO - Successfully processed patient 17221
+2025-03-28 04:25:26,706 - INFO - Progress: 5/171 patients processed
+2025-03-28 04:25:26,706 - INFO - Processing patient 19672
+2025-03-28 04:25:26,740 - INFO - Successfully processed patient 19672
+2025-03-28 04:25:26,741 - INFO - Progress: 6/171 patients processed
+2025-03-28 04:25:26,741 - INFO - Processing patient 20235
+2025-03-28 04:25:26,776 - INFO - Successfully processed patient 20235
+2025-03-28 04:25:26,776 - INFO - Progress: 7/171 patients processed
+2025-03-28 04:25:26,777 - INFO - Processing patient 21336
+2025-03-28 04:25:26,809 - INFO - Successfully processed patient 21336
+2025-03-28 04:25:26,810 - INFO - Progress: 8/171 patients processed
+2025-03-28 04:25:26,810 - INFO - Processing patient 23961
+2025-03-28 04:25:26,843 - INFO - Successfully processed patient 23961
+2025-03-28 04:25:26,844 - INFO - Progress: 9/171 patients processed
+2025-03-28 04:25:26,845 - INFO - Processing patient 24204
+2025-03-28 04:25:26,887 - INFO - Successfully processed patient 24204
+2025-03-28 04:25:26,888 - INFO - Progress: 10/171 patients processed
+2025-03-28 04:25:26,888 - INFO - Processing patient 27006
+2025-03-28 04:25:26,921 - INFO - Successfully processed patient 27006
+2025-03-28 04:25:26,922 - INFO - Progress: 11/171 patients processed
+2025-03-28 04:25:26,922 - INFO - Processing patient 31679
+2025-03-28 04:25:26,959 - INFO - Successfully processed patient 31679
+2025-03-28 04:25:26,959 - INFO - Progress: 12/171 patients processed
+2025-03-28 04:25:26,960 - INFO - Processing patient 31761
+2025-03-28 04:25:26,994 - INFO - Successfully processed patient 31761
+2025-03-28 04:25:26,995 - INFO - Progress: 13/171 patients processed
+2025-03-28 04:25:26,996 - INFO - Processing patient 31961
+2025-03-28 04:25:26,999 - WARNING - No ASRS responses found for patient 31961
+2025-03-28 04:25:26,999 - INFO - Progress: 14/171 patients processed
+2025-03-28 04:25:27,000 - INFO - Processing patient 32313
+2025-03-28 04:25:27,033 - INFO - Successfully processed patient 32313
+2025-03-28 04:25:27,034 - INFO - Progress: 15/171 patients processed
+2025-03-28 04:25:27,035 - INFO - Processing patient 33121
+2025-03-28 04:25:27,037 - WARNING - No ASRS responses found for patient 33121
+2025-03-28 04:25:27,037 - INFO - Progress: 16/171 patients processed
+2025-03-28 04:25:27,038 - INFO - Processing patient 33191
+2025-03-28 04:25:27,068 - INFO - Successfully processed patient 33191
+2025-03-28 04:25:27,069 - INFO - Progress: 17/171 patients processed
+2025-03-28 04:25:27,069 - INFO - Processing patient 33287
+2025-03-28 04:25:27,102 - INFO - Successfully processed patient 33287
+2025-03-28 04:25:27,103 - INFO - Progress: 18/171 patients processed
+2025-03-28 04:25:27,103 - INFO - Processing patient 33343
+2025-03-28 04:25:27,138 - INFO - Successfully processed patient 33343
+2025-03-28 04:25:27,139 - INFO - Progress: 19/171 patients processed
+2025-03-28 04:25:27,139 - INFO - Processing patient 33555
+2025-03-28 04:25:27,171 - INFO - Successfully processed patient 33555
+2025-03-28 04:25:27,171 - INFO - Progress: 20/171 patients processed
+2025-03-28 04:25:27,172 - INFO - Processing patient 33607
+2025-03-28 04:25:27,205 - INFO - Successfully processed patient 33607
+2025-03-28 04:25:27,205 - INFO - Progress: 21/171 patients processed
+2025-03-28 04:25:27,206 - INFO - Processing patient 33655
+2025-03-28 04:25:27,249 - INFO - Successfully processed patient 33655
+2025-03-28 04:25:27,250 - INFO - Progress: 22/171 patients processed
+2025-03-28 04:25:27,250 - INFO - Processing patient 33690
+2025-03-28 04:25:27,284 - INFO - Successfully processed patient 33690
+2025-03-28 04:25:27,285 - INFO - Progress: 23/171 patients processed
+2025-03-28 04:25:27,285 - INFO - Processing patient 33750
+2025-03-28 04:25:27,321 - INFO - Successfully processed patient 33750
+2025-03-28 04:25:27,322 - INFO - Progress: 24/171 patients processed
+2025-03-28 04:25:27,323 - INFO - Processing patient 33759
+2025-03-28 04:25:27,358 - INFO - Successfully processed patient 33759
+2025-03-28 04:25:27,358 - INFO - Progress: 25/171 patients processed
+2025-03-28 04:25:27,359 - INFO - Processing patient 33808
+2025-03-28 04:25:27,391 - INFO - Successfully processed patient 33808
+2025-03-28 04:25:27,392 - INFO - Progress: 26/171 patients processed
+2025-03-28 04:25:27,392 - INFO - Processing patient 33860
+2025-03-28 04:25:27,423 - INFO - Successfully processed patient 33860
+2025-03-28 04:25:27,424 - INFO - Progress: 27/171 patients processed
+2025-03-28 04:25:27,425 - INFO - Processing patient 33877
+2025-03-28 04:25:27,459 - INFO - Successfully processed patient 33877
+2025-03-28 04:25:27,460 - INFO - Progress: 28/171 patients processed
+2025-03-28 04:25:27,460 - INFO - Processing patient 33911
+2025-03-28 04:25:27,493 - INFO - Successfully processed patient 33911
+2025-03-28 04:25:27,493 - INFO - Progress: 29/171 patients processed
+2025-03-28 04:25:27,494 - INFO - Processing patient 33954
+2025-03-28 04:25:27,526 - INFO - Successfully processed patient 33954
+2025-03-28 04:25:27,526 - INFO - Progress: 30/171 patients processed
+2025-03-28 04:25:27,527 - INFO - Processing patient 33957
+2025-03-28 04:25:27,569 - INFO - Successfully processed patient 33957
+2025-03-28 04:25:27,570 - INFO - Progress: 31/171 patients processed
+2025-03-28 04:25:27,570 - INFO - Processing patient 33959
+2025-03-28 04:25:27,603 - INFO - Successfully processed patient 33959
+2025-03-28 04:25:27,604 - INFO - Progress: 32/171 patients processed
+2025-03-28 04:25:27,604 - INFO - Processing patient 33989
+2025-03-28 04:25:27,637 - INFO - Successfully processed patient 33989
+2025-03-28 04:25:27,637 - INFO - Progress: 33/171 patients processed
+2025-03-28 04:25:27,638 - INFO - Processing patient 34003
+2025-03-28 04:25:27,668 - INFO - Successfully processed patient 34003
+2025-03-28 04:25:27,668 - INFO - Progress: 34/171 patients processed
+2025-03-28 04:25:27,669 - INFO - Processing patient 34004
+2025-03-28 04:25:27,700 - INFO - Successfully processed patient 34004
+2025-03-28 04:25:27,700 - INFO - Progress: 35/171 patients processed
+2025-03-28 04:25:27,701 - INFO - Processing patient 34020
+2025-03-28 04:25:27,734 - INFO - Successfully processed patient 34020
+2025-03-28 04:25:27,734 - INFO - Progress: 36/171 patients processed
+2025-03-28 04:25:27,735 - INFO - Processing patient 34039
+2025-03-28 04:25:27,767 - INFO - Successfully processed patient 34039
+2025-03-28 04:25:27,768 - INFO - Progress: 37/171 patients processed
+2025-03-28 04:25:27,768 - INFO - Processing patient 34048
+2025-03-28 04:25:27,801 - INFO - Successfully processed patient 34048
+2025-03-28 04:25:27,802 - INFO - Progress: 38/171 patients processed
+2025-03-28 04:25:27,802 - INFO - Processing patient 34054
+2025-03-28 04:25:27,836 - INFO - Successfully processed patient 34054
+2025-03-28 04:25:27,837 - INFO - Progress: 39/171 patients processed
+2025-03-28 04:25:27,837 - INFO - Processing patient 34055
+2025-03-28 04:25:27,869 - INFO - Successfully processed patient 34055
+2025-03-28 04:25:27,870 - INFO - Progress: 40/171 patients processed
+2025-03-28 04:25:27,870 - INFO - Processing patient 34066
+2025-03-28 04:25:27,909 - INFO - Successfully processed patient 34066
+2025-03-28 04:25:27,910 - INFO - Progress: 41/171 patients processed
+2025-03-28 04:25:27,911 - INFO - Processing patient 34079
+2025-03-28 04:25:27,942 - INFO - Successfully processed patient 34079
+2025-03-28 04:25:27,942 - INFO - Progress: 42/171 patients processed
+2025-03-28 04:25:27,943 - INFO - Processing patient 34084
+2025-03-28 04:25:27,976 - INFO - Successfully processed patient 34084
+2025-03-28 04:25:27,976 - INFO - Progress: 43/171 patients processed
+2025-03-28 04:25:27,980 - INFO - Processing patient 34159
+2025-03-28 04:25:28,021 - INFO - Successfully processed patient 34159
+2025-03-28 04:25:28,022 - INFO - Progress: 44/171 patients processed
+2025-03-28 04:25:28,022 - INFO - Processing patient 34211
+2025-03-28 04:25:28,057 - INFO - Successfully processed patient 34211
+2025-03-28 04:25:28,058 - INFO - Progress: 45/171 patients processed
+2025-03-28 04:25:28,058 - INFO - Processing patient 34214
+2025-03-28 04:25:28,089 - INFO - Successfully processed patient 34214
+2025-03-28 04:25:28,089 - INFO - Progress: 46/171 patients processed
+2025-03-28 04:25:28,089 - INFO - Processing patient 34283
+2025-03-28 04:25:28,123 - INFO - Successfully processed patient 34283
+2025-03-28 04:25:28,123 - INFO - Progress: 47/171 patients processed
+2025-03-28 04:25:28,124 - INFO - Processing patient 34512
+2025-03-28 04:25:28,159 - INFO - Successfully processed patient 34512
+2025-03-28 04:25:28,159 - INFO - Progress: 48/171 patients processed
+2025-03-28 04:25:28,159 - INFO - Processing patient 34556
+2025-03-28 04:25:28,192 - INFO - Successfully processed patient 34556
+2025-03-28 04:25:28,193 - INFO - Progress: 49/171 patients processed
+2025-03-28 04:25:28,193 - INFO - Processing patient 34559
+2025-03-28 04:25:28,230 - INFO - Successfully processed patient 34559
+2025-03-28 04:25:28,231 - INFO - Progress: 50/171 patients processed
+2025-03-28 04:25:28,231 - INFO - Processing patient 34593
+2025-03-28 04:25:28,278 - INFO - Successfully processed patient 34593
+2025-03-28 04:25:28,278 - INFO - Progress: 51/171 patients processed
+2025-03-28 04:25:28,279 - INFO - Processing patient 34756
+2025-03-28 04:25:28,316 - INFO - Successfully processed patient 34756
+2025-03-28 04:25:28,317 - INFO - Progress: 52/171 patients processed
+2025-03-28 04:25:28,317 - INFO - Processing patient 34766
+2025-03-28 04:25:28,351 - INFO - Successfully processed patient 34766
+2025-03-28 04:25:28,352 - INFO - Progress: 53/171 patients processed
+2025-03-28 04:25:28,352 - INFO - Processing patient 34795
+2025-03-28 04:25:28,386 - INFO - Successfully processed patient 34795
+2025-03-28 04:25:28,387 - INFO - Progress: 54/171 patients processed
+2025-03-28 04:25:28,387 - INFO - Processing patient 34802
+2025-03-28 04:25:28,422 - INFO - Successfully processed patient 34802
+2025-03-28 04:25:28,423 - INFO - Progress: 55/171 patients processed
+2025-03-28 04:25:28,423 - INFO - Processing patient 34845
+2025-03-28 04:25:28,457 - INFO - Successfully processed patient 34845
+2025-03-28 04:25:28,458 - INFO - Progress: 56/171 patients processed
+2025-03-28 04:25:28,459 - INFO - Processing patient 34898
+2025-03-28 04:25:28,490 - INFO - Successfully processed patient 34898
+2025-03-28 04:25:28,490 - INFO - Progress: 57/171 patients processed
+2025-03-28 04:25:28,491 - INFO - Processing patient 34908
+2025-03-28 04:25:28,522 - INFO - Successfully processed patient 34908
+2025-03-28 04:25:28,523 - INFO - Progress: 58/171 patients processed
+2025-03-28 04:25:28,524 - INFO - Processing patient 34916
+2025-03-28 04:25:28,555 - INFO - Successfully processed patient 34916
+2025-03-28 04:25:28,556 - INFO - Progress: 59/171 patients processed
+2025-03-28 04:25:28,556 - INFO - Processing patient 34944
+2025-03-28 04:25:28,597 - INFO - Successfully processed patient 34944
+2025-03-28 04:25:28,598 - INFO - Progress: 60/171 patients processed
+2025-03-28 04:25:28,598 - INFO - Processing patient 34950
+2025-03-28 04:25:28,637 - INFO - Successfully processed patient 34950
+2025-03-28 04:25:28,638 - INFO - Progress: 61/171 patients processed
+2025-03-28 04:25:28,638 - INFO - Processing patient 34974
+2025-03-28 04:25:28,673 - INFO - Successfully processed patient 34974
+2025-03-28 04:25:28,674 - INFO - Progress: 62/171 patients processed
+2025-03-28 04:25:28,674 - INFO - Processing patient 35010
+2025-03-28 04:25:28,708 - INFO - Successfully processed patient 35010
+2025-03-28 04:25:28,709 - INFO - Progress: 63/171 patients processed
+2025-03-28 04:25:28,710 - INFO - Processing patient 35036
+2025-03-28 04:25:28,746 - INFO - Successfully processed patient 35036
+2025-03-28 04:25:28,747 - INFO - Progress: 64/171 patients processed
+2025-03-28 04:25:28,747 - INFO - Processing patient 35065
+2025-03-28 04:25:28,781 - INFO - Successfully processed patient 35065
+2025-03-28 04:25:28,781 - INFO - Progress: 65/171 patients processed
+2025-03-28 04:25:28,782 - INFO - Processing patient 35102
+2025-03-28 04:25:28,813 - INFO - Successfully processed patient 35102
+2025-03-28 04:25:28,814 - INFO - Progress: 66/171 patients processed
+2025-03-28 04:25:28,815 - INFO - Processing patient 35117
+2025-03-28 04:25:28,849 - INFO - Successfully processed patient 35117
+2025-03-28 04:25:28,850 - INFO - Progress: 67/171 patients processed
+2025-03-28 04:25:28,850 - INFO - Processing patient 35209
+2025-03-28 04:25:28,885 - INFO - Successfully processed patient 35209
+2025-03-28 04:25:28,885 - INFO - Progress: 68/171 patients processed
+2025-03-28 04:25:28,886 - INFO - Processing patient 35230
+2025-03-28 04:25:28,920 - INFO - Successfully processed patient 35230
+2025-03-28 04:25:28,921 - INFO - Progress: 69/171 patients processed
+2025-03-28 04:25:28,921 - INFO - Processing patient 35273
+2025-03-28 04:25:28,965 - INFO - Successfully processed patient 35273
+2025-03-28 04:25:28,966 - INFO - Progress: 70/171 patients processed
+2025-03-28 04:25:28,966 - INFO - Processing patient 35309
+2025-03-28 04:25:29,001 - INFO - Successfully processed patient 35309
+2025-03-28 04:25:29,001 - INFO - Progress: 71/171 patients processed
+2025-03-28 04:25:29,002 - INFO - Processing patient 35471
+2025-03-28 04:25:29,034 - INFO - Successfully processed patient 35471
+2025-03-28 04:25:29,034 - INFO - Progress: 72/171 patients processed
+2025-03-28 04:25:29,034 - INFO - Processing patient 35506
+2025-03-28 04:25:29,066 - INFO - Successfully processed patient 35506
+2025-03-28 04:25:29,066 - INFO - Progress: 73/171 patients processed
+2025-03-28 04:25:29,067 - INFO - Processing patient 35545
+2025-03-28 04:25:29,097 - INFO - Successfully processed patient 35545
+2025-03-28 04:25:29,097 - INFO - Progress: 74/171 patients processed
+2025-03-28 04:25:29,098 - INFO - Processing patient 35599
+2025-03-28 04:25:29,133 - INFO - Successfully processed patient 35599
+2025-03-28 04:25:29,134 - INFO - Progress: 75/171 patients processed
+2025-03-28 04:25:29,134 - INFO - Processing patient 35836
+2025-03-28 04:25:29,135 - WARNING - No ASRS responses found for patient 35836
+2025-03-28 04:25:29,136 - INFO - Progress: 76/171 patients processed
+2025-03-28 04:25:29,136 - INFO - Processing patient 36078
+2025-03-28 04:25:29,167 - INFO - Successfully processed patient 36078
+2025-03-28 04:25:29,168 - INFO - Progress: 77/171 patients processed
+2025-03-28 04:25:29,168 - INFO - Processing patient 36089
+2025-03-28 04:25:29,201 - INFO - Successfully processed patient 36089
+2025-03-28 04:25:29,201 - INFO - Progress: 78/171 patients processed
+2025-03-28 04:25:29,201 - INFO - Processing patient 36093
+2025-03-28 04:25:29,236 - INFO - Successfully processed patient 36093
+2025-03-28 04:25:29,237 - INFO - Progress: 79/171 patients processed
+2025-03-28 04:25:29,237 - INFO - Processing patient 36153
+2025-03-28 04:25:29,271 - INFO - Successfully processed patient 36153
+2025-03-28 04:25:29,272 - INFO - Progress: 80/171 patients processed
+2025-03-28 04:25:29,273 - INFO - Processing patient 36191
+2025-03-28 04:25:29,314 - INFO - Successfully processed patient 36191
+2025-03-28 04:25:29,315 - INFO - Progress: 81/171 patients processed
+2025-03-28 04:25:29,315 - INFO - Processing patient 36411
+2025-03-28 04:25:29,351 - INFO - Successfully processed patient 36411
+2025-03-28 04:25:29,352 - INFO - Progress: 82/171 patients processed
+2025-03-28 04:25:29,352 - INFO - Processing patient 36430
+2025-03-28 04:25:29,387 - INFO - Successfully processed patient 36430
+2025-03-28 04:25:29,388 - INFO - Progress: 83/171 patients processed
+2025-03-28 04:25:29,388 - INFO - Processing patient 36439
+2025-03-28 04:25:29,422 - INFO - Successfully processed patient 36439
+2025-03-28 04:25:29,423 - INFO - Progress: 84/171 patients processed
+2025-03-28 04:25:29,423 - INFO - Processing patient 36470
+2025-03-28 04:25:29,450 - INFO - Successfully processed patient 36470
+2025-03-28 04:25:29,451 - INFO - Progress: 85/171 patients processed
+2025-03-28 04:25:29,451 - INFO - Processing patient 36490
+2025-03-28 04:25:29,494 - INFO - Successfully processed patient 36490
+2025-03-28 04:25:29,495 - INFO - Progress: 86/171 patients processed
+2025-03-28 04:25:29,495 - INFO - Processing patient 36639
+2025-03-28 04:25:29,528 - INFO - Successfully processed patient 36639
+2025-03-28 04:25:29,529 - INFO - Progress: 87/171 patients processed
+2025-03-28 04:25:29,529 - INFO - Processing patient 36674
+2025-03-28 04:25:29,558 - INFO - Successfully processed patient 36674
+2025-03-28 04:25:29,559 - INFO - Progress: 88/171 patients processed
+2025-03-28 04:25:29,560 - INFO - Processing patient 36682
+2025-03-28 04:25:29,596 - INFO - Successfully processed patient 36682
+2025-03-28 04:25:29,596 - INFO - Progress: 89/171 patients processed
+2025-03-28 04:25:29,597 - INFO - Processing patient 36839
+2025-03-28 04:25:29,642 - INFO - Successfully processed patient 36839
+2025-03-28 04:25:29,642 - INFO - Progress: 90/171 patients processed
+2025-03-28 04:25:29,643 - INFO - Processing patient 36923
+2025-03-28 04:25:29,679 - INFO - Successfully processed patient 36923
+2025-03-28 04:25:29,679 - INFO - Progress: 91/171 patients processed
+2025-03-28 04:25:29,680 - INFO - Processing patient 36943
+2025-03-28 04:25:29,714 - INFO - Successfully processed patient 36943
+2025-03-28 04:25:29,715 - INFO - Progress: 92/171 patients processed
+2025-03-28 04:25:29,715 - INFO - Processing patient 36947
+2025-03-28 04:25:29,748 - INFO - Successfully processed patient 36947
+2025-03-28 04:25:29,749 - INFO - Progress: 93/171 patients processed
+2025-03-28 04:25:29,749 - INFO - Processing patient 36966
+2025-03-28 04:25:29,782 - INFO - Successfully processed patient 36966
+2025-03-28 04:25:29,783 - INFO - Progress: 94/171 patients processed
+2025-03-28 04:25:29,784 - INFO - Processing patient 36972
+2025-03-28 04:25:29,817 - INFO - Successfully processed patient 36972
+2025-03-28 04:25:29,818 - INFO - Progress: 95/171 patients processed
+2025-03-28 04:25:29,818 - INFO - Processing patient 36986
+2025-03-28 04:25:29,853 - INFO - Successfully processed patient 36986
+2025-03-28 04:25:29,854 - INFO - Progress: 96/171 patients processed
+2025-03-28 04:25:29,854 - INFO - Processing patient 37081
+2025-03-28 04:25:29,883 - INFO - Successfully processed patient 37081
+2025-03-28 04:25:29,883 - INFO - Progress: 97/171 patients processed
+2025-03-28 04:25:29,884 - INFO - Processing patient 37087
+2025-03-28 04:25:29,920 - INFO - Successfully processed patient 37087
+2025-03-28 04:25:29,920 - INFO - Progress: 98/171 patients processed
+2025-03-28 04:25:29,921 - INFO - Processing patient 37109
+2025-03-28 04:25:29,955 - INFO - Successfully processed patient 37109
+2025-03-28 04:25:29,955 - INFO - Progress: 99/171 patients processed
+2025-03-28 04:25:29,956 - INFO - Processing patient 37236
+2025-03-28 04:25:29,996 - INFO - Successfully processed patient 37236
+2025-03-28 04:25:29,996 - INFO - Progress: 100/171 patients processed
+2025-03-28 04:25:29,997 - INFO - Processing patient 37345
+2025-03-28 04:25:30,031 - INFO - Successfully processed patient 37345
+2025-03-28 04:25:30,032 - INFO - Progress: 101/171 patients processed
+2025-03-28 04:25:30,032 - INFO - Processing patient 37420
+2025-03-28 04:25:30,062 - INFO - Successfully processed patient 37420
+2025-03-28 04:25:30,062 - INFO - Progress: 102/171 patients processed
+2025-03-28 04:25:30,063 - INFO - Processing patient 37474
+2025-03-28 04:25:30,090 - INFO - Successfully processed patient 37474
+2025-03-28 04:25:30,091 - INFO - Progress: 103/171 patients processed
+2025-03-28 04:25:30,091 - INFO - Processing patient 37476
+2025-03-28 04:25:30,121 - INFO - Successfully processed patient 37476
+2025-03-28 04:25:30,122 - INFO - Progress: 104/171 patients processed
+2025-03-28 04:25:30,122 - INFO - Processing patient 37479
+2025-03-28 04:25:30,155 - INFO - Successfully processed patient 37479
+2025-03-28 04:25:30,156 - INFO - Progress: 105/171 patients processed
+2025-03-28 04:25:30,156 - INFO - Processing patient 37484
+2025-03-28 04:25:30,190 - INFO - Successfully processed patient 37484
+2025-03-28 04:25:30,190 - INFO - Progress: 106/171 patients processed
+2025-03-28 04:25:30,190 - INFO - Processing patient 37534
+2025-03-28 04:25:30,223 - INFO - Successfully processed patient 37534
+2025-03-28 04:25:30,224 - INFO - Progress: 107/171 patients processed
+2025-03-28 04:25:30,224 - INFO - Processing patient 37568
+2025-03-28 04:25:30,253 - INFO - Successfully processed patient 37568
+2025-03-28 04:25:30,254 - INFO - Progress: 108/171 patients processed
+2025-03-28 04:25:30,254 - INFO - Processing patient 37571
+2025-03-28 04:25:30,283 - INFO - Successfully processed patient 37571
+2025-03-28 04:25:30,284 - INFO - Progress: 109/171 patients processed
+2025-03-28 04:25:30,284 - INFO - Processing patient 37581
+2025-03-28 04:25:30,326 - INFO - Successfully processed patient 37581
+2025-03-28 04:25:30,327 - INFO - Progress: 110/171 patients processed
+2025-03-28 04:25:30,328 - INFO - Processing patient 37584
+2025-03-28 04:25:30,361 - INFO - Successfully processed patient 37584
+2025-03-28 04:25:30,362 - INFO - Progress: 111/171 patients processed
+2025-03-28 04:25:30,362 - INFO - Processing patient 37604
+2025-03-28 04:25:30,395 - INFO - Successfully processed patient 37604
+2025-03-28 04:25:30,395 - INFO - Progress: 112/171 patients processed
+2025-03-28 04:25:30,396 - INFO - Processing patient 37620
+2025-03-28 04:25:30,430 - INFO - Successfully processed patient 37620
+2025-03-28 04:25:30,430 - INFO - Progress: 113/171 patients processed
+2025-03-28 04:25:30,431 - INFO - Processing patient 37624
+2025-03-28 04:25:30,464 - INFO - Successfully processed patient 37624
+2025-03-28 04:25:30,464 - INFO - Progress: 114/171 patients processed
+2025-03-28 04:25:30,465 - INFO - Processing patient 37676
+2025-03-28 04:25:30,501 - INFO - Successfully processed patient 37676
+2025-03-28 04:25:30,502 - INFO - Progress: 115/171 patients processed
+2025-03-28 04:25:30,502 - INFO - Processing patient 37689
+2025-03-28 04:25:30,534 - INFO - Successfully processed patient 37689
+2025-03-28 04:25:30,535 - INFO - Progress: 116/171 patients processed
+2025-03-28 04:25:30,535 - INFO - Processing patient 37698
+2025-03-28 04:25:30,561 - INFO - Successfully processed patient 37698
+2025-03-28 04:25:30,562 - INFO - Progress: 117/171 patients processed
+2025-03-28 04:25:30,562 - INFO - Processing patient 37704
+2025-03-28 04:25:30,597 - INFO - Successfully processed patient 37704
+2025-03-28 04:25:30,598 - INFO - Progress: 118/171 patients processed
+2025-03-28 04:25:30,598 - INFO - Processing patient 37718
+2025-03-28 04:25:30,631 - INFO - Successfully processed patient 37718
+2025-03-28 04:25:30,631 - INFO - Progress: 119/171 patients processed
+2025-03-28 04:25:30,632 - INFO - Processing patient 37724
+2025-03-28 04:25:30,676 - INFO - Successfully processed patient 37724
+2025-03-28 04:25:30,676 - INFO - Progress: 120/171 patients processed
+2025-03-28 04:25:30,677 - INFO - Processing patient 37802
+2025-03-28 04:25:30,710 - INFO - Successfully processed patient 37802
+2025-03-28 04:25:30,710 - INFO - Progress: 121/171 patients processed
+2025-03-28 04:25:30,711 - INFO - Processing patient 37822
+2025-03-28 04:25:30,743 - INFO - Successfully processed patient 37822
+2025-03-28 04:25:30,744 - INFO - Progress: 122/171 patients processed
+2025-03-28 04:25:30,744 - INFO - Processing patient 37850
+2025-03-28 04:25:30,777 - INFO - Successfully processed patient 37850
+2025-03-28 04:25:30,778 - INFO - Progress: 123/171 patients processed
+2025-03-28 04:25:30,778 - INFO - Processing patient 37855
+2025-03-28 04:25:30,806 - INFO - Successfully processed patient 37855
+2025-03-28 04:25:30,806 - INFO - Progress: 124/171 patients processed
+2025-03-28 04:25:30,808 - INFO - Processing patient 37865
+2025-03-28 04:25:30,810 - WARNING - No ASRS responses found for patient 37865
+2025-03-28 04:25:30,810 - INFO - Progress: 125/171 patients processed
+2025-03-28 04:25:30,810 - INFO - Processing patient 37951
+2025-03-28 04:25:30,837 - INFO - Successfully processed patient 37951
+2025-03-28 04:25:30,838 - INFO - Progress: 126/171 patients processed
+2025-03-28 04:25:30,838 - INFO - Processing patient 38024
+2025-03-28 04:25:30,865 - INFO - Successfully processed patient 38024
+2025-03-28 04:25:30,865 - INFO - Progress: 127/171 patients processed
+2025-03-28 04:25:30,865 - INFO - Processing patient 38054
+2025-03-28 04:25:30,896 - INFO - Successfully processed patient 38054
+2025-03-28 04:25:30,897 - INFO - Progress: 128/171 patients processed
+2025-03-28 04:25:30,897 - INFO - Processing patient 38058
+2025-03-28 04:25:30,927 - INFO - Successfully processed patient 38058
+2025-03-28 04:25:30,928 - INFO - Progress: 129/171 patients processed
+2025-03-28 04:25:30,928 - INFO - Processing patient 38069
+2025-03-28 04:25:30,966 - INFO - Successfully processed patient 38069
+2025-03-28 04:25:30,967 - INFO - Progress: 130/171 patients processed
+2025-03-28 04:25:30,968 - INFO - Processing patient 38154
+2025-03-28 04:25:31,013 - INFO - Successfully processed patient 38154
+2025-03-28 04:25:31,014 - INFO - Progress: 131/171 patients processed
+2025-03-28 04:25:31,014 - INFO - Processing patient 38163
+2025-03-28 04:25:31,049 - INFO - Successfully processed patient 38163
+2025-03-28 04:25:31,050 - INFO - Progress: 132/171 patients processed
+2025-03-28 04:25:31,050 - INFO - Processing patient 38173
+2025-03-28 04:25:31,083 - INFO - Successfully processed patient 38173
+2025-03-28 04:25:31,084 - INFO - Progress: 133/171 patients processed
+2025-03-28 04:25:31,085 - INFO - Processing patient 38252
+2025-03-28 04:25:31,123 - INFO - Successfully processed patient 38252
+2025-03-28 04:25:31,124 - INFO - Progress: 134/171 patients processed
+2025-03-28 04:25:31,124 - INFO - Processing patient 38282
+2025-03-28 04:25:31,158 - INFO - Successfully processed patient 38282
+2025-03-28 04:25:31,159 - INFO - Progress: 135/171 patients processed
+2025-03-28 04:25:31,159 - INFO - Processing patient 38344
+2025-03-28 04:25:31,193 - INFO - Successfully processed patient 38344
+2025-03-28 04:25:31,193 - INFO - Progress: 136/171 patients processed
+2025-03-28 04:25:31,194 - INFO - Processing patient 38350
+2025-03-28 04:25:31,229 - INFO - Successfully processed patient 38350
+2025-03-28 04:25:31,229 - INFO - Progress: 137/171 patients processed
+2025-03-28 04:25:31,230 - INFO - Processing patient 38418
+2025-03-28 04:25:31,263 - INFO - Successfully processed patient 38418
+2025-03-28 04:25:31,263 - INFO - Progress: 138/171 patients processed
+2025-03-28 04:25:31,264 - INFO - Processing patient 38432
+2025-03-28 04:25:31,296 - INFO - Successfully processed patient 38432
+2025-03-28 04:25:31,297 - INFO - Progress: 139/171 patients processed
+2025-03-28 04:25:31,297 - INFO - Processing patient 38435
+2025-03-28 04:25:31,344 - INFO - Successfully processed patient 38435
+2025-03-28 04:25:31,344 - INFO - Progress: 140/171 patients processed
+2025-03-28 04:25:31,345 - INFO - Processing patient 38445
+2025-03-28 04:25:31,380 - INFO - Successfully processed patient 38445
+2025-03-28 04:25:31,381 - INFO - Progress: 141/171 patients processed
+2025-03-28 04:25:31,381 - INFO - Processing patient 38454
+2025-03-28 04:25:31,415 - INFO - Successfully processed patient 38454
+2025-03-28 04:25:31,416 - INFO - Progress: 142/171 patients processed
+2025-03-28 04:25:31,416 - INFO - Processing patient 38496
+2025-03-28 04:25:31,449 - INFO - Successfully processed patient 38496
+2025-03-28 04:25:31,449 - INFO - Progress: 143/171 patients processed
+2025-03-28 04:25:31,450 - INFO - Processing patient 38505
+2025-03-28 04:25:31,483 - INFO - Successfully processed patient 38505
+2025-03-28 04:25:31,483 - INFO - Progress: 144/171 patients processed
+2025-03-28 04:25:31,484 - INFO - Processing patient 38529
+2025-03-28 04:25:31,518 - INFO - Successfully processed patient 38529
+2025-03-28 04:25:31,518 - INFO - Progress: 145/171 patients processed
+2025-03-28 04:25:31,519 - INFO - Processing patient 38591
+2025-03-28 04:25:31,552 - INFO - Successfully processed patient 38591
+2025-03-28 04:25:31,553 - INFO - Progress: 146/171 patients processed
+2025-03-28 04:25:31,553 - INFO - Processing patient 38597
+2025-03-28 04:25:31,587 - INFO - Successfully processed patient 38597
+2025-03-28 04:25:31,588 - INFO - Progress: 147/171 patients processed
+2025-03-28 04:25:31,588 - INFO - Processing patient 38678
+2025-03-28 04:25:31,620 - INFO - Successfully processed patient 38678
+2025-03-28 04:25:31,620 - INFO - Progress: 148/171 patients processed
+2025-03-28 04:25:31,620 - INFO - Processing patient 38708
+2025-03-28 04:25:31,654 - INFO - Successfully processed patient 38708
+2025-03-28 04:25:31,655 - INFO - Progress: 149/171 patients processed
+2025-03-28 04:25:31,656 - INFO - Processing patient 38772
+2025-03-28 04:25:31,698 - INFO - Successfully processed patient 38772
+2025-03-28 04:25:31,699 - INFO - Progress: 150/171 patients processed
+2025-03-28 04:25:31,699 - INFO - Processing patient 38863
+2025-03-28 04:25:31,735 - INFO - Successfully processed patient 38863
+2025-03-28 04:25:31,735 - INFO - Progress: 151/171 patients processed
+2025-03-28 04:25:31,736 - INFO - Processing patient 38900
+2025-03-28 04:25:31,770 - INFO - Successfully processed patient 38900
+2025-03-28 04:25:31,770 - INFO - Progress: 152/171 patients processed
+2025-03-28 04:25:31,771 - INFO - Processing patient 38901
+2025-03-28 04:25:31,806 - INFO - Successfully processed patient 38901
+2025-03-28 04:25:31,807 - INFO - Progress: 153/171 patients processed
+2025-03-28 04:25:31,807 - INFO - Processing patient 38931
+2025-03-28 04:25:31,810 - WARNING - No ASRS responses found for patient 38931
+2025-03-28 04:25:31,810 - INFO - Progress: 154/171 patients processed
+2025-03-28 04:25:31,811 - INFO - Processing patient 38971
+2025-03-28 04:25:31,844 - INFO - Successfully processed patient 38971
+2025-03-28 04:25:31,845 - INFO - Progress: 155/171 patients processed
+2025-03-28 04:25:31,845 - INFO - Processing patient 39000
+2025-03-28 04:25:31,879 - INFO - Successfully processed patient 39000
+2025-03-28 04:25:31,880 - INFO - Progress: 156/171 patients processed
+2025-03-28 04:25:31,880 - INFO - Processing patient 39076
+2025-03-28 04:25:31,916 - INFO - Successfully processed patient 39076
+2025-03-28 04:25:31,917 - INFO - Progress: 157/171 patients processed
+2025-03-28 04:25:31,918 - INFO - Processing patient 39085
+2025-03-28 04:25:31,952 - INFO - Successfully processed patient 39085
+2025-03-28 04:25:31,952 - INFO - Progress: 158/171 patients processed
+2025-03-28 04:25:31,953 - INFO - Processing patient 39112
+2025-03-28 04:25:31,989 - INFO - Successfully processed patient 39112
+2025-03-28 04:25:31,989 - INFO - Progress: 159/171 patients processed
+2025-03-28 04:25:31,990 - INFO - Processing patient 39114
+2025-03-28 04:25:32,025 - INFO - Successfully processed patient 39114
+2025-03-28 04:25:32,026 - INFO - Progress: 160/171 patients processed
+2025-03-28 04:25:32,026 - INFO - Processing patient 39190
+2025-03-28 04:25:32,060 - INFO - Successfully processed patient 39190
+2025-03-28 04:25:32,061 - INFO - Progress: 161/171 patients processed
+2025-03-28 04:25:32,061 - INFO - Processing patient 39236
+2025-03-28 04:25:32,095 - INFO - Successfully processed patient 39236
+2025-03-28 04:25:32,095 - INFO - Progress: 162/171 patients processed
+2025-03-28 04:25:32,096 - INFO - Processing patient 39426
+2025-03-28 04:25:32,134 - INFO - Successfully processed patient 39426
+2025-03-28 04:25:32,134 - INFO - Progress: 163/171 patients processed
+2025-03-28 04:25:32,135 - INFO - Processing patient 39482
+2025-03-28 04:25:32,169 - INFO - Successfully processed patient 39482
+2025-03-28 04:25:32,170 - INFO - Progress: 164/171 patients processed
+2025-03-28 04:25:32,170 - INFO - Processing patient 39578
+2025-03-28 04:25:32,206 - INFO - Successfully processed patient 39578
+2025-03-28 04:25:32,207 - INFO - Progress: 165/171 patients processed
+2025-03-28 04:25:32,208 - INFO - Processing patient 39782
+2025-03-28 04:25:32,242 - INFO - Successfully processed patient 39782
+2025-03-28 04:25:32,242 - INFO - Progress: 166/171 patients processed
+2025-03-28 04:25:32,243 - INFO - Processing patient 39787
+2025-03-28 04:25:32,276 - INFO - Successfully processed patient 39787
+2025-03-28 04:25:32,277 - INFO - Progress: 167/171 patients processed
+2025-03-28 04:25:32,277 - INFO - Processing patient 39918
+2025-03-28 04:25:32,311 - INFO - Successfully processed patient 39918
+2025-03-28 04:25:32,311 - INFO - Progress: 168/171 patients processed
+2025-03-28 04:25:32,312 - INFO - Processing patient 40007
+2025-03-28 04:25:32,343 - INFO - Successfully processed patient 40007
+2025-03-28 04:25:32,344 - INFO - Progress: 169/171 patients processed
+2025-03-28 04:25:32,344 - INFO - Processing patient 40252
+2025-03-28 04:25:32,376 - INFO - Successfully processed patient 40252
+2025-03-28 04:25:32,376 - INFO - Progress: 170/171 patients processed
+2025-03-28 04:25:32,377 - INFO - Processing patient 40277
+2025-03-28 04:25:32,417 - INFO - Successfully processed patient 40277
+2025-03-28 04:25:32,418 - INFO - Progress: 171/171 patients processed
+2025-03-28 04:25:32,418 - INFO - Processing complete. Successfully processed 166/171 patients
+2025-03-28 04:25:32,419 - INFO - Successfully completed ASRS to DSM-5 processing
+2025-03-28 04:34:29,990 - INFO - Connected to database: G:\My Drive\Programming\Report_Reformat\SQL_Data Extractor_from_PDF\data\cognitive_analysis.db
+2025-03-28 04:34:29,997 - INFO - Successfully created DSM-5 tables
+2025-03-28 04:34:29,998 - INFO - Processing patient 6888
+2025-03-28 04:34:30,073 - INFO - Successfully processed patient 6888
+2025-03-28 04:34:30,073 - INFO - Progress: 1/171 patients processed
+2025-03-28 04:34:30,074 - INFO - Processing patient 11111
+2025-03-28 04:34:30,190 - INFO - Successfully processed patient 11111
+2025-03-28 04:34:30,191 - INFO - Progress: 2/171 patients processed
+2025-03-28 04:34:30,191 - INFO - Processing patient 15277
+2025-03-28 04:34:30,256 - INFO - Successfully processed patient 15277
+2025-03-28 04:34:30,256 - INFO - Progress: 3/171 patients processed
+2025-03-28 04:34:30,257 - INFO - Processing patient 16618
+2025-03-28 04:34:30,324 - INFO - Successfully processed patient 16618
+2025-03-28 04:34:30,324 - INFO - Progress: 4/171 patients processed
+2025-03-28 04:34:30,325 - INFO - Processing patient 17221
+2025-03-28 04:34:30,394 - INFO - Successfully processed patient 17221
+2025-03-28 04:34:30,395 - INFO - Progress: 5/171 patients processed
+2025-03-28 04:34:30,395 - INFO - Processing patient 19672
+2025-03-28 04:34:30,467 - INFO - Successfully processed patient 19672
+2025-03-28 04:34:30,467 - INFO - Progress: 6/171 patients processed
+2025-03-28 04:34:30,468 - INFO - Processing patient 20235
+2025-03-28 04:34:30,556 - INFO - Successfully processed patient 20235
+2025-03-28 04:34:30,557 - INFO - Progress: 7/171 patients processed
+2025-03-28 04:34:30,558 - INFO - Processing patient 21336
+2025-03-28 04:34:30,628 - INFO - Successfully processed patient 21336
+2025-03-28 04:34:30,628 - INFO - Progress: 8/171 patients processed
+2025-03-28 04:34:30,629 - INFO - Processing patient 23961
+2025-03-28 04:34:30,693 - INFO - Successfully processed patient 23961
+2025-03-28 04:34:30,693 - INFO - Progress: 9/171 patients processed
+2025-03-28 04:34:30,694 - INFO - Processing patient 24204
+2025-03-28 04:34:30,762 - INFO - Successfully processed patient 24204
+2025-03-28 04:34:30,762 - INFO - Progress: 10/171 patients processed
+2025-03-28 04:34:30,763 - INFO - Processing patient 27006
+2025-03-28 04:34:30,827 - INFO - Successfully processed patient 27006
+2025-03-28 04:34:30,828 - INFO - Progress: 11/171 patients processed
+2025-03-28 04:34:30,828 - INFO - Processing patient 31679
+2025-03-28 04:34:30,927 - INFO - Successfully processed patient 31679
+2025-03-28 04:34:30,928 - INFO - Progress: 12/171 patients processed
+2025-03-28 04:34:30,929 - INFO - Processing patient 31761
+2025-03-28 04:34:30,998 - INFO - Successfully processed patient 31761
+2025-03-28 04:34:30,999 - INFO - Progress: 13/171 patients processed
+2025-03-28 04:34:30,999 - INFO - Processing patient 31961
+2025-03-28 04:34:31,002 - WARNING - No ASRS responses found for patient 31961
+2025-03-28 04:34:31,003 - INFO - Progress: 14/171 patients processed
+2025-03-28 04:34:31,003 - INFO - Processing patient 32313
+2025-03-28 04:34:31,072 - INFO - Successfully processed patient 32313
+2025-03-28 04:34:31,073 - INFO - Progress: 15/171 patients processed
+2025-03-28 04:34:31,073 - INFO - Processing patient 33121
+2025-03-28 04:34:31,076 - WARNING - No ASRS responses found for patient 33121
+2025-03-28 04:34:31,076 - INFO - Progress: 16/171 patients processed
+2025-03-28 04:34:31,077 - INFO - Processing patient 33191
+2025-03-28 04:34:31,147 - INFO - Successfully processed patient 33191
+2025-03-28 04:34:31,147 - INFO - Progress: 17/171 patients processed
+2025-03-28 04:34:31,148 - INFO - Processing patient 33287
+2025-03-28 04:34:31,220 - INFO - Successfully processed patient 33287
+2025-03-28 04:34:31,221 - INFO - Progress: 18/171 patients processed
+2025-03-28 04:34:31,222 - INFO - Processing patient 33343
+2025-03-28 04:34:31,293 - INFO - Successfully processed patient 33343
+2025-03-28 04:34:31,293 - INFO - Progress: 19/171 patients processed
+2025-03-28 04:34:31,294 - INFO - Processing patient 33555
+2025-03-28 04:34:31,367 - INFO - Successfully processed patient 33555
+2025-03-28 04:34:31,367 - INFO - Progress: 20/171 patients processed
+2025-03-28 04:34:31,368 - INFO - Processing patient 33607
+2025-03-28 04:34:31,433 - INFO - Successfully processed patient 33607
+2025-03-28 04:34:31,433 - INFO - Progress: 21/171 patients processed
+2025-03-28 04:34:31,434 - INFO - Processing patient 33655
+2025-03-28 04:34:31,497 - INFO - Successfully processed patient 33655
+2025-03-28 04:34:31,498 - INFO - Progress: 22/171 patients processed
+2025-03-28 04:34:31,498 - INFO - Processing patient 33690
+2025-03-28 04:34:31,574 - INFO - Successfully processed patient 33690
+2025-03-28 04:34:31,575 - INFO - Progress: 23/171 patients processed
+2025-03-28 04:34:31,575 - INFO - Processing patient 33750
+2025-03-28 04:34:31,639 - INFO - Successfully processed patient 33750
+2025-03-28 04:34:31,640 - INFO - Progress: 24/171 patients processed
+2025-03-28 04:34:31,640 - INFO - Processing patient 33759
+2025-03-28 04:34:31,695 - INFO - Successfully processed patient 33759
+2025-03-28 04:34:31,695 - INFO - Progress: 25/171 patients processed
+2025-03-28 04:34:31,696 - INFO - Processing patient 33808
+2025-03-28 04:34:31,753 - INFO - Successfully processed patient 33808
+2025-03-28 04:34:31,754 - INFO - Progress: 26/171 patients processed
+2025-03-28 04:34:31,754 - INFO - Processing patient 33860
+2025-03-28 04:34:31,813 - INFO - Successfully processed patient 33860
+2025-03-28 04:34:31,814 - INFO - Progress: 27/171 patients processed
+2025-03-28 04:34:31,814 - INFO - Processing patient 33877
+2025-03-28 04:34:31,887 - INFO - Successfully processed patient 33877
+2025-03-28 04:34:31,888 - INFO - Progress: 28/171 patients processed
+2025-03-28 04:34:31,888 - INFO - Processing patient 33911
+2025-03-28 04:34:31,967 - INFO - Successfully processed patient 33911
+2025-03-28 04:34:31,968 - INFO - Progress: 29/171 patients processed
+2025-03-28 04:34:31,968 - INFO - Processing patient 33954
+2025-03-28 04:34:32,045 - INFO - Successfully processed patient 33954
+2025-03-28 04:34:32,046 - INFO - Progress: 30/171 patients processed
+2025-03-28 04:34:32,046 - INFO - Processing patient 33957
+2025-03-28 04:34:32,118 - INFO - Successfully processed patient 33957
+2025-03-28 04:34:32,119 - INFO - Progress: 31/171 patients processed
+2025-03-28 04:34:32,119 - INFO - Processing patient 33959
+2025-03-28 04:34:32,184 - INFO - Successfully processed patient 33959
+2025-03-28 04:34:32,185 - INFO - Progress: 32/171 patients processed
+2025-03-28 04:34:32,185 - INFO - Processing patient 33989
+2025-03-28 04:34:32,255 - INFO - Successfully processed patient 33989
+2025-03-28 04:34:32,255 - INFO - Progress: 33/171 patients processed
+2025-03-28 04:34:32,256 - INFO - Processing patient 34003
+2025-03-28 04:34:32,314 - INFO - Successfully processed patient 34003
+2025-03-28 04:34:32,316 - INFO - Progress: 34/171 patients processed
+2025-03-28 04:34:32,317 - INFO - Processing patient 34004
+2025-03-28 04:34:32,393 - INFO - Successfully processed patient 34004
+2025-03-28 04:34:32,394 - INFO - Progress: 35/171 patients processed
+2025-03-28 04:34:32,395 - INFO - Processing patient 34020
+2025-03-28 04:34:32,462 - INFO - Successfully processed patient 34020
+2025-03-28 04:34:32,463 - INFO - Progress: 36/171 patients processed
+2025-03-28 04:34:32,463 - INFO - Processing patient 34039
+2025-03-28 04:34:32,534 - INFO - Successfully processed patient 34039
+2025-03-28 04:34:32,535 - INFO - Progress: 37/171 patients processed
+2025-03-28 04:34:32,535 - INFO - Processing patient 34048
+2025-03-28 04:34:32,624 - INFO - Successfully processed patient 34048
+2025-03-28 04:34:32,625 - INFO - Progress: 38/171 patients processed
+2025-03-28 04:34:32,625 - INFO - Processing patient 34054
+2025-03-28 04:34:32,691 - INFO - Successfully processed patient 34054
+2025-03-28 04:34:32,692 - INFO - Progress: 39/171 patients processed
+2025-03-28 04:34:32,692 - INFO - Processing patient 34055
+2025-03-28 04:34:32,756 - INFO - Successfully processed patient 34055
+2025-03-28 04:34:32,757 - INFO - Progress: 40/171 patients processed
+2025-03-28 04:34:32,758 - INFO - Processing patient 34066
+2025-03-28 04:34:32,817 - INFO - Successfully processed patient 34066
+2025-03-28 04:34:32,817 - INFO - Progress: 41/171 patients processed
+2025-03-28 04:34:32,818 - INFO - Processing patient 34079
+2025-03-28 04:34:32,875 - INFO - Successfully processed patient 34079
+2025-03-28 04:34:32,875 - INFO - Progress: 42/171 patients processed
+2025-03-28 04:34:32,876 - INFO - Processing patient 34084
+2025-03-28 04:34:32,940 - INFO - Successfully processed patient 34084
+2025-03-28 04:34:32,941 - INFO - Progress: 43/171 patients processed
+2025-03-28 04:34:32,941 - INFO - Processing patient 34159
+2025-03-28 04:34:33,010 - INFO - Successfully processed patient 34159
+2025-03-28 04:34:33,010 - INFO - Progress: 44/171 patients processed
+2025-03-28 04:34:33,011 - INFO - Processing patient 34211
+2025-03-28 04:34:33,099 - INFO - Successfully processed patient 34211
+2025-03-28 04:34:33,100 - INFO - Progress: 45/171 patients processed
+2025-03-28 04:34:33,101 - INFO - Processing patient 34214
+2025-03-28 04:34:33,181 - INFO - Successfully processed patient 34214
+2025-03-28 04:34:33,182 - INFO - Progress: 46/171 patients processed
+2025-03-28 04:34:33,183 - INFO - Processing patient 34283
+2025-03-28 04:34:33,250 - INFO - Successfully processed patient 34283
+2025-03-28 04:34:33,251 - INFO - Progress: 47/171 patients processed
+2025-03-28 04:34:33,251 - INFO - Processing patient 34512
+2025-03-28 04:34:33,321 - INFO - Successfully processed patient 34512
+2025-03-28 04:34:33,322 - INFO - Progress: 48/171 patients processed
+2025-03-28 04:34:33,322 - INFO - Processing patient 34556
+2025-03-28 04:34:33,395 - INFO - Successfully processed patient 34556
+2025-03-28 04:34:33,396 - INFO - Progress: 49/171 patients processed
+2025-03-28 04:34:33,396 - INFO - Processing patient 34559
+2025-03-28 04:34:33,488 - INFO - Successfully processed patient 34559
+2025-03-28 04:34:33,489 - INFO - Progress: 50/171 patients processed
+2025-03-28 04:34:33,490 - INFO - Processing patient 34593
+2025-03-28 04:34:33,561 - INFO - Successfully processed patient 34593
+2025-03-28 04:34:33,562 - INFO - Progress: 51/171 patients processed
+2025-03-28 04:34:33,562 - INFO - Processing patient 34756
+2025-03-28 04:34:33,630 - INFO - Successfully processed patient 34756
+2025-03-28 04:34:33,631 - INFO - Progress: 52/171 patients processed
+2025-03-28 04:34:33,632 - INFO - Processing patient 34766
+2025-03-28 04:34:33,706 - INFO - Successfully processed patient 34766
+2025-03-28 04:34:33,707 - INFO - Progress: 53/171 patients processed
+2025-03-28 04:34:33,707 - INFO - Processing patient 34795
+2025-03-28 04:34:33,766 - INFO - Successfully processed patient 34795
+2025-03-28 04:34:33,767 - INFO - Progress: 54/171 patients processed
+2025-03-28 04:34:33,768 - INFO - Processing patient 34802
+2025-03-28 04:34:33,828 - INFO - Successfully processed patient 34802
+2025-03-28 04:34:33,829 - INFO - Progress: 55/171 patients processed
+2025-03-28 04:34:33,829 - INFO - Processing patient 34845
+2025-03-28 04:34:33,883 - INFO - Successfully processed patient 34845
+2025-03-28 04:34:33,884 - INFO - Progress: 56/171 patients processed
+2025-03-28 04:34:33,884 - INFO - Processing patient 34898
+2025-03-28 04:34:33,944 - INFO - Successfully processed patient 34898
+2025-03-28 04:34:33,945 - INFO - Progress: 57/171 patients processed
+2025-03-28 04:34:33,946 - INFO - Processing patient 34908
+2025-03-28 04:34:34,021 - INFO - Successfully processed patient 34908
+2025-03-28 04:34:34,021 - INFO - Progress: 58/171 patients processed
+2025-03-28 04:34:34,022 - INFO - Processing patient 34916
+2025-03-28 04:34:34,088 - INFO - Successfully processed patient 34916
+2025-03-28 04:34:34,089 - INFO - Progress: 59/171 patients processed
+2025-03-28 04:34:34,089 - INFO - Processing patient 34944
+2025-03-28 04:34:34,155 - INFO - Successfully processed patient 34944
+2025-03-28 04:34:34,156 - INFO - Progress: 60/171 patients processed
+2025-03-28 04:34:34,156 - INFO - Processing patient 34950
+2025-03-28 04:34:34,225 - INFO - Successfully processed patient 34950
+2025-03-28 04:34:34,226 - INFO - Progress: 61/171 patients processed
+2025-03-28 04:34:34,227 - INFO - Processing patient 34974
+2025-03-28 04:34:34,299 - INFO - Successfully processed patient 34974
+2025-03-28 04:34:34,300 - INFO - Progress: 62/171 patients processed
+2025-03-28 04:34:34,301 - INFO - Processing patient 35010
+2025-03-28 04:34:34,380 - INFO - Successfully processed patient 35010
+2025-03-28 04:34:34,381 - INFO - Progress: 63/171 patients processed
+2025-03-28 04:34:34,381 - INFO - Processing patient 35036
+2025-03-28 04:34:34,449 - INFO - Successfully processed patient 35036
+2025-03-28 04:34:34,450 - INFO - Progress: 64/171 patients processed
+2025-03-28 04:34:34,451 - INFO - Processing patient 35065
+2025-03-28 04:34:34,515 - INFO - Successfully processed patient 35065
+2025-03-28 04:34:34,516 - INFO - Progress: 65/171 patients processed
+2025-03-28 04:34:34,516 - INFO - Processing patient 35102
+2025-03-28 04:34:34,587 - INFO - Successfully processed patient 35102
+2025-03-28 04:34:34,588 - INFO - Progress: 66/171 patients processed
+2025-03-28 04:34:34,589 - INFO - Processing patient 35117
+2025-03-28 04:34:34,647 - INFO - Successfully processed patient 35117
+2025-03-28 04:34:34,648 - INFO - Progress: 67/171 patients processed
+2025-03-28 04:34:34,648 - INFO - Processing patient 35209
+2025-03-28 04:34:34,738 - INFO - Successfully processed patient 35209
+2025-03-28 04:34:34,738 - INFO - Progress: 68/171 patients processed
+2025-03-28 04:34:34,739 - INFO - Processing patient 35230
+2025-03-28 04:34:34,802 - INFO - Successfully processed patient 35230
+2025-03-28 04:34:34,804 - INFO - Progress: 69/171 patients processed
+2025-03-28 04:34:34,804 - INFO - Processing patient 35273
+2025-03-28 04:34:34,867 - INFO - Successfully processed patient 35273
+2025-03-28 04:34:34,868 - INFO - Progress: 70/171 patients processed
+2025-03-28 04:34:34,868 - INFO - Processing patient 35309
+2025-03-28 04:34:34,931 - INFO - Successfully processed patient 35309
+2025-03-28 04:34:34,932 - INFO - Progress: 71/171 patients processed
+2025-03-28 04:34:34,932 - INFO - Processing patient 35471
+2025-03-28 04:34:35,007 - INFO - Successfully processed patient 35471
+2025-03-28 04:34:35,008 - INFO - Progress: 72/171 patients processed
+2025-03-28 04:34:35,009 - INFO - Processing patient 35506
+2025-03-28 04:34:35,098 - INFO - Successfully processed patient 35506
+2025-03-28 04:34:35,099 - INFO - Progress: 73/171 patients processed
+2025-03-28 04:34:35,100 - INFO - Processing patient 35545
+2025-03-28 04:34:35,174 - INFO - Successfully processed patient 35545
+2025-03-28 04:34:35,175 - INFO - Progress: 74/171 patients processed
+2025-03-28 04:34:35,175 - INFO - Processing patient 35599
+2025-03-28 04:34:35,244 - INFO - Successfully processed patient 35599
+2025-03-28 04:34:35,244 - INFO - Progress: 75/171 patients processed
+2025-03-28 04:34:35,245 - INFO - Processing patient 35836
+2025-03-28 04:34:35,248 - WARNING - No ASRS responses found for patient 35836
+2025-03-28 04:34:35,249 - INFO - Progress: 76/171 patients processed
+2025-03-28 04:34:35,249 - INFO - Processing patient 36078
+2025-03-28 04:34:35,306 - INFO - Successfully processed patient 36078
+2025-03-28 04:34:35,306 - INFO - Progress: 77/171 patients processed
+2025-03-28 04:34:35,307 - INFO - Processing patient 36089
+2025-03-28 04:34:35,379 - INFO - Successfully processed patient 36089
+2025-03-28 04:34:35,380 - INFO - Progress: 78/171 patients processed
+2025-03-28 04:34:35,380 - INFO - Processing patient 36093
+2025-03-28 04:34:35,455 - INFO - Successfully processed patient 36093
+2025-03-28 04:34:35,455 - INFO - Progress: 79/171 patients processed
+2025-03-28 04:34:35,456 - INFO - Processing patient 36153
+2025-03-28 04:34:35,518 - INFO - Successfully processed patient 36153
+2025-03-28 04:34:35,519 - INFO - Progress: 80/171 patients processed
+2025-03-28 04:34:35,519 - INFO - Processing patient 36191
+2025-03-28 04:34:35,590 - INFO - Successfully processed patient 36191
+2025-03-28 04:34:35,591 - INFO - Progress: 81/171 patients processed
+2025-03-28 04:34:35,591 - INFO - Processing patient 36411
+2025-03-28 04:34:35,655 - INFO - Successfully processed patient 36411
+2025-03-28 04:34:35,655 - INFO - Progress: 82/171 patients processed
+2025-03-28 04:34:35,656 - INFO - Processing patient 36430
+2025-03-28 04:34:35,723 - INFO - Successfully processed patient 36430
+2025-03-28 04:34:35,724 - INFO - Progress: 83/171 patients processed
+2025-03-28 04:34:35,724 - INFO - Processing patient 36439
+2025-03-28 04:34:35,821 - INFO - Successfully processed patient 36439
+2025-03-28 04:34:35,822 - INFO - Progress: 84/171 patients processed
+2025-03-28 04:34:35,823 - INFO - Processing patient 36470
+2025-03-28 04:34:35,898 - INFO - Successfully processed patient 36470
+2025-03-28 04:34:35,899 - INFO - Progress: 85/171 patients processed
+2025-03-28 04:34:35,899 - INFO - Processing patient 36490
+2025-03-28 04:34:35,963 - INFO - Successfully processed patient 36490
+2025-03-28 04:34:35,964 - INFO - Progress: 86/171 patients processed
+2025-03-28 04:34:35,965 - INFO - Processing patient 36639
+2025-03-28 04:34:36,050 - INFO - Successfully processed patient 36639
+2025-03-28 04:34:36,050 - INFO - Progress: 87/171 patients processed
+2025-03-28 04:34:36,051 - INFO - Processing patient 36674
+2025-03-28 04:34:36,136 - INFO - Successfully processed patient 36674
+2025-03-28 04:34:36,137 - INFO - Progress: 88/171 patients processed
+2025-03-28 04:34:36,138 - INFO - Processing patient 36682
+2025-03-28 04:34:36,206 - INFO - Successfully processed patient 36682
+2025-03-28 04:34:36,206 - INFO - Progress: 89/171 patients processed
+2025-03-28 04:34:36,207 - INFO - Processing patient 36839
+2025-03-28 04:34:36,282 - INFO - Successfully processed patient 36839
+2025-03-28 04:34:36,283 - INFO - Progress: 90/171 patients processed
+2025-03-28 04:34:36,283 - INFO - Processing patient 36923
+2025-03-28 04:34:36,350 - INFO - Successfully processed patient 36923
+2025-03-28 04:34:36,351 - INFO - Progress: 91/171 patients processed
+2025-03-28 04:34:36,351 - INFO - Processing patient 36943
+2025-03-28 04:34:36,428 - INFO - Successfully processed patient 36943
+2025-03-28 04:34:36,429 - INFO - Progress: 92/171 patients processed
+2025-03-28 04:34:36,430 - INFO - Processing patient 36947
+2025-03-28 04:34:36,527 - INFO - Successfully processed patient 36947
+2025-03-28 04:34:36,527 - INFO - Progress: 93/171 patients processed
+2025-03-28 04:34:36,530 - INFO - Processing patient 36966
+2025-03-28 04:34:36,609 - INFO - Successfully processed patient 36966
+2025-03-28 04:34:36,609 - INFO - Progress: 94/171 patients processed
+2025-03-28 04:34:36,610 - INFO - Processing patient 36972
+2025-03-28 04:34:36,687 - INFO - Successfully processed patient 36972
+2025-03-28 04:34:36,688 - INFO - Progress: 95/171 patients processed
+2025-03-28 04:34:36,689 - INFO - Processing patient 36986
+2025-03-28 04:34:36,770 - INFO - Successfully processed patient 36986
+2025-03-28 04:34:36,771 - INFO - Progress: 96/171 patients processed
+2025-03-28 04:34:36,771 - INFO - Processing patient 37081
+2025-03-28 04:34:36,839 - INFO - Successfully processed patient 37081
+2025-03-28 04:34:36,840 - INFO - Progress: 97/171 patients processed
+2025-03-28 04:34:36,840 - INFO - Processing patient 37087
+2025-03-28 04:34:36,916 - INFO - Successfully processed patient 37087
+2025-03-28 04:34:36,917 - INFO - Progress: 98/171 patients processed
+2025-03-28 04:34:36,918 - INFO - Processing patient 37109
+2025-03-28 04:34:36,990 - INFO - Successfully processed patient 37109
+2025-03-28 04:34:36,990 - INFO - Progress: 99/171 patients processed
+2025-03-28 04:34:36,991 - INFO - Processing patient 37236
+2025-03-28 04:34:37,065 - INFO - Successfully processed patient 37236
+2025-03-28 04:34:37,066 - INFO - Progress: 100/171 patients processed
+2025-03-28 04:34:37,067 - INFO - Processing patient 37345
+2025-03-28 04:34:37,144 - INFO - Successfully processed patient 37345
+2025-03-28 04:34:37,144 - INFO - Progress: 101/171 patients processed
+2025-03-28 04:34:37,145 - INFO - Processing patient 37420
+2025-03-28 04:34:37,226 - INFO - Successfully processed patient 37420
+2025-03-28 04:34:37,227 - INFO - Progress: 102/171 patients processed
+2025-03-28 04:34:37,228 - INFO - Processing patient 37474
+2025-03-28 04:34:37,312 - INFO - Successfully processed patient 37474
+2025-03-28 04:34:37,312 - INFO - Progress: 103/171 patients processed
+2025-03-28 04:34:37,313 - INFO - Processing patient 37476
+2025-03-28 04:34:37,388 - INFO - Successfully processed patient 37476
+2025-03-28 04:34:37,389 - INFO - Progress: 104/171 patients processed
+2025-03-28 04:34:37,389 - INFO - Processing patient 37479
+2025-03-28 04:34:37,455 - INFO - Successfully processed patient 37479
+2025-03-28 04:34:37,456 - INFO - Progress: 105/171 patients processed
+2025-03-28 04:34:37,456 - INFO - Processing patient 37484
+2025-03-28 04:34:37,524 - INFO - Successfully processed patient 37484
+2025-03-28 04:34:37,525 - INFO - Progress: 106/171 patients processed
+2025-03-28 04:34:37,525 - INFO - Processing patient 37534
+2025-03-28 04:34:37,590 - INFO - Successfully processed patient 37534
+2025-03-28 04:34:37,591 - INFO - Progress: 107/171 patients processed
+2025-03-28 04:34:37,591 - INFO - Processing patient 37568
+2025-03-28 04:34:37,676 - INFO - Successfully processed patient 37568
+2025-03-28 04:34:37,676 - INFO - Progress: 108/171 patients processed
+2025-03-28 04:34:37,677 - INFO - Processing patient 37571
+2025-03-28 04:34:37,748 - INFO - Successfully processed patient 37571
+2025-03-28 04:34:37,749 - INFO - Progress: 109/171 patients processed
+2025-03-28 04:34:37,749 - INFO - Processing patient 37581
+2025-03-28 04:34:37,813 - INFO - Successfully processed patient 37581
+2025-03-28 04:34:37,814 - INFO - Progress: 110/171 patients processed
+2025-03-28 04:34:37,814 - INFO - Processing patient 37584
+2025-03-28 04:34:37,874 - INFO - Successfully processed patient 37584
+2025-03-28 04:34:37,874 - INFO - Progress: 111/171 patients processed
+2025-03-28 04:34:37,875 - INFO - Processing patient 37604
+2025-03-28 04:34:37,944 - INFO - Successfully processed patient 37604
+2025-03-28 04:34:37,945 - INFO - Progress: 112/171 patients processed
+2025-03-28 04:34:37,945 - INFO - Processing patient 37620
+2025-03-28 04:34:38,048 - INFO - Successfully processed patient 37620
+2025-03-28 04:34:38,049 - INFO - Progress: 113/171 patients processed
+2025-03-28 04:34:38,050 - INFO - Processing patient 37624
+2025-03-28 04:34:38,121 - INFO - Successfully processed patient 37624
+2025-03-28 04:34:38,122 - INFO - Progress: 114/171 patients processed
+2025-03-28 04:34:38,122 - INFO - Processing patient 37676
+2025-03-28 04:34:38,181 - INFO - Successfully processed patient 37676
+2025-03-28 04:34:38,182 - INFO - Progress: 115/171 patients processed
+2025-03-28 04:34:38,182 - INFO - Processing patient 37689
+2025-03-28 04:34:38,249 - INFO - Successfully processed patient 37689
+2025-03-28 04:34:38,250 - INFO - Progress: 116/171 patients processed
+2025-03-28 04:34:38,251 - INFO - Processing patient 37698
+2025-03-28 04:34:38,322 - INFO - Successfully processed patient 37698
+2025-03-28 04:34:38,322 - INFO - Progress: 117/171 patients processed
+2025-03-28 04:34:38,323 - INFO - Processing patient 37704
+2025-03-28 04:34:38,395 - INFO - Successfully processed patient 37704
+2025-03-28 04:34:38,396 - INFO - Progress: 118/171 patients processed
+2025-03-28 04:34:38,397 - INFO - Processing patient 37718
+2025-03-28 04:34:38,466 - INFO - Successfully processed patient 37718
+2025-03-28 04:34:38,467 - INFO - Progress: 119/171 patients processed
+2025-03-28 04:34:38,468 - INFO - Processing patient 37724
+2025-03-28 04:34:38,543 - INFO - Successfully processed patient 37724
+2025-03-28 04:34:38,543 - INFO - Progress: 120/171 patients processed
+2025-03-28 04:34:38,543 - INFO - Processing patient 37802
+2025-03-28 04:34:38,600 - INFO - Successfully processed patient 37802
+2025-03-28 04:34:38,600 - INFO - Progress: 121/171 patients processed
+2025-03-28 04:34:38,601 - INFO - Processing patient 37822
+2025-03-28 04:34:38,672 - INFO - Successfully processed patient 37822
+2025-03-28 04:34:38,673 - INFO - Progress: 122/171 patients processed
+2025-03-28 04:34:38,674 - INFO - Processing patient 37850
+2025-03-28 04:34:38,748 - INFO - Successfully processed patient 37850
+2025-03-28 04:34:38,748 - INFO - Progress: 123/171 patients processed
+2025-03-28 04:34:38,749 - INFO - Processing patient 37855
+2025-03-28 04:34:38,805 - INFO - Successfully processed patient 37855
+2025-03-28 04:34:38,805 - INFO - Progress: 124/171 patients processed
+2025-03-28 04:34:38,806 - INFO - Processing patient 37865
+2025-03-28 04:34:38,807 - WARNING - No ASRS responses found for patient 37865
+2025-03-28 04:34:38,808 - INFO - Progress: 125/171 patients processed
+2025-03-28 04:34:38,808 - INFO - Processing patient 37951
+2025-03-28 04:34:38,864 - INFO - Successfully processed patient 37951
+2025-03-28 04:34:38,865 - INFO - Progress: 126/171 patients processed
+2025-03-28 04:34:38,865 - INFO - Processing patient 38024
+2025-03-28 04:34:38,940 - INFO - Successfully processed patient 38024
+2025-03-28 04:34:38,941 - INFO - Progress: 127/171 patients processed
+2025-03-28 04:34:38,942 - INFO - Processing patient 38054
+2025-03-28 04:34:39,011 - INFO - Successfully processed patient 38054
+2025-03-28 04:34:39,011 - INFO - Progress: 128/171 patients processed
+2025-03-28 04:34:39,012 - INFO - Processing patient 38058
+2025-03-28 04:34:39,097 - INFO - Successfully processed patient 38058
+2025-03-28 04:34:39,097 - INFO - Progress: 129/171 patients processed
+2025-03-28 04:34:39,098 - INFO - Processing patient 38069
+2025-03-28 04:34:39,180 - INFO - Successfully processed patient 38069
+2025-03-28 04:34:39,181 - INFO - Progress: 130/171 patients processed
+2025-03-28 04:34:39,181 - INFO - Processing patient 38154
+2025-03-28 04:34:39,243 - INFO - Successfully processed patient 38154
+2025-03-28 04:34:39,243 - INFO - Progress: 131/171 patients processed
+2025-03-28 04:34:39,244 - INFO - Processing patient 38163
+2025-03-28 04:34:39,310 - INFO - Successfully processed patient 38163
+2025-03-28 04:34:39,311 - INFO - Progress: 132/171 patients processed
+2025-03-28 04:34:39,311 - INFO - Processing patient 38173
+2025-03-28 04:34:39,374 - INFO - Successfully processed patient 38173
+2025-03-28 04:34:39,375 - INFO - Progress: 133/171 patients processed
+2025-03-28 04:34:39,376 - INFO - Processing patient 38252
+2025-03-28 04:34:39,453 - INFO - Successfully processed patient 38252
+2025-03-28 04:34:39,454 - INFO - Progress: 134/171 patients processed
+2025-03-28 04:34:39,454 - INFO - Processing patient 38282
+2025-03-28 04:34:39,519 - INFO - Successfully processed patient 38282
+2025-03-28 04:34:39,520 - INFO - Progress: 135/171 patients processed
+2025-03-28 04:34:39,520 - INFO - Processing patient 38344
+2025-03-28 04:34:39,584 - INFO - Successfully processed patient 38344
+2025-03-28 04:34:39,585 - INFO - Progress: 136/171 patients processed
+2025-03-28 04:34:39,586 - INFO - Processing patient 38350
+2025-03-28 04:34:39,656 - INFO - Successfully processed patient 38350
+2025-03-28 04:34:39,657 - INFO - Progress: 137/171 patients processed
+2025-03-28 04:34:39,657 - INFO - Processing patient 38418
+2025-03-28 04:34:39,731 - INFO - Successfully processed patient 38418
+2025-03-28 04:34:39,731 - INFO - Progress: 138/171 patients processed
+2025-03-28 04:34:39,732 - INFO - Processing patient 38432
+2025-03-28 04:34:39,823 - INFO - Successfully processed patient 38432
+2025-03-28 04:34:39,824 - INFO - Progress: 139/171 patients processed
+2025-03-28 04:34:39,824 - INFO - Processing patient 38435
+2025-03-28 04:34:39,888 - INFO - Successfully processed patient 38435
+2025-03-28 04:34:39,888 - INFO - Progress: 140/171 patients processed
+2025-03-28 04:34:39,889 - INFO - Processing patient 38445
+2025-03-28 04:34:39,964 - INFO - Successfully processed patient 38445
+2025-03-28 04:34:39,964 - INFO - Progress: 141/171 patients processed
+2025-03-28 04:34:39,965 - INFO - Processing patient 38454
+2025-03-28 04:34:40,037 - INFO - Successfully processed patient 38454
+2025-03-28 04:34:40,038 - INFO - Progress: 142/171 patients processed
+2025-03-28 04:34:40,039 - INFO - Processing patient 38496
+2025-03-28 04:34:40,119 - INFO - Successfully processed patient 38496
+2025-03-28 04:34:40,120 - INFO - Progress: 143/171 patients processed
+2025-03-28 04:34:40,120 - INFO - Processing patient 38505
+2025-03-28 04:34:40,194 - INFO - Successfully processed patient 38505
+2025-03-28 04:34:40,194 - INFO - Progress: 144/171 patients processed
+2025-03-28 04:34:40,195 - INFO - Processing patient 38529
+2025-03-28 04:34:40,262 - INFO - Successfully processed patient 38529
+2025-03-28 04:34:40,263 - INFO - Progress: 145/171 patients processed
+2025-03-28 04:34:40,263 - INFO - Processing patient 38591
+2025-03-28 04:34:40,344 - INFO - Successfully processed patient 38591
+2025-03-28 04:34:40,345 - INFO - Progress: 146/171 patients processed
+2025-03-28 04:34:40,345 - INFO - Processing patient 38597
+2025-03-28 04:34:40,426 - INFO - Successfully processed patient 38597
+2025-03-28 04:34:40,427 - INFO - Progress: 147/171 patients processed
+2025-03-28 04:34:40,427 - INFO - Processing patient 38678
+2025-03-28 04:34:40,532 - INFO - Successfully processed patient 38678
+2025-03-28 04:34:40,534 - INFO - Progress: 148/171 patients processed
+2025-03-28 04:34:40,535 - INFO - Processing patient 38708
+2025-03-28 04:34:40,600 - INFO - Successfully processed patient 38708
+2025-03-28 04:34:40,601 - INFO - Progress: 149/171 patients processed
+2025-03-28 04:34:40,601 - INFO - Processing patient 38772
+2025-03-28 04:34:40,686 - INFO - Successfully processed patient 38772
+2025-03-28 04:34:40,687 - INFO - Progress: 150/171 patients processed
+2025-03-28 04:34:40,687 - INFO - Processing patient 38863
+2025-03-28 04:34:40,756 - INFO - Successfully processed patient 38863
+2025-03-28 04:34:40,757 - INFO - Progress: 151/171 patients processed
+2025-03-28 04:34:40,757 - INFO - Processing patient 38900
+2025-03-28 04:34:40,820 - INFO - Successfully processed patient 38900
+2025-03-28 04:34:40,822 - INFO - Progress: 152/171 patients processed
+2025-03-28 04:34:40,822 - INFO - Processing patient 38901
+2025-03-28 04:34:40,899 - INFO - Successfully processed patient 38901
+2025-03-28 04:34:40,900 - INFO - Progress: 153/171 patients processed
+2025-03-28 04:34:40,901 - INFO - Processing patient 38931
+2025-03-28 04:34:40,902 - WARNING - No ASRS responses found for patient 38931
+2025-03-28 04:34:40,903 - INFO - Progress: 154/171 patients processed
+2025-03-28 04:34:40,904 - INFO - Processing patient 38971
+2025-03-28 04:34:40,961 - INFO - Successfully processed patient 38971
+2025-03-28 04:34:40,962 - INFO - Progress: 155/171 patients processed
+2025-03-28 04:34:40,962 - INFO - Processing patient 39000
+2025-03-28 04:34:41,049 - INFO - Successfully processed patient 39000
+2025-03-28 04:34:41,049 - INFO - Progress: 156/171 patients processed
+2025-03-28 04:34:41,050 - INFO - Processing patient 39076
+2025-03-28 04:34:41,127 - INFO - Successfully processed patient 39076
+2025-03-28 04:34:41,128 - INFO - Progress: 157/171 patients processed
+2025-03-28 04:34:41,128 - INFO - Processing patient 39085
+2025-03-28 04:34:41,212 - INFO - Successfully processed patient 39085
+2025-03-28 04:34:41,212 - INFO - Progress: 158/171 patients processed
+2025-03-28 04:34:41,213 - INFO - Processing patient 39112
+2025-03-28 04:34:41,293 - INFO - Successfully processed patient 39112
+2025-03-28 04:34:41,294 - INFO - Progress: 159/171 patients processed
+2025-03-28 04:34:41,295 - INFO - Processing patient 39114
+2025-03-28 04:34:41,370 - INFO - Successfully processed patient 39114
+2025-03-28 04:34:41,371 - INFO - Progress: 160/171 patients processed
+2025-03-28 04:34:41,371 - INFO - Processing patient 39190
+2025-03-28 04:34:41,441 - INFO - Successfully processed patient 39190
+2025-03-28 04:34:41,442 - INFO - Progress: 161/171 patients processed
+2025-03-28 04:34:41,442 - INFO - Processing patient 39236
+2025-03-28 04:34:41,512 - INFO - Successfully processed patient 39236
+2025-03-28 04:34:41,513 - INFO - Progress: 162/171 patients processed
+2025-03-28 04:34:41,514 - INFO - Processing patient 39426
+2025-03-28 04:34:41,582 - INFO - Successfully processed patient 39426
+2025-03-28 04:34:41,583 - INFO - Progress: 163/171 patients processed
+2025-03-28 04:34:41,583 - INFO - Processing patient 39482
+2025-03-28 04:34:41,658 - INFO - Successfully processed patient 39482
+2025-03-28 04:34:41,659 - INFO - Progress: 164/171 patients processed
+2025-03-28 04:34:41,660 - INFO - Processing patient 39578
+2025-03-28 04:34:41,741 - INFO - Successfully processed patient 39578
+2025-03-28 04:34:41,741 - INFO - Progress: 165/171 patients processed
+2025-03-28 04:34:41,742 - INFO - Processing patient 39782
+2025-03-28 04:34:41,817 - INFO - Successfully processed patient 39782
+2025-03-28 04:34:41,818 - INFO - Progress: 166/171 patients processed
+2025-03-28 04:34:41,818 - INFO - Processing patient 39787
+2025-03-28 04:34:41,905 - INFO - Successfully processed patient 39787
+2025-03-28 04:34:41,906 - INFO - Progress: 167/171 patients processed
+2025-03-28 04:34:41,906 - INFO - Processing patient 39918
+2025-03-28 04:34:41,976 - INFO - Successfully processed patient 39918
+2025-03-28 04:34:41,977 - INFO - Progress: 168/171 patients processed
+2025-03-28 04:34:41,977 - INFO - Processing patient 40007
+2025-03-28 04:34:42,070 - INFO - Successfully processed patient 40007
+2025-03-28 04:34:42,070 - INFO - Progress: 169/171 patients processed
+2025-03-28 04:34:42,071 - INFO - Processing patient 40252
+2025-03-28 04:34:42,141 - INFO - Successfully processed patient 40252
+2025-03-28 04:34:42,141 - INFO - Progress: 170/171 patients processed
+2025-03-28 04:34:42,142 - INFO - Processing patient 40277
+2025-03-28 04:34:42,209 - INFO - Successfully processed patient 40277
+2025-03-28 04:34:42,210 - INFO - Progress: 171/171 patients processed
+2025-03-28 04:34:42,211 - INFO - Processing complete. Successfully processed 166/171 patients
+2025-03-28 04:34:42,211 - INFO - Successfully completed ASRS to DSM-5 processing

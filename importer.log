@@ -1,0 +1,8 @@
+2025-04-24 10:32:22,966 INFO Logging initialized: starting cognitive_importer.py
+2025-04-24 10:32:23,321 INFO MODULE FINGERPRINT: parsing_helpers.py loaded from src/report_refactor at 2025-04-23T21:46:28+08:00
+2025-04-24 10:32:26,495 INFO Attempting to import PDF data for: report_refactor/40436.pdf
+2025-04-24 10:32:26,871 INFO Parsing cognitive subtests from PDF: report_refactor/40436.pdf
+2025-04-24 10:32:29,174 INFO Parsed 18 ASRS responses using bounding boxes on page 4.
+2025-04-24 10:32:30,750 INFO [DEBUG] FINGERPRINT: Entered extract_npq_questions_pymupdf in cognitive_importer at 2025-04-23T21:57:28+08:00
+2025-04-24 10:32:30,904 INFO Extracted 365 NPQ questions.
+2025-04-24 10:32:32,577 INFO Successfully imported all available data for session ID: 1
