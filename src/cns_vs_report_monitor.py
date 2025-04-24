@@ -7,6 +7,8 @@ import configparser
 from playwright.sync_api import Playwright, sync_playwright
 import random
 from pdf_report_utils import extract_patient_id_from_pdf, save_pdf_to_db
+from db import Session, Referral
+import re
 
 # Robust logger setup
 log_path = os.path.join(os.path.dirname(__file__), '..', 'cns_vs_report_monitor.log')
@@ -84,36 +86,66 @@ def login_and_download_report(email_data: Dict, username: str, password: str, re
         page.get_by_role("button", name="Search").click()
         page.get_by_text("Default Report Type: Clinical").click()
         page.get_by_role("button", name="Search").click()
-        # Try to find the report cell, skip download if not found
+        # After search, find all report rows and download each
         try:
-            cell = page.get_by_role("cell", name="LucidCognitiveTesting@gmail.")
-            if not cell.is_visible():
-                logger.info(f"No report found for date {target_date.strftime('%Y-%m-%d')}. Skipping download.")
-                context.close()
-                browser.close()
-                return False
-            with page.expect_download() as download_info:
-                cell.click()
-            download = download_info.value
-            # Use a robust, timestamped filename
-            from datetime import datetime as dt
-            safe_dt = dt.now().strftime('%Y%m%d_%H%M%S')
-            report_filename = f"CNSVS_Report_{safe_dt}.pdf"
-            report_path = os.path.join(reports_dir, report_filename)
-            download.save_as(report_path)
-            logger.info(f"Downloaded CNS VS report for: {email_data.get('subject')} / {email_data.get('date')} to {report_path}")
-            # Extract patient ID and store in DB
-            patient_id = extract_patient_id_from_pdf(report_path)
-            if patient_id:
-                email_id = email_data.get('id', 'unknown')
-                save_pdf_to_db(report_path, patient_id, email_id)
-            else:
-                logger.warning(f"Could not extract patient ID from {report_path}, not saving to DB.")
+            # Wait for the report table to appear
+            page.wait_for_selector("table#reports_table", timeout=10000)
+            rows = page.query_selector_all("table#reports_table tbody tr")
+            logger.info(f"Found {len(rows)} report rows.")
+            for row in rows:
+                try:
+                    # Find the download cell/button in the row (adjust selector as needed)
+                    download_cell = row.query_selector("td:has-text('LucidCognitiveTesting@gmail.')")
+                    if not download_cell or not download_cell.is_visible():
+                        continue
+                    with page.expect_download() as download_info:
+                        download_cell.click()
+                    download = download_info.value
+                    from datetime import datetime as dt
+                    safe_dt = dt.now().strftime('%Y%m%d_%H%M%S_%f')
+                    report_filename = f"CNSVS_Report_{safe_dt}.pdf"
+                    report_path = os.path.join(reports_dir, report_filename)
+                    download.save_as(report_path)
+                    logger.info(f"Downloaded CNS VS report to {report_path}")
+                    # Extract patient ID and store in DB (DEDUPLICATION LOGIC)
+                    patient_id = extract_patient_id_from_pdf(report_path)
+                    if patient_id:
+                        email_id = email_data.get('id', 'unknown')
+                        # Deduplication: Check if a report for this patient and date already exists
+                        report_date = None
+                        match = re.search(r'(\d{8}_\d{6})', report_path)
+                        if match:
+                            try:
+                                report_date = dt.strptime(match.group(1), '%Y%m%d_%H%M%S').date()
+                            except Exception:
+                                report_date = datetime.now().date()
+                        else:
+                            report_date = datetime.now().date()
+                        duplicate = False
+                        with Session() as session:
+                            existing = session.query(Referral).filter(
+                                Referral.id_number == patient_id,
+                                Referral.test_completed == True,
+                                Referral.report_processed == True,
+                                Referral.report_sent_date != None,
+                            ).first()
+                            if existing:
+                                duplicate = True
+                        if duplicate:
+                            logger.info(f"Duplicate report found for patient {patient_id} on {report_date}, skipping save.")
+                            try:
+                                os.remove(report_path)
+                                logger.info(f"Deleted duplicate file {report_path}.")
+                            except Exception as del_err:
+                                logger.warning(f"Failed to delete duplicate file {report_path}: {del_err}")
+                        else:
+                            save_pdf_to_db(report_path, patient_id, email_id)
+                    else:
+                        logger.warning(f"Could not extract patient ID from {report_path}, not saving to DB.")
+                except Exception as e:
+                    logger.warning(f"Download failed for a report row: {e}")
         except Exception as e:
-            logger.warning(f"No report cell found or download failed: {e}. Skipping download.")
-            context.close()
-            browser.close()
-            return False
+            logger.warning(f"No report table found or download failed: {e}. Skipping downloads.")
         context.close()
         browser.close()
         return True

@@ -20,6 +20,8 @@ import logging
 import sys
 import os
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
 
 # Import necessary DB components
 from db import Session, Referral, save_referral
@@ -307,6 +309,43 @@ def process_resend_link_requests():
     except Exception as e:
         logger.exception(f"Error processing resend link requests: {e}")
 
+def parse_and_upload_reports():
+    """Parse downloaded reports and upload structured data to the DB."""
+    logger.info("[STAGE] Parsing and uploading new reports...")
+    from db import Session, Referral
+    import subprocess
+    import sys
+    try:
+        with Session() as session:
+            # Find referrals with unprocessed reports (PDF downloaded, not yet parsed)
+            referrals = session.query(Referral).filter(
+                Referral.report_unprocessed == True
+            ).all()
+            logger.info(f"Found {len(referrals)} report(s) to parse.")
+            for referral in referrals:
+                try:
+                    # Assume PDF path is stored in a field, e.g., referral.pdf_path (add if missing)
+                    pdf_path = getattr(referral, 'pdf_path', None)
+                    if not pdf_path or not os.path.exists(pdf_path):
+                        logger.warning(f"No valid PDF path for referral ID {referral.id}, skipping.")
+                        continue
+                    # Call cognitive_importer.py as subprocess (for isolation and error capture)
+                    result = subprocess.run([
+                        sys.executable, '-m', 'report_refactor.cognitive_importer', pdf_path
+                    ], capture_output=True, text=True)
+                    if result.returncode == 0:
+                        # On success, update status
+                        referral.report_unprocessed = False
+                        referral.report_processed = True
+                        session.commit()
+                        logger.info(f"Parsed and uploaded report for referral ID {referral.id}.")
+                    else:
+                        logger.error(f"Parser failed for referral ID {referral.id}: {result.stderr}")
+                except Exception as parse_err:
+                    logger.exception(f"Error parsing report for referral ID {referral.id}: {parse_err}")
+    except Exception as e:
+        logger.exception(f"Error in parse_and_upload_reports stage: {e}")
+
 def main():
     logger.info("--- LUCID Orchestration Cycle Start ---")
     try:
@@ -323,9 +362,9 @@ def main():
         else:
             logger.info('[SKIP] Report Monitoring: Detect Test Completion')
         if is_stage_enabled('ORCH_STAGE_REPORT_PROCESS'):
-            reformat_and_save_reports()
+            parse_and_upload_reports()
         else:
-            logger.info('[SKIP] Report Processing: Reformat and Save')
+            logger.info('[SKIP] Report Processing: Parse and Upload')
         if is_stage_enabled('ORCH_STAGE_REPORT_DELIVERY'):
             send_reports_to_referrers()
         else:
