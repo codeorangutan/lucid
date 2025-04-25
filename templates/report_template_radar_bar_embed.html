@@ -340,6 +340,32 @@
             }
         }
 
+        // --- HSL Gradient Functions for Bar Color ---
+        function getSegmentedColor(pct) {
+            pct = Math.max(0, Math.min(100, pct));
+            if (pct <= 2) {
+                return 'hsl(0, 100%, 80%)'; // flat red
+            } else if (pct <= 9) {
+                const t = (pct - 2) / (9 - 2); // 0–1
+                return lerpHSL({ h: 0, s: 100, l: 80 }, { h: 30, s: 100, l: 70 }, t); // red → orange
+            } else if (pct <= 25) {
+                const t = (pct - 9) / (25 - 9);
+                return lerpHSL({ h: 30, s: 100, l: 70 }, { h: 55, s: 100, l: 60 }, t); // orange → yellow
+            } else if (pct <= 75) {
+                const t = (pct - 25) / (75 - 25);
+                return lerpHSL({ h: 220, s: 60, l: 80 }, { h: 220, s: 80, l: 60 }, t); // pale blue → blue
+            } else {
+                const t = (pct - 75) / (25);
+                return lerpHSL({ h: 220, s: 80, l: 60 }, { h: 220, s: 100, l: 40 }, t); // blue → intense
+            }
+        }
+        function lerpHSL(c1, c2, t) {
+            const h = c1.h + (c2.h - c1.h) * t;
+            const s = c1.s + (c2.s - c1.s) * t;
+            const l = c1.l + (c2.l - c1.l) * t;
+            return `hsl(${h.toFixed(0)}, ${s.toFixed(0)}%, ${l.toFixed(0)}%)`;
+        }
+
         // --- Chart Creation Functions ---
         function createRadarChart(labels, data) {
             const ctx = document.getElementById('cognitiveRadarChart');
@@ -404,7 +430,7 @@
                         const stdScore = score.standard_score !== null ? parseFloat(score.standard_score).toFixed(0) : 'N/A';
                         const percentile = score.percentile !== null ? parseFloat(score.percentile).toFixed(0) : 'N/A';
                         const classification = getClassification(score.percentile);
-                        const barCell = `<td class=\"py-2 px-3\"><div class='bar-bg'><div class='bar-fill' style='width: ${score.percentile || 0}%; min-width:2px;'></div></div></td>`;
+                        const barCell = `<td class=\"py-2 px-3\"><div class='bar-bg'><div class='bar-fill' style='width: ${score.percentile || 0}%; min-width:2px; background: ${getSegmentedColor(score.percentile || 0)};'></div></div></td>`;
                         const row = `
                             <tr>
                                 <td class=\"py-2 px-3\">${score.domain || 'N/A'}</td>
