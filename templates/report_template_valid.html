@@ -117,6 +117,11 @@
             transition: width 0.4s;
             min-width: 2px;
         }
+        /* Mildly bold domain column */
+        .cognitive-domain {
+            font-weight: 500;
+            color: #334155;
+        }
     </style>
     <!-- Inject JSON data for Chart.js and dynamic report rendering -->
     <script>
@@ -166,11 +171,11 @@
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
                                 <tr>
-                                    <th scope="col">Domain</th>
-                                    <th scope="col">Std Score</th>
-                                    <th scope="col">%ile</th>
-                                    <th scope="col">Class</th>
-                                    <th scope="col">Graph</th>
+                                    <th scope="col" class="text-left">Domain</th>
+                                    <th scope="col" class="text-left">Std Score</th>
+                                    <th scope="col" class="text-left">%ile</th>
+                                    <th scope="col" class="text-center">Rating</th>
+                                    <th scope="col" class="text-left">Graph</th>
                                 </tr>
                             </thead>
                             <tbody id="cognitive-scores-table" class="bg-white divide-y divide-gray-200">
@@ -356,15 +361,17 @@
             } else if (pct <= 9) {
                 const t = (pct - 2) / (9 - 2); // 0–1
                 return lerpHSL({ h: 0, s: 100, l: 80 }, { h: 30, s: 100, l: 70 }, t); // red → orange
-            } else if (pct <= 25) {
+            } else if (pct < 25) {
                 const t = (pct - 9) / (25 - 9);
                 return lerpHSL({ h: 30, s: 100, l: 70 }, { h: 55, s: 100, l: 60 }, t); // orange → yellow
+            } else if (pct === 25) {
+                return 'hsl(220, 80%, 60%)'; // blue at 25 exactly
             } else if (pct <= 75) {
                 const t = (pct - 25) / (75 - 25);
-                return lerpHSL({ h: 220, s: 60, l: 80 }, { h: 220, s: 80, l: 60 }, t); // pale blue → blue
+                return lerpHSL({ h: 220, s: 80, l: 60 }, { h: 220, s: 100, l: 40 }, t); // blue → intense
             } else {
                 const t = (pct - 75) / (25);
-                return lerpHSL({ h: 220, s: 80, l: 60 }, { h: 220, s: 100, l: 40 }, t); // blue → intense
+                return lerpHSL({ h: 220, s: 100, l: 40 }, { h: 220, s: 100, l: 30 }, t); // more intense blue
             }
         }
         function lerpHSL(c1, c2, t) {
@@ -439,7 +446,7 @@
                         const percentile = score.percentile !== null ? parseFloat(score.percentile).toFixed(0) : 'N/A';
                         const classification = getClassification(score.percentile);
                         const isValid = String(score.validity_index).toLowerCase() === 'yes';
-                        let domainCell = `<td class=\"py-2 px-3\">${score.domain || 'N/A'}`;
+                        let domainCell = `<td class=\"py-2 px-3 cognitive-domain\">${score.domain || 'N/A'}`;
                         if (!isValid) {
                             domainCell += `<div class='badge-invalid'>Invalid</div>`;
                         }
