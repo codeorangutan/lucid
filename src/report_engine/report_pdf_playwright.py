@@ -21,7 +21,10 @@ async def generate_pdf(html_path, json_path, output_pdf):
         # Load the HTML template file
         await page.goto(f'file://{os.path.abspath(html_path)}')
         # Wait for DOM and key elements
-        await page.wait_for_selector("#cognitiveBarChart", timeout=5000)
+        if html_path.endswith('_embed.html') or html_path.endswith('_valid.html'):
+            await page.wait_for_selector("#cognitive-scores-table", timeout=5000)
+        else:
+            await page.wait_for_selector("#cognitiveBarChart", timeout=5000)
         await page.wait_for_selector("#patient-id", timeout=5000)
 
         # Inject JSON and call populateReport
@@ -39,10 +42,10 @@ async def generate_pdf(html_path, json_path, output_pdf):
             format="A4",
             print_background=True,
             margin={
-                "top": "2mm",
-                "bottom": "2mm",
-                "left": "2mm",
-                "right": "2mm"
+                "top": "0mm",
+                "bottom": "0mm",
+                "left": "0mm",
+                "right": "0mm"
             }
         )
         await browser.close()
