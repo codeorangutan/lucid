@@ -1,0 +1,37 @@
+# Color Palette: Professional Blue Scheme
+
+## Main Background
+- bg-blue-50: #eff6ff
+
+## Headings
+- text-blue-900: #1e3a8a
+
+## Table
+- Table header: bg-blue-100 #dbeafe, text-blue-900 #1e3a8a
+- Table even row: bg-blue-50 #eff6ff
+- Table odd row: #ffffff
+
+## Chart.js
+- primaryColor: #2563eb (blue-600)
+- gridColor: #dbeafe (blue-100)
+- fontColor: #334155 (slate-700)
+
+## Badges
+- .badge-above-average: bg #dbeafe, color #2563eb (blue-100, blue-600)
+- .badge-average: bg #e0e7ff, color #1e40af (indigo-100, blue-800)
+- .badge-low-average: bg #f1f5f9, color #0369a1 (slate-50, sky-800)
+- .badge-low: bg #fef9c3, color #f59e42 (yellow-100, orange-500)
+- .badge-very-low: bg #fee2e2, color #b91c1c (red-100, red-700)
+- .badge-met: bg #dbeafe, color #2563eb (blue-100, blue-600)
+- .badge-not-met: bg #fee2e2, color #991b1b (red-100, red-800)
+- .badge-severe: bg #fee2e2, color #b91c1c (red-100, red-700)
+- .badge-moderate: bg #fef3c7, color #ea580c (yellow-100, orange-600)
+- .badge-mild: bg #fef9c3, color #f59e42 (yellow-100, orange-500)
+- .badge-not-problem: bg #dbeafe, color #2563eb (blue-100, blue-600)
+
+## Body Text
+- Neutral gray: #334155 (slate-700)
+
+## Notes
+- This palette uses blue as the primary accent, with red/orange reserved for severity/alerts.
+- All colors are Tailwind CSS defaults or close analogs for consistency and accessibility.

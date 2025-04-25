@@ -1,0 +1,86 @@
+**Pipeline and notes for LUCID the APP**
+
+
+1. High-Level Pipeline Overview
+Core Pipeline Stages (from Orchestration Plan & ProjectPlan)
+Intake: Receive and parse referral emails, save to DB.
+Test Request: Automate test requests via Playwright.
+Report Monitoring: Detect and download completed reports.
+Report Processing: Reformat downloaded reports (integration point for report_refactor).
+Report Delivery: Email reformatted report to referrer.
+Reminders: Send reminders for incomplete tests.
+Safety & Limits: Prevent abuse, enforce limits, and log everything.
+**
+
+**Configuration**
+CNS VS and Databases setup in config.ini in Root 
+config.utils.py makes that available to other functions
+Example usage:
+from config_utils import get_lucid_data_db, get_cns_vs_reports_db
+
+db_path = get_lucid_data_db()  # For all data lookups and report generation
+cns_db_path = get_cns_vs_reports_db()  # For PDF uploads
+**Parsing of PDFs from Report_ Refactor
+
+2. Report Refactor Module: Summary & Integration
+Key Components (from INFO_INFORMATION_FLOW.txt)
+cognitive_importer.py: Main entry for parsing cognitive report PDFs.
+parsing_helpers.py: Contains parsing logic for each test (Epworth, ASRS, NPQ, etc.).
+data_access.py: Handles DB I/O.
+pdf_cognitive_parser.py: Extracts raw text from PDFs.
+asrs_dsm_mapper.py: Maps ASRS responses to DSM criteria.
+Logging and batch processing utilities.
+Information Flow
+PDF Ingestion: cognitive_importer.py is called with a PDF path, uses pdf_cognitive_parser.py for text extraction.
+Parsing: Test-specific parsing in parsing_helpers.py.
+Mapping & Cleaning: ASRS mapped to DSM, data cleaned.
+DB Insertion: Parsed data written to DB.
+Reporting (optional): Report generation utilities.
+Logging: All steps are logged.
+Integration Point
+The orchestrator is expected to invoke cognitive_importer.py (as a subprocess or module) during the “reformat_and_save_reports” stage.
+Parsed results are written to the DB for downstream use (e.g., report delivery).
+
+**Testing Parsing**
+test script for report processing, upload and parse
+run test_referral_pdf_cycle.py place test_report.pdf in /reports and it will create DB entry
+then run orchestrator.py with .env set to only parse reportsShould then upl;oad it into the lucid.data.db
+
+#Config.ini sets the X day report look back period
+
+**Report Generation**
+
+I have refactored generate_report.py to provide a modular, robust CLI that supports all of your requirements:
+
+Primary Key: --patient-id is now the preferred and most direct way to generate a report.
+Referral Support: You can use --referral-id to resolve and generate a report for the associated patient.
+PDF Import Option: You can still use --pdf (with optional --import) to import data from a PDF and generate a report. This logic is cleanly separated, so the code remains modular and database-driven at its core.
+Output Path: You can specify --output. If omitted, the output is auto-named based on input.
+Robust Error Handling & Logging: All pathways include checks and logs for missing data, re-import logic, and clear error messages.
+Usage examples:
+From / src:
+python -m generate_report.report_generator --patient-id 40436 --output 40436_comprehensive
+python -m "generate_report.report_generator" --patient-id 40436 --output 40436_comprehensive.pdf
+
+python generate_report.py --patient-id 12345 --output my_report.pdf
+python generate_report.py --referral-id 67890
+python generate_report.py --pdf path/to/file.pdf --import
+
+src/
+├── generate_report/
+│   ├── __init__.py
+│   ├── asrs_dsm_mapper.py
+│   ├── generate_report.py
+│   └── report_generator.py
+├── __init__.py
+├── requirements.txt
+├── orchestrator.py
+└── ... (other project files)
+
+Summary of changes:
+
+CLI now uses argparse for clarity and flexibility.
+Mutually exclusive arguments ensure only one input mode is used per invocation.
+PDF import is preserved but does not break the modular, DB-driven workflow.
+All code is organized for future extensibility (e.g., adding report styles).
+You can now generate reports by patient ID, referral ID, or PDF, all using the same robust, modular backend!

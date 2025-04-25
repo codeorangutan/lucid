@@ -88,25 +88,41 @@ def login_and_download_report(email_data: Dict, username: str, password: str, re
         page.get_by_role("button", name="Search").click()
         # After search, find all report rows and download each
         try:
-            # Wait for the report table to appear
-            page.wait_for_selector("table#reports_table", timeout=10000)
-            rows = page.query_selector_all("table#reports_table tbody tr")
-            logger.info(f"Found {len(rows)} report rows.")
-            for row in rows:
-                try:
-                    # Find the download cell/button in the row (adjust selector as needed)
-                    download_cell = row.query_selector("td:has-text('LucidCognitiveTesting@gmail.')")
-                    if not download_cell or not download_cell.is_visible():
+            # Wait for the correct report table to appear
+            page.wait_for_selector("table#test_sessions", timeout=10000)
+            rows = page.query_selector_all("table#test_sessions tbody tr")
+            logger.info(f"Found {len(rows)} report rows (including header).")
+            # Skip the first row if it's a header
+            for idx, row in enumerate(rows):
+                if idx == 0:
+                    # Optionally check if this is a header row by inspecting its cells
+                    header_cells = row.query_selector_all('th')
+                    if header_cells and len(header_cells) > 0:
+                        logger.info("Skipping header row.")
                         continue
+                try:
                     with page.expect_download() as download_info:
-                        download_cell.click()
+                        row.click()
                     download = download_info.value
                     from datetime import datetime as dt
                     safe_dt = dt.now().strftime('%Y%m%d_%H%M%S_%f')
                     report_filename = f"CNSVS_Report_{safe_dt}.pdf"
                     report_path = os.path.join(reports_dir, report_filename)
                     download.save_as(report_path)
-                    logger.info(f"Downloaded CNS VS report to {report_path}")
+                    # --- Robust file availability check (wait for file to be fully available) ---
+                    import time
+                    max_wait = 5  # seconds
+                    waited = 0
+                    while not os.path.exists(report_path) or os.path.getsize(report_path) == 0:
+                        logger.info(f"Waiting for file to be fully available: {report_path}")
+                        time.sleep(0.5)
+                        waited += 0.5
+                        if waited >= max_wait:
+                            logger.error(f"File {report_path} not available after {max_wait} seconds, skipping.")
+                            break
+                    else:
+                        logger.info(f"File {report_path} is now available and non-empty.")
+                    # -------------------------------------------------------------------------
                     # Extract patient ID and store in DB (DEDUPLICATION LOGIC)
                     patient_id = extract_patient_id_from_pdf(report_path)
                     if patient_id:
@@ -140,6 +156,18 @@ def login_and_download_report(email_data: Dict, username: str, password: str, re
                                 logger.warning(f"Failed to delete duplicate file {report_path}: {del_err}")
                         else:
                             save_pdf_to_db(report_path, patient_id, email_id)
+                            # --- NEW: Update Referral.pdf_path in DB for orchestrator ---
+                            try:
+                                with Session() as session:
+                                    referral = session.query(Referral).filter(Referral.id_number == patient_id).order_by(Referral.id.desc()).first()
+                                    if referral:
+                                        referral.pdf_path = report_path
+                                        session.commit()
+                                        logger.info(f"Updated Referral.pdf_path for patient {patient_id} to {report_path}")
+                                    else:
+                                        logger.warning(f"No Referral found to update pdf_path for patient {patient_id}")
+                            except Exception as db_update_err:
+                                logger.error(f"Failed to update Referral.pdf_path for patient {patient_id}: {db_update_err}")
                     else:
                         logger.warning(f"Could not extract patient ID from {report_path}, not saving to DB.")
                 except Exception as e:

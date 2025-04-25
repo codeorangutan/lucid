@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+env/
+venv/
+*.db
+*.sqlite3
+.DS_Store
+.idea/
+.vscode/
+lucid_data_encrypted.db
+config.ini

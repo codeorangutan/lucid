@@ -19,6 +19,10 @@ Issues with:
 - NPQ questions
 - python -m report_refactor.cognitive_importer report_refactor/40436.pdf
 
+- New JSON module 
+python -m generate_report.generate_report_json --patient-id 40436 --output report_40436_json.pdf
+python -m generate_report.report_generator_json --patient-id 40436 --output report_40436_json.pdf
+
 Configuration Management: While request_cns_test.py correctly uses config.ini for credentials, other parts of the system might benefit from this (e.g., email addresses, reminder intervals, API scopes if they change). Centralizing configuration improves maintainability (ETC principle).
 Parsing Brittleness: email_receiver.py uses regular expressions (parse_email_body) to extract data. This can be prone to errors if the format of incoming emails varies even slightly. Consider making this more robust, perhaps using more flexible parsing or encouraging structured data in referral emails if possible.
 

@@ -1,0 +1,119 @@
+Checking database at: G:\My Drive\Programming\Lucid the App\Project Folder\data\lucid_data.db
+Exists? True
+
+Files in data directory:
+ - .keep
+ - lucid_data.db
+
+Tables found: [('referrals',), ('test_sessions',), ('cognitive_scores',), ('subtest_results',), ('asrs_responses',), ('dsm_diagnoses',), ('dsm_criteria_met',), ('epworth_responses',), ('epworth_summary',), ('npq_domain_scores',), ('npq_responses',)]
+
+--- referrals schema ---
+  - id (INTEGER)
+  - email (VARCHAR)
+  - mobile (VARCHAR)
+  - dob (VARCHAR)
+  - id_number (VARCHAR)
+  - raw_subject (VARCHAR)
+  - raw_body (VARCHAR)
+  - referral_received_time (DATETIME)
+  - test_request_time (DATETIME)
+  - referrer (VARCHAR)
+  - referrer_email (VARCHAR)
+  - referral_confirmed_time (DATETIME)
+  - paid (BOOLEAN)
+  - invoice_date (DATETIME)
+  - invoice_number (VARCHAR)
+  - test_completed (BOOLEAN)
+  - retest (BOOLEAN)
+  - report_unprocessed (BOOLEAN)
+  - report_processed (BOOLEAN)
+  - report_sent_date (DATETIME)
+  - test_resent (BOOLEAN)
+  - test_resent_time (DATETIME)
+  - pdf_path (VARCHAR)
+
+--- test_sessions schema ---
+  - id (INTEGER)
+  - referral_id (INTEGER)
+  - session_date (DATETIME)
+  - status (VARCHAR)
+
+--- cognitive_scores schema ---
+  - id (INTEGER)
+  - session_id (INTEGER)
+  - patient_id (VARCHAR)
+  - domain (VARCHAR)
+  - patient_score (VARCHAR)
+  - standard_score (VARCHAR)
+  - percentile (VARCHAR)
+  - validity_index (VARCHAR)
+
+--- subtest_results schema ---
+  - id (INTEGER)
+  - session_id (INTEGER)
+  - patient_id (VARCHAR)
+  - subtest_name (VARCHAR)
+  - metric (VARCHAR)
+  - score (FLOAT)
+  - standard_score (FLOAT)
+  - percentile (FLOAT)
+  - validity_flag (BOOLEAN)
+
+--- asrs_responses schema ---
+  - id (INTEGER)
+  - session_id (INTEGER)
+  - patient_id (VARCHAR)
+  - question_number (INTEGER)
+  - part (VARCHAR)
+  - response (VARCHAR)
+  - question_text (VARCHAR)
+
+--- dsm_diagnoses schema ---
+  - id (INTEGER)
+  - session_id (INTEGER)
+  - patient_id (VARCHAR)
+  - diagnosis (VARCHAR)
+  - code (VARCHAR)
+  - severity (VARCHAR)
+  - notes (VARCHAR)
+
+--- dsm_criteria_met schema ---
+  - id (INTEGER)
+  - session_id (INTEGER)
+  - patient_id (VARCHAR)
+  - dsm_criterion (VARCHAR)
+  - dsm_category (VARCHAR)
+  - is_met (BOOLEAN)
+
+--- epworth_responses schema ---
+  - id (INTEGER)
+  - session_id (INTEGER)
+  - patient_id (VARCHAR)
+  - situation (VARCHAR)
+  - score (INTEGER)
+
+--- epworth_summary schema ---
+  - id (INTEGER)
+  - session_id (INTEGER)
+  - patient_id (VARCHAR)
+  - total_score (INTEGER)
+  - interpretation (VARCHAR)
+
+--- npq_domain_scores schema ---
+  - id (INTEGER)
+  - session_id (INTEGER)
+  - patient_id (VARCHAR)
+  - domain (VARCHAR)
+  - score (INTEGER)
+  - severity (VARCHAR)
+
+--- npq_responses schema ---
+  - id (INTEGER)
+  - session_id (INTEGER)
+  - patient_id (VARCHAR)
+  - domain (VARCHAR)
+  - question_number (INTEGER)
+  - question_text (VARCHAR)
+  - score (INTEGER)
+  - severity (VARCHAR)
+

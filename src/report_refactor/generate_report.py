@@ -3,11 +3,12 @@ import os
 from cognitive_importer import import_pdf_to_db, parse_basic_info, extract_text_blocks
 from report_generator import create_fancy_report
 from data_access import patient_exists_in_db, fetch_all_patient_data, check_data_completeness, debug_log
+from config_utils import get_lucid_data_db
 
 #Use is as follows python generate_report.py path/to/yourfile.pdf --import
 #This will import the pdf to the database and generate a report
 
-DB_PATH = "cognitive_analysis.db"
+DB_PATH = get_lucid_data_db()
 
 
 def extract_patient_id_from_pdf(pdf_path):

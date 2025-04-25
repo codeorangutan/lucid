@@ -1,0 +1,89 @@
+# Lucid Cognitive Parsing - Information Flow & Essential Files
+
+## Project Context
+This module is responsible for parsing cognitive assessment reports (PDFs), extracting relevant scores and responses, and preparing data for integration with the main orchestration pipeline. The orchestration pipeline automates the intake, processing, and delivery of cognitive assessment results.
+
+---
+
+## Essential Files in `report_refactor`
+
+**1. cognitive_importer.py**
+- Main entry point for parsing cognitive report PDFs.
+- Handles overall control flow, invokes helpers for specific tests (Epworth, ASRS, NPQ, etc.).
+- Interacts with the database (via `db.py`).
+
+**2. parsing_helpers.py**
+- Contains parsing logic for each cognitive test/scale (Epworth, ASRS, NPQ, etc.).
+- Each parser extracts responses, scores, and interpretations from text.
+- Ensures data is in the correct format for database insertion.
+
+**3. data_access.py**
+- Handles reading/writing to the database.
+- Contains helper functions for abstracting DB operations.
+
+**4. pdf_cognitive_parser.py**
+- Lower-level PDF extraction logic.
+- Converts PDF pages to text for further parsing.
+
+**5. asrs_dsm_mapper.py**
+- Maps ASRS responses to DSM diagnostic criteria.
+- Used by the ASRS parsing logic.
+
+**6. report_generator.py / generate_report.py**
+- (If used) Generate summary reports or output files from parsed data.
+
+**7. batch_import.py**
+- For batch processing multiple reports at once.
+
+**8. importer.log**
+- Log file for debugging and traceability.
+
+**9. bounding_boxes.csv**
+- Contains bounding box coordinates for extracting structured data from PDFs.
+- Used by parsing functions (e.g., for ASRS) to accurately locate answers in the PDF.
+
+---
+
+## Information Flow
+
+1. **PDF Ingestion**
+   - `cognitive_importer.py` is called with a PDF path.
+   - Uses `pdf_cognitive_parser.py` to extract raw text from PDF.
+
+2. **Parsing**
+   - `parsing_helpers.py` functions parse the extracted text for each cognitive test.
+   - Test-specific logic (Epworth, ASRS, NPQ, etc.) extracts responses/scores.
+
+3. **Mapping & Data Cleaning**
+   - For ASRS, `asrs_dsm_mapper.py` maps responses to DSM domains.
+   - Data is cleaned and formatted for DB.
+
+4. **Database Insertion**
+   - `data_access.py` (or direct SQLAlchemy calls) insert parsed data into `cognitive_analysis.db`.
+
+5. **Reporting (Optional)**
+   - `report_generator.py` or `generate_report.py` may be used to create output reports.
+
+6. **Logging**
+   - All steps log to `importer.log` for traceability.
+
+---
+
+## Integration with Orchestration Pipeline
+- The orchestration pipeline (see `orchestrator.py` in main project) will invoke `cognitive_importer.py` as a subprocess or module.
+- Parsed data is written to the DB, which the orchestrator then uses for downstream processing (report delivery, reminders, etc.).
+
+---
+
+## Files That Can Be Deprecated (Candidates)
+- `cognitive_importer_original.py`, `cognitive_importer_full_backup.py`, `cognitive_importer_cleaned_backup.py`, `cognitive_importer_dsm_criteria_working.py`, `cognitive_importer_validity_flag_fixed.py` (older or experimental versions, kept for reference but not needed in production)
+- `asrs_dsm_mapper_original.py` (if not used by current pipeline)
+- Any scripts in `/deprecated/` subfolder (these are old, backup, or test scripts)
+- `move_deprecated_files.py` (used for migration/cleanup)
+
+---
+
+## Notes
+- Always check that `parsing_helpers.py` and `cognitive_importer.py` are up-to-date and consistent with the latest orchestration requirements.
+- Keep only the latest, working versions of each script in the main `report_refactor` folder; move older versions to `/deprecated/`.
+- Review and update this document as integration progresses.

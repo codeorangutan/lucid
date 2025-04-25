@@ -4,6 +4,7 @@ import sqlite3
 import logging
 from typing import Optional
 import PyPDF2
+from config_utils import get_cns_vs_reports_db
 
 def extract_patient_id_from_pdf(pdf_path: str) -> Optional[str]:
     """Extracts the patient ID from a CNSVS PDF report. Returns the patient ID as a string, or None if not found."""
@@ -15,6 +16,8 @@ def extract_patient_id_from_pdf(pdf_path: str) -> Optional[str]:
                 page_text = page.extract_text()
                 if page_text:
                     text += page_text
+        # Log the full path and existence for debugging
+        logging.warning(f"[PDF DEBUG] Checking path: {pdf_path} Exists: {os.path.exists(pdf_path)} Size: {os.path.getsize(pdf_path) if os.path.exists(pdf_path) else 'N/A'}")
         # Log the first 500 characters for debugging
         logging.warning(f"[PDF DEBUG] Extracted text (first 500 chars):\n{text[:500]}")
         # More robust regex: allow for any whitespace and possible line breaks
@@ -27,8 +30,10 @@ def extract_patient_id_from_pdf(pdf_path: str) -> Optional[str]:
         logging.error(f"Error extracting patient ID from {pdf_path}: {e}")
         return None
 
-def save_pdf_to_db(pdf_path: str, patient_id: str, email_id: str, db_path: str = 'cns_vs_reports.db') -> bool:
+def save_pdf_to_db(pdf_path: str, patient_id: str, email_id: str, db_path: str = None) -> bool:
     """Stores the PDF and metadata in the database. Returns True if successful."""
+    if db_path is None:
+        db_path = get_cns_vs_reports_db()
     try:
         with open(pdf_path, 'rb') as f:
             pdf_blob = f.read()

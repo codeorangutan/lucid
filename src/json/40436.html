@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Assessment Report - Patient 40436</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Use Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for severity/classification badges */
+        .badge {
+            display: inline-block;
+            padding: 0.2em 0.6em;
+            font-size: 0.8em;
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.375rem; /* rounded-md */
+        }
+        .badge-severe { background-color: #fee2e2; color: #b91c1c; } /* red-100, red-700 */
+        .badge-moderate { background-color: #ffedd5; color: #c2410c; } /* orange-100, orange-700 */
+        .badge-mild { background-color: #fef3c7; color: #a16207; } /* yellow-100, yellow-700 */
+        .badge-not-problem { background-color: #dcfce7; color: #166534; } /* green-100, green-700 */
+        .badge-above-average { background-color: #dbeafe; color: #1d4ed8; } /* blue-100, blue-700 */
+        .badge-average { background-color: #e0e7ff; color: #4338ca; } /* indigo-100, indigo-700 */
+        .badge-low-average { background-color: #f3e8ff; color: #7e22ce; } /* purple-100, purple-700 */
+        .badge-low { background-color: #fce7f3; color: #be185d; } /* pink-100, pink-700 */
+        .badge-very-low { background-color: #fee2e2; color: #b91c1c; } /* red-100, red-700 */
+
+        .badge-met { background-color: #dcfce7; color: #166534; } /* green-100, green-700 */
+        .badge-not-met { background-color: #fee2e2; color: #991b1b; } /* red-100, red-800 */
+
+        /* Style for tables */
+        table {
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 0.75rem 1rem; /* p-3 px-4 */
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb; /* divide-y divide-gray-200 */
+        }
+        thead th {
+            background-color: #f9fafb; /* bg-gray-50 */
+            font-weight: 600; /* font-semibold */
+            color: #374151; /* text-gray-700 */
+            font-size: 0.875rem; /* text-sm */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9fafb; /* even:bg-gray-50 */
+        }
+        tbody tr:hover {
+            background-color: #f3f4f6; /* hover:bg-gray-100 */
+        }
+        td {
+            font-size: 0.875rem; /* text-sm */
+            color: #4b5563; /* text-gray-600 */
+        }
+        /* Card styling */
+        .report-card {
+            background-color: white;
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:p-8">
+    <div class="max-w-4xl mx-auto">
+
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Cognitive Assessment Report</h1>
+            <p class="text-lg text-gray-600">Patient ID: <span id="patient-id-header" class="font-semibold"></span></p>
+        </header>
+
+        <section class="report-card" aria-labelledby="demographics-heading">
+            <h2 id="demographics-heading" class="text-xl font-semibold text-gray-700 mb-4">Demographics</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <p><strong>Patient ID:</strong> <span id="patient-id"></span></p>
+                <p><strong>Age:</strong> <span id="patient-age"></span></p> <p><strong>Language:</strong> <span id="patient-language"></span></p> <p><strong>Referral Received:</strong> <span id="test-date"></span></p>
+            </div>
+        </section>
+
+        <section class="report-card" aria-labelledby="cognitive-scores-heading">
+            <h2 id="cognitive-scores-heading" class="text-xl font-semibold text-gray-700 mb-4">Cognitive Domain Scores</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col">Domain</th>
+                            <th scope="col">Standard Score</th>
+                            <th scope="col">Percentile</th>
+                            <th scope="col">Classification</th>
+                            <th scope="col">Valid</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cognitive-scores-table" class="bg-white divide-y divide-gray-200">
+                        </tbody>
+                </table>
+            </div>
+             <div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <h3 class="text-md font-semibold text-gray-700 mb-2">Score Interpretation Guide</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+                    <div><span class="badge badge-above-average mr-1">> 75</span> Above Average (Strengths)</div>
+                    <div><span class="badge badge-average mr-1">25-75</span> Average (Normal Functioning)</div>
+                    <div><span class="badge badge-low-average mr-1">9-25</span> Low Average (Mild Difficulties)</div>
+                    <div><span class="badge badge-low mr-1">2-9</span> Low (Significant Difficulties)</div>
+                    <div><span class="badge badge-very-low mr-1">≤ 2</span> Very Low (Severe Impairment)</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="report-card" aria-labelledby="subtest-results-heading">
+            <h2 id="subtest-results-heading" class="text-xl font-semibold text-gray-700 mb-4">Subtest Results</h2>
+            <div id="subtest-tables-container" class="space-y-6">
+                </div>
+        </section>
+
+        <section class="report-card" aria-labelledby="asrs-dsm-heading">
+            <h2 id="asrs-dsm-heading" class="text-xl font-semibold text-gray-700 mb-4">ASRS to DSM-5 Mapping</h2>
+
+            <h3 class="text-lg font-medium text-gray-600 mb-2">Criterion A: Inattention</h3>
+            <div class="overflow-x-auto mb-4">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col">DSM-5 Criterion</th>
+                            <th scope="col">ASRS Question</th>
+                            <th scope="col">Response</th>
+                            <th scope="col">Met</th>
+                        </tr>
+                    </thead>
+                    <tbody id="asrs-inattention-table" class="bg-white divide-y divide-gray-200">
+                        </tbody>
+                </table>
+            </div>
+            <p id="asrs-inattention-summary" class="text-sm font-medium text-gray-700 mb-4"></p>
+
+            <h3 class="text-lg font-medium text-gray-600 mb-2">Criterion B: Hyperactivity/Impulsivity</h3>
+             <div class="overflow-x-auto mb-4">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col">DSM-5 Criterion</th>
+                            <th scope="col">ASRS Question</th>
+                            <th scope="col">Response</th>
+                            <th scope="col">Met</th>
+                        </tr>
+                    </thead>
+                    <tbody id="asrs-hyperactivity-table" class="bg-white divide-y divide-gray-200">
+                        </tbody>
+                </table>
+            </div>
+            <p id="asrs-hyperactivity-summary" class="text-sm font-medium text-gray-700 mb-4"></p>
+
+            <h3 class="text-lg font-medium text-gray-600 mb-2">ADHD Diagnosis Summary</h3>
+            <div id="adhd-diagnosis-summary" class="text-sm space-y-1">
+                </div>
+        </section>
+
+        <section class="report-card" aria-labelledby="epworth-heading">
+            <h2 id="epworth-heading" class="text-xl font-semibold text-gray-700 mb-4">Epworth Sleepiness Scale</h2>
+             <div class="overflow-x-auto mb-4">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col">Situation</th>
+                            <th scope="col">Score (0-3)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="epworth-responses-table" class="bg-white divide-y divide-gray-200">
+                        </tbody>
+                </table>
+            </div>
+            <div id="epworth-summary" class="text-sm font-semibold text-gray-700 bg-gray-100 p-3 rounded-md">
+                </div>
+        </section>
+
+        <section class="report-card" aria-labelledby="npq-summary-heading">
+            <h2 id="npq-summary-heading" class="text-xl font-semibold text-gray-700 mb-4">NPQ LF-207 Diagnostic Screen Summary</h2>
+            <p class="text-xs text-gray-500 mb-4 italic">Note: The NPQ is a clinical screening tool. Scores suggest potential symptom burden and are not diagnostic. Results should be used as a basis for clinical enquiry rather than diagnosis.</p>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col">Domain</th>
+                            <th scope="col">Score</th>
+                            <th scope="col">Severity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="npq-scores-table" class="bg-white divide-y divide-gray-200">
+                        </tbody>
+                </table>
+            </div>
+             <div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <h3 class="text-md font-semibold text-gray-700 mb-2">Severity Legend</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                    <div><span class="badge badge-severe mr-1">Severe</span></div>
+                    <div><span class="badge badge-moderate mr-1">Moderate</span></div>
+                    <div><span class="badge badge-mild mr-1">Mild</span></div>
+                    <div><span class="badge badge-not-problem mr-1">Not a problem</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="report-card" aria-labelledby="npq-details-heading">
+            <h2 id="npq-details-heading" class="text-xl font-semibold text-gray-700 mb-4">Detailed NPQ Responses</h2>
+            <div id="npq-details-container" class="space-y-6">
+                 </div>
+        </section>
+
+        <footer class="mt-12 text-center text-xs text-gray-500">
+            Report Generated: <span id="generation-date"></span> | Patient ID: <span id="patient-id-footer"></span>
+             </footer>
+
+    </div>
+
+    <script>
+        // Raw JSON data (replace with actual fetched data if loading dynamically)
+        const reportData = {
+          "patient": {
+            "id": 2,
+            "id_number": "40436",
+            "raw_subject": "[Auto-imported]",
+            "referral_received_time": "2025-04-24 14:46:53.494979", // Using this as a proxy for Test Date
+            "paid": 0,
+            "test_completed": 0,
+            "retest": 0,
+            "report_unprocessed": 1,
+            "report_processed": 0,
+            "test_resent": 0
+          },
+          "cognitive_scores": [
+            { "id": 1, "session_id": 1, "patient_id": "40436", "domain": "Neurocognition Index (NCI)", "standard_score": "106.0", "percentile": "66.0", "validity_index": "Yes" },
+            { "id": 2, "session_id": 1, "patient_id": "40436", "domain": "Composite Memory", "patient_score": "102.0", "standard_score": "110.0", "percentile": "75.0", "validity_index": "Yes" },
+            { "id": 3, "session_id": 1, "patient_id": "40436", "domain": "Verbal Memory", "patient_score": "54.0", "standard_score": "106.0", "percentile": "66.0", "validity_index": "Yes" },
+            { "id": 4, "session_id": 1, "patient_id": "40436", "domain": "Visual Memory", "patient_score": "48.0", "standard_score": "109.0", "percentile": "73.0", "validity_index": "Yes" },
+            { "id": 5, "session_id": 1, "patient_id": "40436", "domain": "Psychomotor Speed", "patient_score": "192.0", "standard_score": "125.0", "percentile": "95.0", "validity_index": "Yes" },
+            { "id": 6, "session_id": 1, "patient_id": "40436", "domain": "Reaction Time*", "patient_score": "597.0", "standard_score": "112.0", "percentile": "79.0", "validity_index": "Yes" },
+            { "id": 7, "session_id": 1, "patient_id": "40436", "domain": "Complex Attention*", "patient_score": "9.0", "standard_score": "92.0", "percentile": "30.0", "validity_index": "Yes" },
+            { "id": 8, "session_id": 1, "patient_id": "40436", "domain": "Cognitive Flexibility", "patient_score": "39.0", "standard_score": "93.0", "percentile": "32.0", "validity_index": "Yes" },
+            { "id": 9, "session_id": 1, "patient_id": "40436", "domain": "Processing Speed", "patient_score": "67.0", "standard_score": "130.0", "percentile": "98.0", "validity_index": "Yes" },
+            { "id": 10, "session_id": 1, "patient_id": "40436", "domain": "Executive Function", "patient_score": "42.0", "standard_score": "96.0", "percentile": "40.0", "validity_index": "Yes" },
+            { "id": 11, "session_id": 1, "patient_id": "40436", "domain": "Reasoning", "patient_score": "3.0", "standard_score": "90.0", "percentile": "25.0", "validity_index": "Yes" },
+            { "id": 12, "session_id": 1, "patient_id": "40436", "domain": "Working Memory", "patient_score": "15.0", "standard_score": "121.0", "percentile": "92.0", "validity_index": "Yes" },
+            { "id": 13, "session_id": 1, "patient_id": "40436", "domain": "Sustained Attention", "patient_score": "37.0", "standard_score": "119.0", "percentile": "90.0", "validity_index": "Yes" },
+            { "id": 14, "session_id": 1, "patient_id": "40436", "domain": "Simple Attention", "patient_score": "38.0", "standard_score": "77.0", "percentile": "6.0", "validity_index": "Yes" },
+            { "id": 15, "session_id": 1, "patient_id": "40436", "domain": "Motor Speed", "patient_score": "125.0", "standard_score": "114.0", "percentile": "82.0", "validity_index": "Yes" }
+          ],
+          "subtests": [
+             { "id": 1, "session_id": 1, "patient_id": "40436", "subtest_name": "Verbal Memory Test (VBM)", "metric": "Correct Hits - Immediate", "score": 12.0, "standard_score": 98.0, "percentile": 45.0, "validity_flag": 1 },
+             { "id": 2, "session_id": 1, "patient_id": "40436", "subtest_name": "Verbal Memory Test (VBM)", "metric": "Correct Passes - Immediate", "score": 15.0, "standard_score": 110.0, "percentile": 75.0, "validity_flag": 1 },
+             { "id": 3, "session_id": 1, "patient_id": "40436", "subtest_name": "Verbal Memory Test (VBM)", "metric": "Correct Hits - Delay", "score": 12.0, "standard_score": 105.0, "percentile": 63.0, "validity_flag": 1 },
+             { "id": 4, "session_id": 1, "patient_id": "40436", "subtest_name": "Verbal Memory Test (VBM)", "metric": "Correct Passes - Delay", "score": 15.0, "standard_score": 110.0, "percentile": 75.0, "validity_flag": 1 },
+             { "id": 5, "session_id": 1, "patient_id": "40436", "subtest_name": "Visual Memory Test (VSM)", "metric": "Correct Hits - Immediate", "score": 15.0, "standard_score": 124.0, "percentile": 95.0, "validity_flag": 1 },
+             { "id": 6, "session_id": 1, "patient_id": "40436", "subtest_name": "Visual Memory Test (VSM)", "metric": "Correct Passes - Immediate", "score": 12.0, "standard_score": 105.0, "percentile": 63.0, "validity_flag": 1 },
+             { "id": 7, "session_id": 1, "patient_id": "40436", "subtest_name": "Visual Memory Test (VSM)", "metric": "Correct Hits - Delay", "score": 14.0, "standard_score": 119.0, "percentile": 90.0, "validity_flag": 1 },
+             { "id": 8, "session_id": 1, "patient_id": "40436", "subtest_name": "Visual Memory Test (VSM)", "metric": "Correct Passes - Delay", "score": 7.0, "standard_score": 77.0, "percentile": 6.0, "validity_flag": 1 },
+             { "id": 9, "session_id": 1, "patient_id": "40436", "subtest_name": "Finger Tapping Test (FTT)", "metric": "Right Taps Average", "score": 64.0, "standard_score": 114.0, "percentile": 82.0, "validity_flag": 1 },
+             { "id": 10, "session_id": 1, "patient_id": "40436", "subtest_name": "Finger Tapping Test (FTT)", "metric": "Left Taps Average", "score": 61.0, "standard_score": 112.0, "percentile": 79.0, "validity_flag": 1 },
+             { "id": 11, "session_id": 1, "patient_id": "40436", "subtest_name": "Symbol Digit Coding (SDC)", "metric": "Correct Responses", "score": 67.0, "standard_score": 127.0, "percentile": 96.0, "validity_flag": 1 },
+             { "id": 12, "session_id": 1, "patient_id": "40436", "subtest_name": "Symbol Digit Coding (SDC)", "metric": "Errors*", "score": 0.0, "standard_score": 110.0, "percentile": 75.0, "validity_flag": 1 },
+             { "id": 13, "session_id": 1, "patient_id": "40436", "subtest_name": "Stroop Test (ST)", "metric": "Simple Reaction Time*", "score": 271.0, "standard_score": 106.0, "percentile": 66.0, "validity_flag": 1 },
+             { "id": 14, "session_id": 1, "patient_id": "40436", "subtest_name": "Stroop Test (ST)", "metric": "Complex Reaction Time Correct*", "score": 551.0, "standard_score": 110.0, "percentile": 75.0, "validity_flag": 1 },
+             { "id": 15, "session_id": 1, "patient_id": "40436", "subtest_name": "Stroop Test (ST)", "metric": "Stroop Reaction Time Correct*", "score": 642.0, "standard_score": 111.0, "percentile": 77.0, "validity_flag": 1 },
+             { "id": 16, "session_id": 1, "patient_id": "40436", "subtest_name": "Stroop Test (ST)", "metric": "Stroop Commission Errors*", "score": 3.0, "standard_score": 72.0, "percentile": 3.0, "validity_flag": 1 },
+             { "id": 17, "session_id": 1, "patient_id": "40436", "subtest_name": "Shifting Attention Test (SAT)", "metric": "Correct Responses", "score": 46.0, "standard_score": 92.0, "percentile": 30.0, "validity_flag": 1 },
+             { "id": 18, "session_id": 1, "patient_id": "40436", "subtest_name": "Shifting Attention Test (SAT)", "metric": "Errors*", "score": 4.0, "standard_score": 105.0, "percentile": 63.0, "validity_flag": 1 },
+             { "id": 19, "session_id": 1, "patient_id": "40436", "subtest_name": "Shifting Attention Test (SAT)", "metric": "Correct Reaction Time*", "score": 1131.0, "standard_score": 99.0, "percentile": 47.0, "validity_flag": 1 },
+             { "id": 20, "session_id": 1, "patient_id": "40436", "subtest_name": "Continuous Performance Test (CPT)", "metric": "Correct Responses", "score": 40.0, "standard_score": 103.0, "percentile": 58.0, "validity_flag": 1 },
+             { "id": 21, "session_id": 1, "patient_id": "40436", "subtest_name": "Continuous Performance Test (CPT)", "metric": "Omission Errors*", "score": 0.0, "standard_score": 103.0, "percentile": 58.0, "validity_flag": 1 },
+             { "id": 22, "session_id": 1, "patient_id": "40436", "subtest_name": "Continuous Performance Test (CPT)", "metric": "Commission Errors*", "score": 2.0, "standard_score": 68.0, "percentile": 2.0, "validity_flag": 1 },
+             { "id": 23, "session_id": 1, "patient_id": "40436", "subtest_name": "Continuous Performance Test (CPT)", "metric": "Choice Reaction Time Correct*", "score": 386.0, "standard_score": 109.0, "percentile": 73.0, "validity_flag": 1 },
+             { "id": 24, "session_id": 1, "patient_id": "40436", "subtest_name": "Reasoning Test (RT)", "metric": "Correct Responses", "score": 9.0, "standard_score": 95.0, "percentile": 37.0, "validity_flag": 1 },
+             { "id": 25, "session_id": 1, "patient_id": "40436", "subtest_name": "Reasoning Test (RT)", "metric": "Average Correct Reaction Time*", "score": 4040.0, "standard_score": 115.0, "percentile": 84.0, "validity_flag": 1 },
+             { "id": 26, "session_id": 1, "patient_id": "40436", "subtest_name": "Reasoning Test (RT)", "metric": "Commission Errors*", "score": 6.0, "standard_score": 87.0, "percentile": 19.0, "validity_flag": 1 },
+             { "id": 27, "session_id": 1, "patient_id": "40436", "subtest_name": "Reasoning Test (RT)", "metric": "Omission Errors*", "score": 0.0, "standard_score": 117.0, "percentile": 87.0, "validity_flag": 1 },
+             { "id": 28, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Average Correct Reaction Time* - Part 1", "score": 261.0, "standard_score": 114.0, "percentile": 82.0, "validity_flag": 1 }, // Added Part 1 manually based on PDF structure
+             { "id": 29, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Correct Responses - Part 2", "score": 6.0, "standard_score": 103.0, "percentile": 58.0, "validity_flag": 1 }, // Added Part 2 manually
+             { "id": 30, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Average Correct Reaction Time* - Part 2", "score": 371.0, "standard_score": 105.0, "percentile": 63.0, "validity_flag": 1 }, // Added Part 2 manually
+             { "id": 31, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Incorrect Responses* - Part 2", "score": 0.0, "standard_score": 104.0, "percentile": 61.0, "validity_flag": 1 }, // Added Part 2 manually
+             //{ "id": 32, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Average Incorrect Reaction Time*", "score": 0.0, "validity_flag": 1 }, // This seems duplicated or misplaced in JSON for Part 2
+             { "id": 33, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Omission Errors* - Part 2", "score": 0.0, "standard_score": 103.0, "percentile": 58.0, "validity_flag": 1 }, // Added Part 2 manually
+             { "id": 34, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Correct Responses - Part 3", "score": 16.0, "standard_score": 113.0, "percentile": 81.0, "validity_flag": 1 }, // Added Part 3 manually
+             { "id": 35, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Average Correct Reaction Time* - Part 3", "score": 429.0, "standard_score": 113.0, "percentile": 81.0, "validity_flag": 1 }, // Added Part 3 manually
+             { "id": 36, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Incorrect Responses* - Part 3", "score": 0.0, "standard_score": 104.0, "percentile": 61.0, "validity_flag": 1 }, // Added Part 3 manually
+             //{ "id": 37, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Average Incorrect Reaction Time*", "score": 0.0, "validity_flag": 1 }, // This seems duplicated or misplaced in JSON for Part 3
+             { "id": 38, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Omission Errors* - Part 3", "score": 0.0, "standard_score": 113.0, "percentile": 81.0, "validity_flag": 1 }, // Added Part 3 manually
+             { "id": 39, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Correct Responses - Part 4", "score": 16.0, "standard_score": 124.0, "percentile": 95.0, "validity_flag": 1 }, // Added Part 4 manually
+             { "id": 40, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Average Correct Reaction Time* - Part 4", "score": 625.0, "standard_score": 103.0, "percentile": 58.0, "validity_flag": 1 }, // Added Part 4 manually
+             { "id": 41, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Incorrect Responses* - Part 4", "score": 1.0, "standard_score": 103.0, "percentile": 58.0, "validity_flag": 1 }, // Added Part 4 manually
+             { "id": 42, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Average Incorrect Reaction Time* - Part 4", "score": 933.0, "standard_score": 89.0, "percentile": 23.0, "validity_flag": 1 }, // Added Part 4 manually
+             { "id": 43, "session_id": 1, "patient_id": "40436", "subtest_name": "Four Part Continuous Performance Test", "metric": "Omission Errors* - Part 4", "score": 0.0, "standard_score": 124.0, "percentile": 95.0, "validity_flag": 1 } // Added Part 4 manually
+          ],
+          "asrs": [
+            { "id": 1, "session_id": 1, "patient_id": "40436", "question_number": 1, "part": "A", "response": "Very Often", "question_text": "Q1: How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?" },
+            { "id": 2, "session_id": 1, "patient_id": "40436", "question_number": 2, "part": "A", "response": "Often", "question_text": "Q2: How often do you have difficulty getting things in order when you have to do a task that requires organization?" },
+            { "id": 3, "session_id": 1, "patient_id": "40436", "question_number": 3, "part": "A", "response": "Sometimes", "question_text": "Q3: How often do you have problems remembering appointments or obligations?" },
+            { "id": 4, "session_id": 1, "patient_id": "40436", "question_number": 4, "part": "A", "response": "Very Often", "question_text": "Q4: When you have a task that requires a lot of thought, how often do you avoid or delay getting started?" },
+            { "id": 5, "session_id": 1, "patient_id": "40436", "question_number": 5, "part": "A", "response": "Very Often", "question_text": "Q5: How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?" },
+            { "id": 6, "session_id": 1, "patient_id": "40436", "question_number": 6, "part": "A", "response": "Rarely", "question_text": "Q6: How often do you feel overly active and compelled to do things, like you were driven by a motor?" },
+            { "id": 7, "session_id": 1, "patient_id": "40436", "question_number": 7, "part": "B", "response": "Often", "question_text": "Q7: How often do you make careless mistakes when you have to work on a boring or difficult project?" },
+            { "id": 8, "session_id": 1, "patient_id": "40436", "question_number": 8, "part": "B", "response": "Often", "question_text": "Q8: How often do you have difficulty keeping your attention when you are doing boring or repetitive work?" },
+            { "id": 9, "session_id": 1, "patient_id": "40436", "question_number": 9, "part": "B", "response": "Sometimes", "question_text": "Q9: How often do you have difficulty concentrating on what people say to you, even when they are speaking to you directly?" },
+            { "id": 10, "session_id": 1, "patient_id": "40436", "question_number": 10, "part": "B", "response": "Often", "question_text": "Q10: How often do you misplace or have difficulty finding things at home or at work?" },
+            { "id": 11, "session_id": 1, "patient_id": "40436", "question_number": 11, "part": "B", "response": "Often", "question_text": "Q11: How often are you distracted by activity or noise around you?" },
+            { "id": 12, "session_id": 1, "patient_id": "40436", "question_number": 12, "part": "B", "response": "Never", "question_text": "Q12: How often do you leave your seat in meetings or other situations in which you are expected to remain seated?" },
+            { "id": 13, "session_id": 1, "patient_id": "40436", "question_number": 13, "part": "B", "response": "Very Often", "question_text": "Q13: How often do you feel restless or fidgety?" },
+            { "id": 14, "session_id": 1, "patient_id": "40436", "question_number": 14, "part": "B", "response": "Often", "question_text": "Q14: How often do you have difficulty unwinding and relaxing when you have time to yourself?" },
+            { "id": 15, "session_id": 1, "patient_id": "40436", "question_number": 15, "part": "B", "response": "Often", "question_text": "Q15: How often do you find yourself talking too much when you are in social situations?" },
+            { "id": 16, "session_id": 1, "patient_id": "40436", "question_number": 16, "part": "B", "response": "Sometimes", "question_text": "Q16: When you're in a conversation, how often do you find yourself finishing the sentences of the people you are talking to, before they can finish them themselves?" },
+            { "id": 17, "session_id": 1, "patient_id": "40436", "question_number": 17, "part": "B", "response": "Rarely", "question_text": "Q17: How often do you have difficulty waiting your turn in situations when turn taking is required?" },
+            { "id": 18, "session_id": 1, "patient_id": "40436", "question_number": 18, "part": "B", "response": "Often", "question_text": "Q18: How often do you interrupt others when they are busy?" }
+          ],
+          "dass_summary": [ // Note: PDF calls this ASRS/DSM mapping summary
+            { "id": 1, "session_id": 1, "patient_id": "40436", "diagnosis": "Combined Presentation" }
+          ],
+          "dass_items": [ // Note: PDF calls this ASRS/DSM mapping items
+            { "id": 1, "session_id": 1, "patient_id": "40436", "dsm_criterion": "A1: Often fails to give close attention to details or makes careless mistakes", "dsm_category": "Inattention", "is_met": 1 },
+            { "id": 2, "session_id": 1, "patient_id": "40436", "dsm_criterion": "A2: Often has difficulty sustaining attention in tasks or play activities", "dsm_category": "Inattention", "is_met": 1 },
+            { "id": 3, "session_id": 1, "patient_id": "40436", "dsm_criterion": "A3: Often does not seem to listen when spoken to directly", "dsm_category": "Inattention", "is_met": 1 },
+            { "id": 4, "session_id": 1, "patient_id": "40436", "dsm_criterion": "A4: Often does not follow through on instructions and fails to finish duties", "dsm_category": "Inattention", "is_met": 1 },
+            { "id": 5, "session_id": 1, "patient_id": "40436", "dsm_criterion": "A5: Often has difficulty organizing tasks and activities", "dsm_category": "Inattention", "is_met": 1 },
+            { "id": 6, "session_id": 1, "patient_id": "40436", "dsm_criterion": "A6: Often avoids or is reluctant to engage in tasks requiring sustained mental effort", "dsm_category": "Inattention", "is_met": 1 },
+            { "id": 7, "session_id": 1, "patient_id": "40436", "dsm_criterion": "A7: Often loses things necessary for tasks or activities", "dsm_category": "Inattention", "is_met": 1 },
+            { "id": 8, "session_id": 1, "patient_id": "40436", "dsm_criterion": "A8: Is often easily distracted by extraneous stimuli", "dsm_category": "Inattention", "is_met": 1 },
+            { "id": 9, "session_id": 1, "patient_id": "40436", "dsm_criterion": "A9: Is often forgetful in daily activities", "dsm_category": "Inattention", "is_met": 1 },
+            { "id": 10, "session_id": 1, "patient_id": "40436", "dsm_criterion": "B1: Often fidgets or squirms in seat", "dsm_category": "Hyperactivity/Impulsivity", "is_met": 1 },
+            { "id": 11, "session_id": 1, "patient_id": "40436", "dsm_criterion": "B2: Often leaves seat in situations when remaining seated is expected", "dsm_category": "Hyperactivity/Impulsivity", "is_met": 0 },
+            { "id": 12, "session_id": 1, "patient_id": "40436", "dsm_criterion": "B3: Often runs about or climbs in situations where it is inappropriate", "dsm_category": "Hyperactivity/Impulsivity", "is_met": 1 },
+            { "id": 13, "session_id": 1, "patient_id": "40436", "dsm_criterion": "B4: Often unable to play or engage in leisure activities quietly", "dsm_category": "Hyperactivity/Impulsivity", "is_met": 1 },
+            { "id": 14, "session_id": 1, "patient_id": "40436", "dsm_criterion": "B5: Is often 'on the go', acting as if 'driven by a motor'", "dsm_category": "Hyperactivity/Impulsivity", "is_met": 0 },
+            { "id": 15, "session_id": 1, "patient_id": "40436", "dsm_criterion": "B6: Often talks excessively", "dsm_category": "Hyperactivity/Impulsivity", "is_met": 1 },
+            { "id": 16, "session_id": 1, "patient_id": "40436", "dsm_criterion": "B7: Often blurts out an answer before a question has been completed", "dsm_category": "Hyperactivity/Impulsivity", "is_met": 1 },
+            { "id": 17, "session_id": 1, "patient_id": "40436", "dsm_criterion": "B8: Often has difficulty waiting his or her turn", "dsm_category": "Hyperactivity/Impulsivity", "is_met": 0 },
+            { "id": 18, "session_id": 1, "patient_id": "40436", "dsm_criterion": "B9: Often interrupts or intrudes on others", "dsm_category": "Hyperactivity/Impulsivity", "is_met": 1 }
+          ],
+          "epworth": {
+            "responses": [
+              { "id": 1, "session_id": 1, "patient_id": "40436", "situation": "Sitting and reading", "score": 3 },
+              { "id": 2, "session_id": 1, "patient_id": "40436", "situation": "Watching TV", "score": 2 },
+              { "id": 3, "session_id": 1, "patient_id": "40436", "situation": "Sitting inactive in a public place (e.g., a theater or a meeting)", "score": 2 },
+              { "id": 4, "session_id": 1, "patient_id": "40436", "situation": "As a passenger in a car for an hour without a break", "score": 3 },
+              { "id": 5, "session_id": 1, "patient_id": "40436", "situation": "Lying down to rest in the afternoon when circumstances permit", "score": 3 },
+              { "id": 6, "session_id": 1, "patient_id": "40436", "situation": "Sitting and talking to someone", "score": 1 },
+              { "id": 7, "session_id": 1, "patient_id": "40436", "situation": "Sitting quietly after a lunch without alcohol", "score": 1 },
+              { "id": 8, "session_id": 1, "patient_id": "40436", "situation": "In a car, while stopped for a few minutes in traffic", "score": 0 }
+            ],
+            "summary": [
+              { "id": 1, "session_id": 1, "patient_id": "40436", "total_score": 15, "interpretation": "Moderate excessive daytime sleepiness." }
+            ]
+          },
+          "npq_scores": [
+            { "id": 1, "session_id": 1, "patient_id": "40436", "domain": "Attention", "score": 145, "severity": "Mild" },
+            { "id": 2, "session_id": 1, "patient_id": "40436", "domain": "Impulsive", "score": 83, "severity": "Mild" },
+            { "id": 3, "session_id": 1, "patient_id": "40436", "domain": "Learning", "score": 62, "severity": "Not a problem" },
+            { "id": 4, "session_id": 1, "patient_id": "40436", "domain": "Memory", "score": 86, "severity": "Mild" },
+            { "id": 5, "session_id": 1, "patient_id": "40436", "domain": "Anxiety", "score": 100, "severity": "Mild" },
+            { "id": 6, "session_id": 1, "patient_id": "40436", "domain": "Panic", "score": 17, "severity": "Not a problem" },
+            { "id": 7, "session_id": 1, "patient_id": "40436", "domain": "Agoraphobia", "score": 0, "severity": "Not a problem" },
+            { "id": 8, "session_id": 1, "patient_id": "40436", "domain": "Obsessions & Compulsions", "score": 47, "severity": "Not a problem" },
+            { "id": 9, "session_id": 1, "patient_id": "40436", "domain": "Social Anxiety", "score": 25, "severity": "Not a problem" },
+            { "id": 10, "session_id": 1, "patient_id": "40436", "domain": "Depression", "score": 41, "severity": "Not a problem" },
+            { "id": 11, "session_id": 1, "patient_id": "40436", "domain": "Mood Stability", "score": 23, "severity": "Not a problem" },
+            { "id": 12, "session_id": 1, "patient_id": "40436", "domain": "Mania", "score": 0, "severity": "Not a problem" },
+            { "id": 13, "session_id": 1, "patient_id": "40436", "domain": "Aggression", "score": 0, "severity": "Not a problem" },
+            { "id": 14, "session_id": 1, "patient_id": "40436", "domain": "Psychotic", "score": 14, "severity": "Not a problem" },
+            { "id": 15, "session_id": 1, "patient_id": "40436", "domain": "Somatic", "score": 122, "severity": "Mild" },
+            { "id": 16, "session_id": 1, "patient_id": "40436", "domain": "Fatigue", "score": 100, "severity": "Mild" },
+            { "id": 17, "session_id": 1, "patient_id": "40436", "domain": "Sleep", "score": 75, "severity": "Mild" },
+            { "id": 18, "session_id": 1, "patient_id": "40436", "domain": "Suicide", "score": 33, "severity": "Not a problem" },
+            { "id": 19, "session_id": 1, "patient_id": "40436", "domain": "Pain", "score": 100, "severity": "Mild" },
+            { "id": 20, "session_id": 1, "patient_id": "40436", "domain": "Substance Abuse", "score": 0, "severity": "Not a problem" },
+            { "id": 21, "session_id": 1, "patient_id": "40436", "domain": "Average Symptom Score", "score": 54, "severity": "Not a problem" }, // Might omit this specific one
+            { "id": 22, "session_id": 1, "patient_id": "40436", "domain": "PTSD", "score": 56, "severity": "Not a problem" },
+            { "id": 23, "session_id": 1, "patient_id": "40436", "domain": "Bipolar", "score": 41, "severity": "Not a problem" },
+            { "id": 24, "session_id": 1, "patient_id": "40436", "domain": "Autism", "score": 25, "severity": "Not a problem" },
+            { "id": 25, "session_id": 1, "patient_id": "40436", "domain": "Asperger's", "score": 27, "severity": "Not a problem" },
+            { "id": 26, "session_id": 1, "patient_id": "40436", "domain": "ADHD", "score": 140, "severity": "Mild" },
+            { "id": 27, "session_id": 1, "patient_id": "40436", "domain": "MCI", "score": 104, "severity": "Mild" },
+            { "id": 28, "session_id": 1, "patient_id": "40436", "domain": "Concussion", "score": 106, "severity": "Mild" },
+            { "id": 29, "session_id": 1, "patient_id": "40436", "domain": "Anxiety/Depression", "score": 80, "severity": "Mild" }
+          ],
+          "npq_questions": [ /* Truncated for brevity in this example - full data would be used */
+            { "id": 1, "session_id": 1, "patient_id": "40436", "domain": "Attention", "question_number": 1, "question_text": "Difficulty concentrating", "score": 1, "severity": "A mild problem" },
+            { "id": 2, "session_id": 1, "patient_id": "40436", "domain": "Attention", "question_number": 2, "question_text": "Difficulty paying attention", "score": 1, "severity": "A mild problem" },
+            { "id": 3, "session_id": 1, "patient_id": "40436", "domain": "Attention", "question_number": 3, "question_text": "Easily distracted", "score": 2, "severity": "A moderate problem" },
+            // ... many more questions ...
+             { "id": 365, "session_id": 1, "patient_id": "40436", "domain": "Anxiety/Depression", "question_number": 35, "question_text": "Worrying too much", "score": 2, "severity": "A moderate problem" }
+          ]
+        };
+
+        // --- Helper Functions ---
+
+        // Function to get classification based on percentile
+        function getClassification(percentile) {
+            const p = parseFloat(percentile);
+            if (isNaN(p)) return { text: 'N/A', class: '' };
+            if (p > 75) return { text: 'Above Average', class: 'badge-above-average' };
+            if (p >= 25) return { text: 'Average', class: 'badge-average' };
+            if (p >= 9) return { text: 'Low Average', class: 'badge-low-average' };
+            if (p >= 2) return { text: 'Low', class: 'badge-low' };
+            return { text: 'Very Low', class: 'badge-very-low' };
+        }
+
+        // Function to get severity class
+        function getSeverityClass(severity) {
+            if (!severity) return '';
+            const lowerSeverity = severity.toLowerCase();
+            if (lowerSeverity.includes('severe')) return 'badge-severe';
+            if (lowerSeverity.includes('moderate')) return 'badge-moderate';
+            if (lowerSeverity.includes('mild')) return 'badge-mild';
+            if (lowerSeverity.includes('not a problem')) return 'badge-not-problem';
+            return ''; // Default or fallback class
+        }
+
+         // Function to get 'Met'/'Not Met' class
+        function getMetClass(isMet) {
+            return isMet ? 'badge-met' : 'badge-not-met';
+        }
+
+        // Function to format date/time string
+        function formatDate(dateString) {
+            if (!dateString) return 'N/A';
+            try {
+                const date = new Date(dateString);
+                 // Adjust options as needed
+                return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+            } catch (e) {
+                return dateString; // Return original if parsing fails
+            }
+        }
+
+        // --- Populate Data ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const patientId = reportData.patient?.id_number || 'N/A';
+
+            // Populate Header & Footer
+            document.getElementById('patient-id-header').textContent = patientId;
+            document.getElementById('patient-id-footer').textContent = patientId;
+            document.getElementById('generation-date').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            // Populate Demographics
+            document.getElementById('patient-id').textContent = patientId;
+            document.getElementById('patient-age').textContent = '50'; // Hardcoded based on PDF, not in JSON
+            document.getElementById('patient-language').textContent = 'English (United States)'; // Hardcoded based on PDF, not in JSON
+            document.getElementById('test-date').textContent = formatDate(reportData.patient?.referral_received_time);
+
+            // Populate Cognitive Scores Table
+            const cognitiveTableBody = document.getElementById('cognitive-scores-table');
+            if (reportData.cognitive_scores && cognitiveTableBody) {
+                reportData.cognitive_scores.forEach(score => {
+                    const classification = getClassification(score.percentile);
+                    const row = `
+                        <tr>
+                            <td>${score.domain || 'N/A'}</td>
+                            <td>${score.standard_score || 'N/A'}</td>
+                            <td>${score.percentile || 'N/A'}%</td>
+                            <td><span class="badge ${classification.class}">${classification.text}</span></td>
+                            <td>${score.validity_index || 'N/A'}</td>
+                        </tr>
+                    `;
+                    cognitiveTableBody.innerHTML += row;
+                });
+            }
+
+             // Populate Subtest Results Tables
+            const subtestsContainer = document.getElementById('subtest-tables-container');
+            if (reportData.subtests && subtestsContainer) {
+                const groupedSubtests = reportData.subtests.reduce((acc, test) => {
+                    const name = test.subtest_name;
+                    if (!acc[name]) {
+                        acc[name] = [];
+                    }
+                    acc[name].push(test);
+                    return acc;
+                }, {});
+
+                for (const testName in groupedSubtests) {
+                    const tests = groupedSubtests[testName];
+                    let tableHTML = `
+                        <div class="overflow-x-auto">
+                            <h3 class="text-md font-semibold text-gray-600 mb-2">${testName}</h3>
+                            <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-md">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col">Metric</th>
+                                        <th scope="col">Score</th>
+                                        <th scope="col">Standard</th>
+                                        <th scope="col">Percentile</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                    `;
+                    tests.forEach(metric => {
+                        // Handle cases where standard_score or percentile might be missing/null
+                        const standardScore = metric.standard_score !== null && metric.standard_score !== undefined ? metric.standard_score : 'N/A';
+                        const percentile = metric.percentile !== null && metric.percentile !== undefined ? `${metric.percentile}%` : 'N/A';
+                        const score = metric.score !== null && metric.score !== undefined ? metric.score : 'N/A';
+
+                        tableHTML += `
+                            <tr>
+                                <td>${metric.metric || 'N/A'}</td>
+                                <td>${score}</td>
+                                <td>${standardScore}</td>
+                                <td>${percentile}</td>
+                            </tr>
+                        `;
+                    });
+                    tableHTML += `
+                                </tbody>
+                            </table>
+                        </div>
+                    `;
+                    subtestsContainer.innerHTML += tableHTML;
+                }
+            }
+
+            // Populate ASRS/DSM Mapping
+            const asrsInattentionTable = document.getElementById('asrs-inattention-table');
+            const asrsHyperactivityTable = document.getElementById('asrs-hyperactivity-table');
+            const dassItems = reportData.dass_items || [];
+            const asrsResponses = reportData.asrs || [];
+
+            // Create a map for quick ASRS response lookup based on DSM criterion text pattern
+            const asrsResponseMap = asrsResponses.reduce((map, item) => {
+                // Try to extract the core ASRS question text
+                const match = item.question_text.match(/Q\d+:\s*(.*)/);
+                 if (match && match[1]) {
+                     // Use a simplified key matching the pattern in dass_items
+                     map[match[1].trim()] = item.response;
+                 } else {
+                     // Fallback if pattern doesn't match perfectly
+                     map[item.question_text] = item.response;
+                 }
+                return map;
+            }, {});
+
+             // Map DSM criteria to ASRS questions (based on PDF structure)
+            const dsmToAsrsMap = {
+                "A1": "Q7", "A2": "Q8", "A3": "Q9", "A4": "Q1", "A5": "Q2",
+                "A6": "Q4", "A7": "Q10", "A8": "Q11", "A9": "Q3",
+                "B1": "Q5", "B2": "Q12", "B3": "Q13", "B4": "Q14", "B5": "Q6",
+                "B6": "Q15", "B7": "Q16", "B8": "Q17", "B9": "Q18"
+            };
+
+            let inattentionMetCount = 0;
+            let hyperactivityMetCount = 0;
+
+            dassItems.forEach(item => {
+                const isMet = item.is_met === 1;
+                const metClass = getMetClass(isMet);
+                const metText = isMet ? 'Met' : 'Not Met';
+
+                // Find corresponding ASRS question and response
+                const criterionCodeMatch = item.dsm_criterion.match(/([AB]\d+):/);
+                let asrsQuestionText = 'N/A';
+                let asrsResponse = 'N/A';
+                if (criterionCodeMatch) {
+                    const criterionCode = criterionCodeMatch[1];
+                    const asrsQNum = dsmToAsrsMap[criterionCode];
+                    const asrsItem = asrsResponses.find(q => q.question_text.startsWith(asrsQNum + ':'));
+                    if (asrsItem) {
+                        asrsQuestionText = asrsItem.question_text;
+                        asrsResponse = asrsItem.response;
+                    }
+                }
+
+
+                const row = `
+                    <tr>
+                        <td>${item.dsm_criterion || 'N/A'}</td>
+                        <td class="text-xs">${asrsQuestionText}</td>
+                        <td>${asrsResponse}</td>
+                        <td><span class="badge ${metClass}">${metText}</span></td>
+                    </tr>
+                `;
+
+                if (item.dsm_category === 'Inattention' && asrsInattentionTable) {
+                    asrsInattentionTable.innerHTML += row;
+                    if (isMet) inattentionMetCount++;
+                } else if (item.dsm_category === 'Hyperactivity/Impulsivity' && asrsHyperactivityTable) {
+                    asrsHyperactivityTable.innerHTML += row;
+                    if (isMet) hyperactivityMetCount++;
+                }
+            });
+
+             // ASRS Summaries
+            const inattentionSummaryEl = document.getElementById('asrs-inattention-summary');
+            const hyperactivitySummaryEl = document.getElementById('asrs-hyperactivity-summary');
+            const diagnosisSummaryEl = document.getElementById('adhd-diagnosis-summary');
+
+            const inattentionNeeded = 5; // Standard requirement
+            const hyperactivityNeeded = 5; // Standard requirement
+            const inattentionOverallMet = inattentionMetCount >= inattentionNeeded;
+            const hyperactivityOverallMet = hyperactivityMetCount >= hyperactivityNeeded;
+
+            if(inattentionSummaryEl) {
+                inattentionSummaryEl.innerHTML = `Summary: ${inattentionMetCount}/9 criteria met (Need ≥${inattentionNeeded}) - <span class="font-bold ${inattentionOverallMet ? 'text-green-700' : 'text-red-700'}">${inattentionOverallMet ? 'Met' : 'Not Met'}</span>`;
+            }
+            if(hyperactivitySummaryEl) {
+                hyperactivitySummaryEl.innerHTML = `Summary: ${hyperactivityMetCount}/9 criteria met (Need ≥${hyperactivityNeeded}) - <span class="font-bold ${hyperactivityOverallMet ? 'text-green-700' : 'text-red-700'}">${hyperactivityOverallMet ? 'Met' : 'Not Met'}</span>`;
+            }
+
+             if(diagnosisSummaryEl) {
+                 diagnosisSummaryEl.innerHTML = `
+                    <p>Inattention Criteria: <span class="font-semibold ${inattentionOverallMet ? 'text-green-700' : 'text-red-700'}">${inattentionOverallMet ? 'Met' : 'Not Met'}</span></p>
+                    <p>Hyperactivity/Impulsivity Criteria: <span class="font-semibold ${hyperactivityOverallMet ? 'text-green-700' : 'text-red-700'}">${hyperactivityOverallMet ? 'Met' : 'Not Met'}</span></p>
+                    <p class="mt-2"><strong>Overall Diagnosis:</strong> <span class="font-semibold text-blue-700">${reportData.dass_summary?.[0]?.diagnosis || 'N/A'}</span></p>
+                 `;
+             }
+
+
+            // Populate Epworth Scale
+            const epworthTableBody = document.getElementById('epworth-responses-table');
+            const epworthSummaryEl = document.getElementById('epworth-summary');
+            if (reportData.epworth && epworthTableBody && epworthSummaryEl) {
+                reportData.epworth.responses.forEach(resp => {
+                    const row = `
+                        <tr>
+                            <td>${resp.situation || 'N/A'}</td>
+                            <td>${resp.score !== null ? resp.score : 'N/A'}</td>
+                        </tr>
+                    `;
+                    epworthTableBody.innerHTML += row;
+                });
+                const summary = reportData.epworth.summary?.[0];
+                epworthSummaryEl.innerHTML = `<strong>Total Score:</strong> ${summary?.total_score ?? 'N/A'} | <strong>Interpretation:</strong> ${summary?.interpretation ?? 'N/A'}`;
+            }
+
+            // Populate NPQ Summary Table
+            const npqTableBody = document.getElementById('npq-scores-table');
+             if (reportData.npq_scores && npqTableBody) {
+                // Define order based on PDF structure if needed, otherwise sort alphabetically
+                const domainOrder = [
+                    "ADHD", "Attention", "Impulsive", "Learning", "Memory", // Attention & Hyperactivity
+                    "Anxiety", "Panic", "Agoraphobia", "Obsessions & Compulsions", "Social Anxiety", "PTSD", // Anxiety
+                    "Depression", "Bipolar", "Mood Stability", "Mania", "Aggression", // Mood
+                    "Autism", "Asperger's", // Autism Spectrum
+                    "Psychotic", "Somatic", "Fatigue", "Sleep", "Suicide", "Pain", "Substance Abuse", "MCI", "Concussion", "Anxiety/Depression" // Other/Combined
+                ];
+
+                const sortedScores = reportData.npq_scores
+                    .filter(score => score.domain !== "Average Symptom Score") // Exclude average score row
+                    .sort((a, b) => {
+                        const indexA = domainOrder.indexOf(a.domain);
+                        const indexB = domainOrder.indexOf(b.domain);
+                        // If both domains are in the order list, sort by that order
+                        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                        // If only A is in the list, it comes first
+                        if (indexA !== -1) return -1;
+                        // If only B is in the list, it comes first
+                        if (indexB !== -1) return 1;
+                        // Otherwise, sort alphabetically
+                        return a.domain.localeCompare(b.domain);
+                    });
+
+
+                sortedScores.forEach(score => {
+                    const severityClass = getSeverityClass(score.severity);
+                    const row = `
+                        <tr>
+                            <td>${score.domain || 'N/A'}</td>
+                            <td>${score.score !== null ? score.score : 'N/A'}</td>
+                            <td><span class="badge ${severityClass}">${score.severity || 'N/A'}</span></td>
+                        </tr>
+                    `;
+                    npqTableBody.innerHTML += row;
+                });
+            }
+
+             // Populate Detailed NPQ Responses
+            const npqDetailsContainer = document.getElementById('npq-details-container');
+            if (reportData.npq_questions && npqDetailsContainer) {
+                 const groupedNpqQuestions = reportData.npq_questions.reduce((acc, q) => {
+                    const domain = q.domain;
+                    if (!acc[domain]) {
+                        acc[domain] = [];
+                    }
+                    acc[domain].push(q);
+                    return acc;
+                }, {});
+
+                // Use the same domain order as the summary table
+                 const domainOrder = [
+                    "ADHD", "Attention", "Impulsive", "Learning", "Memory",
+                    "Anxiety", "Panic", "Agoraphobia", "Obsessions & Compulsions", "Social Anxiety", "PTSD",
+                    "Depression", "Bipolar", "Mood Stability", "Mania", "Aggression",
+                    "Autism", "Asperger's",
+                    "Psychotic", "Somatic", "Fatigue", "Sleep", "Suicide", "Pain", "Substance Abuse", "MCI", "Concussion", "Anxiety/Depression"
+                ];
+
+                domainOrder.forEach(domainName => {
+                    if (groupedNpqQuestions[domainName]) {
+                        const questions = groupedNpqQuestions[domainName];
+                        let tableHTML = `
+                            <div class="overflow-x-auto">
+                                <h3 class="text-md font-semibold text-gray-600 mb-2">${domainName}</h3>
+                                <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-md">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th scope="col">Question</th>
+                                            <th scope="col">Score</th>
+                                            <th scope="col">Severity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                        `;
+                        questions.forEach(q => {
+                             const severityClass = getSeverityClass(q.severity);
+                             tableHTML += `
+                                <tr>
+                                    <td>${q.question_text || 'N/A'}</td>
+                                    <td>${q.score !== null ? q.score : 'N/A'}</td>
+                                    <td><span class="badge ${severityClass}">${q.severity || 'N/A'}</span></td>
+                                </tr>
+                            `;
+                        });
+                        tableHTML += `
+                                    </tbody>
+                                </table>
+                            </div>
+                        `;
+                        npqDetailsContainer.innerHTML += tableHTML;
+                    }
+                });
+            }
+
+        });
+
+    </script>
+</body>
+</html>

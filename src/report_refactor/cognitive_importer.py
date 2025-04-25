@@ -39,8 +39,9 @@ from db import (
     insert_dsm_diagnosis, insert_epworth_responses, insert_npq_domain_scores, insert_npq_responses,
     insert_dsm_criteria_met, insert_epworth_summary
 )
-
-DB_PATH = "cognitive_analysis.db"
+from .asrs_dsm_mapper import DSM5_ASRS_MAPPING
+from config_utils import get_lucid_data_db
+DB_PATH = get_lucid_data_db()
 
 # ... rest of the file unchanged ...
 
@@ -180,7 +181,8 @@ def import_pdf_to_db(pdf_path):
             'patient_score': safe_float(t[2]),
             'standard_score': safe_float(t[3]),
             'percentile': safe_float(t[4]),
-            'validity_index': t[5] if len(t) > 5 else None
+            'validity_index': t[5] if len(t) > 5 else None,
+            'patient_id': patient_id
         }
         for t in raw_score_tuples
     ]
@@ -188,13 +190,30 @@ def import_pdf_to_db(pdf_path):
 
     # Epworth
     epworth_total, epworth_responses = parse_epworth(raw_text, patient_id)
-    # Convert tuples to dicts for DB insert
     epworth_response_dicts = [
-        {'situation': t[2], 'score': t[3]} for t in epworth_responses
+        {'situation': t[2], 'score': t[3], 'patient_id': patient_id} for t in epworth_responses
     ]
     insert_epworth_responses(session_id, epworth_response_dicts)
-    if epworth_total is not None:
-        insert_epworth_summary(session_id, epworth_total)
+    # Robust: Always sum scores from parsed responses for total
+    calculated_total = sum(int(resp['score']) for resp in epworth_response_dicts if resp['score'] is not None)
+    # Determine interpretation comment (was previously called severity)
+    if calculated_total <= 5:
+        interpretation = "Low level of normal daytime sleepiness."
+    elif calculated_total <= 10:
+        interpretation = "Normal level of daytime sleepiness."
+    elif calculated_total <= 12:
+        interpretation = "Mild excessive daytime sleepiness."
+    elif calculated_total <= 15:
+        interpretation = "Moderate excessive daytime sleepiness."
+    elif calculated_total <= 24:
+        interpretation = "Severe excessive daytime sleepiness."
+    else:
+        interpretation = "Invalid/unknown Epworth score."
+    if calculated_total > 0:
+        insert_epworth_summary(session_id, {'total_score': calculated_total, 'interpretation': interpretation, 'patient_id': patient_id})
+        logger.info(f"Inserted Epworth summary with interpretation: {interpretation}")
+    else:
+        logger.warning(f"Epworth summary not inserted: no valid scores found for patient {patient_id}, session {session_id}")
 
     # Subtests
     logger.info(f"Parsing cognitive subtests from PDF: {pdf_path}")
@@ -206,7 +225,8 @@ def import_pdf_to_db(pdf_path):
             'score': t[3],
             'standard_score': t[4],
             'percentile': t[5],
-            'validity_flag': t[6] if len(t) > 6 else True
+            'validity_flag': t[6] if len(t) > 6 else True,
+            'patient_id': patient_id
         }
         for t in subtest_tuples
     ]
@@ -214,14 +234,20 @@ def import_pdf_to_db(pdf_path):
 
     # ASRS
     asrs_tuples = parse_asrs_with_bounding_boxes(pdf_path, patient_id)
+    # Build a mapping from question_number to question_text using DSM5_ASRS_MAPPING
+    question_number_to_text = {int(q_num): asrs_text for (_, asrs_text, q_num) in DSM5_ASRS_MAPPING}
+    logger.info(f"ASRS question_number_to_text mapping: {question_number_to_text}")
     asrs_dicts = [
         {
             'question_number': t[1],
             'part': t[2],
-            'response': t[3]
+            'response': t[3],
+            'question_text': question_number_to_text.get(int(t[1]), None),
+            'patient_id': patient_id
         }
         for t in asrs_tuples
     ]
+    logger.info(f"ASRS dicts to insert: {asrs_dicts}")
     insert_asrs_responses(session_id, asrs_dicts)
 
     # NPQ
@@ -236,64 +262,51 @@ def import_pdf_to_db(pdf_path):
                 'question_text': t[1],
                 'score': t[2],
                 'severity': t[3],
-                'domain': t[4] if len(t) > 4 else None
+                'domain': t[4] if len(t) > 4 else None,
+                'patient_id': patient_id
             }
             for t in npq_questions
         ]
         npq_domain_scores = extract_npq_domain_scores_from_pdf(pdf_path, npq_pages)
         npq_domain_scores = [
-            {'domain': t[0], 'score': t[1], 'severity': t[2]}
-            for t in npq_domain_scores
-        ]
-    else:
-        npq_section_text = '\n'.join([lines[i] for i in npq_pages]) if npq_pages else raw_text
-        npq_questions = parse_npq_questions_from_text(npq_section_text)
-        npq_questions = [
             {
-                'question_number': t[0],
-                'question_text': t[1],
-                'score': t[2],
-                'severity': t[3],
-                'domain': None
+                'domain': t[0],
+                'score': t[1],
+                'severity': t[2],
+                'patient_id': patient_id
             }
-            for t in npq_questions
+            for t in npq_domain_scores
         ]
     insert_npq_responses(session_id, npq_questions)
     insert_npq_domain_scores(session_id, npq_domain_scores)
 
-    # DSM Diagnosis
-    dsm = extract_dsm_diagnosis(asrs_dicts, patient_id)
-    # Robustly normalize dsm to a list of dicts
-    if isinstance(dsm, str):
-        dsm = [{'diagnosis': dsm}]
-    elif isinstance(dsm, dict):
-        dsm = [dsm]
-    elif isinstance(dsm, list):
-        if all(isinstance(x, str) for x in dsm):
-            dsm = [{'diagnosis': x} for x in dsm]
-        elif all(isinstance(x, dict) for x in dsm):
-            pass  # already correct
-        else:
-            logger.error(f"DSM diagnosis list contains unexpected types: {dsm}")
-            dsm = []
+    # DSM
+    logger.info(f"ASRS dicts for DSM extraction: {asrs_dicts}")
+    dsm_result = extract_dsm_diagnosis(asrs_dicts, patient_id)
+    logger.info(f"DSM extraction result: {dsm_result}")
+    if dsm_result:
+        # Insert DSM diagnosis
+        dsm_diag = {
+            'inattentive_criteria_met': dsm_result['inattentive_criteria_met'],
+            'hyperactive_criteria_met': dsm_result['hyperactive_criteria_met'],
+            'diagnosis': dsm_result['diagnosis'],
+            'patient_id': patient_id
+        }
+        insert_dsm_diagnosis(session_id, [dsm_diag])
+        # Insert DSM criteria met
+        criteria_data = []
+        for crit_name, domain, met in dsm_result['dsm_criteria_data']:
+            criteria_data.append({
+                'dsm_criterion': crit_name,
+                'dsm_category': domain,
+                'is_met': met,
+                'patient_id': patient_id
+            })
+        if criteria_data:
+            insert_dsm_criteria_met(session_id, criteria_data)
+        logger.info(f"Inserted DSM diagnosis and {len(criteria_data)} criteria met records.")
     else:
-        logger.error(f"DSM diagnosis is unexpected type: {type(dsm)} value: {dsm}")
-        dsm = []
-    if dsm:
-        insert_dsm_diagnosis(session_id, dsm)
-        # Robust conversion for dsm_criteria_data
-        criteria_data = dsm[0].get('dsm_criteria_data', [])
-        if criteria_data and isinstance(criteria_data, list):
-            if all(isinstance(x, tuple) for x in criteria_data):
-                criteria_data = [
-                    {
-                        'dsm_criterion': t[0],
-                        'dsm_category': t[1],
-                        'is_met': t[2],
-                    }
-                    for t in criteria_data
-                ]
-        insert_dsm_criteria_met(session_id, criteria_data)
+        logger.warning(f"No DSM diagnosis extracted for patient {patient_id}.")
 
     logger.info(f"Successfully imported all available data for session ID: {session_id}")
     return True

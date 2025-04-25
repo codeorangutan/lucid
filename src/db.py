@@ -2,10 +2,11 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime, Boolean
 from sqlalchemy.orm import declarative_base, sessionmaker
 import os
 from datetime import datetime
+from config_utils import get_lucid_data_db
 
-# Use unencrypted SQLite for development
-DB_FILENAME = 'lucid_data.db'
-DATABASE_URL = f'sqlite:///{DB_FILENAME}'
+# Get the absolute path from config
+DATABASE_PATH = get_lucid_data_db()
+DATABASE_URL = f'sqlite:///{DATABASE_PATH}'
 
 engine = create_engine(
     DATABASE_URL,
@@ -38,6 +39,7 @@ class Referral(Base):
     report_sent_date = Column(DateTime)
     test_resent = Column(Boolean, default=False)
     test_resent_time = Column(DateTime, nullable=True)
+    pdf_path = Column(String)
 
 class TestSession(Base):
     __tablename__ = 'test_sessions'
@@ -51,6 +53,7 @@ class CognitiveScore(Base):
     __tablename__ = 'cognitive_scores'
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
+    patient_id = Column(String)  # Unique patient identifier from PDF
     domain = Column(String, nullable=False)
     patient_score = Column(String)
     standard_score = Column(String)
@@ -62,6 +65,7 @@ class SubtestResult(Base):
     __tablename__ = 'subtest_results'
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
+    patient_id = Column(String)  # Unique patient identifier from PDF
     subtest_name = Column(String, nullable=False)
     metric = Column(String, nullable=False)
     score = Column(Float)
@@ -74,15 +78,18 @@ class ASRSResponse(Base):
     __tablename__ = 'asrs_responses'
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
+    patient_id = Column(String)  # Unique patient identifier from PDF
     question_number = Column(Integer, nullable=False)
     part = Column(String, nullable=True)
     response = Column(String, nullable=False)
+    question_text = Column(String, nullable=True)
 
 # --- DSM Diagnosis Model ---
 class DSMDiagnosis(Base):
     __tablename__ = 'dsm_diagnoses'
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
+    patient_id = Column(String)  # Unique patient identifier from PDF
     diagnosis = Column(String, nullable=False)
     code = Column(String, nullable=True)
     severity = Column(String, nullable=True)
@@ -93,6 +100,7 @@ class DSMCriteriaMet(Base):
     __tablename__ = 'dsm_criteria_met'
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
+    patient_id = Column(String)  # Unique patient identifier from PDF
     dsm_criterion = Column(String, nullable=False)
     dsm_category = Column(String, nullable=False)
     is_met = Column(Boolean, nullable=False)
@@ -102,6 +110,7 @@ class EpworthResponse(Base):
     __tablename__ = 'epworth_responses'
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
+    patient_id = Column(String)  # Unique patient identifier from PDF
     situation = Column(String, nullable=False)
     score = Column(Integer, nullable=False)
 
@@ -110,6 +119,7 @@ class EpworthSummary(Base):
     __tablename__ = 'epworth_summary'
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
+    patient_id = Column(String)  # Unique patient identifier from PDF
     total_score = Column(Integer, nullable=False)
     interpretation = Column(String, nullable=True)
 
@@ -118,6 +128,7 @@ class NPQDomainScore(Base):
     __tablename__ = 'npq_domain_scores'
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
+    patient_id = Column(String)  # Unique patient identifier from PDF
     domain = Column(String, nullable=False)
     score = Column(Integer, nullable=False)
     severity = Column(String, nullable=False)
@@ -127,6 +138,7 @@ class NPQResponse(Base):
     __tablename__ = 'npq_responses'
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
+    patient_id = Column(String)  # Unique patient identifier from PDF
     domain = Column(String, nullable=False)
     question_number = Column(Integer, nullable=False)
     question_text = Column(String, nullable=False)
@@ -135,6 +147,9 @@ class NPQResponse(Base):
 
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
+
+def get_session():
+    return Session()
 
 def save_referral(parsed, subject, body, referrer=None, referrer_email=None, referral_received_time=None, referral_confirmed_time=None):
     with Session() as session:
@@ -206,6 +221,7 @@ def insert_cognitive_scores(session_id, scores):
         records = [
             CognitiveScore(
                 session_id=session_id,
+                patient_id=score.get('patient_id'),  # Add patient_id
                 domain=score['domain'],
                 patient_score=clean(score.get('patient_score')),
                 standard_score=clean(score.get('standard_score')),
@@ -232,6 +248,7 @@ def insert_subtest_results(session_id, subtests):
         records = [
             SubtestResult(
                 session_id=session_id,
+                patient_id=s['patient_id'],  # Add patient_id
                 subtest_name=s['subtest_name'],
                 metric=s['metric'],
                 score=s.get('score'),
@@ -251,7 +268,7 @@ def insert_asrs_responses(session_id, responses):
     Insert ASRS responses for a session.
     Args:
         session_id (int): ID of the test session.
-        responses (list of dict): Each dict should have keys: question_number, part, response.
+        responses (list of dict): Each dict should have keys: question_number, part, response, question_text.
     Returns:
         int: Number of records inserted.
     """
@@ -259,9 +276,11 @@ def insert_asrs_responses(session_id, responses):
         records = [
             ASRSResponse(
                 session_id=session_id,
+                patient_id=resp.get('patient_id'),  # Add patient_id
                 question_number=resp['question_number'],
                 part=resp.get('part'),
                 response=resp['response'],
+                question_text=resp.get('question_text'),
             )
             for resp in responses
         ]
@@ -283,6 +302,7 @@ def insert_dsm_diagnosis(session_id, diagnoses):
         records = [
             DSMDiagnosis(
                 session_id=session_id,
+                patient_id=diag.get('patient_id'),  # Add patient_id
                 diagnosis=diag['diagnosis'],
                 code=diag.get('code'),
                 severity=diag.get('severity'),
@@ -308,6 +328,7 @@ def insert_dsm_criteria_met(session_id, criteria_data):
         records = [
             DSMCriteriaMet(
                 session_id=session_id,
+                patient_id=item.get('patient_id'),  # Add patient_id
                 dsm_criterion=item['dsm_criterion'],
                 dsm_category=item['dsm_category'],
                 is_met=bool(item['is_met']),
@@ -332,6 +353,7 @@ def insert_epworth_responses(session_id, responses):
         records = [
             EpworthResponse(
                 session_id=session_id,
+                patient_id=resp.get('patient_id'),  # Add patient_id
                 situation=resp['situation'],
                 score=resp['score'],
             )
@@ -354,6 +376,7 @@ def insert_epworth_summary(session_id, summary):
     with Session() as session:
         record = EpworthSummary(
             session_id=session_id,
+            patient_id=summary.get('patient_id'),  # Add patient_id
             total_score=summary['total_score'],
             interpretation=summary.get('interpretation'),
         )
@@ -375,6 +398,7 @@ def insert_npq_domain_scores(session_id, scores):
         records = [
             NPQDomainScore(
                 session_id=session_id,
+                patient_id=score.get('patient_id'),  # Add patient_id
                 domain=score['domain'],
                 score=score['score'],
                 severity=score['severity'],
@@ -399,6 +423,7 @@ def insert_npq_responses(session_id, responses):
         records = [
             NPQResponse(
                 session_id=session_id,
+                patient_id=resp.get('patient_id'),  # Add patient_id
                 domain=resp['domain'],
                 question_number=resp['question_number'],
                 question_text=resp['question_text'],

@@ -1,7 +1,8 @@
 import sqlite3
 import sys
+from config_utils import get_cns_vs_reports_db
 
-DB_PATH = 'cns_vs_reports.db'
+DB_PATH = get_cns_vs_reports_db()
 
 def delete_reports_for_patient(patient_id, db_path=DB_PATH):
     conn = sqlite3.connect(db_path)

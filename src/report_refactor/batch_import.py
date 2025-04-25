@@ -1,6 +1,7 @@
 from pathlib import Path
 import sqlite3
 from cognitive_importer import create_db, import_pdf_to_db
+from config_utils import get_lucid_data_db
 
 def batch_process_pdfs(folder="tests", reset_db=False):
     """
@@ -35,7 +36,7 @@ def batch_process_pdfs(folder="tests", reset_db=False):
             
             # Check if patient already exists
             patient_id = pdf.stem.split('-')[0]  # Extract patient ID from filename
-            with sqlite3.connect("cognitive_analysis.db") as conn:
+            with sqlite3.connect(get_lucid_data_db()) as conn:
                 cur = conn.cursor()
                 cur.execute("SELECT 1 FROM patients WHERE patient_id = ?", (patient_id,))
                 if cur.fetchone():

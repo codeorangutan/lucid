@@ -1,0 +1,60 @@
+LUCID Project: Status & Next Steps (as of 24th April)
+=======================================================
+
+Current Status:
+---------------
+- The orchestrator pipeline is modular and robustly logged.
+- Intake and test request stages are implemented and functional.
+- Report monitoring (process_new_reports) detects CNS VS report notification emails, downloads PDFs, and saves them (raw) to the database.
+- Logging is robust and configuration is partially centralized.
+- Stubs exist for report parsing, reformatting, and emailing, but these stages are not yet implemented.
+
+Outstanding Tasks / What Needs to Happen Next:
+---------------------------------------------
+1. **Parsing & Upload Stage**
+   - Implement a new orchestrator function (e.g., parse_and_upload_reports) to:
+     - Find new reports (status: report_downloaded, not yet parsed).
+     - Call the report parser (cognitive_importer.py) on each.
+     - Upload parsed data to the DB.
+     - Update status to report_parsed.
+
+2. **Reformatting Stage**
+   - Complete reformat_and_save_reports:
+     - Find parsed reports (status: report_parsed, not yet reformatted).
+     - Call the reformatter.
+     - Save reformatted report to DB and/or filesystem.
+     - Update status to report_reformatted.
+
+3. **Sending Stage**
+   - Complete send_reports_to_referrers:
+     - Find reformatted reports (status: report_reformatted, not yet sent).
+     - Email to referrers.
+     - Update status to report_sent.
+
+4. **Testing & Robustness**
+   - Implement unit and integration tests for each stage.
+   - Ensure error handling is robust and logs are scrubbed of sensitive data.
+
+5. **Security & Configuration**
+   - Centralize all configuration (credentials, intervals, etc.).
+   - Begin migration to encrypted DB and log scrubbing.
+
+6. **Deprecation & Cleanup**
+   - Move old/unused scripts to /deprecated.
+   - Regularly update documentation and planning files.
+
+Immediate Next Step:
+--------------------
+- Implement and test the parsing/upload stage so that raw PDFs are automatically parsed and structured data is uploaded to the DB for downstream processing.
+
+---
+This plan reflects the pipeline's current state and the next priorities for robust, testable, and secure automation.
+
+To Do:
+- fix the download click of pdfs
+- fix the database connection
+
+Optional:
+- dashboard trigger for PDF download and parse- 
+- each pdf is 100kb - think about storage limits here 
+- Set up Tailwind CSS before production

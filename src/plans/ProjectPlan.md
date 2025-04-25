@@ -72,8 +72,12 @@ LUCID is a healthcare automation app for managing cognitive assessment referrals
 - [ ] Add placeholder for interpretation (optional)
 - [ ] Load report into DB as Reformatted report
 - [ ] Test output format with samples
-
----
+Using: 
+JSON format report 
+from src
+python report_engine/report_generator_modern.py --json json/40436.json --template "G:\My Drive\Programming\Lucid the App\Project Folder\templates\report_template_radar_bar.html" --output ../output/report_40436.pdf
+from root
+---python src/report_engine/report_generator_modern.py --json src/json/40436.json --template "G:\My Drive\Programming\Lucid the App\Project Folder\templates\report_template_radar_bar.html" --output output/report_40436.pdf
 
 ## 📤 Phase 7: Email Sender
 - [ ] Write script to email with attachments (`smtplib`)

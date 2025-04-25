@@ -1,0 +1,13 @@
+The template now includes:
+
+A new section titled "Cognitive Domain Profile" placed after "Demographics".
+A <canvas id="cognitiveRadarChart"> element within this new section.
+An updated populateReport function that:
+Defines the order of domains for the radar chart (radarDomainsOrder).
+Extracts labels and percentile data from reportData.cognitive_scores based on the defined order.
+Calls a new function createRadarChart to render the chart using Chart.js.
+The createRadarChart function handles the Chart.js configuration, styling (using colors that complement the Tailwind theme), and rendering. It also destroys any previous chart instance if populateReport is called multiple times.
+Remember to assign your JSON data to the window.reportData variable and call populateReport() after the data is loaded to render the report with the chart.
+
+
+Sources and related content

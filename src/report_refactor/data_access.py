@@ -1,7 +1,9 @@
 import sqlite3
 import logging
+import os
 import pandas as pd
 from collections import defaultdict
+from config_utils import get_lucid_data_db
 
 # Set up logging
 logging.basicConfig(
@@ -16,23 +18,20 @@ def debug_log(message):
     logging.debug(message)
     print(message)
 
-def patient_exists_in_db(patient_id, db_path="cognitive_analysis.db"):
+def patient_exists_in_db(patient_id, db_path=None):
     """Check if the patient has valid data in the database."""
+    if db_path is None:
+        db_path = get_lucid_data_db()
     try:
         conn = sqlite3.connect(db_path)
         cur = conn.cursor()
-        
-        # Check if patient exists in the patients table
-        patient = cur.execute("SELECT * FROM patients WHERE patient_id = ?", (patient_id,)).fetchone()
-        
+        # Check if patient exists in referrals table
+        patient = cur.execute("SELECT * FROM referrals WHERE id_number = ?", (patient_id,)).fetchone()
         # Check if cognitive scores exist for the patient
         scores = cur.execute("SELECT COUNT(*) FROM cognitive_scores WHERE patient_id = ?", (patient_id,)).fetchone()
-        
         # Check if subtest results exist for the patient
         subtests = cur.execute("SELECT COUNT(*) FROM subtest_results WHERE patient_id = ?", (patient_id,)).fetchone()
-        
         conn.close()
-        
         # Return True if the patient exists and has at least some data
         return (patient is not None) and (scores[0] > 0 or subtests[0] > 0)
     
@@ -40,11 +39,13 @@ def patient_exists_in_db(patient_id, db_path="cognitive_analysis.db"):
         debug_log(f"[ERROR] Error checking if patient exists: {e}")
         return False
 
-def check_data_completeness(patient_id, db_path="cognitive_analysis.db"):
+def check_data_completeness(patient_id, db_path=None):
     """
     Check if all required data components are available for the patient.
     Returns a dictionary with status of each component.
     """
+    if db_path is None:
+        db_path = get_lucid_data_db()
     result = {
         "patient_info": False,
         "cognitive_scores": False,
@@ -58,9 +59,8 @@ def check_data_completeness(patient_id, db_path="cognitive_analysis.db"):
     try:
         conn = sqlite3.connect(db_path)
         cur = conn.cursor()
-        
         # Check patient info
-        patient = cur.execute("SELECT * FROM patients WHERE patient_id = ?", (patient_id,)).fetchone()
+        patient = cur.execute("SELECT * FROM referrals WHERE id_number = ?", (patient_id,)).fetchone()
         result["patient_info"] = patient is not None
         
         # Check cognitive scores
@@ -75,17 +75,26 @@ def check_data_completeness(patient_id, db_path="cognitive_analysis.db"):
         asrs = cur.execute("SELECT COUNT(*) FROM asrs_responses WHERE patient_id = ?", (patient_id,)).fetchone()
         result["asrs"] = asrs[0] > 0
         
-        # Check DASS
-        dass = cur.execute("SELECT COUNT(*) FROM dass21_scores WHERE patient_id = ?", (patient_id,)).fetchone()
-        result["dass"] = dass[0] > 0
+        # Check DASS (dsm_diagnoses fallback)
+        try:
+            dass = cur.execute("SELECT COUNT(*) FROM dsm_diagnoses WHERE patient_id = ?", (patient_id,)).fetchone()
+            result["dass"] = dass[0] > 0
+        except Exception:
+            result["dass"] = False
         
-        # Check Epworth
-        epworth = cur.execute("SELECT COUNT(*) FROM epworth_scores WHERE patient_id = ?", (patient_id,)).fetchone()
-        result["epworth"] = epworth[0] > 0
+        # Check Epworth (epworth_summary fallback)
+        try:
+            epworth = cur.execute("SELECT COUNT(*) FROM epworth_summary WHERE patient_id = ?", (patient_id,)).fetchone()
+            result["epworth"] = epworth[0] > 0
+        except Exception:
+            result["epworth"] = False
         
-        # Check NPQ
-        npq = cur.execute("SELECT COUNT(*) FROM npq_scores WHERE patient_id = ?", (patient_id,)).fetchone()
-        result["npq"] = npq[0] > 0
+        # Check NPQ (npq_domain_scores fallback)
+        try:
+            npq = cur.execute("SELECT COUNT(*) FROM npq_domain_scores WHERE patient_id = ?", (patient_id,)).fetchone()
+            result["npq"] = npq[0] > 0
+        except Exception:
+            result["npq"] = False
         
         conn.close()
         
@@ -94,20 +103,24 @@ def check_data_completeness(patient_id, db_path="cognitive_analysis.db"):
     
     return result
 
-def get_patient_data(patient_id, db_path="cognitive_analysis.db"):
-    """Get patient basic information"""
+def get_patient_data(patient_id, db_path=None):
+    """Get patient basic information from referrals table using id_number as patient identifier"""
+    if db_path is None:
+        db_path = get_lucid_data_db()
     try:
         conn = sqlite3.connect(db_path)
         cur = conn.cursor()
-        patient = cur.execute("SELECT * FROM patients WHERE patient_id = ?", (patient_id,)).fetchone()
+        patient = cur.execute("SELECT * FROM referrals WHERE id_number = ?", (patient_id,)).fetchone()
         conn.close()
         return patient
     except Exception as e:
         debug_log(f"[ERROR] Error getting patient data: {e}")
         return None
 
-def get_cognitive_scores(patient_id, db_path="cognitive_analysis.db"):
-    """Get cognitive scores for a patient"""
+def get_cognitive_scores(patient_id, db_path=None):
+    """Get cognitive scores for a patient using patient_id (VARCHAR)"""
+    if db_path is None:
+        db_path = get_lucid_data_db()
     try:
         conn = sqlite3.connect(db_path)
         cur = conn.cursor()
@@ -118,8 +131,10 @@ def get_cognitive_scores(patient_id, db_path="cognitive_analysis.db"):
         debug_log(f"[ERROR] Error getting cognitive scores: {e}")
         return []
 
-def get_subtest_results(patient_id, db_path="cognitive_analysis.db"):
-    """Get subtest results for a patient"""
+def get_subtest_results(patient_id, db_path=None):
+    """Get subtest results for a patient using patient_id (VARCHAR)"""
+    if db_path is None:
+        db_path = get_lucid_data_db()
     try:
         conn = sqlite3.connect(db_path)
         cur = conn.cursor()
@@ -130,8 +145,10 @@ def get_subtest_results(patient_id, db_path="cognitive_analysis.db"):
         debug_log(f"[ERROR] Error getting subtest results: {e}")
         return []
 
-def get_asrs_responses(patient_id, db_path="cognitive_analysis.db"):
-    """Get ASRS responses for a patient"""
+def get_asrs_responses(patient_id, db_path=None):
+    """Get ASRS responses for a patient using patient_id (VARCHAR)"""
+    if db_path is None:
+        db_path = get_lucid_data_db()
     try:
         conn = sqlite3.connect(db_path)
         cur = conn.cursor()
@@ -142,50 +159,66 @@ def get_asrs_responses(patient_id, db_path="cognitive_analysis.db"):
         debug_log(f"[ERROR] Error getting ASRS responses: {e}")
         return []
 
-def get_dass_data(patient_id, db_path="cognitive_analysis.db"):
-    """Get DASS scores and responses for a patient"""
+def get_dass_data(patient_id, db_path=None):
+    """Get DASS data for a patient (fallback: returns empty if table not present)"""
+    if db_path is None:
+        db_path = get_lucid_data_db()
     try:
         conn = sqlite3.connect(db_path)
         cur = conn.cursor()
-        summary = cur.execute("SELECT * FROM dass21_scores WHERE patient_id = ?", (patient_id,)).fetchall()
-        items = cur.execute("SELECT * FROM dass21_responses WHERE patient_id = ?", (patient_id,)).fetchall()
+        # Try to get DASS from dsm_diagnoses or dsm_criteria_met as fallback
+        try:
+            summary = cur.execute("SELECT * FROM dsm_diagnoses WHERE patient_id = ?", (patient_id,)).fetchall()
+        except Exception:
+            summary = []
+        try:
+            items = cur.execute("SELECT * FROM dsm_criteria_met WHERE patient_id = ?", (patient_id,)).fetchall()
+        except Exception:
+            items = []
         conn.close()
         return {"summary": summary, "items": items}
     except Exception as e:
         debug_log(f"[ERROR] Error getting DASS data: {e}")
         return {"summary": [], "items": []}
 
-def get_epworth_scores(patient_id, db_path="cognitive_analysis.db"):
-    """Get Epworth scores for a patient"""
+def get_epworth_scores(patient_id, db_path=None):
+    """Get Epworth responses and summary for a patient using patient_id (VARCHAR)"""
+    if db_path is None:
+        db_path = get_lucid_data_db()
     try:
         conn = sqlite3.connect(db_path)
         cur = conn.cursor()
-        epworth = cur.execute("SELECT * FROM epworth_scores WHERE patient_id = ?", (patient_id,)).fetchall()
+        responses = cur.execute("SELECT * FROM epworth_responses WHERE patient_id = ?", (patient_id,)).fetchall()
+        summary = cur.execute("SELECT * FROM epworth_summary WHERE patient_id = ?", (patient_id,)).fetchall()
         conn.close()
-        return epworth
+        return {"responses": responses, "summary": summary}
     except Exception as e:
         debug_log(f"[ERROR] Error getting Epworth scores: {e}")
-        return []
+        return {"responses": [], "summary": []}
 
-def get_npq_data(patient_id, db_path="cognitive_analysis.db"):
-    """Get NPQ scores and questions for a patient"""
+def get_npq_data(patient_id, db_path=None):
+    """Get NPQ domain scores and responses for a patient using patient_id (VARCHAR)"""
+    if db_path is None:
+        db_path = get_lucid_data_db()
     try:
         conn = sqlite3.connect(db_path)
         cur = conn.cursor()
-        scores = cur.execute("SELECT * FROM npq_scores WHERE patient_id = ?", (patient_id,)).fetchall()
-        questions = cur.execute("SELECT * FROM npq_questions WHERE patient_id = ?", (patient_id,)).fetchall()
+        domain_scores = cur.execute("SELECT * FROM npq_domain_scores WHERE patient_id = ?", (patient_id,)).fetchall()
+        responses = cur.execute("SELECT * FROM npq_responses WHERE patient_id = ?", (patient_id,)).fetchall()
         conn.close()
-        return {"scores": scores, "questions": questions}
+        return {"scores": domain_scores, "questions": responses}
     except Exception as e:
         debug_log(f"[ERROR] Error getting NPQ data: {e}")
         return {"scores": [], "questions": []}
 
-def get_domain_scores_for_radar(patient_id, db_path="cognitive_analysis.db"):
+def get_domain_scores_for_radar(patient_id, db_path=None):
     """
     Directly query the database for domain scores needed for the radar chart.
     Returns a dictionary of domain names to percentile scores.
     Also returns a list of invalid domain names.
     """
+    if db_path is None:
+        db_path = get_lucid_data_db()
     domain_percentiles = {}
     invalid_domains = []
     
@@ -287,11 +320,16 @@ def get_domain_scores_for_radar(patient_id, db_path="cognitive_analysis.db"):
     
     return domain_percentiles, invalid_domains
 
-def fetch_all_patient_data(patient_id, db_path="cognitive_analysis.db"):
+def fetch_all_patient_data(patient_id, db_path=None):
     """
     Fetch all data for a patient in one go.
     Returns a dictionary with all patient data.
     """
+    if db_path is None:
+        db_path = get_lucid_data_db()
+
+    print(f"DEBUG: Attempting to connect to DB at absolute path: {os.path.abspath(db_path)}")
+
     try:
         # Get individual data components
         patient = get_patient_data(patient_id, db_path)
