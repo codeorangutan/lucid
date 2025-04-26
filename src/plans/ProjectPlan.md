@@ -136,7 +136,7 @@ Next Steps:
 
 ## 🚀 Phase 11: Testing, Docs, and Deployment
 - [ ] Document security policies in `README.md`
-- [ ] Purchase Raspberry Pi ? 8GB model
+- [ ] Purchase Raspberry Pi ? 8GB model + Uninterruptible powersupply
 - [ ] Deployment to Raspberry Pi for self-hosting at home
 - [ ] Security audit
 - [ ] Ensure encrypted SQL deployed

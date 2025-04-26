@@ -38,16 +38,7 @@
         .badge-moderate { background-color: #fef3c7; color: #ea580c; } /* yellow-100, orange-600 */
         .badge-mild { background-color: #fef9c3; color: #f59e42; } /* yellow-100, orange-500 */
         .badge-not-problem { background-color: #dbeafe; color: #2563eb; } /* blue-100, blue-600 */
-        .badge-invalid {
-            background-color: #fee2e2;
-            color: #b91c1c;
-            font-size: 0.7em;
-            font-weight: 700;
-            padding: 0.15em 0.5em;
-            border-radius: 0.375rem;
-            display: inline-block;
-            margin-top: 0.25em;
-        }
+
         /* Style for tables */
         table {
             width: 100%;
@@ -74,11 +65,6 @@
             font-size: 0.875rem; /* text-sm */
             color: #334155 !important; /* slate-700 */
         }
-        /* Equal row/bar height for table and bar chart */
-        #cognitive-scores-table tr {
-            height: 48px;
-        }
-        /* Bar chart width and height override */
         /* Card styling */
         .report-card {
             background-color: white;
@@ -89,39 +75,22 @@
         }
         /* Ensure canvas is responsive */
         .chart-container canvas {
-            width: 600px !important;
-            height: 600px !important;
+            max-width: 100%;
+            height: 480px !important;
+            min-height: 480px !important;
+            width: 800px !important;
             min-width: 600px !important;
-            min-height: 600px !important;
-            max-width: 600px !important;
-            max-height: 600px !important;
             background: #fff;
         }
         h1, h2, h3, .text-blue-heading {
             color: #1e3a8a !important; /* text-blue-900 */
         }
-        .bar-bg {
-            background: #e0e7ff;
-            border-radius: 8px;
-            height: 18px;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-            min-width: 80px;
-            margin-top: 2px;
-            margin-bottom: 2px;
-        }
-        .bar-fill {
-            background: #2563eb;
-            height: 100%;
-            border-radius: 8px 0 0 8px;
-            transition: width 0.4s;
-            min-width: 2px;
-        }
-        /* Mildly bold domain column */
-        .cognitive-domain {
-            font-weight: 500;
-            color: #334155;
+        /* Bar chart width and height override */
+        #cognitiveBarChart {
+            width: 250px !important;
+            min-width: 250px !important;
+            height: 800px !important;
+            min-height: 800px !important;
         }
     </style>
     <!-- Inject JSON data for Chart.js and dynamic report rendering -->
@@ -140,9 +109,9 @@
         <header class="mb-8 text-center">
             <h1 class="text-3xl font-bold text-gray-800 mb-2">ADHD Cognitive Assessment Report</h1>
             <p class="text-lg text-gray-600">
-                Patient ID: <span id="patient-id">{{ report_data.patient.id_number or 'N/A' }}</span>
+                Patient ID: <span id="patient-id">{{ report_data.patient_id or 'N/A' }}</span>
                 &nbsp;|&nbsp;
-                Test Date: <span id="test-date">{{ report_data.patient.test_completed or 'N/A' }}</span>
+                Test Date: <span id="test-date">{{ report_data.test_date or 'N/A' }}</span>
             </p>
         </header>
 
@@ -155,8 +124,8 @@
 
         <section class="report-card mb-6" aria-labelledby="cognitive-profile-heading">
             <h2 id="cognitive-profile-heading" class="text-xl font-semibold text-gray-700 mb-4">Cognitive Domain Profile (Percentiles)</h2>
-            <div class="relative mx-auto chart-container" style="width: 600px; height: 600px;">
-                <canvas id="cognitiveRadarChart" width="600" height="600"></canvas>
+            <div class="relative mx-auto chart-container" style="max-width: 500px;">
+                <canvas id="cognitiveRadarChart"></canvas>
             </div>
             <p class="text-center text-xs text-gray-500 mt-2">Scores shown are percentiles (%). Higher scores indicate better performance relative to peers.</p>
         </section>
@@ -166,17 +135,17 @@
 
         <section class="report-card" aria-labelledby="cognitive-scores-heading">
             <h2 id="cognitive-scores-heading" class="text-xl font-semibold text-gray-700 mb-4">Cognitive Domain Scores</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <div class="md:col-span-2">
                     <div class="overflow-x-auto">
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
                                 <tr>
-                                    <th scope="col" class="text-left">Domain</th>
-                                    <th scope="col" class="text-left">Standard Score</th>
-                                    <th scope="col" class="text-left">Percentile</th>
-                                    <th scope="col" class="text-center">Rating</th>
-                                    <th scope="col" class="text-left">Graph</th>
+                                    <th scope="col">Domain</th>
+                                    <th scope="col">Std Score</th>
+                                    <th scope="col">%ile</th>
+                                    <th scope="col">Class</th>
+                                    <th scope="col">Valid</th>
                                 </tr>
                             </thead>
                             <tbody id="cognitive-scores-table" class="bg-white divide-y divide-gray-200">
@@ -186,30 +155,19 @@
                     </div>
                     <div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
                         <h3 class="text-md font-semibold text-gray-700 mb-2">Score Interpretation Guide</h3>
-                        <div class="flex flex-row justify-between items-end mb-2" style="gap:0.5rem;">
-                            <span class="flex flex-col items-center flex-1">
-                                <span class="badge badge-very-low">≤ 2</span>
-                                <span class="text-xs text-gray-700 mt-1">Very Low</span>
-                            </span>
-                            <span class="flex flex-col items-center flex-1">
-                                <span class="badge badge-low">2-9</span>
-                                <span class="text-xs text-gray-700 mt-1">Low</span>
-                            </span>
-                            <span class="flex flex-col items-center flex-1">
-                                <span class="badge badge-low-average">9-25</span>
-                                <span class="text-xs text-gray-700 mt-1">Low Average</span>
-                            </span>
-                            <span class="flex flex-col items-center flex-1">
-                                <span class="badge badge-average">25-75</span>
-                                <span class="text-xs text-gray-700 mt-1">Average</span>
-                            </span>
-                            <span class="flex flex-col items-center flex-1">
-                                <span class="badge badge-above-average">&gt; 75</span>
-                                <span class="text-xs text-gray-700 mt-1">Above Average</span>
-                            </span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                            <div><span class="badge badge-above-average mr-1">> 75%ile</span> Above Average</div>
+                            <div><span class="badge badge-average mr-1">25-75%ile</span> Average</div>
+                            <div><span class="badge badge-low-average mr-1">9-25%ile</span> Low Average</div>
+                            <div><span class="badge badge-low mr-1">2-9%ile</span> Low</div>
+                            <div><span class="badge badge-very-low mr-1">≤ 2%ile</span> Very Low</div>
                         </div>
-                        <p class="text-xs text-gray-500 mt-2">Classification based on Percentile (%ile).</p>
+                         <p class="text-xs text-gray-500 mt-2">Classification based on Percentile (%ile). Std Score = Standard Score.</p>
                     </div>
+                </div>
+                <div class="chart-container" style="height:480px;margin-top:56px;">
+                     <canvas id="cognitiveBarChart" style="height:100%; width:100%;"></canvas>
+                     <p class="text-center text-xs text-gray-500 mt-2">Standard Scores (Average = 100, SD = 15). Higher bars indicate better performance.</p>
                 </div>
             </div>
         </section>
@@ -222,9 +180,6 @@
                 <p class="text-center text-gray-500 py-4">Loading data...</p>
             </div>
         </section>
-
-        <!-- PAGE BREAK BEFORE ASRS/DSM Mapping -->
-        <div style="page-break-before: always;"></div>
 
         <section class="report-card" aria-labelledby="asrs-dsm-heading">
             <h2 id="asrs-dsm-heading" class="text-xl font-semibold text-gray-700 mb-4">ASRS to DSM-5 Mapping</h2>
@@ -324,7 +279,7 @@
         </section>
 
         <footer class="mt-12 text-center text-xs text-gray-500">
-            Report Generated: <span id="generation-date"></span> | Patient ID: <span id="patient-id-footer">{{ report_data.patient.id_number or 'N/A' }}</span>
+            Report Generated: <span id="generation-date"></span> | Patient ID: <span id="patient-id-footer">{{ report_data.patient_id or 'N/A' }}</span>
         </footer>
 
     </div>
@@ -338,6 +293,7 @@
         // ========================================================================
 
         let cognitiveRadarChartInstance = null; // To hold the radar chart instance
+        let cognitiveBarChartInstance = null; // To hold the bar chart instance
 
         // --- Helper Functions ---
         function getClassification(percentile) {
@@ -372,51 +328,9 @@
             }
         }
 
-        // --- HSL Gradient Functions for Bar Color ---
-        function getSegmentedColor(pct) {
-            pct = Math.max(0, Math.min(100, pct));
-            if (pct <= 2) {
-                return 'hsl(0, 100%, 80%)'; // flat red
-            } else if (pct <= 9) {
-                const t = (pct - 2) / (9 - 2); // 0–1
-                return lerpHSL({ h: 0, s: 100, l: 80 }, { h: 30, s: 100, l: 70 }, t); // red → orange
-            } else if (pct < 25) {
-                const t = (pct - 9) / (25 - 9);
-                return lerpHSL({ h: 30, s: 100, l: 70 }, { h: 55, s: 100, l: 60 }, t); // orange → yellow
-            } else if (pct === 25) {
-                return 'hsl(220, 80%, 60%)'; // blue at 25 exactly
-            } else if (pct <= 75) {
-                const t = (pct - 25) / (75 - 25);
-                return lerpHSL({ h: 220, s: 80, l: 60 }, { h: 220, s: 100, l: 40 }, t); // blue → intense
-            } else {
-                const t = (pct - 75) / (25);
-                return lerpHSL({ h: 220, s: 100, l: 40 }, { h: 220, s: 100, l: 30 }, t); // more intense blue
-            }
-        }
-        function lerpHSL(c1, c2, t) {
-            const h = c1.h + (c2.h - c1.h) * t;
-            const s = c1.s + (c2.s - c1.s) * t;
-            const l = c1.l + (c2.l - c1.l) * t;
-            return `hsl(${h.toFixed(0)}, ${s.toFixed(0)}%, ${l.toFixed(0)}%)`;
-        }
-
-        // Utility to set HiDPI canvas for crisp Chart.js rendering
-        function setHiDPICanvas(canvas, width, height) {
-            const dpr = window.devicePixelRatio || 1;
-            canvas.width = width * dpr;
-            canvas.height = height * dpr;
-            canvas.style.width = width + 'px';
-            canvas.style.height = height + 'px';
-            const ctx = canvas.getContext('2d');
-            ctx.setTransform(1, 0, 0, 1, 0, 0);
-            ctx.scale(dpr, dpr);
-        }
-
         // --- Chart Creation Functions ---
         function createRadarChart(labels, data) {
-            const canvas = document.getElementById('cognitiveRadarChart');
-            setHiDPICanvas(canvas, 600, 600);
-            const ctx = canvas.getContext('2d');
+            const ctx = document.getElementById('cognitiveRadarChart');
             if (!ctx) {
                 console.error("Canvas element for radar chart not found.");
                 return;
@@ -430,12 +344,81 @@
                 type: 'radar',
                 data: { labels: labels, datasets: [{ label: 'Cognitive Percentile', data: data, fill: true, backgroundColor: 'rgba(79, 70, 229, 0.2)', borderColor: primaryColor, pointBackgroundColor: pointColor, pointBorderColor: '#fff', pointHoverBackgroundColor: '#fff', pointHoverBorderColor: pointColor }] },
                 options: {
-                    responsive: false, maintainAspectRatio: false, elements: { line: { borderWidth: 2 } },
+                    responsive: true, maintainAspectRatio: true, elements: { line: { borderWidth: 2 } },
                     scales: { r: { angleLines: { color: gridColor }, grid: { color: gridColor }, pointLabels: { font: { family: "'Inter', sans-serif", size: 11 }, color: fontColor }, ticks: { beginAtZero: true, min: 0, max: 100, stepSize: 25, backdropColor: 'rgba(255, 255, 255, 0.75)', color: fontColor, font: { family: "'Inter', sans-serif" } }, suggestedMin: 0, suggestedMax: 100 } },
                     plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { return (context.dataset.label || '') + ': ' + (context.parsed.r !== null ? context.parsed.r + '%' : ''); } } } }
                 }
             });
         }
+
+        function createBarChart(labels, data) {
+             const ctx = document.getElementById('cognitiveBarChart');
+            if (!ctx) {
+                console.error("Canvas element for bar chart not found.");
+                return;
+            }
+            if (cognitiveBarChartInstance) { cognitiveBarChartInstance.destroy(); }
+
+            const primaryColor = '#2563eb'; // blue-600
+            const gridColor = '#dbeafe';    // blue-100
+            const fontColor = '#334155';    // slate-700
+
+            // Determine appropriate min/max for standard scores (e.g., 3 SDs from mean 100)
+            const minScore = 40; // Math.min(50, ...data); // Or a fixed value like 40-50
+            const maxScore = 130;// Math.max(150, ...data); // Or a fixed value like 130)
+
+            // --- DEBUG: Log what is being passed to Chart.js ---
+            console.log('Bar Chart Labels:', labels);
+            console.log('Bar Chart Data:', data);
+            // --- END DEBUG ---
+
+            const barOptions = {
+                indexAxis: 'y',
+                responsive: false,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        min: minScore,
+                        max: maxScore,
+                        grid: { color: gridColor },
+                        title: { display: true, text: 'Standard Score', color: fontColor, font: { family: "'Inter', sans-serif", size: 12 } },
+                        ticks: { color: fontColor, font: { family: "'Inter', sans-serif", size: 12 }, stepSize: 10 }
+                    },
+                    y: {
+                        grid: { color: gridColor },
+                        ticks: { color: fontColor, font: { family: "'Inter', sans-serif", size: 12 } }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Std Score: ${context.parsed.x ?? 'N/A'}`;
+                            }
+                        }
+                    }
+                },
+                barThickness: 22,
+                maxBarThickness: 32,
+                categoryPercentage: 0.8,
+                barPercentage: 0.8,
+            };
+            cognitiveBarChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Standard Score',
+                        data: data,
+                        backgroundColor: primaryColor,
+                        borderRadius: 8,
+                    }]
+                },
+                options: barOptions
+            });
+        }
+
 
         // --- Main Population Function ---
         function populateReport() {
@@ -446,27 +429,23 @@
                 return;
             }
 
-            // Populate Header & Footer (Patient ID and Test Date)
-            const patientIdHeaderElem = document.getElementById('patient-id');
-            if (patientIdHeaderElem && reportData.patient) {
-                patientIdHeaderElem.textContent = reportData.patient.id_number || 'N/A';
-            }
-            const testDateElem = document.getElementById('test-date');
-            if (testDateElem && reportData.patient) {
-                testDateElem.textContent = reportData.patient.test_completed || 'N/A';
-            }
-            const patientIdFooterElem = document.getElementById('patient-id-footer');
-            if (patientIdFooterElem && reportData.patient) {
-                patientIdFooterElem.textContent = reportData.patient.id_number || 'N/A';
-            }
+            const patientId = reportData.patient?.id_number || 'N/A';
 
-            // Populate Generation Date
+            // Populate Header & Footer
+            const patientIdHeaderElem = document.getElementById('patient-id-header');
+            if (patientIdHeaderElem) patientIdHeaderElem.textContent = patientId;
+            const patientIdFooterElem = document.getElementById('patient-id-footer');
+            if (patientIdFooterElem) patientIdFooterElem.textContent = patientId;
             const generationDateElem = document.getElementById('generation-date');
             if (generationDateElem) generationDateElem.textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
+            // Populate Test Date
+            const testDateElem = document.getElementById('test-date');
+            if (testDateElem) testDateElem.textContent = formatDate(reportData.patient?.referral_received_time);
+
             // --- Populate Charts & Scores ---
             if (reportData.cognitive_scores) {
-                // --- Populate Cognitive Domain Table from JSON order ---
+                // --- Populate Cognitive Domain Table and Bar Chart from JSON order ---
                 if (reportData.cognitive_scores && Array.isArray(reportData.cognitive_scores)) {
                     // Table
                     const cognitiveTableBody = document.getElementById('cognitive-scores-table');
@@ -474,72 +453,70 @@
                     const labels = [];
                     const data = [];
                     reportData.cognitive_scores.forEach(score => {
-                        // Push for radar chart
+                        // Push for bar chart
                         labels.push(score.domain || 'N/A');
-                        data.push(score.percentile !== null ? parseFloat(score.percentile) : 0);
+                        data.push(score.standard_score !== null ? parseFloat(score.standard_score) : null);
 
                         // Table row
                         const stdScore = score.standard_score !== null ? parseFloat(score.standard_score).toFixed(0) : 'N/A';
                         const percentile = score.percentile !== null ? parseFloat(score.percentile).toFixed(0) : 'N/A';
                         const classification = getClassification(score.percentile);
-                        const isValid = String(score.validity_index).toLowerCase() === 'yes';
-                        let domainCell = `<td class=\"py-2 px-3 cognitive-domain\">${score.domain || 'N/A'}`;
-                        if (!isValid) {
-                            domainCell += `<div class='badge-invalid'>Invalid</div>`;
-                        }
-                        domainCell += `</td>`;
-                        const barCell = `<td class=\"py-2 px-3\"><div class='bar-bg'><div class='bar-fill' style='width: ${score.percentile || 0}%; min-width:2px; background: ${getSegmentedColor(score.percentile || 0)};'></div></div></td>`;
                         const row = `
                             <tr>
-                                ${domainCell}
-                                <td class=\"py-2 px-3 text-center\">${stdScore}</td>
-                                <td class=\"py-2 px-3 text-center\">${percentile}</td>
-                                <td class=\"py-2 px-3 text-center\"><span class=\"badge ${classification.class}\">${classification.text}</span></td>
-                                ${barCell}
+                                <td class="py-2 px-3">${score.domain || 'N/A'}</td>
+                                <td class="py-2 px-3 text-center">${stdScore}</td>
+                                <td class="py-2 px-3 text-center">${percentile}</td>
+                                <td class="py-2 px-3 text-center"><span class="badge ${classification.class}">${classification.text}</span></td>
+                                <td class="py-2 px-3 text-center">${score.validity_index || 'N/A'}</td>
                             </tr>
                         `;
                         if (cognitiveTableBody) cognitiveTableBody.innerHTML += row;
                     });
-                    // Update radar chart with JSON order
-                    createRadarChart(labels, data); // Create Radar Chart
+                    // Update bar chart with JSON order
+                    const wrapLabel = label => {
+                        // Split at spaces, max 16 chars per line
+                        if (!label) return label;
+                        if (label.length <= 16) return label;
+                        const words = label.split(' ');
+                        let lines = [], line = '';
+                        words.forEach(word => {
+                            if ((line + ' ' + word).trim().length > 16) {
+                                lines.push(line.trim());
+                                line = word;
+                            } else {
+                                line += ' ' + word;
+                            }
+                        });
+                        if (line) lines.push(line.trim());
+                        return lines;
+                    };
+                    const barLabels = reportData.cognitive_scores.map(score => wrapLabel(score.domain));
+                    const barData = reportData.cognitive_scores.map(score => score.standard_score !== null ? parseFloat(score.standard_score) : null);
+                    createBarChart(barLabels, barData); // Create Bar Chart with wrapped labels
+
+                    // --- Table and grid layout: wider table, narrower chart ---
+                    const gridDiv = document.querySelector('.grid.md\\:grid-cols-3');
+                    if (gridDiv) {
+                        gridDiv.classList.remove('md:grid-cols-3');
+                        gridDiv.classList.add('md:grid-cols-3');
+                    }
+                    const tableDiv = gridDiv?.children[0];
+                    if (tableDiv) tableDiv.classList.add('md:col-span-2');
+                    const chartDiv = gridDiv?.children[1];
+                    if (chartDiv) chartDiv.classList.remove('md:col-span-1');
                 }
 
                 // --- Radar Chart Data Prep ---
-                const radarDomainsOrder = [
-                    "Executive Function",
-                    "Complex Attention",
-                    "Simple Attention",
-                    "Sustained Attention",
-                    "Processing Speed",
-                    "Reaction Time",
-                    "Psychomotor Speed",
-                    "Motor Speed",
-                    "Visual Memory",
-                    "Verbal Memory",
-                    "Working Memory",
-                    "Reasoning",
-                    "Cognitive Flexibility"
-                ];
-                // Helper to normalize domain names (strip asterisks and trim)
-                function normalizeDomain(domain) {
-                    return (domain || '').replace(/\*/g, '').trim();
-                }
-                // Map normalized domain to percentile
-                const scoreMap = {};
-                reportData.cognitive_scores.forEach(score => {
-                    const normDomain = normalizeDomain(score.domain);
-                    if (normDomain && score.percentile !== undefined && score.percentile !== null) {
-                        scoreMap[normDomain] = parseFloat(score.percentile);
-                    }
-                });
-                const radarLabels = radarDomainsOrder;
-                const radarData = radarDomainsOrder.map(domain => scoreMap[normalizeDomain(domain)] !== undefined ? scoreMap[normalizeDomain(domain)] : 0);
+                const radarLabels = reportData.cognitive_scores.map(score => score.domain);
+                const radarData = reportData.cognitive_scores.map(score => score.percentile !== null ? parseFloat(score.percentile) : 0);
                 createRadarChart(radarLabels, radarData); // Create Radar Chart
             } else {
                 // Handle missing cognitive scores for both charts and table
                 const chartContainerRadar = document.getElementById('cognitiveRadarChart')?.parentElement;
+                const chartContainerBar = document.getElementById('cognitiveBarChart')?.parentElement;
                 const cognitiveTableBody = document.getElementById('cognitive-scores-table');
                 if(chartContainerRadar) chartContainerRadar.innerHTML = '<p class="text-center text-gray-500 py-4">Cognitive profile data not available.</p>';
+                if(chartContainerBar) chartContainerBar.innerHTML = '<p class="text-center text-gray-500 py-4">Cognitive score data not available.</p>';
                 if(cognitiveTableBody) cognitiveTableBody.innerHTML = '<tr><td colspan="5" class="text-center text-gray-500 py-4">Cognitive score data missing or invalid.</td></tr>';
             }
 
@@ -559,8 +536,6 @@
 
                     for (const testName in groupedSubtests) {
                         const tests = groupedSubtests[testName];
-                        // Check if any metric in the group is invalid
-                        const hasInvalid = tests.some(metric => Number(metric.validity_flag) === 0);
                         if (testName === "Four Part Continuous Performance Test") {
                             tests.sort((a, b) => {
                                 const partA = a.metric.match(/Part (\d)/)?.[1] || 0;
@@ -569,18 +544,17 @@
                                 return a.metric.localeCompare(b.metric);
                             });
                         }
+
                         let tableHTML = `
                             <div class="overflow-x-auto">
-                                <h3 class="text-md font-semibold text-gray-600 mb-2">
-                                    ${testName}${hasInvalid ? ' <span class=\'badge-invalid\'>Invalid</span>' : ''}
-                                </h3>
+                                <h3 class="text-md font-semibold text-gray-600 mb-2">${testName}</h3>
                                 <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-md">
                                     <thead class="bg-gray-50">
                                         <tr>
-                                            <th scope="col" class="text-center">Metric</th>
-                                            <th scope="col" class="text-center">Score</th>
-                                            <th scope="col" class="text-center">Standard Score</th>
-                                            <th scope="col" class="text-center">Percentile</th>
+                                            <th scope="col">Metric</th>
+                                            <th scope="col">Score</th>
+                                            <th scope="col">Standard</th>
+                                            <th scope="col">Percentile</th>
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200">
@@ -589,7 +563,7 @@
                             const standardScore = metric.standard_score !== null ? parseFloat(metric.standard_score).toFixed(0) : 'N/A';
                             const percentile = metric.percentile !== null ? parseFloat(metric.percentile).toFixed(0) : 'N/A';
                             const score = metric.score !== null ? parseFloat(metric.score).toFixed(1) : 'N/A';
-                            // No badge in row anymore
+
                             tableHTML += `
                                 <tr>
                                     <td class="py-2 px-3">${metric.metric || 'N/A'}</td>

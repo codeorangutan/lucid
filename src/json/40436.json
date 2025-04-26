@@ -5,7 +5,7 @@
     "raw_subject": "[Auto-imported]",
     "referral_received_time": "2025-04-24 14:46:53.494979",
     "paid": 0,
-    "test_completed": 0,
+    "test_completed": "25-04-2025",
     "retest": 0,
     "report_unprocessed": 1,
     "report_processed": 0,
@@ -99,7 +99,7 @@
       "patient_score": "67.0",
       "standard_score": "130.0",
       "percentile": "98.0",
-      "validity_index": "Yes"
+      "validity_index": "No"
     },
     {
       "id": 10,
