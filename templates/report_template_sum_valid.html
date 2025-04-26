@@ -89,12 +89,12 @@
         }
         /* Ensure canvas is responsive */
         .chart-container canvas {
-            width: 600px !important;
-            height: 600px !important;
-            min-width: 600px !important;
-            min-height: 600px !important;
-            max-width: 600px !important;
-            max-height: 600px !important;
+            width: 220px !important;
+            height: 220px !important;
+            min-width: 220px !important;
+            min-height: 220px !important;
+            max-width: 220px !important;
+            max-height: 220px !important;
             background: #fff;
         }
         h1, h2, h3, .text-blue-heading {
@@ -153,16 +153,35 @@
             </div>
         </section>
 
-        <section class="report-card mb-6" aria-labelledby="cognitive-profile-heading">
-            <h2 id="cognitive-profile-heading" class="text-xl font-semibold text-gray-700 mb-4">Cognitive Domain Profile (Percentiles)</h2>
-            <div class="relative mx-auto chart-container" style="width: 600px; height: 600px;">
-                <canvas id="cognitiveRadarChart" width="600" height="600"></canvas>
-            </div>
-            <p class="text-center text-xs text-gray-500 mt-2">Scores shown are percentiles (%). Higher scores indicate better performance relative to peers.</p>
-        </section>
-
         <!-- PAGE BREAK BEFORE Cognitive Domain Scores -->
         <div style="page-break-before: always;"></div>
+
+        <section class="report-card" aria-labelledby="cognitive-profile-summary-heading">
+            <h2 id="cognitive-profile-summary-heading" class="text-xl font-semibold text-gray-700 mb-4">Cognitive Profile Summary</h2>
+            <div class="grid grid-cols-2 grid-rows-2 gap-4 w-full" style="min-height:320px;">
+                <!-- Top Left: Placeholder for summary text -->
+                <div class="col-span-1 row-span-1 flex flex-col justify-between p-2">
+                    <span class="font-semibold">Summary:</span>
+                    <span id="cognitive-summary-placeholder" class="block mt-2">
+                        [Summary text will be populated here from JSON. This is a placeholder for now.]
+                    </span>
+                </div>
+                <!-- Top Right: Radar Chart, shrunk to fit quadrant -->
+                <div class="col-span-1 row-span-1 flex items-center justify-center p-2">
+                    <div class="chart-container" style="width: 220px; height: 220px;">
+                        <canvas id="cognitiveRadarChartSummary" width="220" height="220"></canvas>
+                    </div>
+                </div>
+                <!-- Bottom Left: Placeholder for additional info or wrapping text -->
+                <div class="col-span-1 row-span-1 flex flex-col justify-between p-2">
+                    <span id="cognitive-summary-extra1">[Additional summary or interpretation can go here.]</span>
+                </div>
+                <!-- Bottom Right: Placeholder for further details -->
+                <div class="col-span-1 row-span-1 flex flex-col justify-between p-2">
+                    <span id="cognitive-summary-extra2">[Further details or insights can go here.]</span>
+                </div>
+            </div>
+        </section>
 
         <section class="report-card" aria-labelledby="cognitive-scores-heading">
             <h2 id="cognitive-scores-heading" class="text-xl font-semibold text-gray-700 mb-4">Cognitive Domain Scores</h2>
@@ -413,25 +432,24 @@
         }
 
         // --- Chart Creation Functions ---
-        function createRadarChart(labels, data) {
-            const canvas = document.getElementById('cognitiveRadarChart');
-            setHiDPICanvas(canvas, 600, 600);
+        function createRadarChartSummary(labels, data) {
+            const canvas = document.getElementById('cognitiveRadarChartSummary');
+            setHiDPICanvas(canvas, 220, 220);
             const ctx = canvas.getContext('2d');
             if (!ctx) {
                 console.error("Canvas element for radar chart not found.");
                 return;
             }
-            if (cognitiveRadarChartInstance) { cognitiveRadarChartInstance.destroy(); }
 
             const primaryColor = '#2563eb'; const gridColor = '#dbeafe';
             const pointColor = primaryColor; const fontColor = '#334155';
 
-            cognitiveRadarChartInstance = new Chart(ctx, {
+            const chartInstance = new Chart(ctx, {
                 type: 'radar',
                 data: { labels: labels, datasets: [{ label: 'Cognitive Percentile', data: data, fill: true, backgroundColor: 'rgba(79, 70, 229, 0.2)', borderColor: primaryColor, pointBackgroundColor: pointColor, pointBorderColor: '#fff', pointHoverBackgroundColor: '#fff', pointHoverBorderColor: pointColor }] },
                 options: {
                     responsive: false, maintainAspectRatio: false, elements: { line: { borderWidth: 2 } },
-                    scales: { r: { angleLines: { color: gridColor }, grid: { color: gridColor }, pointLabels: { font: { family: "'Inter', sans-serif", size: 11 }, color: fontColor }, ticks: { beginAtZero: true, min: 0, max: 100, stepSize: 25, backdropColor: 'rgba(255, 255, 255, 0.75)', color: fontColor, font: { family: "'Inter', sans-serif" } }, suggestedMin: 0, suggestedMax: 100 } },
+                    scales: { r: { angleLines: { color: gridColor }, grid: { color: gridColor }, pointLabels: { font: { family: "'Inter', sans-serif", size: 9 }, color: fontColor }, ticks: { beginAtZero: true, min: 0, max: 100, stepSize: 25, backdropColor: 'rgba(255, 255, 255, 0.75)', color: fontColor, font: { family: "'Inter', sans-serif" } }, suggestedMin: 0, suggestedMax: 100 } },
                     plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { return (context.dataset.label || '') + ': ' + (context.parsed.r !== null ? context.parsed.r + '%' : ''); } } } }
                 }
             });
@@ -441,8 +459,7 @@
         function populateReport() {
             // Check if reportData is available
             if (typeof reportData === 'undefined' || !reportData) {
-                console.error("Report data is not available. Make sure 'reportData' is assigned.");
-                document.body.innerHTML = `<div class="text-center text-red-600 font-bold p-10">Error: Report data not loaded.</div>`;
+                console.error("Report data is not available.");
                 return;
             }
 
@@ -500,8 +517,6 @@
                         `;
                         if (cognitiveTableBody) cognitiveTableBody.innerHTML += row;
                     });
-                    // Update radar chart with JSON order
-                    createRadarChart(labels, data); // Create Radar Chart
                 }
 
                 // --- Radar Chart Data Prep ---
@@ -534,7 +549,7 @@
                 });
                 const radarLabels = radarDomainsOrder;
                 const radarData = radarDomainsOrder.map(domain => scoreMap[normalizeDomain(domain)] !== undefined ? scoreMap[normalizeDomain(domain)] : 0);
-                createRadarChart(radarLabels, radarData); // Create Radar Chart
+                createRadarChartSummary(radarLabels, radarData); // Create Radar Chart in Summary Card
             } else {
                 // Handle missing cognitive scores for both charts and table
                 const chartContainerRadar = document.getElementById('cognitiveRadarChart')?.parentElement;
@@ -579,7 +594,6 @@
                                         <tr>
                                             <th scope="col" class="text-center">Metric</th>
                                             <th scope="col" class="text-center">Score</th>
-                                            <th scope="col" class="text-center">Standard Score</th>
                                             <th scope="col" class="text-center">Percentile</th>
                                         </tr>
                                     </thead>
@@ -594,7 +608,6 @@
                                 <tr>
                                     <td class="py-2 px-3">${metric.metric || 'N/A'}</td>
                                     <td class="py-2 px-3 text-center">${score}</td>
-                                    <td class="py-2 px-3 text-center">${standardScore}</td>
                                     <td class="py-2 px-3 text-center">${percentile}%</td>
                                 </tr>
                             `;
