@@ -139,9 +139,9 @@
         <header class="mb-8 text-center">
             <h1 class="text-3xl font-bold text-gray-800 mb-2">ADHD Cognitive Assessment Report</h1>
             <p class="text-lg text-gray-600">
-                Patient ID: <span id="patient-id">{{ report_data.patient_id or 'N/A' }}</span>
+                Patient ID: <span id="patient-id">{{ report_data.patient.id_number or 'N/A' }}</span>
                 &nbsp;|&nbsp;
-                Test Date: <span id="test-date">{{ report_data.test_date or 'N/A' }}</span>
+                Test Date: <span id="test-date">{{ report_data.patient.test_completed or 'N/A' }}</span>
             </p>
         </header>
 
@@ -172,8 +172,8 @@
                             <thead class="bg-gray-50">
                                 <tr>
                                     <th scope="col" class="text-left">Domain</th>
-                                    <th scope="col" class="text-left">Std Score</th>
-                                    <th scope="col" class="text-left">%ile</th>
+                                    <th scope="col" class="text-left">Standard Score</th>
+                                    <th scope="col" class="text-left">Percentile</th>
                                     <th scope="col" class="text-center">Rating</th>
                                     <th scope="col" class="text-left">Graph</th>
                                 </tr>
@@ -185,14 +185,29 @@
                     </div>
                     <div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
                         <h3 class="text-md font-semibold text-gray-700 mb-2">Score Interpretation Guide</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                            <div><span class="badge badge-above-average mr-1">> 75%ile</span> Above Average</div>
-                            <div><span class="badge badge-average mr-1">25-75%ile</span> Average</div>
-                            <div><span class="badge badge-low-average mr-1">9-25%ile</span> Low Average</div>
-                            <div><span class="badge badge-low mr-1">2-9%ile</span> Low</div>
-                            <div><span class="badge badge-very-low mr-1">≤ 2%ile</span> Very Low</div>
+                        <div class="flex flex-row justify-between items-end mb-2" style="gap:0.5rem;">
+                            <span class="flex flex-col items-center flex-1">
+                                <span class="badge badge-very-low">≤ 2</span>
+                                <span class="text-xs text-gray-700 mt-1">Very Low</span>
+                            </span>
+                            <span class="flex flex-col items-center flex-1">
+                                <span class="badge badge-low">2-9</span>
+                                <span class="text-xs text-gray-700 mt-1">Low</span>
+                            </span>
+                            <span class="flex flex-col items-center flex-1">
+                                <span class="badge badge-low-average">9-25</span>
+                                <span class="text-xs text-gray-700 mt-1">Low Average</span>
+                            </span>
+                            <span class="flex flex-col items-center flex-1">
+                                <span class="badge badge-average">25-75</span>
+                                <span class="text-xs text-gray-700 mt-1">Average</span>
+                            </span>
+                            <span class="flex flex-col items-center flex-1">
+                                <span class="badge badge-above-average">&gt; 75</span>
+                                <span class="text-xs text-gray-700 mt-1">Above Average</span>
+                            </span>
                         </div>
-                         <p class="text-xs text-gray-500 mt-2">Classification based on Percentile (%ile). Std Score = Standard Score.</p>
+                        <p class="text-xs text-gray-500 mt-2">Classification based on Percentile (%ile).</p>
                     </div>
                 </div>
             </div>
@@ -206,6 +221,9 @@
                 <p class="text-center text-gray-500 py-4">Loading data...</p>
             </div>
         </section>
+
+        <!-- PAGE BREAK BEFORE ASRS/DSM Mapping -->
+        <div style="page-break-before: always;"></div>
 
         <section class="report-card" aria-labelledby="asrs-dsm-heading">
             <h2 id="asrs-dsm-heading" class="text-xl font-semibold text-gray-700 mb-4">ASRS to DSM-5 Mapping</h2>
@@ -305,7 +323,7 @@
         </section>
 
         <footer class="mt-12 text-center text-xs text-gray-500">
-            Report Generated: <span id="generation-date"></span> | Patient ID: <span id="patient-id-footer">{{ report_data.patient_id or 'N/A' }}</span>
+            Report Generated: <span id="generation-date"></span> | Patient ID: <span id="patient-id-footer">{{ report_data.patient.id_number or 'N/A' }}</span>
         </footer>
 
     </div>
@@ -413,19 +431,23 @@
                 return;
             }
 
-            const patientId = reportData.patient?.id_number || 'N/A';
-
-            // Populate Header & Footer
-            const patientIdHeaderElem = document.getElementById('patient-id-header');
-            if (patientIdHeaderElem) patientIdHeaderElem.textContent = patientId;
+            // Populate Header & Footer (Patient ID and Test Date)
+            const patientIdHeaderElem = document.getElementById('patient-id');
+            if (patientIdHeaderElem && reportData.patient) {
+                patientIdHeaderElem.textContent = reportData.patient.id_number || 'N/A';
+            }
+            const testDateElem = document.getElementById('test-date');
+            if (testDateElem && reportData.patient) {
+                testDateElem.textContent = reportData.patient.test_completed || 'N/A';
+            }
             const patientIdFooterElem = document.getElementById('patient-id-footer');
-            if (patientIdFooterElem) patientIdFooterElem.textContent = patientId;
+            if (patientIdFooterElem && reportData.patient) {
+                patientIdFooterElem.textContent = reportData.patient.id_number || 'N/A';
+            }
+
+            // Populate Generation Date
             const generationDateElem = document.getElementById('generation-date');
             if (generationDateElem) generationDateElem.textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-
-            // Populate Test Date
-            const testDateElem = document.getElementById('test-date');
-            if (testDateElem) testDateElem.textContent = formatDate(reportData.patient?.referral_received_time);
 
             // --- Populate Charts & Scores ---
             if (reportData.cognitive_scores) {
@@ -468,8 +490,30 @@
                 }
 
                 // --- Radar Chart Data Prep ---
-                const radarLabels = reportData.cognitive_scores.map(score => score.domain);
-                const radarData = reportData.cognitive_scores.map(score => score.percentile !== null ? parseFloat(score.percentile) : 0);
+                const radarDomainsOrder = [
+                    "Executive Function",
+                    "Complex Attention",
+                    "Simple Attention",
+                    "Sustained Attention",
+                    "Processing Speed",
+                    "Reaction Time",
+                    "Psychomotor Speed",
+                    "Motor Speed",
+                    "Visual Memory",
+                    "Verbal Memory",
+                    "Working Memory",
+                    "Reasoning",
+                    "Cognitive Flexibility"
+                ];
+                // Map domain to percentile for quick lookup
+                const scoreMap = {};
+                reportData.cognitive_scores.forEach(score => {
+                    if (score.domain && score.percentile !== undefined && score.percentile !== null) {
+                        scoreMap[score.domain] = parseFloat(score.percentile);
+                    }
+                });
+                const radarLabels = radarDomainsOrder;
+                const radarData = radarDomainsOrder.map(domain => scoreMap[domain] !== undefined ? scoreMap[domain] : 0);
                 createRadarChart(radarLabels, radarData); // Create Radar Chart
             } else {
                 // Handle missing cognitive scores for both charts and table
@@ -495,6 +539,8 @@
 
                     for (const testName in groupedSubtests) {
                         const tests = groupedSubtests[testName];
+                        // Check if any metric in the group is invalid
+                        const hasInvalid = tests.some(metric => Number(metric.validity_flag) === 0);
                         if (testName === "Four Part Continuous Performance Test") {
                             tests.sort((a, b) => {
                                 const partA = a.metric.match(/Part (\d)/)?.[1] || 0;
@@ -503,17 +549,18 @@
                                 return a.metric.localeCompare(b.metric);
                             });
                         }
-
                         let tableHTML = `
                             <div class="overflow-x-auto">
-                                <h3 class="text-md font-semibold text-gray-600 mb-2">${testName}</h3>
+                                <h3 class="text-md font-semibold text-gray-600 mb-2">
+                                    ${testName}${hasInvalid ? ' <span class=\'badge-invalid\'>Invalid</span>' : ''}
+                                </h3>
                                 <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-md">
                                     <thead class="bg-gray-50">
                                         <tr>
-                                            <th scope="col">Metric</th>
-                                            <th scope="col">Score</th>
-                                            <th scope="col">Standard</th>
-                                            <th scope="col">Percentile</th>
+                                            <th scope="col" class="text-center">Metric</th>
+                                            <th scope="col" class="text-center">Score</th>
+                                            <th scope="col" class="text-center">Standard Score</th>
+                                            <th scope="col" class="text-center">Percentile</th>
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200">
@@ -522,7 +569,7 @@
                             const standardScore = metric.standard_score !== null ? parseFloat(metric.standard_score).toFixed(0) : 'N/A';
                             const percentile = metric.percentile !== null ? parseFloat(metric.percentile).toFixed(0) : 'N/A';
                             const score = metric.score !== null ? parseFloat(metric.score).toFixed(1) : 'N/A';
-
+                            // No badge in row anymore
                             tableHTML += `
                                 <tr>
                                     <td class="py-2 px-3">${metric.metric || 'N/A'}</td>
