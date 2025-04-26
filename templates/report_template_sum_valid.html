@@ -89,12 +89,12 @@
         }
         /* Ensure canvas is responsive */
         .chart-container canvas {
-            width: 220px !important;
-            height: 220px !important;
-            min-width: 220px !important;
-            min-height: 220px !important;
-            max-width: 220px !important;
-            max-height: 220px !important;
+            width: 320px !important;
+            height: 320px !important;
+            min-width: 320px !important;
+            min-height: 320px !important;
+            max-width: 320px !important;
+            max-height: 320px !important;
             background: #fff;
         }
         h1, h2, h3, .text-blue-heading {
@@ -166,10 +166,10 @@
                         [Summary text will be populated here from JSON. This is a placeholder for now.]
                     </span>
                 </div>
-                <!-- Top Right: Radar Chart, shrunk to fit quadrant -->
+                <!-- Top Right: Radar Chart, expanded to fill quadrant -->
                 <div class="col-span-1 row-span-1 flex items-center justify-center p-2">
-                    <div class="chart-container" style="width: 220px; height: 220px;">
-                        <canvas id="cognitiveRadarChartSummary" width="220" height="220"></canvas>
+                    <div class="chart-container" style="width: 320px; height: 320px;">
+                        <canvas id="cognitiveRadarChartSummary" width="320" height="320"></canvas>
                     </div>
                 </div>
                 <!-- Bottom Left: Placeholder for additional info or wrapping text -->
@@ -434,7 +434,7 @@
         // --- Chart Creation Functions ---
         function createRadarChartSummary(labels, data) {
             const canvas = document.getElementById('cognitiveRadarChartSummary');
-            setHiDPICanvas(canvas, 220, 220);
+            setHiDPICanvas(canvas, 320, 320);
             const ctx = canvas.getContext('2d');
             if (!ctx) {
                 console.error("Canvas element for radar chart not found.");
@@ -449,7 +449,7 @@
                 data: { labels: labels, datasets: [{ label: 'Cognitive Percentile', data: data, fill: true, backgroundColor: 'rgba(79, 70, 229, 0.2)', borderColor: primaryColor, pointBackgroundColor: pointColor, pointBorderColor: '#fff', pointHoverBackgroundColor: '#fff', pointHoverBorderColor: pointColor }] },
                 options: {
                     responsive: false, maintainAspectRatio: false, elements: { line: { borderWidth: 2 } },
-                    scales: { r: { angleLines: { color: gridColor }, grid: { color: gridColor }, pointLabels: { font: { family: "'Inter', sans-serif", size: 9 }, color: fontColor }, ticks: { beginAtZero: true, min: 0, max: 100, stepSize: 25, backdropColor: 'rgba(255, 255, 255, 0.75)', color: fontColor, font: { family: "'Inter', sans-serif" } }, suggestedMin: 0, suggestedMax: 100 } },
+                    scales: { r: { angleLines: { color: gridColor }, grid: { color: gridColor }, pointLabels: { font: { family: "'Inter', sans-serif", size: 10 }, color: fontColor }, ticks: { beginAtZero: true, min: 0, max: 100, stepSize: 25, backdropColor: 'rgba(255, 255, 255, 0.75)', color: fontColor, font: { family: "'Inter', sans-serif" } }, suggestedMin: 0, suggestedMax: 100 } },
                     plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { return (context.dataset.label || '') + ': ' + (context.parsed.r !== null ? context.parsed.r + '%' : ''); } } } }
                 }
             });
@@ -535,6 +535,22 @@
                     "Reasoning",
                     "Cognitive Flexibility"
                 ];
+                // Abbreviated labels for radar chart
+                const radarDomainsLabelsAbbrev = [
+                    "Ex Fn",
+                    "Cx Attn",
+                    "Sm Attn",
+                    "Sus Attn",
+                    "Proc Spd",
+                    "React T",
+                    "Psy Spd",
+                    "Mot Spd",
+                    "Vis Mem",
+                    "Verb Mem",
+                    "Work Mem",
+                    "Reason",
+                    "Cog Flex"
+                ];
                 // Helper to normalize domain names (strip asterisks and trim)
                 function normalizeDomain(domain) {
                     return (domain || '').replace(/\*/g, '').trim();
@@ -547,7 +563,7 @@
                         scoreMap[normDomain] = parseFloat(score.percentile);
                     }
                 });
-                const radarLabels = radarDomainsOrder;
+                const radarLabels = radarDomainsLabelsAbbrev;
                 const radarData = radarDomainsOrder.map(domain => scoreMap[normalizeDomain(domain)] !== undefined ? scoreMap[normalizeDomain(domain)] : 0);
                 createRadarChartSummary(radarLabels, radarData); // Create Radar Chart in Summary Card
             } else {
