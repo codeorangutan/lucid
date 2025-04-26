@@ -3,11 +3,21 @@ from playwright.async_api import async_playwright
 import json
 import os
 import sys
+from executive_summary import generate_cognitive_profile_summary
+import markdown  # Ensure this is in requirements.txt
+import re
 
 async def generate_pdf(html_path, json_path, output_pdf):
     # Read your JSON data
     with open(json_path, 'r', encoding='utf-8') as f:
         report_data = json.load(f)
+
+    # Generate the executive summary and convert to HTML
+    summary_md = generate_cognitive_profile_summary(report_data)
+    summary_html = markdown.markdown(summary_md)
+    # Do NOT strip HTML tags; inject as HTML for formatting
+    summary_styled = f'<div class="executive-summary prose prose-blue max-w-none" style="white-space:pre-line;">{summary_html}</div>'
+    report_data['cognitive_profile_summary'] = summary_styled
 
     async with async_playwright() as p:
         browser = await p.chromium.launch()
