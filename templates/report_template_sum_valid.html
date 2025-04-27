@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADHD Cognitive Assessment Report Template</title>
+    <title>ADHD Cognitive Assessment Report</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -278,6 +278,180 @@
             padding: 0.1em 0.55em;
             font-size: 0.85em;
         }
+        .executive-summary-text, .executive-summary {
+            font-size: 0.92rem !important;
+            line-height: 1.4 !important;
+        }
+        .executive-summary-text h3,
+        .executive-summary-text h2,
+        .executive-summary-text h4 {
+            margin-top: 0.6em !important;
+            margin-bottom: 0.3em !important;
+        }
+        .executive-summary-text hr {
+            margin-top: 0.7em !important;
+            margin-bottom: 0.7em !important;
+        }
+        .executive-summary-text p, 
+        .executive-summary-text ul, 
+        .executive-summary-text ol {
+            margin-top: 0.2em !important;
+            margin-bottom: 0.2em !important;
+        }
+        .disclaimer {
+            font-size: 0.85em;
+            color: #64748b !important;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 0.2em !important;
+        }
+        .section-heading {
+            color: #2563eb !important;
+            font-weight: 600;
+            font-size: 1.08em;
+            margin-top: 1.2em;
+            margin-bottom: 0.4em;
+            display: inline-block;
+        }
+        .highlight {
+            color: #1e40af;
+            font-weight: 600;
+        }
+        .executive-summary-text ul {
+            margin-left: 1.2em;
+            margin-bottom: 0.7em;
+        }
+        .executive-summary-text li {
+            margin-bottom: 0.25em;
+        }
+        /* Remove heading size from executive summary only */
+        #cognitive-profile-summary-heading {
+            display: none !important;
+        }
+        /* Tighten vertical spacing and reduce whitespace in the executive summary */
+        .summary-section {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .summary-block {
+            margin-bottom: 0.2em !important;
+            padding: 0 !important;
+        }
+        .section-heading {
+            display: block;
+            color: #2563eb !important;
+            font-weight: 600;
+            font-size: 1.03em;
+            margin-top: 0.12em !important;
+            margin-bottom: 0.01em !important;
+            letter-spacing: 0.01em;
+        }
+        .summary-body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .summary-block ul {
+            margin: 0.1em 0 0.1em 1em !important;
+            padding: 0 !important;
+        }
+        .summary-block li {
+            margin-bottom: 0.08em !important;
+            margin-top: 0 !important;
+            padding: 0 !important;
+        }
+        /* Prevent page breaks inside executive summary sections */
+        /* .summary-block {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+        } */
+        /* .executive-summary {
+            page-break-inside: avoid !important;
+        } */
+        /* Make all executive summary text smaller for PDF fitting */
+        .executive-summary, .executive-summary * {
+            font-size: 9px !important;
+            line-height: 1.15 !important;
+        }
+        /* Prevent executive summary section from breaking across pages */
+        /* .executive-summary {
+            page-break-inside: avoid !important;
+        } */
+        /* Aggressively minimize whitespace for executive summary blocks */
+        .executive-summary .summary-block {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .executive-summary .summary-body {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.10 !important;
+        }
+        .executive-summary ul, .executive-summary ol {
+            margin: 0 !important;
+            padding-left: 1.1em !important;
+        }
+        .executive-summary li {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.10 !important;
+        }
+        /* Further reduce .report-card padding for summary */
+        .report-card.executive-summary {
+            padding-top: 0.15rem !important;
+            padding-bottom: 0.15rem !important;
+        }
+        /* Aggressive whitespace minimization for executive summary */
+        .executive-summary ul,
+        .executive-summary ol {
+            margin: 0 !important;
+            padding-left: 1.1em !important;
+            line-height: 1.25 !important;
+        }
+        .executive-summary li {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.25 !important;
+        }
+        .executive-summary .summary-body {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.25 !important;
+        }
+        .executive-summary .summary-section {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .executive-summary {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            line-height: 1.25 !important;
+        }
+        .executive-summary span[style*="font-weight:bold"] {
+            display: block;
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.25 !important;
+        }
+        .executive-summary div[style*="font-size:12px"] {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.25 !important;
+        }
+        /* Custom class for ADHD criteria list */
+        .executive-summary ul.adhd-criteria-list {
+            margin: 0 0 0 1.8em !important;
+            padding-left: 0 !important;
+            list-style-type: none !important;
+        }
+        .executive-summary ul.adhd-criteria-list li {
+            margin: 0 !important;
+            padding: 0 !important;
+            text-indent: -1.2em !important;
+            padding-left: 1.2em !important;
+            line-height: 1.25 !important;
+        }
     </style>
     <!-- Inject JSON data for Chart.js and dynamic report rendering -->
     <script>
@@ -301,33 +475,34 @@
             </p>
         </header>
 
-        <section class="report-card mb-6" aria-labelledby="validity-warnings-heading">
-            <h2 id="validity-warnings-heading" class="text-2xl font-semibold text-yellow-700 mb-4">Validity Warnings</h2>
-            <div id="validity-warnings-content" class="text-sm text-yellow-800">
-                <!-- Populated by JS -->
+        <!-- Compact Validity Warning (single line, no box, no heading) -->
+        <div id="validity-warnings-content" class="text-sm mb-2" style="margin-bottom:0.5em;">
+            <!-- Populated by JS: Validity Warning: ... Invalid test names/results will be wrapped in <span style='color:#b20000; font-weight:bold;'> ... </span> -->
+        </div>
+
+        <!-- New Simplified Executive Summary Section (for testing) -->
+        <section class="report-card mb-6">
+            <h2 class="text-xl font-semibold text-blue-900 mb-2" style="margin-top:0.2em; margin-bottom:0.7em; font-size:1.35em; color:#1e293b;">Assessment Summary</h2>
+            <div id="cognitive-summary-placeholder" class="executive-summary-text">
+                [Summary text will be populated here from JSON. This is a placeholder for now.]
             </div>
         </section>
 
-        <!-- Move Executive Summary to First Page (after header, before page break) -->
-        <section class="report-card mb-6" aria-labelledby="cognitive-profile-summary-heading">
-            <h2 id="cognitive-profile-summary-heading" class="text-xl font-semibold text-gray-700 mb-4">Cognitive Profile Summary</h2>
-            <div class="relative w-full" style="min-height:340px;">
-                <!-- Radar Chart: right-floated, magazine style -->
-                <div style="float: right; width: 340px; height: 340px; margin-left: 2rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; background: white;">
+        <!-- Original Executive Summary Section with Radar Chart (COMMENTED OUT for testing) -->
+        <!--
+        <section class="report-card mb-6 executive-summary">
+            <div class="relative w-full">
+                <div style="float: right; width: 340px; height: 340px; margin-left: 2rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; background: white; border: 2.5px solid #2563eb; border-radius: 1rem; box-shadow: 0 2px 8px rgba(37,99,235,0.06);">
                     <div class="chart-container" style="width: 320px; height: 320px;">
                         <canvas id="cognitiveRadarChartSummary" width="320" height="320"></canvas>
                     </div>
                 </div>
-                <!-- Summary Text: wraps around chart -->
-                <span class="font-semibold">Summary:</span>
-                <span id="cognitive-summary-placeholder" class="block mt-2">
+                <div id="cognitive-summary-placeholder" class="executive-summary-text">
                     [Summary text will be populated here from JSON. This is a placeholder for now.]
-                </span>
+                </div>
             </div>
         </section>
-
-        <!-- PAGE BREAK BEFORE Cognitive Domain Scores -->
-        <div style="page-break-before: always;"></div>
+        -->
 
         <section class="report-card" aria-labelledby="cognitive-scores-heading">
             <h2 id="cognitive-scores-heading" class="text-xl font-semibold text-gray-700 mb-4">Cognitive Domain Scores</h2>
@@ -379,18 +554,12 @@
             </div>
         </section>
 
-        <!-- PAGE BREAK AFTER Cognitive Domain Scores -->
-        <div style="page-break-after: always;"></div>
-
         <section class="report-card" aria-labelledby="subtest-results-heading">
             <h2 id="subtest-results-heading" class="text-xl font-semibold text-gray-700 mb-4">Subtest Results</h2>
             <div id="subtest-tables-container" class="space-y-6">
                 <p class="text-center text-gray-500 py-4">Loading data...</p>
             </div>
         </section>
-
-        <!-- PAGE BREAK BEFORE ASRS/DSM Mapping -->
-        <div style="page-break-before: always;"></div>
 
         <section class="report-card" aria-labelledby="asrs-dsm-heading">
             <h2 id="asrs-dsm-heading" class="text-xl font-semibold text-gray-700 mb-4">ASRS to DSM-5 Mapping</h2>
@@ -449,7 +618,6 @@
             <div id="epworth-summary" style="display:none;"></div>
         </section>
 
-        <div style="page-break-before: always;"></div>
         <section class="report-card npq-section" aria-labelledby="npq-summary-heading" style="font-size:10px;padding:0.5rem 0.15rem;">
             <h2 id="npq-summary-heading" class="text-xl font-semibold text-gray-700 mb-2">NPQ LF-207 Diagnostic Screen Summary</h2>
             <p class="text-xs text-gray-500 mb-4 italic">Note: The NPQ is a clinical screening tool. Scores suggest potential symptom burden and are not diagnostic. Results should be used as a basis for clinical enquiry rather than diagnosis.</p>
@@ -478,7 +646,6 @@
             </div>
         </section>
 
-        <div style="page-break-before: always;"></div>
         <section class="report-card" aria-labelledby="npq-details-heading">
             <h2 id="npq-details-heading" class="text-xl font-semibold text-gray-700 mb-4">Detailed NPQ Responses</h2>
             <div id="npq-details-container" class="space-y-6">
@@ -583,14 +750,17 @@
 
         // --- Chart Creation Functions ---
         function createRadarChartSummary(labels, data) {
-            const canvas = document.getElementById('cognitiveRadarChartSummary');
-            setHiDPICanvas(canvas, 320, 320);
-            const ctx = canvas.getContext('2d');
+            const ctx = document.getElementById('cognitiveRadarChartSummary');
+            // Check if the canvas element exists before proceeding
             if (!ctx) {
-                console.error("Canvas element for radar chart not found.");
-                return;
+                console.warn("Radar chart canvas 'cognitiveRadarChartSummary' not found. Skipping chart rendering.");
+                return; // Exit if canvas doesn't exist
             }
 
+            const canvas = ctx.getContext('2d');
+            setHiDPICanvas(ctx, 320, 320); // Set canvas size for HiDPI
+
+            // Prepare data for radar chart
             const primaryColor = '#2563eb'; const gridColor = '#dbeafe';
             const pointColor = primaryColor; const fontColor = '#334155';
 
