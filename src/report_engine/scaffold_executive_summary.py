@@ -71,13 +71,18 @@ def get_npq_symptoms(npq_questions, domain, min_severity_score=2):
     return symptoms
 
 def get_npq_domain_severity(npq_scores, domain_name):
-     """Gets the overall severity rating for a specific NPQ domain."""
-     if npq_scores:
-         for score in npq_scores:
-             if score.get('domain') == domain_name:
-                 sev = score.get('severity', "Not rated")
-                 return sev.replace("A ", "").replace(" problem", "").capitalize()
-     return "Not rated"
+    """Gets the overall severity rating for a specific NPQ domain."""
+    if npq_scores:
+        for score in npq_scores:
+            if score.get('domain') == domain_name:
+                sev = score.get('severity', "Not rated")
+                # Preserve 'Not a problem' intact
+                if sev.strip().lower() == 'not a problem':
+                    return 'Not a problem'
+                # Remove leading 'A ' and trailing ' problem' for mild/moderate/severe
+                clean = sev.replace('A ', '').replace(' problem', '')
+                return clean.capitalize()
+    return 'Not rated'
 
 def get_asrs_response(asrs_items, question_number):
     """Gets the response for a specific ASRS question number."""
@@ -86,6 +91,19 @@ def get_asrs_response(asrs_items, question_number):
             if item.get('question_number') == question_number:
                 return item.get('response', 'N/A')
     return 'N/A'
+
+def format_score_entry(score_item):
+    """Formats a single score entry if valid."""
+    if score_item.get('validity_index', '').strip().lower() != 'yes':
+        return f"{score_item.get('domain', 'Unknown Domain')} (Invalid)"
+    percentile = score_item.get('percentile')
+    domain = score_item.get('domain', 'Unknown Domain')
+    if percentile is None: return f"{domain} (Percentile: N/A)"
+    try:
+        p = float(percentile)
+        return f"{domain} (Percentile: {p:.1f}, Range: {get_score_range(p)})"
+    except (ValueError, TypeError):
+        return f"{domain} (Percentile: {percentile}, Range: Error processing)"
 
 def generate_adhd_summary(data):
     # Extract relevant sections
@@ -98,10 +116,12 @@ def generate_adhd_summary(data):
     subtests = data.get('subtests', [])
     asrs = data.get('asrs', [])
     epworth = data.get('epworth', {}).get('summary', [])
-
+    # Initialize HTML list and disclaimer
     html = []
     html.append('<div class="executive-summary">')
-    html.append('<div class="disclaimer" style="font-size:11px;color:#64748b;margin-bottom:0.8em;"><b>Disclaimer:</b> This is an automatically generated summary and is not a substitute for clinical judgement. Results should be interpreted by a qualified healthcare professional in the context of a full clinical evaluation. Invalid test results have been excluded from interpretation below.</div>')
+    html.append('<div class="disclaimer" style="font-size:10px;color:#dc2626;margin-bottom:0.8em;">')
+    html.append('This automatically generated report is not a substitute for clinical judgement. Results should be interpreted by a qualified healthcare professional in the context of a full clinical evaluation. Invalid test results have been excluded from interpretation below.')
+    html.append('</div>')
     overall_presentation = dass_summary[0].get('diagnosis', 'Unknown') if dass_summary else 'Unknown'
     inattention_met_count = sum(1 for item in dass_items if item.get('dsm_category') == 'Inattention' and item.get('is_met') == 1)
     hyperactivity_met_count = sum(1 for item in dass_items if item.get('dsm_category') == 'Hyperactivity/Impulsivity' and item.get('is_met') == 1)
@@ -117,8 +137,8 @@ def generate_adhd_summary(data):
     html.append('<ul>')
     met_inattention_dsm = get_met_dsm_criteria(dass_items, 'Inattention')
     if met_inattention_dsm:
-        joined = ', '.join(met_inattention_dsm[:3]) + ('...' if len(met_inattention_dsm) > 3 else '')
-        html.append(f'<li><b>DSM:</b> Meets all 9 criteria for Inattention (e.g., {joined}).</li>')
+        joined = ', '.join(met_inattention_dsm)
+        html.append(f'<li><b>DSM:</b> Meets all {len(met_inattention_dsm)} criteria for Inattention (e.g., {joined}).</li>')
     else:
         html.append('<li><b>DSM:</b> No Inattention criteria met.</li>')
     npq_attention_mod_sev = get_npq_symptoms(npq_questions, 'Attention', min_severity_score=2)
@@ -134,11 +154,20 @@ def generate_adhd_summary(data):
     # 2. Executive Function Domain (detailed breakdown)
     html.append('<b>2. Executive Function</b>')
     html.append('<ul>')
-    ef_overall = next((format_cognitive_score(s) for s in cognitive_scores if s.get('domain') == 'Executive Function'), None)
-    if ef_overall and 'Invalid' not in ef_overall:
-        html.append(f'<li><b>Overall Cognitive Score (Valid):</b> {ef_overall.split("(")[-1].split(")")[0]}.</li>')
+    # Overall Cognitive Score: Composite Memory (standard and percentile)
+    cm_item = next(
+        (
+            s for s in cognitive_scores
+            if isinstance(s.get('domain'), str) and s['domain'].strip().lower() == 'composite memory'
+        ),
+        None
+    )
+    if cm_item and cm_item.get('validity_index','').strip().lower() == 'yes':
+        std = cm_item.get('standard_score', 'N/A')
+        perc = cm_item.get('percentile', 'N/A')
+        html.append(f'<li><b>Overall Cognitive Score (Valid):</b> {std} (Percentile: {perc}).</li>')
     else:
-        html.append(f'<li><b>Overall Cognitive Score (Valid):</b> {ef_overall or "Not Available"}.</li>')
+        html.append('<li><b>Overall Cognitive Score (Valid):</b> Not Available.</li>')
 
     # Planning & Organization
     html.append('<li><b>Planning & Organization:</b><ul>')
@@ -183,11 +212,8 @@ def generate_adhd_summary(data):
     else:
         html.append(f'<li>Cognitive: {wm_cog or "Not Available"}.</li>')
     npq_wm_mod = get_npq_symptoms(npq_questions, 'Memory', 2)
-    npq_wm_mild = get_npq_symptoms(npq_questions, 'Attention', 1)
     if npq_wm_mod:
         html.append(f'<li>NPQ: Moderate problems with memory including {", ".join(npq_wm_mod[:3])}.</li>')
-    if any("Forgetful" in s for s in npq_wm_mild):
-        html.append('<li>NPQ: Reports being "Forgetful, I need constant reminding" (Mild).</li>')
     html.append('</ul></li>')
 
     # Inhibition (Response Control)
@@ -196,9 +222,9 @@ def generate_adhd_summary(data):
     if dsm_b7_b9:
         joined = ' and '.join(dsm_b7_b9)
         html.append(f'<li>DSM: Endorses "{joined}".</li>')
-    npq_inhibit = get_npq_symptoms(npq_questions, 'Impulsive', 1)
-    if any("Impulsive, act without thinking" in s for s in npq_inhibit):
-        html.append('<li>NPQ: Reports being "Impulsive, act without thinking" (Mild).</li>')
+    npq_hyper_mod = get_npq_symptoms(npq_questions, 'Impulsive', 2)
+    if npq_hyper_mod:
+        html.append(f'<li>NPQ: Reports {", ".join(npq_hyper_mod)}.</li>')
     cog_inhibit_errors = [format_subtest_score(st) for st in subtests if 'Commission Errors' in st.get('metric', '') and 'Invalid' not in format_subtest_score(st)]
     if cog_inhibit_errors:
          weak_errors = [s for s in cog_inhibit_errors if 'Impaired' in s or 'Borderline' in s]
@@ -226,25 +252,28 @@ def generate_adhd_summary(data):
     # Emotional Regulation
     html.append('<li><b>Emotional Regulation:</b><ul>')
     npq_mood_domain = get_npq_domain_severity(npq_scores, "Mood Stability")
-    npq_mood_mild = get_npq_symptoms(npq_questions, "Mood Stability", 1)
     npq_anxiety_domain = get_npq_domain_severity(npq_scores, "Anxiety")
-    npq_anxiety_mod = get_npq_symptoms(npq_questions, "Anxiety", 2)
     npq_dep_domain = get_npq_domain_severity(npq_scores, "Depression")
-    npq_dep_mod = get_npq_symptoms(npq_questions, "Depression", 2)
     npq_oc_mod = get_npq_symptoms(npq_questions, "Obsessions & Compulsions", 2)
-    html.append(f'<li>NPQ: Mood Stability domain rated "{npq_mood_domain}"; {", ".join(npq_mood_mild)}. Anxiety domain rated "{npq_anxiety_domain}"; {", ".join(npq_anxiety_mod)}. Depression domain rated "{npq_dep_domain}"; {", ".join(npq_dep_mod)}. OC: {", ".join(npq_oc_mod)}.</li>')
+    html.append(f'<li>NPQ: Mood Stability domain rated "{npq_mood_domain}"; Anxiety domain rated "{npq_anxiety_domain}"; Depression domain rated "{npq_dep_domain}"; OC: {", ".join(npq_oc_mod)}.</li>')
     html.append('</ul></li>')
 
     html.append('</ul>')
 
-    # 3. Memory Domain
+    # 3. Memory Domain (Composite Memory overall score)
     html.append('<b>3. Memory:</b>')
     html.append('<ul>')
-    mem_overall = next((format_cognitive_score(s) for s in cognitive_scores if s.get('domain') == 'Memory'), None)
-    if mem_overall and 'Invalid' not in mem_overall:
-        html.append(f'<li><b>Overall Cognitive Score (Valid):</b> {mem_overall.split("(")[-1].split(")")[0]}.</li>')
+    # find Composite Memory entry
+    mem_item = next(
+        s for s in cognitive_scores
+        if isinstance(s.get('domain'), str) and s['domain'].strip().lower() == 'composite memory'
+    ) if cognitive_scores else None
+    if mem_item and mem_item.get('validity_index', '').strip().lower() == 'yes':
+        # show descriptive range only
+        rng = get_score_range(mem_item.get('percentile'))
+        html.append(f'<li><b>Overall Memory Score (Valid):</b> {rng}.</li>')
     else:
-        html.append(f'<li><b>Overall Cognitive Score (Valid):</b> {mem_overall or "Not Available"}.</li>')
+        html.append('<li><b>Overall Memory Score (Valid):</b> Not Available.</li>')
     dsm_a4 = any(item.get('dsm_criterion', '').startswith('A4:') and item.get('is_met') == 1 for item in dass_items)
     if dsm_a4: html.append('<li>DSM: Endorses "Often loses things necessary for tasks or activities".</li>')
     npq_memory_mod = get_npq_symptoms(npq_questions, 'Memory', 2)
@@ -258,7 +287,7 @@ def generate_adhd_summary(data):
     html.append('<ul>')
     met_hyperactive_dsm = get_met_dsm_criteria(dass_items, 'Hyperactivity/Impulsivity')
     if met_hyperactive_dsm:
-        joined = ', '.join(met_hyperactive_dsm[:3]) + ('...' if len(met_hyperactive_dsm) > 3 else '')
+        joined = ', '.join(met_hyperactive_dsm)
         html.append(f'<li>DSM: Meets all {len(met_hyperactive_dsm)} criteria for Hyperactivity/Impulsivity (e.g., {joined}).</li>')
     else:
         # Calculate how many were NOT met
@@ -268,29 +297,34 @@ def generate_adhd_summary(data):
         html.append(f'<li>DSM: Does not endorse {joined}.</li>')
     npq_imp_domain = get_npq_domain_severity(npq_scores, "Impulsive")
     npq_hyper_mod = get_npq_symptoms(npq_questions, 'Impulsive', 2)
-    npq_hyper_mild = get_npq_symptoms(npq_questions, 'Impulsive', 1)
-    npq_hyper_mild_only = [s for s in npq_hyper_mild if s not in npq_hyper_mod]
-    html.append(f'<li>NPQ: Impulsive domain (hyperactivity items) rated "{npq_imp_domain}"; Moderate: {", ".join(npq_hyper_mod)}. Mild: {", ".join(npq_hyper_mild_only)}.</li>')
+    html.append(f'<li>NPQ: Impulsive domain (hyperactivity items) rated "{npq_imp_domain}"; Moderate: {", ".join(npq_hyper_mod)}.</li>')
     html.append('</ul>')
 
     # 5. Secondary Consequences / Functional Impact Domain
     html.append('<b>5. Secondary Consequences / Functional Impact:</b>')
     html.append('<ul>')
-    npq_learning_mod = get_npq_symptoms(npq_questions, 'Learning', 2)
-    if npq_learning_mod: html.append(f'<li>NPQ (Learning Domain): {", ".join(npq_learning_mod)}</li>')
-    html.append('<li>NPQ (Comorbid Domains - Moderate/Severe Focus):</li>')
     comorbid_symptoms = []
     for domain in ["Memory", "Anxiety", "Somatic", "Fatigue", "Sleep", "Suicide", "Pain", "Obsessions & Compulsions", "Depression", "PTSD"]:
          mod_sev = get_npq_symptoms(npq_questions, domain, 2)
          if mod_sev:
              if domain == "Suicide" and any("death or dying" in s for s in mod_sev):
-                  comorbid_symptoms.append(f'<li style="color:#b91c1c;"><b>{domain}:</b> {", ".join(mod_sev)} (requires clinical attention)</li>')
+                  comorbid_symptoms.append(
+                      f'<li style="color:#b91c1c !important;">'
+                      f'<span class="highlight">Suicide:</span> {", ".join(mod_sev)} '
+                      f'<span style="color:#dc2626 !important;">(requires clinical attention)</span>'
+                      f'</li>'
+                  )
              else:
-                  comorbid_symptoms.append(f'<li>{domain}: {", ".join(mod_sev)}</li>')
+                  comorbid_symptoms.append(
+                      f'<li><span class="highlight">{domain}:</span> {", ".join(mod_sev)}</li>'
+                  )
     epworth_score = epworth[0].get('total_score') if epworth else None
     epworth_interp = epworth[0].get('interpretation', '').strip('.') if epworth else None
     if epworth_score and epworth_interp:
-        comorbid_symptoms.append(f'<li>Sleep: Epworth score indicates {epworth_interp}.</li>')
+        # Highlight 'Sleepiness:' tag
+        comorbid_symptoms.append(
+            f'<li><span class="highlight">Sleepiness:</span> Epworth score indicates {epworth_interp}.</li>'
+        )
     if comorbid_symptoms:
         html.extend(comorbid_symptoms)
     else:
@@ -305,11 +339,7 @@ def generate_adhd_summary(data):
         joined = ' and '.join(met_interpersonal_dsm)
         html.append(f'<li>DSM: Endorses {joined}.</li>')
     npq_social_domain = get_npq_domain_severity(npq_scores, "Social Anxiety")
-    npq_social_mild = get_npq_symptoms(npq_questions, "Social Anxiety", 1)
-    html.append(f'<li>NPQ (Social Anxiety): Domain rated {npq_social_domain} overall. Mild: {", ".join(npq_social_mild)}.</li>')
-    npq_interpersonal_mild = get_npq_symptoms(npq_questions, "Psychotic", 1) + get_npq_symptoms(npq_questions, "Autism", 1) + get_npq_symptoms(npq_questions, "Asperger's", 1)
-    interpersonal_relevant_npq = [s for s in npq_interpersonal_mild if "close to another person" in s or "social signals" in s]
-    if interpersonal_relevant_npq: html.append(f'<li>NPQ (Psychotic/Autism/Asperger\'s): {", ".join(interpersonal_relevant_npq)}</li>')
+    html.append(f'<li>NPQ (Social Anxiety): Domain rated {npq_social_domain} overall.</li>')
     html.append('</ul>')
     html.append('</div>')
     return ''.join(html)
