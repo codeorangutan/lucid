@@ -120,7 +120,13 @@ def generate_adhd_summary(data):
     html = []
     html.append('<div class="executive-summary">')
     html.append('<div class="disclaimer" style="font-size:10px;color:#dc2626;margin-bottom:0.8em;">')
-    html.append('This automatically generated report is not a substitute for clinical judgement. Results should be interpreted by a qualified healthcare professional in the context of a full clinical evaluation. Invalid test results have been excluded from interpretation below.')
+    html.append('<span class="executive-summary-disclaimer" style="font-size:0.93em;font-style:italic;color:#dc2626;display:block;line-height:1.6;">')
+    html.append('This automatically generated report is not a substitute for <br>')
+    html.append('clinical judgement. Results should be interpreted by a qualified <br>')
+    html.append('healthcare professional in the context of a full clinical <br>')
+    html.append('evaluation. Invalid test results have been excluded from <br>')
+    html.append('interpretation below.')
+    html.append('</span>')
     html.append('</div>')
     overall_presentation = dass_summary[0].get('diagnosis', 'Unknown') if dass_summary else 'Unknown'
     inattention_met_count = sum(1 for item in dass_items if item.get('dsm_category') == 'Inattention' and item.get('is_met') == 1)

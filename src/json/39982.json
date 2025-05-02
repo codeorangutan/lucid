@@ -1,0 +1,1015 @@
+{
+  "patient": {
+    "id": 4,
+    "id_number": "39982",
+    "raw_subject": "[Auto-imported]",
+    "referral_received_time": "2025-04-26 20:25:29.158750",
+    "paid": 0,
+    "test_completed": 0,
+    "retest": 0,
+    "report_unprocessed": 1,
+    "report_processed": 0,
+    "test_resent": 0
+  },
+  "cognitive_scores": [
+    {
+      "id": 142,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Neurocognition Index (NCI)",
+      "standard_score": "107.0",
+      "percentile": "68.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 143,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Composite Memory",
+      "patient_score": "90.0",
+      "standard_score": "83.0",
+      "percentile": "13.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 144,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Verbal Memory",
+      "patient_score": "51.0",
+      "standard_score": "96.0",
+      "percentile": "40.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 145,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Visual Memory",
+      "patient_score": "39.0",
+      "standard_score": "76.0",
+      "percentile": "5.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 146,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Psychomotor Speed",
+      "patient_score": "197.0",
+      "standard_score": "113.0",
+      "percentile": "81.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 147,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Reaction Time*",
+      "patient_score": "568.0",
+      "standard_score": "108.0",
+      "percentile": "70.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 148,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Complex Attention*",
+      "patient_score": "1.0",
+      "standard_score": "116.0",
+      "percentile": "86.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 149,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Cognitive Flexibility",
+      "patient_score": "60.0",
+      "standard_score": "117.0",
+      "percentile": "87.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 150,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Processing Speed",
+      "patient_score": "82.0",
+      "standard_score": "132.0",
+      "percentile": "98.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 151,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Executive Function",
+      "patient_score": "60.0",
+      "standard_score": "116.0",
+      "percentile": "86.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 152,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Reasoning",
+      "patient_score": "10.0",
+      "standard_score": "110.0",
+      "percentile": "75.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 153,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Working Memory",
+      "patient_score": "12.0",
+      "standard_score": "109.0",
+      "percentile": "73.0",
+      "validity_index": "No"
+    },
+    {
+      "id": 154,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Sustained Attention",
+      "patient_score": "18.0",
+      "standard_score": "78.0",
+      "percentile": "7.0",
+      "validity_index": "No"
+    },
+    {
+      "id": 155,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Simple Attention",
+      "patient_score": "40.0",
+      "standard_score": "107.0",
+      "percentile": "68.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 156,
+      "session_id": 11,
+      "patient_id": "39982",
+      "domain": "Motor Speed",
+      "patient_score": "115.0",
+      "standard_score": "99.0",
+      "percentile": "47.0",
+      "validity_index": "Yes"
+    }
+  ],
+  "subtests": [
+    {
+      "id": 431,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Verbal Memory Test (VBM)",
+      "metric": "Correct Hits - Immediate",
+      "score": 13.0,
+      "standard_score": 104.0,
+      "percentile": 61.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 432,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Verbal Memory Test (VBM)",
+      "metric": "Correct Passes - Immediate",
+      "score": 15.0,
+      "standard_score": 110.0,
+      "percentile": 75.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 433,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Verbal Memory Test (VBM)",
+      "metric": "Correct Hits - Delay",
+      "score": 9.0,
+      "standard_score": 88.0,
+      "percentile": 21.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 434,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Verbal Memory Test (VBM)",
+      "metric": "Correct Passes - Delay",
+      "score": 14.0,
+      "standard_score": 95.0,
+      "percentile": 37.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 435,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Visual Memory Test (VSM)",
+      "metric": "Correct Hits - Immediate",
+      "score": 10.0,
+      "standard_score": 85.0,
+      "percentile": 16.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 436,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Visual Memory Test (VSM)",
+      "metric": "Correct Passes - Immediate",
+      "score": 13.0,
+      "standard_score": 109.0,
+      "percentile": 73.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 437,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Visual Memory Test (VSM)",
+      "metric": "Correct Hits - Delay",
+      "score": 7.0,
+      "standard_score": 70.0,
+      "percentile": 2.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 438,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Visual Memory Test (VSM)",
+      "metric": "Correct Passes - Delay",
+      "score": 9.0,
+      "standard_score": 85.0,
+      "percentile": 16.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 439,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Finger Tapping Test (FTT)",
+      "metric": "Right Taps Average",
+      "score": 63.0,
+      "standard_score": 105.0,
+      "percentile": 63.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 440,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Finger Tapping Test (FTT)",
+      "metric": "Left Taps Average",
+      "score": 52.0,
+      "standard_score": 91.0,
+      "percentile": 27.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 441,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Symbol Digit Coding (SDC)",
+      "metric": "Correct Responses",
+      "score": 82.0,
+      "standard_score": 130.0,
+      "percentile": 98.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 442,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Symbol Digit Coding (SDC)",
+      "metric": "Errors*",
+      "score": 0.0,
+      "standard_score": 109.0,
+      "percentile": 73.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 443,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Stroop Test (ST)",
+      "metric": "Simple Reaction Time*",
+      "score": 281.0,
+      "standard_score": 99.0,
+      "percentile": 47.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 444,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Stroop Test (ST)",
+      "metric": "Complex Reaction Time Correct*",
+      "score": 515.0,
+      "standard_score": 109.0,
+      "percentile": 73.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 445,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Stroop Test (ST)",
+      "metric": "Stroop Reaction Time Correct*",
+      "score": 620.0,
+      "standard_score": 105.0,
+      "percentile": 63.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 446,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Stroop Test (ST)",
+      "metric": "Stroop Commission Errors*",
+      "score": 0.0,
+      "standard_score": 109.0,
+      "percentile": 73.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 447,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Shifting Attention Test (SAT)",
+      "metric": "Correct Responses",
+      "score": 61.0,
+      "standard_score": 114.0,
+      "percentile": 82.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 448,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Shifting Attention Test (SAT)",
+      "metric": "Errors*",
+      "score": 1.0,
+      "standard_score": 114.0,
+      "percentile": 82.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 449,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Shifting Attention Test (SAT)",
+      "metric": "Correct Reaction Time*",
+      "score": 832.0,
+      "standard_score": 121.0,
+      "percentile": 92.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 450,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Continuous Performance Test (CPT)",
+      "metric": "Correct Responses",
+      "score": 40.0,
+      "standard_score": 104.0,
+      "percentile": 61.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 451,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Continuous Performance Test (CPT)",
+      "metric": "Omission Errors*",
+      "score": 0.0,
+      "standard_score": 104.0,
+      "percentile": 61.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 452,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Continuous Performance Test (CPT)",
+      "metric": "Commission Errors*",
+      "score": 0.0,
+      "standard_score": 107.0,
+      "percentile": 68.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 453,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Continuous Performance Test (CPT)",
+      "metric": "Choice Reaction Time Correct*",
+      "score": 413.0,
+      "standard_score": 94.0,
+      "percentile": 34.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 454,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Reasoning Test (RT)",
+      "metric": "Correct Responses",
+      "score": 12.0,
+      "standard_score": 111.0,
+      "percentile": 77.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 455,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Reasoning Test (RT)",
+      "metric": "Average Correct Reaction Time*",
+      "score": 4707.0,
+      "standard_score": 102.0,
+      "percentile": 55.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 456,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Reasoning Test (RT)",
+      "metric": "Commission Errors*",
+      "score": 2.0,
+      "standard_score": 110.0,
+      "percentile": 75.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 457,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Reasoning Test (RT)",
+      "metric": "Omission Errors*",
+      "score": 1.0,
+      "standard_score": 102.0,
+      "percentile": 55.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 458,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Correct Reaction Time*",
+      "score": 335.0,
+      "standard_score": 100.0,
+      "percentile": 50.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 459,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Correct Responses",
+      "score": 6.0,
+      "standard_score": 102.0,
+      "percentile": 55.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 460,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Correct Reaction Time*",
+      "score": 433.0,
+      "standard_score": 85.0,
+      "percentile": 16.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 461,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Incorrect Responses*",
+      "score": 0.0,
+      "standard_score": 104.0,
+      "percentile": 61.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 462,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Incorrect Reaction Time*",
+      "score": 0.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 463,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Omission Errors*",
+      "score": 0.0,
+      "standard_score": 102.0,
+      "percentile": 55.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 464,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Correct Responses",
+      "score": 0.0,
+      "standard_score": 3.0,
+      "percentile": 1.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 465,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Correct Reaction Time*",
+      "score": 0.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 466,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Incorrect Responses*",
+      "score": 0.0,
+      "standard_score": 103.0,
+      "percentile": 58.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 467,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Incorrect Reaction Time*",
+      "score": 0.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 468,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Omission Errors*",
+      "score": 16.0,
+      "standard_score": 3.0,
+      "percentile": 1.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 469,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Correct Responses",
+      "score": 13.0,
+      "standard_score": 108.0,
+      "percentile": 70.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 470,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Correct Reaction Time*",
+      "score": 476.0,
+      "standard_score": 114.0,
+      "percentile": 82.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 471,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Incorrect Responses*",
+      "score": 1.0,
+      "standard_score": 104.0,
+      "percentile": 61.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 472,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Incorrect Reaction Time*",
+      "score": 507.0,
+      "standard_score": 102.0,
+      "percentile": 55.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 473,
+      "session_id": 11,
+      "patient_id": "39982",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Omission Errors*",
+      "score": 3.0,
+      "standard_score": 108.0,
+      "percentile": 70.0,
+      "validity_flag": 1
+    }
+  ],
+  "asrs": [
+    {
+      "id": 181,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 1,
+      "part": "A",
+      "response": "Often",
+      "question_text": "Q1: How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?"
+    },
+    {
+      "id": 182,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 2,
+      "part": "A",
+      "response": "Often",
+      "question_text": "Q2: How often do you have difficulty getting things in order when you have to do a task that requires organization?"
+    },
+    {
+      "id": 183,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 3,
+      "part": "A",
+      "response": "Rarely",
+      "question_text": "Q3: How often do you have problems remembering appointments or obligations?"
+    },
+    {
+      "id": 184,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 4,
+      "part": "A",
+      "response": "Very Often",
+      "question_text": "Q4: When you have a task that requires a lot of thought, how often do you avoid or delay getting started?"
+    },
+    {
+      "id": 185,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 5,
+      "part": "A",
+      "response": "Very Often",
+      "question_text": "Q5: How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?"
+    },
+    {
+      "id": 186,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 6,
+      "part": "A",
+      "response": "Very Often",
+      "question_text": "Q6: How often do you feel overly active and compelled to do things, like you were driven by a motor?"
+    },
+    {
+      "id": 187,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 7,
+      "part": "B",
+      "response": "Sometimes",
+      "question_text": "Q7: How often do you make careless mistakes when you have to work on a boring or difficult project?"
+    },
+    {
+      "id": 188,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 8,
+      "part": "B",
+      "response": "Very Often",
+      "question_text": "Q8: How often do you have difficulty keeping your attention when you are doing boring or repetitive work?"
+    },
+    {
+      "id": 189,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 9,
+      "part": "B",
+      "response": "Sometimes",
+      "question_text": "Q9: How often do you have difficulty concentrating on what people say to you, even when they are speaking to you directly?"
+    },
+    {
+      "id": 190,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 10,
+      "part": "B",
+      "response": "Sometimes",
+      "question_text": "Q10: How often do you misplace or have difficulty finding things at home or at work?"
+    },
+    {
+      "id": 191,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 11,
+      "part": "B",
+      "response": "Often",
+      "question_text": "Q11: How often are you distracted by activity or noise around you?"
+    },
+    {
+      "id": 192,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 12,
+      "part": "B",
+      "response": "Very Often",
+      "question_text": "Q12: How often do you leave your seat in meetings or other situations in which you are expected to remain seated?"
+    },
+    {
+      "id": 193,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 13,
+      "part": "B",
+      "response": "Very Often",
+      "question_text": "Q13: How often do you feel restless or fidgety?"
+    },
+    {
+      "id": 194,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 14,
+      "part": "B",
+      "response": "Very Often",
+      "question_text": "Q14: How often do you have difficulty unwinding and relaxing when you have time to yourself?"
+    },
+    {
+      "id": 195,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 15,
+      "part": "B",
+      "response": "Often",
+      "question_text": "Q15: How often do you find yourself talking too much when you are in social situations?"
+    },
+    {
+      "id": 196,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 16,
+      "part": "B",
+      "response": "Sometimes",
+      "question_text": "Q16: When you're in a conversation, how often do you find yourself finishing the sentences of the people you are talking to, before they can finish them themselves?"
+    },
+    {
+      "id": 197,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 17,
+      "part": "B",
+      "response": "Often",
+      "question_text": "Q17: How often do you have difficulty waiting your turn in situations when turn taking is required?"
+    },
+    {
+      "id": 198,
+      "session_id": 11,
+      "patient_id": "39982",
+      "question_number": 18,
+      "part": "B",
+      "response": "Sometimes",
+      "question_text": "Q18: How often do you interrupt others when they are busy?"
+    }
+  ],
+  "dass_summary": [
+    {
+      "id": 11,
+      "session_id": 11,
+      "patient_id": "39982",
+      "diagnosis": "Combined Presentation"
+    }
+  ],
+  "dass_items": [
+    {
+      "id": 181,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "A1: Often fails to give close attention to details or makes careless mistakes",
+      "dsm_category": "Inattention",
+      "is_met": 0
+    },
+    {
+      "id": 182,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "A2: Often has difficulty sustaining attention in tasks or play activities",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 183,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "A3: Often does not seem to listen when spoken to directly",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 184,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "A4: Often does not follow through on instructions and fails to finish duties",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 185,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "A5: Often has difficulty organizing tasks and activities",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 186,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "A6: Often avoids or is reluctant to engage in tasks requiring sustained mental effort",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 187,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "A7: Often loses things necessary for tasks or activities",
+      "dsm_category": "Inattention",
+      "is_met": 0
+    },
+    {
+      "id": 188,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "A8: Is often easily distracted by extraneous stimuli",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 189,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "A9: Is often forgetful in daily activities",
+      "dsm_category": "Inattention",
+      "is_met": 0
+    },
+    {
+      "id": 190,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "B1: Often fidgets or squirms in seat",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 191,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "B2: Often leaves seat in situations when remaining seated is expected",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 192,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "B3: Often runs about or climbs in situations where it is inappropriate",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 193,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "B4: Often unable to play or engage in leisure activities quietly",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 194,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "B5: Is often 'on the go', acting as if 'driven by a motor'",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 195,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "B6: Often talks excessively",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 196,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "B7: Often blurts out an answer before a question has been completed",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 197,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "B8: Often has difficulty waiting his or her turn",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 198,
+      "session_id": 11,
+      "patient_id": "39982",
+      "dsm_criterion": "B9: Often interrupts or intrudes on others",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    }
+  ],
+  "epworth": {
+    "responses": [
+      {
+        "id": 81,
+        "session_id": 11,
+        "patient_id": "39982",
+        "situation": "Sitting and reading",
+        "score": 0
+      },
+      {
+        "id": 82,
+        "session_id": 11,
+        "patient_id": "39982",
+        "situation": "Watching TV",
+        "score": 0
+      },
+      {
+        "id": 83,
+        "session_id": 11,
+        "patient_id": "39982",
+        "situation": "Sitting inactive in a public place (e.g., a theater or a meeting)",
+        "score": 0
+      },
+      {
+        "id": 84,
+        "session_id": 11,
+        "patient_id": "39982",
+        "situation": "As a passenger in a car for an hour without a break",
+        "score": 0
+      },
+      {
+        "id": 85,
+        "session_id": 11,
+        "patient_id": "39982",
+        "situation": "Lying down to rest in the afternoon when circumstances permit",
+        "score": 0
+      },
+      {
+        "id": 86,
+        "session_id": 11,
+        "patient_id": "39982",
+        "situation": "Sitting and talking to someone",
+        "score": 0
+      },
+      {
+        "id": 87,
+        "session_id": 11,
+        "patient_id": "39982",
+        "situation": "Sitting quietly after a lunch without alcohol",
+        "score": 0
+      },
+      {
+        "id": 88,
+        "session_id": 11,
+        "patient_id": "39982",
+        "situation": "In a car, while stopped for a few minutes in traffic",
+        "score": 0
+      }
+    ],
+    "summary": []
+  },
+  "npq_scores": [],
+  "npq_questions": []
+}

@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADHD Cognitive Assessment Report Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Use Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #eff6ff; /* bg-blue-50 */
+        }
+        /* Custom styles for severity/classification badges */
+        .badge {
+            display: inline-block;
+            padding: 0.2em 0.6em;
+            font-size: 0.8em;
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.375rem; /* rounded-md */
+        }
+        .badge-above-average { background-color: #dbeafe; color: #2563eb; } /* blue-100, blue-600 */
+        .badge-average { background-color: #e0e7ff; color: #1e40af; } /* indigo-100, blue-800 */
+        .badge-low-average { background-color: #fef9c3; color: #ca8a04; } /* yellow-100, yellow-700 */
+        .badge-low { background-color: #ffedd5; color: #ea580c; } /* orange-100, orange-600 */
+        .badge-very-low { background-color: #fee2e2; color: #b91c1c; } /* red-100, red-700 */
+        .badge-met { background-color: #dbeafe; color: #2563eb; } /* blue-100, blue-600 */
+        .badge-not-met { background-color: #fee2e2; color: #991b1b; } /* red-100, red-800 */
+        .badge-severe { background-color: #fee2e2; color: #b91c1c; } /* red-100, red-700 */
+        .badge-moderate { background-color: #fef3c7; color: #ea580c; } /* yellow-100, orange-600 */
+        .badge-mild { background-color: #fef9c3; color: #f59e42; } /* yellow-100, orange-500 */
+        .badge-not-problem { background-color: #dbeafe; color: #2563eb; } /* blue-100, blue-600 */
+        .badge-invalid {
+            background-color: #fee2e2;
+            color: #b91c1c;
+            font-size: 0.7em;
+            font-weight: 700;
+            padding: 0.15em 0.5em;
+            border-radius: 0.375rem;
+            display: inline-block;
+            margin-top: 0.25em;
+        }
+        /* Style for tables */
+        table {
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 0.75rem 1rem; /* p-3 px-4 */
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb; /* divide-y divide-gray-200 */
+        }
+        th {
+            background-color: #dbeafe !important; /* bg-blue-100 */
+            color: #1e3a8a !important; /* text-blue-900 */
+        }
+        tbody tr:nth-child(even) {
+            background-color: #eff6ff !important; /* bg-blue-50 */
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff !important;
+        }
+        td {
+            font-size: 0.875rem; /* text-sm */
+            color: #334155 !important; /* slate-700 */
+        }
+        /* Equal row/bar height for table and bar chart */
+        #cognitive-scores-table tr {
+            height: 48px;
+        }
+        /* Bar chart width and height override */
+        /* Card styling */
+        .report-card {
+            background-color: white;
+            padding: 1.5rem 0.5rem; /* p-6 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+        /* Ensure canvas is responsive */
+        .chart-container canvas {
+            width: 320px !important;
+            height: 320px !important;
+            min-width: 320px !important;
+            min-height: 320px !important;
+            max-width: 320px !important;
+            max-height: 320px !important;
+            background: #fff;
+        }
+        h1, h2, h3, .text-blue-heading {
+            color: #1e3a8a !important; /* text-blue-900 */
+        }
+        .bar-bg {
+            background: #e0e7ff;
+            border-radius: 8px;
+            height: 18px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            min-width: 80px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+        .bar-fill {
+            background: #2563eb;
+            height: 100%;
+            border-radius: 8px 0 0 8px;
+            transition: width 0.4s;
+            min-width: 2px;
+        }
+        /* Mildly bold domain column */
+        .cognitive-domain {
+            font-weight: 500;
+            color: #334155;
+        }
+        /* DSM Mapping Table Styles */
+        table.dsm-mapping-table th,
+        table.dsm-mapping-table td {
+            font-size: 11px !important;
+            padding: 2px 6px !important;
+        }
+        table.dsm-mapping-table {
+            font-size: 11px !important;
+        }
+        .dsm-summary-row {
+            background-color: #f1f5f9 !important;
+            font-weight: 600;
+        }
+        /* Reduce gaps around section and table titles in ADHD/DSM section */
+        #asrs-dsm-heading, #integrative-diagnosis-heading, .report-card h2, .report-card h3 {
+            margin-bottom: 0.5rem !important;
+            margin-top: 0.5rem !important;
+        }
+        .report-card {
+            padding-top: 0.75rem !important;
+            padding-bottom: 0.75rem !important;
+        }
+        .report-card > .mb-4, .report-card > .mb-6 {
+            margin-bottom: 0.5rem !important;
+        }
+        .mb-4, .mb-6 {
+            margin-bottom: 0.5rem !important;
+        }
+        .mt-8 {
+            margin-top: 1.5rem !important;
+        }
+        .mt-12 {
+            margin-top: 2rem !important;
+        }
+        /* NPQ LF-207: Compact table row style */
+        #npq-summary-heading + .overflow-x-auto table tr {
+            height: 28px;
+        }
+        #npq-summary-heading + .overflow-x-auto table td, #npq-summary-heading + .overflow-x-auto table th {
+            font-size: 9.2px !important;
+            padding-top: 0.18rem;
+            padding-bottom: 0.18rem;
+            line-height: 1.2;
+        }
+        /* NPQ LF-207 table and severity legend: make more compact for PDF fitting */
+        #npq-summary-heading + .overflow-x-auto table td, #npq-summary-heading + .overflow-x-auto table th {
+            font-size: 8.5px !important;
+            padding-top: 0.10rem;
+            padding-bottom: 0.10rem;
+            line-height: 1.05;
+        }
+        #npq-summary-heading + .overflow-x-auto table {
+            margin-bottom: 0.5rem !important;
+        }
+        #severity-legend {
+            display: flex;
+            flex-direction: row;
+            gap: 0.25rem;
+            margin-bottom: 0.25rem;
+            font-size: 8.5px !important;
+        }
+        #severity-legend .badge {
+            font-size: 0.75em;
+            padding: 0.15em 0.45em;
+        }
+        /* Ensure NPQ section never breaks across pages */
+        .npq-section {
+            page-break-inside: avoid;
+        }
+        /* Severity Legend: Reverse order */
+        #severity-legend {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        #severity-legend .badge {
+            font-size: 0.8em;
+        }
+        /* Make only NPQ LF-207 table body rows smaller for compact fit */
+        #npq-summary-heading + .overflow-x-auto table tbody td {
+            font-size: 7.5px !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            padding-left: 2px !important;
+            padding-right: 2px !important;
+            line-height: 1 !important;
+            height: 16px !important;
+            min-height: 0 !important;
+            max-height: 18px !important;
+            vertical-align: middle !important;
+        }
+        /* Remove any excessive row height from tr */
+        #npq-summary-heading + .overflow-x-auto table tbody tr {
+            height: 16px !important;
+            min-height: 0 !important;
+            max-height: 18px !important;
+        }
+        /* NPQ table: increase size for readability and restore padding */
+        .npq-table td {
+            font-size: 15.6px !important;
+            padding-top: 8px !important;
+            padding-bottom: 8px !important;
+            padding-left: 8px !important;
+            padding-right: 8px !important;
+            line-height: 1.18 !important;
+            height: 28px !important;
+            min-height: 0 !important;
+            max-height: 32px !important;
+            vertical-align: middle !important;
+        }
+        .npq-table th {
+            font-size: 19.2px !important;
+            font-weight: 700 !important;
+            padding: 10px 14px !important;
+            line-height: 1.22 !important;
+            background-color: #dbeafe !important;
+            color: #1e3a8a !important;
+        }
+        .npq-table th:nth-child(2), .npq-table th:nth-child(3),
+        .npq-table td:nth-child(2), .npq-table td:nth-child(3) {
+            text-align: center !important;
+        }
+        .npq-table th:first-child, .npq-table td:first-child {
+            text-align: left !important;
+        }
+        /* ADHD Diagnosis Summary Table: compact style and blue badges */
+        .adhd-summary-table {
+            font-size: 10px !important;
+            width: 100%;
+            margin-top: 0.5rem;
+            border-collapse: collapse;
+        }
+        .adhd-summary-table th, .adhd-summary-table td {
+            padding: 0.2rem 0.4rem !important;
+            line-height: 1.1 !important;
+            vertical-align: middle !important;
+            border: 1px solid #e5e7eb !important;
+        }
+        .adhd-summary-table .badge-met {
+            background-color: #dbeafe !important; /* blue-100 */
+            color: #2563eb !important; /* blue-600 */
+            font-weight: 700;
+            border-radius: 0.375rem;
+            padding: 0.1em 0.55em;
+            font-size: 0.85em;
+        }
+        .adhd-summary-table .badge-not-met {
+            background-color: #fee2e2 !important;
+            color: #991b1b !important;
+            font-weight: 700;
+            border-radius: 0.375rem;
+            padding: 0.1em 0.55em;
+            font-size: 0.85em;
+        }
+    </style>
+    <!-- Inject JSON data for Chart.js and dynamic report rendering -->
+    <script>
+        window.reportData = {{ report_data | tojson | safe }};
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof populateReport === 'function') {
+                populateReport();
+            }
+        });
+    </script>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-4xl mx-auto">
+
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">ADHD Cognitive Assessment Report</h1>
+            <p class="text-lg text-gray-600">
+                Patient ID: <span id="patient-id">{{ report_data.patient.id_number or 'N/A' }}</span>
+                &nbsp;|&nbsp;
+                Test Date: <span id="test-date">{{ report_data.patient.test_completed or 'N/A' }}</span>
+            </p>
+        </header>
+
+        <section class="report-card mb-6" aria-labelledby="validity-warnings-heading">
+            <h2 id="validity-warnings-heading" class="text-2xl font-semibold text-yellow-700 mb-4">Validity Warnings</h2>
+            <div id="validity-warnings-content" class="text-sm text-yellow-800">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Move Executive Summary to First Page (after header, before page break) -->
+        <section class="report-card mb-6" aria-labelledby="cognitive-profile-summary-heading">
+            <h2 id="cognitive-profile-summary-heading" class="text-xl font-semibold text-gray-700 mb-4">Cognitive Profile Summary</h2>
+            <div class="grid grid-cols-2 grid-rows-2 gap-4 w-full" style="min-height:320px;">
+                <!-- Top Left: Placeholder for summary text -->
+                <div class="col-span-1 row-span-1 flex flex-col justify-between p-2">
+                    <span class="font-semibold">Summary:</span>
+                    <span id="cognitive-summary-placeholder" class="block mt-2">
+                        [Summary text will be populated here from JSON. This is a placeholder for now.]
+                    </span>
+                </div>
+                <!-- Top Right: Radar Chart, expanded to fill quadrant -->
+                <div class="col-span-1 row-span-1 flex items-center justify-center p-2">
+                    <div class="chart-container" style="width: 320px; height: 320px;">
+                        <canvas id="cognitiveRadarChartSummary" width="320" height="320"></canvas>
+                    </div>
+                </div>
+                <!-- Bottom Left: Placeholder for additional info or wrapping text -->
+                <div class="col-span-1 row-span-1 flex flex-col justify-between p-2">
+                    <span id="cognitive-summary-extra1">[Additional summary or interpretation can go here.]</span>
+                </div>
+                <!-- Bottom Right: Placeholder for further details -->
+                <div class="col-span-1 row-span-1 flex flex-col justify-between p-2">
+                    <span id="cognitive-summary-extra2">[Further details or insights can go here.]</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE BREAK BEFORE Cognitive Domain Scores -->
+        <div style="page-break-before: always;"></div>
+
+        <section class="report-card" aria-labelledby="cognitive-scores-heading">
+            <h2 id="cognitive-scores-heading" class="text-xl font-semibold text-gray-700 mb-4">Cognitive Domain Scores</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div class="md:col-span-2">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="text-left">Domain</th>
+                                    <th scope="col" class="text-left">Standard Score</th>
+                                    <th scope="col" class="text-left">Percentile</th>
+                                    <th scope="col" class="text-center">Rating</th>
+                                    <th scope="col" class="text-left">Graph</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cognitive-scores-table" class="bg-white divide-y divide-gray-200">
+                                <tr><td colspan="5" class="text-center text-gray-500 py-4">Loading data...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <h3 class="text-md font-semibold text-gray-700 mb-2">Score Interpretation Guide</h3>
+                        <div class="flex flex-row justify-between items-end mb-2" style="gap:0.5rem;">
+                            <span class="flex flex-col items-center flex-1">
+                                <span class="badge badge-very-low">≤ 2</span>
+                                <span class="text-xs text-gray-700 mt-1">Very Low</span>
+                            </span>
+                            <span class="flex flex-col items-center flex-1">
+                                <span class="badge badge-low">2-9</span>
+                                <span class="text-xs text-gray-700 mt-1">Low</span>
+                            </span>
+                            <span class="flex flex-col items-center flex-1">
+                                <span class="badge badge-low-average">9-25</span>
+                                <span class="text-xs text-gray-700 mt-1">Low Average</span>
+                            </span>
+                            <span class="flex flex-col items-center flex-1">
+                                <span class="badge badge-average">25-75</span>
+                                <span class="text-xs text-gray-700 mt-1">Average</span>
+                            </span>
+                            <span class="flex flex-col items-center flex-1">
+                                <span class="badge badge-above-average">&gt; 75</span>
+                                <span class="text-xs text-gray-700 mt-1">Above Average</span>
+                            </span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Classification based on Percentile (%ile).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE BREAK AFTER Cognitive Domain Scores -->
+        <div style="page-break-after: always;"></div>
+
+        <section class="report-card" aria-labelledby="subtest-results-heading">
+            <h2 id="subtest-results-heading" class="text-xl font-semibold text-gray-700 mb-4">Subtest Results</h2>
+            <div id="subtest-tables-container" class="space-y-6">
+                <p class="text-center text-gray-500 py-4">Loading data...</p>
+            </div>
+        </section>
+
+        <!-- PAGE BREAK BEFORE ASRS/DSM Mapping -->
+        <div style="page-break-before: always;"></div>
+
+        <section class="report-card" aria-labelledby="asrs-dsm-heading">
+            <h2 id="asrs-dsm-heading" class="text-xl font-semibold text-gray-700 mb-4">ASRS to DSM-5 Mapping</h2>
+            <h3 class="text-lg font-medium text-gray-600 mb-2">Criterion A: Inattention</h3>
+            <div class="overflow-x-auto mb-4">
+                <table class="min-w-full divide-y divide-gray-200 dsm-mapping-table">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col">DSM-5 Criterion</th>
+                            <th scope="col">ASRS Question</th>
+                            <th scope="col">Response</th>
+                            <th scope="col">Met</th>
+                        </tr>
+                    </thead>
+                    <tbody id="asrs-inattention-table" class="bg-white divide-y divide-gray-200">
+                        <tr><td colspan="4" class="text-center text-gray-500 py-4">Loading data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="text-lg font-medium text-gray-600 mb-2">Criterion B: Hyperactivity/Impulsivity</h3>
+             <div class="overflow-x-auto mb-4">
+                <table class="min-w-full divide-y divide-gray-200 dsm-mapping-table">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col">DSM-5 Criterion</th>
+                            <th scope="col">ASRS Question</th>
+                            <th scope="col">Response</th>
+                            <th scope="col">Met</th>
+                        </tr>
+                    </thead>
+                    <tbody id="asrs-hyperactivity-table" class="bg-white divide-y divide-gray-200">
+                        <tr><td colspan="4" class="text-center text-gray-500 py-4">Loading data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="adhd-diagnosis-summary" class="text-sm space-y-1">
+                <p>Loading summary...</p>
+            </div>
+        </section>
+
+        <section class="report-card" aria-labelledby="epworth-heading">
+            <h2 id="epworth-heading" class="text-xl font-semibold text-gray-700 mb-4">Epworth Sleepiness Scale</h2>
+             <div class="overflow-x-auto mb-4">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col">Situation</th>
+                            <th scope="col">Score (0-3)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="epworth-responses-table" class="bg-white divide-y divide-gray-200">
+                        <tr><td colspan="2" class="text-center text-gray-500 py-4">Loading data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="epworth-summary" style="display:none;"></div>
+        </section>
+
+        <div style="page-break-before: always;"></div>
+        <section class="report-card npq-section" aria-labelledby="npq-summary-heading" style="font-size:10px;padding:0.5rem 0.15rem;">
+            <h2 id="npq-summary-heading" class="text-xl font-semibold text-gray-700 mb-2">NPQ LF-207 Diagnostic Screen Summary</h2>
+            <p class="text-xs text-gray-500 mb-4 italic">Note: The NPQ is a clinical screening tool. Scores suggest potential symptom burden and are not diagnostic. Results should be used as a basis for clinical enquiry rather than diagnosis.</p>
+            <div class="overflow-x-auto">
+                <table class="npq-table min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col">Domain</th>
+                            <th scope="col">Score</th>
+                            <th scope="col">Severity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="npq-scores-table" class="bg-white divide-y divide-gray-200">
+                        <tr><td colspan="3" class="text-center text-gray-500 py-4">Loading data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-2 p-2 bg-gray-50 rounded-lg border border-gray-200">
+                <h3 class="text-xs font-semibold text-gray-700 mb-1" style="margin-bottom:0.25rem;">Severity Legend</h3>
+                <div id="severity-legend" class="grid grid-cols-2 sm:grid-cols-4 gap-1 text-xs">
+                    <div><span class="badge badge-not-problem mr-1">Not a problem</span></div>
+                    <div><span class="badge badge-mild mr-1">Mild</span></div>
+                    <div><span class="badge badge-moderate mr-1">Moderate</span></div>
+                    <div><span class="badge badge-severe mr-1">Severe</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div style="page-break-before: always;"></div>
+        <section class="report-card" aria-labelledby="npq-details-heading">
+            <h2 id="npq-details-heading" class="text-xl font-semibold text-gray-700 mb-4">Detailed NPQ Responses</h2>
+            <div id="npq-details-container" class="space-y-6">
+                 <p class="text-center text-gray-500 py-4">Loading data...</p>
+            </div>
+        </section>
+
+        <!-- ADHD Diagnosis Summary as Table -->
+        <section class="report-card mt-8" aria-labelledby="integrative-diagnosis-heading">
+            <h2 id="integrative-diagnosis-heading" class="text-xl font-semibold text-gray-700 mb-4">Final Integrative Diagnosis</h2>
+            <div id="adhd-diagnosis-summary-table-container"></div>
+        </section>
+
+        <footer class="mt-12 text-center text-xs text-gray-500">
+            Report Generated: <span id="generation-date"></span> | Patient ID: <span id="patient-id-footer">{{ report_data.patient.id_number or 'N/A' }}</span>
+        </footer>
+
+    </div>
+
+    <script>
+        // ========================================================================
+        // TEMPLATE USAGE INSTRUCTIONS:
+        // 1. Load your JSON data (e.g., via fetch, file upload, etc.).
+        // 2. Assign the loaded JSON object to the global variable `reportData`.
+        // 3. Call `populateReport()` function manually after data is loaded.
+        // ========================================================================
+
+        let cognitiveRadarChartInstance = null; // To hold the radar chart instance
+
+        // --- Helper Functions ---
+        function getClassification(percentile) {
+            const p = parseFloat(percentile);
+            if (isNaN(p)) return { text: 'N/A', class: '' };
+            if (p > 75) return { text: 'Above Average', class: 'badge-above-average' };
+            if (p >= 25) return { text: 'Average', class: 'badge-average' };
+            if (p >= 9) return { text: 'Low Average', class: 'badge-low-average' };
+            if (p >= 2) return { text: 'Low', class: 'badge-low' };
+            return { text: 'Very Low', class: 'badge-very-low' };
+        }
+        function getSeverityClass(severity) {
+            if (!severity) return '';
+            const lowerSeverity = severity.toLowerCase();
+            if (lowerSeverity.includes('severe')) return 'badge-severe';
+            if (lowerSeverity.includes('moderate')) return 'badge-moderate';
+            if (lowerSeverity.includes('mild')) return 'badge-mild';
+            if (lowerSeverity.includes('not a problem')) return 'badge-not-problem';
+            return '';
+        }
+        function getMetClass(isMet) {
+            return isMet ? 'badge-met' : 'badge-not-met';
+        }
+        function formatDate(dateString) {
+            if (!dateString) return 'N/A';
+            try {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+            } catch (e) {
+                console.error("Error formatting date:", e);
+                return dateString;
+            }
+        }
+
+        // --- HSL Gradient Functions for Bar Color ---
+        function getSegmentedColor(pct) {
+            pct = Math.max(0, Math.min(100, pct));
+            if (pct <= 2) {
+                return 'hsl(0, 100%, 80%)'; // flat red
+            } else if (pct <= 9) {
+                const t = (pct - 2) / (9 - 2); // 0–1
+                return lerpHSL({ h: 0, s: 100, l: 80 }, { h: 30, s: 100, l: 70 }, t); // red → orange
+            } else if (pct < 25) {
+                const t = (pct - 9) / (25 - 9);
+                return lerpHSL({ h: 30, s: 100, l: 70 }, { h: 55, s: 100, l: 60 }, t); // orange → yellow
+            } else if (pct === 25) {
+                return 'hsl(220, 80%, 60%)'; // blue at 25 exactly
+            } else if (pct <= 75) {
+                const t = (pct - 25) / (75 - 25);
+                return lerpHSL({ h: 220, s: 80, l: 60 }, { h: 220, s: 100, l: 40 }, t); // blue → intense
+            } else {
+                const t = (pct - 75) / (25);
+                return lerpHSL({ h: 220, s: 100, l: 40 }, { h: 220, s: 100, l: 30 }, t); // more intense blue
+            }
+        }
+        function lerpHSL(c1, c2, t) {
+            const h = c1.h + (c2.h - c1.h) * t;
+            const s = c1.s + (c2.s - c1.s) * t;
+            const l = c1.l + (c2.l - c1.l) * t;
+            return `hsl(${h.toFixed(0)}, ${s.toFixed(0)}%, ${l.toFixed(0)}%)`;
+        }
+
+        // Utility to set HiDPI canvas for crisp Chart.js rendering
+        function setHiDPICanvas(canvas, width, height) {
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            canvas.style.width = width + 'px';
+            canvas.style.height = height + 'px';
+            const ctx = canvas.getContext('2d');
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.scale(dpr, dpr);
+        }
+
+        // --- Chart Creation Functions ---
+        function createRadarChartSummary(labels, data) {
+            const canvas = document.getElementById('cognitiveRadarChartSummary');
+            setHiDPICanvas(canvas, 320, 320);
+            const ctx = canvas.getContext('2d');
+            if (!ctx) {
+                console.error("Canvas element for radar chart not found.");
+                return;
+            }
+
+            const primaryColor = '#2563eb'; const gridColor = '#dbeafe';
+            const pointColor = primaryColor; const fontColor = '#334155';
+
+            const chartInstance = new Chart(ctx, {
+                type: 'radar',
+                data: { labels: labels, datasets: [{ label: 'Cognitive Percentile', data: data, fill: true, backgroundColor: 'rgba(79, 70, 229, 0.2)', borderColor: primaryColor, pointBackgroundColor: pointColor, pointBorderColor: '#fff', pointHoverBackgroundColor: '#fff', pointHoverBorderColor: pointColor }] },
+                options: {
+                    responsive: false, maintainAspectRatio: false, elements: { line: { borderWidth: 2 } },
+                    scales: { r: { angleLines: { color: gridColor }, grid: { color: gridColor }, pointLabels: { font: { family: "'Inter', sans-serif", size: 10 }, color: fontColor }, ticks: { beginAtZero: true, min: 0, max: 100, stepSize: 25, backdropColor: 'rgba(255, 255, 255, 0.75)', color: fontColor, font: { family: "'Inter', sans-serif" } }, suggestedMin: 0, suggestedMax: 100 } },
+                    plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { return (context.dataset.label || '') + ': ' + (context.parsed.r !== null ? context.parsed.r + '%' : ''); } } } }
+                }
+            });
+        }
+
+        // --- Main Population Function ---
+        function populateReport() {
+            // Check if reportData is available
+            if (typeof reportData === 'undefined' || !reportData) {
+                console.error("Report data is not available.");
+                return;
+            }
+            // --- Declare met counts at function scope for DSM and diagnosis table ---
+            let inattentionMetCount = 0;
+            let hyperactivityMetCount = 0;
+            const inattentionNeeded = 5;
+            const hyperactivityNeeded = 5;
+
+            // Populate Header & Footer (Patient ID and Test Date)
+            const patientIdHeaderElem = document.getElementById('patient-id');
+            if (patientIdHeaderElem && reportData.patient) {
+                patientIdHeaderElem.textContent = reportData.patient.id_number || 'N/A';
+            }
+            const testDateElem = document.getElementById('test-date');
+            if (testDateElem && reportData.patient) {
+                testDateElem.textContent = reportData.patient.test_completed || 'N/A';
+            }
+            const patientIdFooterElem = document.getElementById('patient-id-footer');
+            if (patientIdFooterElem && reportData.patient) {
+                patientIdFooterElem.textContent = reportData.patient.id_number || 'N/A';
+            }
+
+            // Populate Generation Date
+            const generationDateElem = document.getElementById('generation-date');
+            if (generationDateElem) generationDateElem.textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            // --- Populate Charts & Scores ---
+            if (reportData.cognitive_scores) {
+                // --- Populate Cognitive Domain Table from JSON order ---
+                if (reportData.cognitive_scores && Array.isArray(reportData.cognitive_scores)) {
+                    // Table
+                    const cognitiveTableBody = document.getElementById('cognitive-scores-table');
+                    if (cognitiveTableBody) cognitiveTableBody.innerHTML = '';
+                    const labels = [];
+                    const data = [];
+                    reportData.cognitive_scores.forEach(score => {
+                        // Push for radar chart
+                        labels.push(score.domain || 'N/A');
+                        data.push(score.percentile !== null ? parseFloat(score.percentile) : 0);
+
+                        // Table row
+                        const stdScore = score.standard_score !== null ? parseFloat(score.standard_score).toFixed(0) : 'N/A';
+                        const percentile = score.percentile !== null ? parseFloat(score.percentile).toFixed(0) : 'N/A';
+                        const classification = getClassification(score.percentile);
+                        const isValid = String(score.validity_index).toLowerCase() === 'yes';
+                        let domainCell = `<td class=\"py-2 px-3 cognitive-domain\">${score.domain || 'N/A'}`;
+                        if (!isValid) {
+                            domainCell += `<div class='badge-invalid'>Invalid</div>`;
+                        }
+                        domainCell += `</td>`;
+                        const barCell = `<td class=\"py-2 px-3\"><div class='bar-bg'><div class='bar-fill' style='width: ${score.percentile || 0}%; min-width:2px; background: ${getSegmentedColor(score.percentile || 0)};'></div></div></td>`;
+                        const row = `
+                            <tr>
+                                ${domainCell}
+                                <td class=\"py-2 px-3 text-center\">${stdScore}</td>
+                                <td class=\"py-2 px-3 text-center\">${percentile}</td>
+                                <td class=\"py-2 px-3 text-center\"><span class=\"badge ${classification.class}\">${classification.text}</span></td>
+                                ${barCell}
+                            </tr>
+                        `;
+                        if (cognitiveTableBody) cognitiveTableBody.innerHTML += row;
+                    });
+                }
+
+                // --- Radar Chart Data Prep ---
+                const radarDomainsOrder = [
+                    "Executive Function",
+                    "Complex Attention",
+                    "Simple Attention",
+                    "Sustained Attention",
+                    "Processing Speed",
+                    "Reaction Time",
+                    "Psychomotor Speed",
+                    "Motor Speed",
+                    "Visual Memory",
+                    "Verbal Memory",
+                    "Working Memory",
+                    "Reasoning",
+                    "Cognitive Flexibility"
+                ];
+                // Abbreviated labels for radar chart
+                const radarDomainsLabelsAbbrev = [
+                    "Ex Fn",
+                    "Cx Attn",
+                    "Sm Attn",
+                    "Sus Attn",
+                    "Proc Spd",
+                    "React T",
+                    "Psy Spd",
+                    "Mot Spd",
+                    "Vis Mem",
+                    "Verb Mem",
+                    "Work Mem",
+                    "Reason",
+                    "Cog Flex"
+                ];
+                // Helper to normalize domain names (strip asterisks and trim)
+                function normalizeDomain(domain) {
+                    return (domain || '').replace(/\*/g, '').trim();
+                }
+                // Map normalized domain to percentile
+                const scoreMap = {};
+                reportData.cognitive_scores.forEach(score => {
+                    const normDomain = normalizeDomain(score.domain);
+                    if (normDomain && score.percentile !== undefined && score.percentile !== null) {
+                        scoreMap[normDomain] = parseFloat(score.percentile);
+                    }
+                });
+                const radarLabels = radarDomainsLabelsAbbrev;
+                const radarData = radarDomainsOrder.map(domain => scoreMap[normalizeDomain(domain)] !== undefined ? scoreMap[normalizeDomain(domain)] : 0);
+                createRadarChartSummary(radarLabels, radarData); // Create Radar Chart in Summary Card
+            } else {
+                // Handle missing cognitive scores for both charts and table
+                const chartContainerRadar = document.getElementById('cognitiveRadarChart')?.parentElement;
+                const cognitiveTableBody = document.getElementById('cognitive-scores-table');
+                if(chartContainerRadar) chartContainerRadar.innerHTML = '<p class="text-center text-gray-500 py-4">Cognitive profile data not available.</p>';
+                if(cognitiveTableBody) cognitiveTableBody.innerHTML = '<tr><td colspan="5" class="text-center text-gray-500 py-4">Cognitive score data missing or invalid.</td></tr>';
+            }
+
+            // Populate Subtest Results Tables
+            const subtestsContainer = document.getElementById('subtest-tables-container');
+            if (reportData.subtests && subtestsContainer) {
+                subtestsContainer.innerHTML = ''; // Clear loading indicator
+                if (reportData.subtests.length === 0) {
+                    subtestsContainer.innerHTML = '<p class="text-center text-gray-500 py-4">No subtest data available.</p>';
+                } else {
+                    const groupedSubtests = reportData.subtests.reduce((acc, test) => {
+                        const name = test.subtest_name;
+                        if (!acc[name]) { acc[name] = []; }
+                        acc[name].push(test);
+                        return acc;
+                    }, {});
+
+                    for (const testName in groupedSubtests) {
+                        const tests = groupedSubtests[testName];
+                        // Check if any metric in the group is invalid
+                        const hasInvalid = tests.some(metric => Number(metric.validity_flag) === 0);
+                        if (testName === "Four Part Continuous Performance Test") {
+                            tests.sort((a, b) => {
+                                const partA = a.metric.match(/Part (\d)/)?.[1] || 0;
+                                const partB = b.metric.match(/Part (\d)/)?.[1] || 0;
+                                if (partA !== partB) return partA - partB;
+                                return a.metric.localeCompare(b.metric);
+                            });
+                        }
+                        let tableHTML = `
+                            <div class="overflow-x-auto">
+                                <h3 class="text-md font-semibold text-gray-600 mb-2">
+                                    ${testName}${hasInvalid ? ' <span class=\'badge-invalid\'>Invalid</span>' : ''}
+                                </h3>
+                                <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-md">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th scope="col">Metric</th>
+                                            <th scope="col">Score</th>
+                                            <th scope="col">Percentile</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                        `;
+                        tests.forEach(metric => {
+                            const standardScore = metric.standard_score !== null ? parseFloat(metric.standard_score).toFixed(0) : 'N/A';
+                            const percentile = metric.percentile !== null ? parseFloat(metric.percentile).toFixed(0) : 'N/A';
+                            const score = metric.score !== null ? parseFloat(metric.score).toFixed(1) : 'N/A';
+                            // No badge in row anymore
+                            tableHTML += `
+                                <tr>
+                                    <td class="py-2 px-3">${metric.metric || 'N/A'}</td>
+                                    <td class="py-2 px-3 text-center">${score}</td>
+                                    <td class="py-2 px-3 text-center">${percentile}%</td>
+                                </tr>
+                            `;
+                        });
+                        tableHTML += `</tbody></table></div>`;
+                        subtestsContainer.innerHTML += tableHTML;
+                    }
+                }
+            } else if (subtestsContainer) {
+                subtestsContainer.innerHTML = '<p class="text-center text-gray-500 py-4">Subtest data missing or invalid.</p>';
+            }
+
+            // Populate ASRS/DSM Mapping
+            const asrsInattentionTable = document.getElementById('asrs-inattention-table');
+            const asrsHyperactivityTable = document.getElementById('asrs-hyperactivity-table');
+            const dassItems = reportData.dass_items || [];
+            const asrsResponses = reportData.asrs || [];
+            if (asrsInattentionTable) asrsInattentionTable.innerHTML = '';
+            if (asrsHyperactivityTable) asrsHyperactivityTable.innerHTML = '';
+
+            if (dassItems.length === 0 || asrsResponses.length === 0) {
+                if (asrsInattentionTable) asrsInattentionTable.innerHTML = '<tr><td colspan="4" class="text-center text-gray-500 py-4">ASRS/DSM data not available.</td></tr>';
+                if (asrsHyperactivityTable) asrsHyperactivityTable.innerHTML = '<tr><td colspan="4" class="text-center text-gray-500 py-4">ASRS/DSM data not available.</td></tr>';
+            } else {
+                const dsmToAsrsMap = { "A1": "Q7", "A2": "Q8", "A3": "Q9", "A4": "Q1", "A5": "Q2", "A6": "Q4", "A7": "Q10", "A8": "Q11", "A9": "Q3", "B1": "Q5", "B2": "Q12", "B3": "Q13", "B4": "Q14", "B5": "Q6", "B6": "Q15", "B7": "Q16", "B8": "Q17", "B9": "Q18" };
+                dassItems.forEach(item => {
+                    const isMet = item.is_met === 1; const metClass = getMetClass(isMet); const metText = isMet ? 'Met' : 'Not Met';
+                    const criterionCodeMatch = item.dsm_criterion.match(/([AB]\d+):/);
+                    let asrsQuestionText = 'N/A'; let asrsResponse = 'N/A';
+                    if (criterionCodeMatch) {
+                        const criterionCode = criterionCodeMatch[1]; const asrsQNum = dsmToAsrsMap[criterionCode];
+                        const asrsItem = asrsResponses.find(q => q.question_text && q.question_text.startsWith(asrsQNum + ':'));
+                        if (asrsItem) { asrsQuestionText = asrsItem.question_text; asrsResponse = asrsItem.response; }
+                    }
+                    const row = `<tr><td class="py-2 px-3">${item.dsm_criterion || 'N/A'}</td><td class="py-2 px-3 text-xs">${asrsQuestionText}</td><td class="py-2 px-3">${asrsResponse}</td><td class="py-2 px-3 text-center"><span class="badge ${metClass}">${metText}</span></td></tr>`;
+                    if (item.dsm_category === 'Inattention' && asrsInattentionTable) { asrsInattentionTable.innerHTML += row; if (isMet) inattentionMetCount++; }
+                    else if (item.dsm_category === 'Hyperactivity/Impulsivity' && asrsHyperactivityTable) { asrsHyperactivityTable.innerHTML += row; if (isMet) hyperactivityMetCount++; }
+                });
+                const inattentionSummaryEl = document.getElementById('asrs-inattention-summary');
+                const hyperactivitySummaryEl = document.getElementById('asrs-hyperactivity-summary');
+                const diagnosisSummaryEl = document.getElementById('adhd-diagnosis-summary');
+                if(inattentionSummaryEl) inattentionSummaryEl.remove();
+                if(hyperactivitySummaryEl) hyperactivitySummaryEl.remove();
+
+                if (asrsInattentionTable) {
+                    const summaryRow = `<tr class="dsm-summary-row">
+                        <td colspan="4" class="text-center text-lg font-bold">Summary: ${inattentionMetCount}/9 criteria met (Need ≥5) - <span class="badge ${inattentionMetCount >= inattentionNeeded ? 'badge-met' : 'badge-not-met'}">${inattentionMetCount >= inattentionNeeded ? 'Met' : 'Not Met'}</span></td>
+                    </tr>`;
+                    asrsInattentionTable.innerHTML += summaryRow;
+                }
+                if (asrsHyperactivityTable) {
+                    const summaryRow = `<tr class="dsm-summary-row">
+                        <td colspan="4" class="text-center text-lg font-bold">Summary: ${hyperactivityMetCount}/9 criteria met (Need ≥5) - <span class="badge ${hyperactivityMetCount >= hyperactivityNeeded ? 'badge-met' : 'badge-not-met'}">${hyperactivityMetCount >= hyperactivityNeeded ? 'Met' : 'Not Met'}</span></td>
+                    </tr>`;
+                    asrsHyperactivityTable.innerHTML += summaryRow;
+                }
+                if(diagnosisSummaryEl) { diagnosisSummaryEl.innerHTML = `
+                    <table class="adhd-summary-table min-w-full border border-gray-300 rounded-md text-sm" style="margin-top:0.5rem;">
+                        <tbody>
+                            <tr class="bg-white">
+                                <td class="px-2 py-1 font-bold">Inattention Criteria</td>
+                                <td class="px-2 py-1"><span class="badge ${inattentionMetCount >= inattentionNeeded ? 'badge-met' : 'badge-not-met'}">${inattentionMetCount >= inattentionNeeded ? 'Met' : 'Not Met'}</span></td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-2 py-1 font-bold">Hyperactivity/Impulsivity Criteria</td>
+                                <td class="px-2 py-1"><span class="badge ${hyperactivityMetCount >= hyperactivityNeeded ? 'badge-met' : 'badge-not-met'}">${hyperactivityMetCount >= hyperactivityNeeded ? 'Met' : 'Not Met'}</span></td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="px-2 py-1 font-bold">Overall Diagnosis</td>
+                                <td class="px-2 py-1"><span class="font-bold text-blue-700 text-base">${reportData.dass_summary?.[0]?.diagnosis || 'N/A'}</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `; }
+            }
+
+            // Populate Epworth Scale
+            const epworthTableBody = document.getElementById('epworth-responses-table');
+            const epworthSummaryEl = document.getElementById('epworth-summary');
+            if (epworthSummaryEl) epworthSummaryEl.style.display = 'none';
+            if (reportData.epworth && reportData.epworth.responses && reportData.epworth.summary && epworthTableBody) {
+                epworthTableBody.innerHTML = ''; // Clear loading
+                if (reportData.epworth.responses.length === 0) {
+                    epworthTableBody.innerHTML = '<tr><td colspan="2" class="text-center text-gray-500 py-4">No Epworth response data available.</td></tr>';
+                } else {
+                    reportData.epworth.responses.forEach(resp => {
+                        epworthTableBody.innerHTML += `<tr><td class="py-2 px-3">${resp.situation || 'N/A'}</td><td class="py-2 px-3 text-center">${resp.score !== null ? resp.score : 'N/A'}</td></tr>`;
+                    });
+                    const summary = reportData.epworth.summary?.[0];
+                    // Append summary as the last row, Sleepiness/Interpretation first
+                    epworthTableBody.innerHTML += `<tr class="bg-gray-100 font-semibold"><td colspan="2" class="text-center">Interpretation: ${summary?.interpretation ?? 'N/A'} | Total Score: ${summary?.total_score ?? 'N/A'}</td></tr>`;
+                }
+            } else if (epworthTableBody) {
+                epworthTableBody.innerHTML = '<tr><td colspan="2" class="text-center text-gray-500 py-4">Epworth data missing or invalid.</td></tr>';
+            }
+
+            // Populate NPQ Summary Table
+            const npqTableBody = document.getElementById('npq-scores-table');
+            if (reportData.npq_scores && npqTableBody) {
+                npqTableBody.innerHTML = ''; // Clear loading
+                if (reportData.npq_scores.length === 0) { npqTableBody.innerHTML = '<tr><td colspan="3" class="text-center text-gray-500 py-4">No NPQ score data available.</td></tr>'; }
+                else {
+                    const domainOrder = [ "ADHD", "Attention", "Impulsive", "Learning", "Memory", "Anxiety", "Panic", "Agoraphobia", "Obsessions & Compulsions", "Social Anxiety", "PTSD", "Depression", "Bipolar", "Mood Stability", "Mania", "Aggression", "Autism", "Asperger's", "Psychotic", "Somatic", "Fatigue", "Sleep", "Suicide", "Pain", "Substance Abuse", "MCI", "Concussion", "Anxiety/Depression" ];
+                    const sortedScores = reportData.npq_scores.filter(score => score.domain !== "Average Symptom Score").sort((a, b) => { const indexA = domainOrder.indexOf(a.domain); const indexB = domainOrder.indexOf(b.domain); if (indexA !== -1 && indexB !== -1) return indexA - indexB; if (indexA !== -1) return -1; if (indexB !== -1) return 1; return a.domain.localeCompare(b.domain); });
+                    sortedScores.forEach(score => { const severityClass = getSeverityClass(score.severity); npqTableBody.innerHTML += `<tr><td class="py-2 px-3">${score.domain || 'N/A'}</td><td class="py-2 px-3 text-center">${score.score !== null ? score.score : 'N/A'}</td><td class="py-2 px-3 text-center"><span class="badge ${severityClass}">${score.severity || 'N/A'}</span></td></tr>`; });
+                }
+            } else if (npqTableBody) { npqTableBody.innerHTML = '<tr><td colspan="3" class="text-center text-gray-500 py-4">NPQ score data missing or invalid.</td></tr>'; }
+
+            // Populate Detailed NPQ Responses
+            const npqDetailsContainer = document.getElementById('npq-details-container');
+            if (reportData.npq_questions && npqDetailsContainer) {
+                npqDetailsContainer.innerHTML = ''; // Clear loading
+                if (reportData.npq_questions.length === 0) { npqDetailsContainer.innerHTML = '<p class="text-center text-gray-500 py-4">No detailed NPQ response data available.</p>'; }
+                else {
+                    const groupedNpqQuestions = reportData.npq_questions.reduce((acc, q) => { const domain = q.domain; if (!acc[domain]) { acc[domain] = []; } acc[domain].push(q); return acc; }, {});
+                    const domainOrder = [ "ADHD", "Attention", "Impulsive", "Learning", "Memory", "Anxiety", "Panic", "Agoraphobia", "Obsessions & Compulsions", "Social Anxiety", "PTSD", "Depression", "Bipolar", "Mood Stability", "Mania", "Aggression", "Autism", "Asperger's", "Psychotic", "Somatic", "Fatigue", "Sleep", "Suicide", "Pain", "Substance Abuse", "MCI", "Concussion", "Anxiety/Depression" ];
+                    domainOrder.forEach(domainName => {
+                        if (groupedNpqQuestions[domainName]) {
+                            const questions = groupedNpqQuestions[domainName];
+                            let tableHTML = `<div class="overflow-x-auto"><h3 class="text-md font-semibold text-gray-600 mb-2">${domainName}</h3><table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-md"><thead class="bg-gray-50"><tr><th scope="col">Question</th><th scope="col">Score</th><th scope="col">Severity</th></tr></thead><tbody class="bg-white divide-y divide-gray-200">`;
+                            questions.forEach(q => { const severityClass = getSeverityClass(q.severity); tableHTML += `<tr><td class="py-2 px-3">${q.question_text || 'N/A'}</td><td class="py-2 px-3 text-center">${q.score !== null ? q.score : 'N/A'}</td><td class="py-2 px-3 text-center"><span class="badge ${severityClass}">${q.severity || 'N/A'}</span></td></tr>`; });
+                            tableHTML += `</tbody></table></div>`;
+                            npqDetailsContainer.innerHTML += tableHTML;
+                        }
+                    });
+                }
+            } else if (npqDetailsContainer) { npqDetailsContainer.innerHTML = '<p class="text-center text-gray-500 py-4">Detailed NPQ response data missing or invalid.</p>'; }
+
+            // --- Render Integrative Diagnosis Table ---
+            function renderDiagnosisSummaryTable(inattentionMet, hyperactivityMet, diagnosisText, inattentionCount, hyperactivityCount) {
+                return `
+                    <table class="adhd-summary-table min-w-full border border-gray-300 rounded-md text-sm" style="margin-top:0.5rem;">
+                        <tbody>
+                            <tr class="bg-white">
+                                <td class="px-2 py-1 font-bold">Inattention Criteria</td>
+                                <td class="px-2 py-1"><span class="badge ${inattentionMet ? 'badge-met' : 'badge-not-met'}">${inattentionMet ? 'Met' : 'Not Met'}</span> <span class="text-xs text-gray-500">(${inattentionCount}/9 criteria met)</span></td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-2 py-1 font-bold">Hyperactivity/Impulsivity Criteria</td>
+                                <td class="px-2 py-1"><span class="badge ${hyperactivityMet ? 'badge-met' : 'badge-not-met'}">${hyperactivityMet ? 'Met' : 'Not Met'}</span> <span class="text-xs text-gray-500">(${hyperactivityCount}/9 criteria met)</span></td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="px-2 py-1 font-bold">Overall Diagnosis</td>
+                                <td class="px-2 py-1"><span class="font-bold text-blue-700 text-base">${diagnosisText}</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+            }
+            const diagnosisSummaryTableContainer = document.getElementById('adhd-diagnosis-summary-table-container');
+            if(diagnosisSummaryTableContainer) {
+                diagnosisSummaryTableContainer.innerHTML = renderDiagnosisSummaryTable(
+                    inattentionMetCount >= inattentionNeeded,
+                    hyperactivityMetCount >= hyperactivityNeeded,
+                    reportData.dass_summary?.[0]?.diagnosis || 'N/A',
+                    inattentionMetCount,
+                    hyperactivityMetCount
+                );
+            }
+
+            // --- Validity Warnings Section ---
+            const warnings = [];
+
+            // Domain-level (cognitive_scores) validity
+            if (reportData.cognitive_scores) {
+                const invalidDomains = reportData.cognitive_scores.filter(score => String(score.validity_index).toLowerCase() !== 'yes');
+                if (invalidDomains.length > 0) {
+                    warnings.push(`<strong>Domains:</strong> ${invalidDomains.map(s => s.domain).join(', ')}`);
+                }
+            }
+            // Subtest-level validity (if present)
+            if (reportData.subtest_scores) {
+                // Collect subtest names with at least one invalid flag
+                const invalidSubtestNames = Array.from(new Set(
+                    reportData.subtest_scores
+                        .filter(score => String(score.validity_flag) !== '1')
+                        .map(s => s.subtest_name)
+                        .filter(Boolean)
+                ));
+                if (invalidSubtestNames.length > 0) {
+                    warnings.push(`<strong>Subtests:</strong> ${invalidSubtestNames.join(', ')}`);
+                }
+            }
+            // Render warnings
+            const validityElem = document.getElementById('validity-warnings-content');
+            if (validityElem) {
+                if (warnings.length > 0) {
+                    validityElem.innerHTML = `Possible invalid scores for:<br>${warnings.join('<br>')}`;
+                } else {
+                    validityElem.innerHTML = `<span class='text-green-700'>No validity warnings detected.</span>`;
+                }
+            }
+        } // End of populateReport function
+
+        // --- Event Listener ---
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof reportData !== 'undefined' && reportData) { populateReport(); }
+            else { console.log("DOM loaded, waiting for reportData to be assigned."); }
+        });
+
+        // --- Example: How to load data dynamically and then populate ---
+        /*
+        async function loadAndPopulate() {
+            try {
+                await new Promise(resolve => { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', resolve); } else { resolve(); } });
+                console.log("Fetching report data...");
+                const response = await fetch('/path/to/your/data.json'); // Replace with your data source
+                if (!response.ok) { throw new Error(`HTTP error! status: ${response.status}`); }
+                window.reportData = await response.json(); // Assign to global scope
+                console.log("Report data loaded, populating report...");
+                populateReport(); // Call populate function AFTER data is loaded and DOM is ready
+            } catch (error) {
+                console.error("Failed to load report data:", error);
+                if (document.body) { document.body.innerHTML = `<div class="text-center text-red-600 font-bold p-10">Error: Failed to load report data. ${error.message}</div>`; }
+                else { document.addEventListener('DOMContentLoaded', () => { document.body.innerHTML = `<div class="text-center text-red-600 font-bold p-10">Error: Failed to load report data. ${error.message}</div>`; }); }
+            }
+        }
+        // loadAndPopulate(); // Call this function to start the process
+        */
+
+    </script>
+</body>
+</html>

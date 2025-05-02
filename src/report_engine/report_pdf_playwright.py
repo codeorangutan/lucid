@@ -8,8 +8,13 @@ import re
 
 async def generate_pdf(html_path, json_path, output_pdf):
     # Read your JSON data
-    with open(json_path, 'r', encoding='utf-8') as f:
-        report_data = json.load(f)
+    # Load JSON, fallback to latin-1 on decode errors
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            report_data = json.load(f)
+    except UnicodeDecodeError:
+        with open(json_path, 'r', encoding='latin-1') as f:
+            report_data = json.load(f)
 
     # Generate the executive summary and convert to HTML
     summary_html = generate_adhd_summary(report_data)
@@ -74,6 +79,17 @@ async def generate_pdf(html_path, json_path, output_pdf):
         color: #1e293b;
         font-weight: 600;
     }
+    .executive-summary .disclaimer {
+        margin-bottom: 0.8em !important;
+        color: #dc2626 !important;
+    }
+    .executive-summary-disclaimer {
+        font-style: italic !important;
+        font-size: 0.93em !important; /* 2pt smaller than 1.13em base */
+        display: block;
+        line-height: 1.6;
+        color: #dc2626 !important;
+    }
     </style>'''
 
     async with async_playwright() as p:
@@ -97,6 +113,7 @@ async def generate_pdf(html_path, json_path, output_pdf):
         # Inject JSON and call populateReport
         await page.evaluate(f'''
             window.reportData = {json.dumps(report_data)};
+            console.log('DEBUG reportData:', window.reportData);
             if (typeof populateReport === "function") populateReport();
         ''')
 
@@ -173,6 +190,29 @@ section[aria-labelledby="subtest-results-heading"] {
 }
 #subtest-tables-container > * {
     margin-bottom: 0.5rem !important;
+}
+/* Further compact subtest tables */
+#subtest-tables-container table {
+    margin: 0.25em 0 !important;
+}
+#subtest-tables-container table th,
+#subtest-tables-container table td {
+    padding-top: 0.25em !important;
+    padding-bottom: 0.25em !important;
+}
+#subtest-tables-container .bar-bg,
+#subtest-tables-container .bar-fill {
+    height: 0.75em !important;
+}
+/* Reduce spacing around subtest group headings */
+#subtest-tables-container h3 {
+    margin: 0.2em 0 !important;
+    font-size: 1em !important;
+}
+/* Remove default margins on subtest table containers */
+#subtest-tables-container .overflow-x-auto {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 /* ASRS-to-DSM mapping section compact and summary size */
 section[aria-labelledby="asrs-dsm-heading"] {

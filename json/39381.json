@@ -1,0 +1,4909 @@
+{
+  "patient": {
+    "id": 7,
+    "id_number": "39381",
+    "raw_subject": "[Auto-imported]",
+    "referral_received_time": "2025-04-28 06:33:38.201747",
+    "paid": 0,
+    "test_completed": 0,
+    "retest": 0,
+    "report_unprocessed": 1,
+    "report_processed": 0,
+    "test_resent": 0
+  },
+  "cognitive_scores": [
+    {
+      "id": 187,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Neurocognition Index (NCI)",
+      "standard_score": "106.0",
+      "percentile": "66.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 188,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Composite Memory",
+      "patient_score": "96.0",
+      "standard_score": "97.0",
+      "percentile": "42.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 189,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Verbal Memory",
+      "patient_score": "54.0",
+      "standard_score": "106.0",
+      "percentile": "66.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 190,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Visual Memory",
+      "patient_score": "42.0",
+      "standard_score": "90.0",
+      "percentile": "25.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 191,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychomotor Speed",
+      "patient_score": "178.0",
+      "standard_score": "113.0",
+      "percentile": "81.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 192,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Reaction Time*",
+      "patient_score": "681.0",
+      "standard_score": "98.0",
+      "percentile": "45.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 193,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Complex Attention*",
+      "patient_score": "1.0",
+      "standard_score": "118.0",
+      "percentile": "88.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 194,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Cognitive Flexibility",
+      "patient_score": "48.0",
+      "standard_score": "106.0",
+      "percentile": "66.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 195,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Processing Speed",
+      "patient_score": "49.0",
+      "standard_score": "99.0",
+      "percentile": "47.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 196,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Executive Function",
+      "patient_score": "49.0",
+      "standard_score": "106.0",
+      "percentile": "66.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 197,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Reasoning",
+      "patient_score": "10.0",
+      "standard_score": "115.0",
+      "percentile": "84.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 198,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Working Memory",
+      "patient_score": "15.0",
+      "standard_score": "121.0",
+      "percentile": "92.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 199,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Sustained Attention",
+      "patient_score": "37.0",
+      "standard_score": "119.0",
+      "percentile": "90.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 200,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Simple Attention",
+      "patient_score": "40.0",
+      "standard_score": "107.0",
+      "percentile": "68.0",
+      "validity_index": "Yes"
+    },
+    {
+      "id": 201,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Motor Speed",
+      "patient_score": "129.0",
+      "standard_score": "119.0",
+      "percentile": "90.0",
+      "validity_index": "Yes"
+    }
+  ],
+  "subtests": [
+    {
+      "id": 560,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Verbal Memory Test (VBM)",
+      "metric": "Correct Hits - Immediate",
+      "score": 13.0,
+      "standard_score": 104.0,
+      "percentile": 61.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 561,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Verbal Memory Test (VBM)",
+      "metric": "Correct Passes - Immediate",
+      "score": 15.0,
+      "standard_score": 110.0,
+      "percentile": 75.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 562,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Verbal Memory Test (VBM)",
+      "metric": "Correct Hits - Delay",
+      "score": 11.0,
+      "standard_score": 99.0,
+      "percentile": 47.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 563,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Verbal Memory Test (VBM)",
+      "metric": "Correct Passes - Delay",
+      "score": 15.0,
+      "standard_score": 110.0,
+      "percentile": 75.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 564,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Visual Memory Test (VSM)",
+      "metric": "Correct Hits - Immediate",
+      "score": 10.0,
+      "standard_score": 85.0,
+      "percentile": 16.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 565,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Visual Memory Test (VSM)",
+      "metric": "Correct Passes - Immediate",
+      "score": 11.0,
+      "standard_score": 98.0,
+      "percentile": 45.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 566,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Visual Memory Test (VSM)",
+      "metric": "Correct Hits - Delay",
+      "score": 8.0,
+      "standard_score": 80.0,
+      "percentile": 9.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 567,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Visual Memory Test (VSM)",
+      "metric": "Correct Passes - Delay",
+      "score": 13.0,
+      "standard_score": 113.0,
+      "percentile": 81.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 568,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Finger Tapping Test (FTT)",
+      "metric": "Right Taps Average",
+      "score": 67.0,
+      "standard_score": 120.0,
+      "percentile": 91.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 569,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Finger Tapping Test (FTT)",
+      "metric": "Left Taps Average",
+      "score": 62.0,
+      "standard_score": 114.0,
+      "percentile": 82.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 570,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Symbol Digit Coding (SDC)",
+      "metric": "Correct Responses",
+      "score": 49.0,
+      "standard_score": 97.0,
+      "percentile": 42.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 571,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Symbol Digit Coding (SDC)",
+      "metric": "Errors*",
+      "score": 0.0,
+      "standard_score": 110.0,
+      "percentile": 75.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 572,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Stroop Test (ST)",
+      "metric": "Simple Reaction Time*",
+      "score": 327.0,
+      "standard_score": 97.0,
+      "percentile": 42.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 573,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Stroop Test (ST)",
+      "metric": "Complex Reaction Time Correct*",
+      "score": 624.0,
+      "standard_score": 98.0,
+      "percentile": 45.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 574,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Stroop Test (ST)",
+      "metric": "Stroop Reaction Time Correct*",
+      "score": 737.0,
+      "standard_score": 99.0,
+      "percentile": 47.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 575,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Stroop Test (ST)",
+      "metric": "Stroop Commission Errors*",
+      "score": 1.0,
+      "standard_score": 98.0,
+      "percentile": 45.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 576,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Shifting Attention Test (SAT)",
+      "metric": "Correct Responses",
+      "score": 49.0,
+      "standard_score": 98.0,
+      "percentile": 45.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 577,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Shifting Attention Test (SAT)",
+      "metric": "Errors*",
+      "score": 0.0,
+      "standard_score": 119.0,
+      "percentile": 90.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 578,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Shifting Attention Test (SAT)",
+      "metric": "Correct Reaction Time*",
+      "score": 1165.0,
+      "standard_score": 96.0,
+      "percentile": 40.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 579,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Continuous Performance Test (CPT)",
+      "metric": "Correct Responses",
+      "score": 40.0,
+      "standard_score": 103.0,
+      "percentile": 58.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 580,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Continuous Performance Test (CPT)",
+      "metric": "Omission Errors*",
+      "score": 0.0,
+      "standard_score": 103.0,
+      "percentile": 58.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 581,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Continuous Performance Test (CPT)",
+      "metric": "Commission Errors*",
+      "score": 0.0,
+      "standard_score": 107.0,
+      "percentile": 68.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 582,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Continuous Performance Test (CPT)",
+      "metric": "Choice Reaction Time Correct*",
+      "score": 452.0,
+      "standard_score": 93.0,
+      "percentile": 32.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 583,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Reasoning Test (RT)",
+      "metric": "Correct Responses",
+      "score": 12.0,
+      "standard_score": 116.0,
+      "percentile": 86.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 584,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Reasoning Test (RT)",
+      "metric": "Average Correct Reaction Time*",
+      "score": 5063.0,
+      "standard_score": 100.0,
+      "percentile": 50.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 585,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Reasoning Test (RT)",
+      "metric": "Commission Errors*",
+      "score": 2.0,
+      "standard_score": 113.0,
+      "percentile": 81.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 586,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Reasoning Test (RT)",
+      "metric": "Omission Errors*",
+      "score": 1.0,
+      "standard_score": 104.0,
+      "percentile": 61.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 587,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Correct Reaction Time*",
+      "score": 359.0,
+      "standard_score": 100.0,
+      "percentile": 50.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 588,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Correct Responses",
+      "score": 6.0,
+      "standard_score": 103.0,
+      "percentile": 58.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 589,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Correct Reaction Time*",
+      "score": 400.0,
+      "standard_score": 98.0,
+      "percentile": 45.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 590,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Incorrect Responses*",
+      "score": 0.0,
+      "standard_score": 104.0,
+      "percentile": 61.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 591,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Incorrect Reaction Time*",
+      "score": 0.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 592,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Omission Errors*",
+      "score": 0.0,
+      "standard_score": 103.0,
+      "percentile": 58.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 593,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Correct Responses",
+      "score": 16.0,
+      "standard_score": 113.0,
+      "percentile": 81.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 594,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Correct Reaction Time*",
+      "score": 510.0,
+      "standard_score": 103.0,
+      "percentile": 58.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 595,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Incorrect Responses*",
+      "score": 0.0,
+      "standard_score": 104.0,
+      "percentile": 61.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 596,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Incorrect Reaction Time*",
+      "score": 0.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 597,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Omission Errors*",
+      "score": 0.0,
+      "standard_score": 113.0,
+      "percentile": 81.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 598,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Correct Responses",
+      "score": 16.0,
+      "standard_score": 124.0,
+      "percentile": 95.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 599,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Correct Reaction Time*",
+      "score": 719.0,
+      "standard_score": 96.0,
+      "percentile": 40.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 600,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Incorrect Responses*",
+      "score": 1.0,
+      "standard_score": 103.0,
+      "percentile": 58.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 601,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Average Incorrect Reaction Time*",
+      "score": 836.0,
+      "standard_score": 92.0,
+      "percentile": 30.0,
+      "validity_flag": 1
+    },
+    {
+      "id": 602,
+      "session_id": 14,
+      "patient_id": "39381",
+      "subtest_name": "Four Part Continuous Performance Test",
+      "metric": "Omission Errors*",
+      "score": 0.0,
+      "standard_score": 124.0,
+      "percentile": 95.0,
+      "validity_flag": 1
+    }
+  ],
+  "asrs": [
+    {
+      "id": 235,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 1,
+      "part": "A",
+      "response": "Very Often",
+      "question_text": "Q1: How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?"
+    },
+    {
+      "id": 236,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 2,
+      "part": "A",
+      "response": "Very Often",
+      "question_text": "Q2: How often do you have difficulty getting things in order when you have to do a task that requires organization?"
+    },
+    {
+      "id": 237,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 3,
+      "part": "A",
+      "response": "Very Often",
+      "question_text": "Q3: How often do you have problems remembering appointments or obligations?"
+    },
+    {
+      "id": 238,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 4,
+      "part": "A",
+      "response": "Very Often",
+      "question_text": "Q4: When you have a task that requires a lot of thought, how often do you avoid or delay getting started?"
+    },
+    {
+      "id": 239,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 5,
+      "part": "A",
+      "response": "Very Often",
+      "question_text": "Q5: How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?"
+    },
+    {
+      "id": 240,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 6,
+      "part": "A",
+      "response": "Sometimes",
+      "question_text": "Q6: How often do you feel overly active and compelled to do things, like you were driven by a motor?"
+    },
+    {
+      "id": 241,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 7,
+      "part": "B",
+      "response": "Often",
+      "question_text": "Q7: How often do you make careless mistakes when you have to work on a boring or difficult project?"
+    },
+    {
+      "id": 242,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 8,
+      "part": "B",
+      "response": "Very Often",
+      "question_text": "Q8: How often do you have difficulty keeping your attention when you are doing boring or repetitive work?"
+    },
+    {
+      "id": 243,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 9,
+      "part": "B",
+      "response": "Very Often",
+      "question_text": "Q9: How often do you have difficulty concentrating on what people say to you, even when they are speaking to you directly?"
+    },
+    {
+      "id": 244,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 10,
+      "part": "B",
+      "response": "Often",
+      "question_text": "Q10: How often do you misplace or have difficulty finding things at home or at work?"
+    },
+    {
+      "id": 245,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 11,
+      "part": "B",
+      "response": "Very Often",
+      "question_text": "Q11: How often are you distracted by activity or noise around you?"
+    },
+    {
+      "id": 246,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 12,
+      "part": "B",
+      "response": "Often",
+      "question_text": "Q12: How often do you leave your seat in meetings or other situations in which you are expected to remain seated?"
+    },
+    {
+      "id": 247,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 13,
+      "part": "B",
+      "response": "Very Often",
+      "question_text": "Q13: How often do you feel restless or fidgety?"
+    },
+    {
+      "id": 248,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 14,
+      "part": "B",
+      "response": "Often",
+      "question_text": "Q14: How often do you have difficulty unwinding and relaxing when you have time to yourself?"
+    },
+    {
+      "id": 249,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 15,
+      "part": "B",
+      "response": "Often",
+      "question_text": "Q15: How often do you find yourself talking too much when you are in social situations?"
+    },
+    {
+      "id": 250,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 16,
+      "part": "B",
+      "response": "Sometimes",
+      "question_text": "Q16: When you're in a conversation, how often do you find yourself finishing the sentences of the people you are talking to, before they can finish them themselves?"
+    },
+    {
+      "id": 251,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 17,
+      "part": "B",
+      "response": "Sometimes",
+      "question_text": "Q17: How often do you have difficulty waiting your turn in situations when turn taking is required?"
+    },
+    {
+      "id": 252,
+      "session_id": 14,
+      "patient_id": "39381",
+      "question_number": 18,
+      "part": "B",
+      "response": "Sometimes",
+      "question_text": "Q18: How often do you interrupt others when they are busy?"
+    }
+  ],
+  "dass_summary": [
+    {
+      "id": 14,
+      "session_id": 14,
+      "patient_id": "39381",
+      "diagnosis": "Combined Presentation"
+    }
+  ],
+  "dass_items": [
+    {
+      "id": 235,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "A1: Often fails to give close attention to details or makes careless mistakes",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 236,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "A2: Often has difficulty sustaining attention in tasks or play activities",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 237,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "A3: Often does not seem to listen when spoken to directly",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 238,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "A4: Often does not follow through on instructions and fails to finish duties",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 239,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "A5: Often has difficulty organizing tasks and activities",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 240,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "A6: Often avoids or is reluctant to engage in tasks requiring sustained mental effort",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 241,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "A7: Often loses things necessary for tasks or activities",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 242,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "A8: Is often easily distracted by extraneous stimuli",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 243,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "A9: Is often forgetful in daily activities",
+      "dsm_category": "Inattention",
+      "is_met": 1
+    },
+    {
+      "id": 244,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "B1: Often fidgets or squirms in seat",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 245,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "B2: Often leaves seat in situations when remaining seated is expected",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 246,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "B3: Often runs about or climbs in situations where it is inappropriate",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 247,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "B4: Often unable to play or engage in leisure activities quietly",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 248,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "B5: Is often 'on the go', acting as if 'driven by a motor'",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 0
+    },
+    {
+      "id": 249,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "B6: Often talks excessively",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 250,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "B7: Often blurts out an answer before a question has been completed",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    },
+    {
+      "id": 251,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "B8: Often has difficulty waiting his or her turn",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 0
+    },
+    {
+      "id": 252,
+      "session_id": 14,
+      "patient_id": "39381",
+      "dsm_criterion": "B9: Often interrupts or intrudes on others",
+      "dsm_category": "Hyperactivity/Impulsivity",
+      "is_met": 1
+    }
+  ],
+  "epworth": {
+    "responses": [
+      {
+        "id": 105,
+        "session_id": 14,
+        "patient_id": "39381",
+        "situation": "Sitting and reading",
+        "score": 2
+      },
+      {
+        "id": 106,
+        "session_id": 14,
+        "patient_id": "39381",
+        "situation": "Watching TV",
+        "score": 1
+      },
+      {
+        "id": 107,
+        "session_id": 14,
+        "patient_id": "39381",
+        "situation": "Sitting inactive in a public place (e.g., a theater or a meeting)",
+        "score": 2
+      },
+      {
+        "id": 108,
+        "session_id": 14,
+        "patient_id": "39381",
+        "situation": "As a passenger in a car for an hour without a break",
+        "score": 2
+      },
+      {
+        "id": 109,
+        "session_id": 14,
+        "patient_id": "39381",
+        "situation": "Lying down to rest in the afternoon when circumstances permit",
+        "score": 3
+      },
+      {
+        "id": 110,
+        "session_id": 14,
+        "patient_id": "39381",
+        "situation": "Sitting and talking to someone",
+        "score": 0
+      },
+      {
+        "id": 111,
+        "session_id": 14,
+        "patient_id": "39381",
+        "situation": "Sitting quietly after a lunch without alcohol",
+        "score": 1
+      },
+      {
+        "id": 112,
+        "session_id": 14,
+        "patient_id": "39381",
+        "situation": "In a car, while stopped for a few minutes in traffic",
+        "score": 0
+      }
+    ],
+    "summary": [
+      {
+        "id": 13,
+        "session_id": 14,
+        "patient_id": "39381",
+        "total_score": 11,
+        "interpretation": "Mild excessive daytime sleepiness."
+      }
+    ]
+  },
+  "npq_scores": [
+    {
+      "id": 349,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "score": 264,
+      "severity": "Severe"
+    },
+    {
+      "id": 350,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Impulsive",
+      "score": 117,
+      "severity": "Mild"
+    },
+    {
+      "id": 351,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "score": 177,
+      "severity": "Moderate"
+    },
+    {
+      "id": 352,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "score": 186,
+      "severity": "Moderate"
+    },
+    {
+      "id": 353,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety",
+      "score": 200,
+      "severity": "Moderate"
+    },
+    {
+      "id": 354,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Panic",
+      "score": 100,
+      "severity": "Mild"
+    },
+    {
+      "id": 355,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Agoraphobia",
+      "score": 200,
+      "severity": "Moderate"
+    },
+    {
+      "id": 356,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "score": 216,
+      "severity": "Moderate"
+    },
+    {
+      "id": 357,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Social Anxiety",
+      "score": 275,
+      "severity": "Severe"
+    },
+    {
+      "id": 358,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "score": 200,
+      "severity": "Moderate"
+    },
+    {
+      "id": 359,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "score": 131,
+      "severity": "Mild"
+    },
+    {
+      "id": 360,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mania",
+      "score": 50,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 361,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Aggression",
+      "score": 50,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 362,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "score": 107,
+      "severity": "Mild"
+    },
+    {
+      "id": 363,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Somatic",
+      "score": 78,
+      "severity": "Mild"
+    },
+    {
+      "id": 364,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Fatigue",
+      "score": 183,
+      "severity": "Moderate"
+    },
+    {
+      "id": 365,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Sleep",
+      "score": 50,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 366,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Suicide",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 367,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Pain",
+      "score": 150,
+      "severity": "Moderate"
+    },
+    {
+      "id": 368,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Substance Abuse",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 369,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Average Symptom Score",
+      "score": 137,
+      "severity": "Mild"
+    },
+    {
+      "id": 370,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "score": 167,
+      "severity": "Moderate"
+    },
+    {
+      "id": 371,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "score": 121,
+      "severity": "Mild"
+    },
+    {
+      "id": 372,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "score": 250,
+      "severity": "Severe"
+    },
+    {
+      "id": 373,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "score": 240,
+      "severity": "Severe"
+    },
+    {
+      "id": 374,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "score": 240,
+      "severity": "Severe"
+    },
+    {
+      "id": 375,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "score": 250,
+      "severity": "Severe"
+    },
+    {
+      "id": 376,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "score": 200,
+      "severity": "Moderate"
+    },
+    {
+      "id": 377,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "score": 186,
+      "severity": "Moderate"
+    }
+  ],
+  "npq_questions": [
+    {
+      "id": 4381,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "question_number": 1,
+      "question_text": "Difficulty concentrating",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4382,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "question_number": 2,
+      "question_text": "Difficulty paying attention",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4383,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "question_number": 3,
+      "question_text": "Easily distracted",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4384,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "question_number": 4,
+      "question_text": "Feeling scattered, disorganized",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4385,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "question_number": 5,
+      "question_text": "Forgetful, I need constant reminding",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4386,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "question_number": 6,
+      "question_text": "Leaving things behind and having to go back to get them.",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4387,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "question_number": 7,
+      "question_text": "Losing things",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4388,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "question_number": 8,
+      "question_text": "Making careless mistakes",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4389,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "question_number": 9,
+      "question_text": "Not finishing chores, homework or projects",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4390,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "question_number": 10,
+      "question_text": "Short attention span",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4391,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Attention",
+      "question_number": 11,
+      "question_text": "When reading, losing track of what the story is about",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4392,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Impulsive",
+      "question_number": 1,
+      "question_text": "Feeling restless",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4393,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Impulsive",
+      "question_number": 2,
+      "question_text": "Fidgety, I can't sit still",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4394,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Impulsive",
+      "question_number": 3,
+      "question_text": "High energy",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4395,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Impulsive",
+      "question_number": 4,
+      "question_text": "Impatient",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4396,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Impulsive",
+      "question_number": 5,
+      "question_text": "Impulsive, act without thinking",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4397,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Impulsive",
+      "question_number": 6,
+      "question_text": "Overly active",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4398,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 1,
+      "question_text": "Bad handwriting",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4399,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 2,
+      "question_text": "Having to do things slowly to make sure it's right",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4400,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 3,
+      "question_text": "Learning a foreign language",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4401,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 4,
+      "question_text": "Learning math",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4402,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 5,
+      "question_text": "Learning new things",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4403,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 6,
+      "question_text": "I don't like to read",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4404,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 7,
+      "question_text": "I don't work up to my potential",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4405,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 8,
+      "question_text": "Organizing studies or projects",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4406,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 9,
+      "question_text": "Paying attention to lectures",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4407,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 10,
+      "question_text": "Remembering what you studied or read",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4408,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 11,
+      "question_text": "Taking notes",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4409,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 12,
+      "question_text": "Taking tests",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4410,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Learning",
+      "question_number": 13,
+      "question_text": "When reading, losing track of what the story is about",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4411,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 1,
+      "question_text": "Failing to recognize places you have been before.",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4412,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 2,
+      "question_text": "Finding a television story or a movie hard to follow.",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4413,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 3,
+      "question_text": "Forgetful, I need constant reminding",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4414,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 4,
+      "question_text": "Forgetting appointments or social engagements.",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4415,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 5,
+      "question_text": "Forgetting if you have taken your medicine",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4416,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 6,
+      "question_text": "Forgetting something cooking on the stove or in the toaster",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4417,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 7,
+      "question_text": "Forgetting to do something you said you would do",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4418,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 8,
+      "question_text": "Forgetting to give a message to someone",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4419,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 9,
+      "question_text": "Forgetting to tell somebody something that you meant to tell them",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4420,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 10,
+      "question_text": "Forgetting where things are kept; looking for them in the wrong place",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4421,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 11,
+      "question_text": "Forgetting where you parked the car",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4422,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 12,
+      "question_text": "Going to the store but forgetting to get what you need",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4423,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 13,
+      "question_text": "I can't remember the names of close relatives or friends.",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4424,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 14,
+      "question_text": "Learning new things",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4425,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 15,
+      "question_text": "Leaving things behind and having to go back to get them.",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4426,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 16,
+      "question_text": "My mind goes blank",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4427,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 17,
+      "question_text": "Problems with memory",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4428,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 18,
+      "question_text": "Putting something down and then forgetting where you put it.",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4429,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 19,
+      "question_text": "Reading something and then realizing you have read it before.",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4430,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 20,
+      "question_text": "Trouble thinking of the right word",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4431,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 21,
+      "question_text": "Unable to remember things as well as I used to",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4432,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Memory",
+      "question_number": 22,
+      "question_text": "When reading, losing track of what the story is about",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4433,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety",
+      "question_number": 1,
+      "question_text": "Feeling anxious",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4434,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety",
+      "question_number": 2,
+      "question_text": "Feeling keyed up or on edge",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4435,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety",
+      "question_number": 3,
+      "question_text": "Feeling nervous",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4436,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety",
+      "question_number": 4,
+      "question_text": "Feeling restless",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4437,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety",
+      "question_number": 5,
+      "question_text": "Feeling tense",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4438,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety",
+      "question_number": 6,
+      "question_text": "Fidgety, I can't sit still",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4439,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety",
+      "question_number": 7,
+      "question_text": "Having nightmares or bad dreams",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4440,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety",
+      "question_number": 8,
+      "question_text": "High-strung or keyed up",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4441,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety",
+      "question_number": 9,
+      "question_text": "I find it hard to relax",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4442,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety",
+      "question_number": 10,
+      "question_text": "Worrying too much",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4443,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Panic",
+      "question_number": 1,
+      "question_text": "Attacks of intense anxiety",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4444,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Panic",
+      "question_number": 2,
+      "question_text": "Feeling so nervous it's hard to breathe",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4445,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Panic",
+      "question_number": 3,
+      "question_text": "Getting so nervous I feel like passing out",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4446,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Panic",
+      "question_number": 4,
+      "question_text": "Getting really scared for no reason at all",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4447,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Panic",
+      "question_number": 5,
+      "question_text": "Panic attacks",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4448,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Panic",
+      "question_number": 6,
+      "question_text": "Trouble catching my breath",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4449,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Agoraphobia",
+      "question_number": 1,
+      "question_text": "Avoiding certain things or places",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4450,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Agoraphobia",
+      "question_number": 2,
+      "question_text": "Feeling scared in open spaces or out in public",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4451,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Agoraphobia",
+      "question_number": 3,
+      "question_text": "Feeling scared to use buses or trains",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4452,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Agoraphobia",
+      "question_number": 4,
+      "question_text": "Feeling uncomfortable in crowds",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4453,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Agoraphobia",
+      "question_number": 5,
+      "question_text": "Feelings of being trapped",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4454,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Agoraphobia",
+      "question_number": 6,
+      "question_text": "Worrying about fainting in public",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4455,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 1,
+      "question_text": "I hate being touched or held",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4456,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 2,
+      "question_text": "Checking things several times",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4457,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 3,
+      "question_text": "Collecting things that you don't really need",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4458,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 4,
+      "question_text": "Counting things; numbers going through your mind",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4459,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 5,
+      "question_text": "Eating the same foods all the time",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4460,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 6,
+      "question_text": "Feeling guilty over minor infractions",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4461,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 7,
+      "question_text": "Having bad thoughts that you can't get rid of",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4462,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 8,
+      "question_text": "Having thoughts or words that go over and over in your mind",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4463,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 9,
+      "question_text": "It bothers me when someone eats off my plate",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4464,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 10,
+      "question_text": "I have a special number that I count up to or do things just that number of times",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4465,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 11,
+      "question_text": "I have to do things a certain number of times before I'm satisfied",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4466,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 12,
+      "question_text": "Moving or talking in special ways to avoid bad luck",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4467,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 13,
+      "question_text": "Putting things away, and they have to be just right",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4468,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 14,
+      "question_text": "Repetitive behaviors like touching or counting",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4469,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 15,
+      "question_text": "Thoughts about sex that are troubling",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4470,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 16,
+      "question_text": "Trouble making up your mind",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4471,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 17,
+      "question_text": "Washing your hands over and over",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4472,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 18,
+      "question_text": "Worrying about being clean",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4473,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Obsessions & Compulsions",
+      "question_number": 19,
+      "question_text": "Worrying about the germs that are on things",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4474,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Social Anxiety",
+      "question_number": 1,
+      "question_text": "I am a shy person",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4475,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Social Anxiety",
+      "question_number": 2,
+      "question_text": "Difficulty developing friendships",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4476,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Social Anxiety",
+      "question_number": 3,
+      "question_text": "Feeling nervous around people I don't know",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4477,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Social Anxiety",
+      "question_number": 4,
+      "question_text": "Feeling nervous when I have to do something in front of people",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4478,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Social Anxiety",
+      "question_number": 5,
+      "question_text": "Feeling uneasy about eating or drinking in public",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4479,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Social Anxiety",
+      "question_number": 6,
+      "question_text": "Hard to go out in public",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4480,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Social Anxiety",
+      "question_number": 7,
+      "question_text": "Hard to relate to other people",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4481,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Social Anxiety",
+      "question_number": 8,
+      "question_text": "Starting a conversation with people I don't know",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4482,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 1,
+      "question_text": "Crying spells",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4483,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 2,
+      "question_text": "Feeling depressed",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4484,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 3,
+      "question_text": "Feeling discouraged about the future",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4485,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 4,
+      "question_text": "Feeling empty inside",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4486,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 5,
+      "question_text": "Feeling hopeless",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4487,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 6,
+      "question_text": "Feeling irritable",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4488,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 7,
+      "question_text": "Feeling little or no interest in things",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4489,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 8,
+      "question_text": "Feeling lonely",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4490,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 9,
+      "question_text": "Feeling sad",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4491,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 10,
+      "question_text": "Feeling that doing anything is a real effort",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4492,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 11,
+      "question_text": "Feelings of guilt or remorse",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4493,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 12,
+      "question_text": "Having nightmares or bad dreams",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4494,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 13,
+      "question_text": "I feel like a failure",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4495,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 14,
+      "question_text": "I feel like I'm being punished",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4496,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 15,
+      "question_text": "Loss of interest in sex",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4497,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 16,
+      "question_text": "Not enjoying things as much as before",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4498,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Depression",
+      "question_number": 17,
+      "question_text": "Withdrawn, isolated",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4499,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 1,
+      "question_text": "Anger",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4500,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 2,
+      "question_text": "Angry outbursts",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4501,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 3,
+      "question_text": "Crying spells",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4502,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 4,
+      "question_text": "Easily agitated",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4503,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 5,
+      "question_text": "Easily annoyed",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4504,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 6,
+      "question_text": "Easily frustrated",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4505,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 7,
+      "question_text": "Elevated mood, euphoria",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4506,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 8,
+      "question_text": "Excitable",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4507,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 9,
+      "question_text": "Explosive",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4508,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 10,
+      "question_text": "Feeling irritable",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4509,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 11,
+      "question_text": "Feeling negative",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4510,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 12,
+      "question_text": "My moods change quickly",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4511,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mood Stability",
+      "question_number": 13,
+      "question_text": "Temper tantrums",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4512,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mania",
+      "question_number": 1,
+      "question_text": "Much more interested in sex than usual",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4513,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mania",
+      "question_number": 2,
+      "question_text": "Being much more social or outgoing than usual",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4514,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mania",
+      "question_number": 3,
+      "question_text": "Decreased need for sleep",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4515,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mania",
+      "question_number": 4,
+      "question_text": "Feeling much more confident than usual",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4516,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mania",
+      "question_number": 5,
+      "question_text": "Having much more energy than usual",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4517,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mania",
+      "question_number": 6,
+      "question_text": "Increased or inappropriate sexual interest",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4518,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mania",
+      "question_number": 7,
+      "question_text": "Pressured speech, uninterruptible and continuous",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4519,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Mania",
+      "question_number": 8,
+      "question_text": "Thoughts racing",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4520,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Aggression",
+      "question_number": 1,
+      "question_text": "Blaming other people for your own mistakes",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4521,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Aggression",
+      "question_number": 2,
+      "question_text": "Defiant or argumentative",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4522,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Aggression",
+      "question_number": 3,
+      "question_text": "Destructive to property or things",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4523,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Aggression",
+      "question_number": 4,
+      "question_text": "Excessive yelling or screaming",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4524,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Aggression",
+      "question_number": 5,
+      "question_text": "Getting into fights",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4525,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Aggression",
+      "question_number": 6,
+      "question_text": "Having an urge to injure or to hurt someone",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4526,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Aggression",
+      "question_number": 7,
+      "question_text": "Having the urge to destroy things",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4527,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Aggression",
+      "question_number": 8,
+      "question_text": "Hostile",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4528,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Aggression",
+      "question_number": 9,
+      "question_text": "In trouble with the law",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4529,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Aggression",
+      "question_number": 10,
+      "question_text": "Physical aggression toward others",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4530,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 1,
+      "question_text": "I feel nervous when people watch me or talk about me",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4531,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 2,
+      "question_text": "Feeling paranoid",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4532,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 3,
+      "question_text": "I feel that other people are watching or talking about me",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4533,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 4,
+      "question_text": "I feel that someone else can control my mind",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4534,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 5,
+      "question_text": "I feel that I can't trust other people",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4535,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 6,
+      "question_text": "I feel I am being watched",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4536,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 7,
+      "question_text": "I hear voices that no one else can hear",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4537,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 8,
+      "question_text": "I can't think straight",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4538,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 9,
+      "question_text": "My mind is full of terrifying thoughts or images",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4539,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 10,
+      "question_text": "Other people know my private thoughts",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4540,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 11,
+      "question_text": "Overly suspicious",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4541,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 12,
+      "question_text": "Peculiar or bizarre behavior",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4542,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 13,
+      "question_text": "Seeing things that other people don't see",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4543,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Psychotic",
+      "question_number": 14,
+      "question_text": "I can't feel close to another person",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4544,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Somatic",
+      "question_number": 1,
+      "question_text": "Blackout spells or seizures",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4545,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Somatic",
+      "question_number": 2,
+      "question_text": "Difficulty breathing",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4546,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Somatic",
+      "question_number": 3,
+      "question_text": "Difficulty swallowing",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4547,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Somatic",
+      "question_number": 4,
+      "question_text": "Dizzy/unsteady/lightheaded",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4548,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Somatic",
+      "question_number": 5,
+      "question_text": "Feeling faint",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4549,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Somatic",
+      "question_number": 6,
+      "question_text": "Heart racing",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4550,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Somatic",
+      "question_number": 7,
+      "question_text": "Nausea",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4551,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Somatic",
+      "question_number": 8,
+      "question_text": "Numbness/Tingling",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4552,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Somatic",
+      "question_number": 9,
+      "question_text": "Worrying that something bad is wrong with your body",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4553,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Fatigue",
+      "question_number": 1,
+      "question_text": "Fatigue",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4554,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Fatigue",
+      "question_number": 2,
+      "question_text": "Feeling slower than usual",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4555,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Fatigue",
+      "question_number": 3,
+      "question_text": "Feeling tired",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4556,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Fatigue",
+      "question_number": 4,
+      "question_text": "Feeling weak",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4557,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Fatigue",
+      "question_number": 5,
+      "question_text": "Low energy",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4558,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Fatigue",
+      "question_number": 6,
+      "question_text": "Unable to exercise without getting really tired",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4559,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Sleep",
+      "question_number": 1,
+      "question_text": "Difficulty staying asleep",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4560,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Sleep",
+      "question_number": 2,
+      "question_text": "Hard to fall asleep",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4561,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Sleep",
+      "question_number": 3,
+      "question_text": "I wake up too early in the morning and can't get back to sleep",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4562,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Sleep",
+      "question_number": 4,
+      "question_text": "Restless or disturbed sleep",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4563,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Suicide",
+      "question_number": 1,
+      "question_text": "I feel like giving up on life",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4564,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Suicide",
+      "question_number": 2,
+      "question_text": "I feel like I would be better off dead",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4565,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Suicide",
+      "question_number": 3,
+      "question_text": "I feel that I have nothing left to live for",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4566,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Suicide",
+      "question_number": 4,
+      "question_text": "I feel that my family would be better off if I were gone",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4567,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Suicide",
+      "question_number": 5,
+      "question_text": "Thinking about death or dying",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4568,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Suicide",
+      "question_number": 6,
+      "question_text": "Thoughts about ending your life",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4569,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Pain",
+      "question_number": 1,
+      "question_text": "A lot of aches and pains",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4570,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Pain",
+      "question_number": 2,
+      "question_text": "Abdominal pain or discomfort",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4571,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Pain",
+      "question_number": 3,
+      "question_text": "Back pain",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4572,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Pain",
+      "question_number": 4,
+      "question_text": "Chest pain or discomfort",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4573,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Pain",
+      "question_number": 5,
+      "question_text": "Headache",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4574,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Pain",
+      "question_number": 6,
+      "question_text": "Muscle soreness",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4575,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Pain",
+      "question_number": 7,
+      "question_text": "Unable to exercise without a lot of pain",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4576,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Pain",
+      "question_number": 8,
+      "question_text": "Unbearable pain",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4577,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Substance Abuse",
+      "question_number": 1,
+      "question_text": "Abusing drugs",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4578,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Substance Abuse",
+      "question_number": 2,
+      "question_text": "I drink too much",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4579,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Substance Abuse",
+      "question_number": 3,
+      "question_text": "I use too many drugs or medications",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4580,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 1,
+      "question_text": "Avoiding certain things or places",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4581,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 2,
+      "question_text": "Difficulty concentrating",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4582,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 3,
+      "question_text": "Difficulty staying asleep",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4583,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 4,
+      "question_text": "Easily startled",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4584,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 5,
+      "question_text": "Emotionally numb",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4585,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 6,
+      "question_text": "Feeling depressed",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4586,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 7,
+      "question_text": "Feeling discouraged about the future",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4587,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 8,
+      "question_text": "I feel that I can't trust other people",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4588,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 9,
+      "question_text": "Flashbacks to a traumatic event",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4589,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 10,
+      "question_text": "Hard to fall asleep",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4590,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 11,
+      "question_text": "Hard to go out in public",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4591,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 12,
+      "question_text": "Hard to relate to other people",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4592,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 13,
+      "question_text": "Having nightmares or bad dreams",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4593,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 14,
+      "question_text": "Having unpleasant thoughts that you can't get out of your mind",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4594,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 15,
+      "question_text": "I feel like I'm being punished",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4595,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 16,
+      "question_text": "Reliving a traumatic event",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4596,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 17,
+      "question_text": "Restless or disturbed sleep",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4597,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "PTSD",
+      "question_number": 18,
+      "question_text": "I can't feel close to another person",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4598,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 1,
+      "question_text": "Anger",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4599,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 2,
+      "question_text": "Angry outbursts",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4600,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 3,
+      "question_text": "Much more interested in sex than usual",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4601,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 4,
+      "question_text": "Being much more social or outgoing than usual",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4602,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 5,
+      "question_text": "Crying spells",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4603,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 6,
+      "question_text": "Decreased need for sleep",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4604,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 7,
+      "question_text": "Difficulty concentrating",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4605,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 8,
+      "question_text": "Difficulty paying attention",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4606,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 9,
+      "question_text": "Easily agitated",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4607,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 10,
+      "question_text": "Easily annoyed",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4608,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 11,
+      "question_text": "Easily distracted",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4609,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 12,
+      "question_text": "Easily frustrated",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4610,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 13,
+      "question_text": "Elevated mood, euphoria",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4611,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 14,
+      "question_text": "Excitable",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4612,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 15,
+      "question_text": "Explosive",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4613,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 16,
+      "question_text": "Feeling irritable",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4614,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 17,
+      "question_text": "Feeling much more confident than usual",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4615,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 18,
+      "question_text": "Feeling restless",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4616,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 19,
+      "question_text": "Feeling scattered, disorganized",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4617,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 20,
+      "question_text": "Having much more energy than usual",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4618,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 21,
+      "question_text": "High energy",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4619,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 22,
+      "question_text": "Impulsive, act without thinking",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4620,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 23,
+      "question_text": "Increased or inappropriate sexual interest",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4621,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 24,
+      "question_text": "My moods change quickly",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4622,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 25,
+      "question_text": "Overly active",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4623,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 26,
+      "question_text": "Pressured speech, uninterruptible and continuous",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4624,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 27,
+      "question_text": "Short attention span",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4625,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 28,
+      "question_text": "Temper tantrums",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4626,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Bipolar",
+      "question_number": 29,
+      "question_text": "Thoughts racing",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4627,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 1,
+      "question_text": "Avoiding eye contact",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4628,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 2,
+      "question_text": "I can't relate to other people, socially or emotionally",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4629,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 3,
+      "question_text": "I don't attend to social signals",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4630,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 4,
+      "question_text": "I don't respond to other people's expressions or body language",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4631,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 5,
+      "question_text": "Not able to begin or to sustain a conversation with other people",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4632,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 6,
+      "question_text": "Not responsive to other people's feelings",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4633,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 7,
+      "question_text": "Odd preoccupations or interests",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4634,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 8,
+      "question_text": "Peculiar or bizarre behavior",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4635,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 9,
+      "question_text": "Preoccupied by a particular interest to the exclusion of other things",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4636,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 10,
+      "question_text": "Repetitive behaviors like touching or counting",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4637,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 11,
+      "question_text": "Rigid, inflexible, resistant to change",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4638,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Autism",
+      "question_number": 12,
+      "question_text": "Strongly attached to routines or sameness in the environment",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4639,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 1,
+      "question_text": "Avoiding eye contact",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4640,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 2,
+      "question_text": "Difficulty developing friendships",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4641,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 3,
+      "question_text": "Difficulty understanding sarcasm, metaphors or jokes",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4642,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 4,
+      "question_text": "Hard to relate to other people",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4643,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 5,
+      "question_text": "I can't relate to other people, socially or emotionally",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4644,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 6,
+      "question_text": "I don't attend to social signals",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4645,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 7,
+      "question_text": "I don't respond to other people's expressions or body language",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4646,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 8,
+      "question_text": "Not able to begin or to sustain a conversation with other people",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4647,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 9,
+      "question_text": "Not responsive to other people's feelings",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4648,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 10,
+      "question_text": "Odd preoccupations or interests",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4649,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 11,
+      "question_text": "Preoccupied by a particular interest to the exclusion of other things",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4650,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 12,
+      "question_text": "Rigid, inflexible, resistant to change",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4651,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 13,
+      "question_text": "Strongly attached to routines or sameness in the environment",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4652,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 14,
+      "question_text": "I can't feel close to another person",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4653,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Asperger's",
+      "question_number": 15,
+      "question_text": "Withdrawn, isolated",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4654,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 1,
+      "question_text": "Difficulty concentrating",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4655,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 2,
+      "question_text": "Difficulty paying attention",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4656,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 3,
+      "question_text": "Easily distracted",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4657,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 4,
+      "question_text": "Feeling restless",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4658,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 5,
+      "question_text": "Feeling scattered, disorganized",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4659,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 6,
+      "question_text": "Fidgety, I can't sit still",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4660,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 7,
+      "question_text": "Forgetful, I need constant reminding",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4661,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 8,
+      "question_text": "Impatient",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4662,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 9,
+      "question_text": "Impulsive, act without thinking",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4663,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 10,
+      "question_text": "Leaving things behind and having to go back to get them.",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4664,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 11,
+      "question_text": "Losing things",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4665,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 12,
+      "question_text": "Making careless mistakes",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4666,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 13,
+      "question_text": "Not finishing chores, homework or projects",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4667,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 14,
+      "question_text": "Overly active",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4668,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "ADHD",
+      "question_number": 15,
+      "question_text": "Short attention span",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4669,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 1,
+      "question_text": "Difficulty concentrating",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4670,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 2,
+      "question_text": "Difficulty paying attention",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4671,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 3,
+      "question_text": "Easily distracted",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4672,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 4,
+      "question_text": "Feeling scattered, disorganized",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4673,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 5,
+      "question_text": "Forgetful, I need constant reminding",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4674,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 6,
+      "question_text": "Forgetting appointments or social engagements.",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4675,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 7,
+      "question_text": "Forgetting if you have taken your medicine",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4676,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 8,
+      "question_text": "Forgetting to do something you said you would do",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4677,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 9,
+      "question_text": "Forgetting to give a message to someone",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4678,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 10,
+      "question_text": "Forgetting to tell somebody something that you meant to tell them",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4679,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 11,
+      "question_text": "Forgetting where things are kept; looking for them in the wrong place",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4680,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 12,
+      "question_text": "Going to the store but forgetting to get what you need",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4681,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 13,
+      "question_text": "Having to do things slowly to make sure it's right",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4682,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 14,
+      "question_text": "I can't remember the names of close relatives or friends.",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4683,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 15,
+      "question_text": "Learning new things",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4684,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 16,
+      "question_text": "Leaving things behind and having to go back to get them.",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4685,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 17,
+      "question_text": "Losing things",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4686,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 18,
+      "question_text": "Making careless mistakes",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4687,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 19,
+      "question_text": "My mind goes blank",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4688,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 20,
+      "question_text": "Not finishing chores, homework or projects",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4689,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 21,
+      "question_text": "Putting something down and then forgetting where you put it.",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4690,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 22,
+      "question_text": "Reading something and then realizing you have read it before.",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4691,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 23,
+      "question_text": "Short attention span",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4692,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "MCI",
+      "question_number": 24,
+      "question_text": "When reading, losing track of what the story is about",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4693,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 1,
+      "question_text": "Difficulty concentrating",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4694,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 2,
+      "question_text": "Difficulty paying attention",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4695,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 3,
+      "question_text": "Dizzy/unsteady/lightheaded",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4696,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 4,
+      "question_text": "Easily distracted",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4697,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 5,
+      "question_text": "Easily frustrated",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4698,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 6,
+      "question_text": "Fatigue",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4699,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 7,
+      "question_text": "Feeling irritable",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4700,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 8,
+      "question_text": "Feeling scattered, disorganized",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4701,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 9,
+      "question_text": "Feeling slower than usual",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4702,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 10,
+      "question_text": "Hard to fall asleep",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4703,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 11,
+      "question_text": "Headache",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4704,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 12,
+      "question_text": "I can't think straight",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4705,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 13,
+      "question_text": "Low energy",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4706,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 14,
+      "question_text": "My mind goes blank",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4707,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 15,
+      "question_text": "My moods change quickly",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4708,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 16,
+      "question_text": "Problems with memory",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4709,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 17,
+      "question_text": "Short attention span",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4710,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Concussion",
+      "question_number": 18,
+      "question_text": "Unable to exercise without getting really tired",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4711,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 1,
+      "question_text": "Crying spells",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4712,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 2,
+      "question_text": "Easily agitated",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4713,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 3,
+      "question_text": "Fatigue",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4714,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 4,
+      "question_text": "Feeling anxious",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4715,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 5,
+      "question_text": "Feeling depressed",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4716,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 6,
+      "question_text": "Feeling discouraged about the future",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4717,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 7,
+      "question_text": "Feeling empty inside",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4718,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 8,
+      "question_text": "Feeling hopeless",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4719,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 9,
+      "question_text": "Feeling irritable",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4720,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 10,
+      "question_text": "Feeling keyed up or on edge",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4721,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 11,
+      "question_text": "Feeling little or no interest in things",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4722,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 12,
+      "question_text": "Feeling lonely",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4723,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 13,
+      "question_text": "Feeling nervous",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4724,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 14,
+      "question_text": "Feeling restless",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4725,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 15,
+      "question_text": "Feeling sad",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4726,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 16,
+      "question_text": "Feeling scattered, disorganized",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4727,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 17,
+      "question_text": "Feeling so nervous it's hard to breathe",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4728,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 18,
+      "question_text": "Feeling tense",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4729,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 19,
+      "question_text": "Feeling that doing anything is a real effort",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4730,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 20,
+      "question_text": "Feeling tired",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4731,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 21,
+      "question_text": "Feelings of guilt or remorse",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4732,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 22,
+      "question_text": "Fidgety, I can't sit still",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4733,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 23,
+      "question_text": "Hard to fall asleep",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4734,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 24,
+      "question_text": "Having nightmares or bad dreams",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4735,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 25,
+      "question_text": "High-strung or keyed up",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4736,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 26,
+      "question_text": "I feel like a failure",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4737,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 27,
+      "question_text": "I feel like I'm being punished",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4738,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 28,
+      "question_text": "I find it hard to relax",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4739,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 29,
+      "question_text": "Low energy",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4740,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 30,
+      "question_text": "My mind goes blank",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4741,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 31,
+      "question_text": "Not enjoying things as much as before",
+      "score": 3,
+      "severity": "A severe problem"
+    },
+    {
+      "id": 4742,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 32,
+      "question_text": "Restless or disturbed sleep",
+      "score": 1,
+      "severity": "A mild problem"
+    },
+    {
+      "id": 4743,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 33,
+      "question_text": "Thinking about death or dying",
+      "score": 0,
+      "severity": "Not a problem"
+    },
+    {
+      "id": 4744,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 34,
+      "question_text": "Withdrawn, isolated",
+      "score": 2,
+      "severity": "A moderate problem"
+    },
+    {
+      "id": 4745,
+      "session_id": 14,
+      "patient_id": "39381",
+      "domain": "Anxiety/Depression",
+      "question_number": 35,
+      "question_text": "Worrying too much",
+      "score": 3,
+      "severity": "A severe problem"
+    }
+  ]
+}
