@@ -309,6 +309,34 @@ def generate_adhd_summary(data):
     # 5. Secondary Consequences / Functional Impact Domain
     html.append('<b>5. Secondary Consequences / Functional Impact:</b>')
     html.append('<ul>')
+    # Identify NPQ domains with Severe and Moderate scores
+    severity_map = {"Not a problem": 0, "A mild problem": 1, "Mild": 1,
+                    "A moderate problem": 2, "Moderate": 2,
+                    "A severe problem": 3, "Severe": 3}
+    severe_domains = []
+    moderate_domains = []
+    for score in npq_scores:
+        sev = score.get('severity')
+        dom = score.get('domain')
+        if sev and dom and dom != 'Average' and sev in severity_map:
+            if severity_map[sev] == 3:
+                severe_domains.append(dom)
+            elif severity_map[sev] == 2:
+                moderate_domains.append(dom)
+    # Deduplicate
+    severe_domains = sorted(set(severe_domains))
+    moderate_domains = sorted(set(moderate_domains) - set(severe_domains))
+    # Compose summary HTML
+    if severe_domains or moderate_domains:
+        summary_line = '<div>Flagged NPQ Domains: '
+        if severe_domains:
+            summary_line += 'Severe: ' + ' '.join([f'<span class="badge badge-severe">{d}</span>' for d in severe_domains])
+        if moderate_domains:
+            if severe_domains:
+                summary_line += ' | '
+            summary_line += 'Moderate: ' + ' '.join([f'<span class="badge badge-moderate">{d}</span>' for d in moderate_domains])
+        summary_line += '</div>'
+        html.append(summary_line)
     comorbid_symptoms = []
     for domain in ["Memory", "Anxiety", "Somatic", "Fatigue", "Sleep", "Suicide", "Pain", "Obsessions & Compulsions", "Depression", "PTSD"]:
          mod_sev = get_npq_symptoms(npq_questions, domain, 2)
