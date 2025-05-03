@@ -822,11 +822,11 @@
             }
 
             // Populate Subtest Results Tables
-            const subtestsContainer = document.getElementById('subtest-tables-container');
-            if (reportData.subtests && subtestsContainer) {
-                subtestsContainer.innerHTML = ''; // Clear loading indicator
+            const subtestContainer = document.getElementById('subtest-tables-container');
+            if (reportData.subtests && subtestContainer) {
+                subtestContainer.innerHTML = ''; // Clear loading indicator
                 if (reportData.subtests.length === 0) {
-                    subtestsContainer.innerHTML = '<p class="text-center text-gray-500 py-4">No subtest data available.</p>';
+                    subtestContainer.innerHTML = '<p class="text-center text-gray-500 py-4">No subtest data available.</p>';
                 } else {
                     const groupedSubtests = reportData.subtests.reduce((acc, test) => {
                         const name = test.subtest_name;
@@ -852,12 +852,12 @@
                                 <h3 class="text-md font-semibold text-gray-600 mb-2">
                                     ${testName}${hasInvalid ? ' <span class=\'badge-invalid\'>Invalid</span>' : ''}
                                 </h3>
-                                <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-md">
+                                <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-md table-fixed">
                                     <thead class="bg-gray-50">
                                         <tr>
-                                            <th scope="col">Metric</th>
-                                            <th scope="col">Score</th>
-                                            <th scope="col">Percentile</th>
+                                            <th scope="col" class="w-3/5 py-2 px-3 text-left">Metric</th>
+                                            <th scope="col" class="w-1/5 py-2 px-3 text-center">Score</th>
+                                            <th scope="col" class="w-1/5 py-2 px-3 text-center">Percentile</th>
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200">
@@ -869,18 +869,18 @@
                             // No badge in row anymore
                             tableHTML += `
                                 <tr>
-                                    <td class="py-2 px-3">${metric.metric || 'N/A'}</td>
-                                    <td class="py-2 px-3 text-center">${score}</td>
-                                    <td class="py-2 px-3 text-center">${percentile}%</td>
+                                    <td class="py-2 px-3 text-sm text-left">${metric.metric || 'N/A'}</td>
+                                    <td class="py-2 px-3 text-sm text-center">${score}</td>
+                                    <td class="py-2 px-3 text-sm text-center">${percentile}%</td>
                                 </tr>
                             `;
                         });
                         tableHTML += `</tbody></table></div>`;
-                        subtestsContainer.innerHTML += tableHTML;
+                        subtestContainer.innerHTML += tableHTML;
                     }
                 }
-            } else if (subtestsContainer) {
-                subtestsContainer.innerHTML = '<p class="text-center text-gray-500 py-4">Subtest data missing or invalid.</p>';
+            } else if (subtestContainer) {
+                subtestContainer.innerHTML = '<p class="text-center text-gray-500 py-4">Subtest data missing or invalid.</p>';
             }
 
             // Populate ASRS/DSM Mapping
@@ -990,8 +990,8 @@
                     domainOrder.forEach(domainName => {
                         if (groupedNpqQuestions[domainName]) {
                             const questions = groupedNpqQuestions[domainName];
-                            let tableHTML = `<div class="overflow-x-auto"><h3 class="text-md font-semibold text-gray-600 mb-2">${domainName}</h3><table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-md"><thead class="bg-gray-50"><tr><th scope="col">Question</th><th scope="col">Score</th><th scope="col">Severity</th></tr></thead><tbody class="bg-white divide-y divide-gray-200">`;
-                            questions.forEach(q => { const severityClass = getSeverityClass(q.severity); tableHTML += `<tr><td class="py-2 px-3">${q.question_text || 'N/A'}</td><td class="py-2 px-3 text-center">${q.score !== null ? q.score : 'N/A'}</td><td class="py-2 px-3 text-center"><span class="badge ${severityClass}">${q.severity || 'N/A'}</span></td></tr>`; });
+                            let tableHTML = `<div class="overflow-x-auto"><h3 class="text-md font-semibold text-gray-600 mb-2">${domainName}</h3><table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-md"><thead class="bg-gray-50"><tr><th scope="col">Question</th><th scope="col" class="text-center">Score</th><th scope="col" class="text-center">Severity</th></tr></thead><tbody class="bg-white divide-y divide-gray-200">`;
+                            questions.forEach(q => { const severityClass = getSeverityClass(q.severity); tableHTML += `<tr><td class="py-2 px-3 text-sm text-left">${q.question_text || 'N/A'}</td><td class="py-2 px-3 text-sm text-center">${q.score !== null ? q.score : 'N/A'}</td><td class="py-2 px-3 text-sm text-center"><span class="badge ${severityClass}">${q.severity || 'N/A'}</span></td></tr>`; });
                             tableHTML += `</tbody></table></div>`;
                             npqDetailsContainer.innerHTML += tableHTML;
                         }
