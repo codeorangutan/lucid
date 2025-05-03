@@ -395,6 +395,19 @@
     </style>
 </head>
 <body class="p-4 md:p-8">
+    <!-- Hidden div to ensure Tailwind CDN includes necessary text color classes -->
+    <div class="hidden">
+        <span class="text-purple-700"></span>
+        <span class="text-blue-700"></span>
+        <span class="text-teal-700"></span>
+        <span class="text-green-700"></span>
+        <span class="text-yellow-700"></span>
+        <span class="text-orange-600"></span>
+        <span class="text-red-700"></span>
+        <span class="text-red-800"></span>
+        <span class="text-gray-700"></span>
+    </div>
+
     <div class="max-w-4xl mx-auto">
 
         <header class="mb-8 text-center">
@@ -635,6 +648,22 @@
             }
         }
 
+        // Helper to map badge class to text color class
+        function getTextHighlightClass(badgeClass) {
+            switch (badgeClass) {
+                case 'badge-very-superior': return '!text-purple-700'; // Keep high ones just in case
+                case 'badge-superior': return '!text-blue-700';
+                case 'badge-high-average': return '!text-teal-700'; // Or adjust if logs show 'badge-above-average'
+                case 'badge-above-average': return '!text-teal-700'; // Match log
+                case 'badge-average': return '!text-green-700'; // Match log
+                case 'badge-low-average': return '!text-yellow-700'; // Match log
+                case 'badge-borderline': return '!text-orange-600'; // Keep lower ones
+                case 'badge-low': return '!text-red-700'; // Match log
+                case 'badge-very-low': return '!text-red-800'; // Match log
+                default: return '!text-gray-700'; // Apply important even to default for consistency
+            }
+        }
+
         // --- HSL Gradient Functions for Bar Color ---
         function getSegmentedColor(pct) {
             pct = Math.max(0, Math.min(100, pct));
@@ -866,14 +895,18 @@
                             const standardScore = metric.standard_score !== null ? parseFloat(metric.standard_score).toFixed(0) : 'N/A';
                             const percentile = metric.percentile !== null ? parseFloat(metric.percentile).toFixed(0) : 'N/A';
                             const score = metric.score !== null ? parseFloat(metric.score).toFixed(1) : 'N/A';
-                            // No badge in row anymore
-                            tableHTML += `
+                            const classification = getClassification(metric.percentile);
+                            const highlightClass = getTextHighlightClass(classification.class);
+                            let percentileDisplay = percentile === 'N/A' ? 'N/A' : `${percentile}%`;
+ 
+                            const row = `
                                 <tr>
-                                    <td class="py-2 px-3 text-sm text-left">${metric.metric || 'N/A'}</td>
+                                    <td class="py-2 px-3 text-sm text-left ${highlightClass}">${metric.metric || 'N/A'}</td>
                                     <td class="py-2 px-3 text-sm text-center">${score}</td>
-                                    <td class="py-2 px-3 text-sm text-center">${percentile}%</td>
+                                    <td class="py-2 px-3 text-sm text-center ${highlightClass}">${percentileDisplay}</td>
                                 </tr>
                             `;
+                            tableHTML += row;
                         });
                         tableHTML += `</tbody></table></div>`;
                         subtestContainer.innerHTML += tableHTML;
