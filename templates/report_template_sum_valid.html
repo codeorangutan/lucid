@@ -138,145 +138,147 @@
         }
         /* Reduce gaps around section and table titles in ADHD/DSM section */
         #asrs-dsm-heading, #integrative-diagnosis-heading, .report-card h2, .report-card h3 {
-            margin-bottom: 0.5rem !important;
-            margin-top: 0.5rem !important;
+          margin-bottom: 0.5rem !important;
+          margin-top: 0.5rem !important;
         }
         .report-card {
-            padding-top: 0.75rem !important;
-            padding-bottom: 0.75rem !important;
+          padding-top: 0.75rem !important;
+          padding-bottom: 0.75rem !important;
         }
         .report-card > .mb-4, .report-card > .mb-6 {
-            margin-bottom: 0.5rem !important;
+          margin-bottom: 0.5rem !important;
         }
         .mb-4, .mb-6 {
-            margin-bottom: 0.5rem !important;
+          margin-bottom: 0.5rem !important;
         }
         .mt-8 {
-            margin-top: 1.5rem !important;
+          margin-top: 1.5rem !important;
         }
         .mt-12 {
-            margin-top: 2rem !important;
+          margin-top: 2rem !important;
         }
         /* NPQ LF-207: Compact table row style */
         #npq-summary-heading + .overflow-x-auto table tr {
-            height: 28px;
+          height: 28px;
         }
         #npq-summary-heading + .overflow-x-auto table td, #npq-summary-heading + .overflow-x-auto table th {
-            font-size: 9.2px !important;
-            padding-top: 0.18rem;
-            padding-bottom: 0.18rem;
-            line-height: 1.2;
+          font-size: 9.2px !important;
+          padding-top: 0.18rem;
+          padding-bottom: 0.18rem;
+          line-height: 1.2;
         }
         /* NPQ LF-207 table and severity legend: make more compact for PDF fitting */
         #npq-summary-heading + .overflow-x-auto table td, #npq-summary-heading + .overflow-x-auto table th {
-            font-size: 8.5px !important;
-            padding-top: 0.10rem;
-            padding-bottom: 0.10rem;
-            line-height: 1.05;
+          font-size: 8.5px !important;
+          padding-top: 0.10rem;
+          padding-bottom: 0.10rem;
+          line-height: 1.05;
         }
         #npq-summary-heading + .overflow-x-auto table {
-            margin-bottom: 0.5rem !important;
+          margin-bottom: 0.5rem !important;
         }
         #severity-legend {
-            display: flex;
-            flex-direction: row;
-            gap: 0.25rem;
-            margin-bottom: 0.25rem;
-            font-size: 8.5px !important;
+          display: flex;
+          flex-direction: row;
+          gap: 0.25rem;
+          margin-bottom: 0.25rem;
+          font-size: 8.5px !important;
         }
         #severity-legend .badge {
-            font-size: 0.75em;
-            padding: 0.15em 0.45em;
+          font-size: 0.75em;
+          padding: 0.15em 0.45em;
         }
         /* Ensure NPQ section never breaks across pages */
         .npq-section {
-            page-break-inside: avoid;
+          page-break-inside: avoid;
         }
         /* Severity Legend: Reverse order */
         #severity-legend {
-            display: flex;
-            flex-direction: row;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
+          display: flex;
+          flex-direction: row;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
         }
         #severity-legend .badge {
-            font-size: 0.8em;
+          font-size: 0.8em;
         }
         /* Make only NPQ LF-207 table body rows smaller for compact fit */
         #npq-summary-heading + .overflow-x-auto table tbody td {
-            font-size: 7.5px !important;
-            padding-top: 0 !important;
-            padding-bottom: 0 !important;
-            padding-left: 2px !important;
-            padding-right: 2px !important;
-            line-height: 1 !important;
-            height: 16px !important;
+            font-size: 12px !important;
+            padding: 4px 6px !important;
+            line-height: 1.2 !important;
+            height: 28px !important;
             min-height: 0 !important;
-            max-height: 18px !important;
+            max-height: 30px !important;
             vertical-align: middle !important;
+        }
+        /* Ensure Score and Severity columns are centered */
+        #npq-summary-heading + .overflow-x-auto table td:nth-child(2),
+        #npq-summary-heading + .overflow-x-auto table td:nth-child(3) {
+            text-align: center !important;
         }
         /* Remove any excessive row height from tr */
         #npq-summary-heading + .overflow-x-auto table tbody tr {
-            height: 16px !important;
+            height: 28px !important;
             min-height: 0 !important;
-            max-height: 18px !important;
+            max-height: 30px !important;
         }
         /* NPQ table: increase size for readability and restore padding */
         .npq-table td {
-            font-size: 15.6px !important;
-            padding-top: 8px !important;
-            padding-bottom: 8px !important;
-            padding-left: 8px !important;
-            padding-right: 8px !important;
-            line-height: 1.18 !important;
-            height: 28px !important;
-            min-height: 0 !important;
-            max-height: 32px !important;
-            vertical-align: middle !important;
+          font-size: 15.6px !important;
+          padding-top: 8px !important;
+          padding-bottom: 8px !important;
+          padding-left: 8px !important;
+          padding-right: 8px !important;
+          line-height: 1.18 !important;
+          height: 28px !important;
+          min-height: 0 !important;
+          max-height: 32px !important;
+          vertical-align: middle !important;
         }
         .npq-table th {
-            font-size: 19.2px !important;
-            font-weight: 700 !important;
-            padding: 10px 14px !important;
-            line-height: 1.22 !important;
-            background-color: #dbeafe !important;
-            color: #1e3a8a !important;
+          font-size: 19.2px !important;
+          font-weight: 600 !important;
+          padding: 10px 14px !important;
+          line-height: 1.22 !important;
+          background-color: #dbeafe !important;
+          color: #1e3a8a !important;
         }
         .npq-table th:nth-child(2), .npq-table th:nth-child(3),
         .npq-table td:nth-child(2), .npq-table td:nth-child(3) {
-            text-align: center !important;
+          text-align: center !important;
         }
         .npq-table th:first-child, .npq-table td:first-child {
-            text-align: left !important;
+          text-align: left !important;
         }
         /* ADHD Diagnosis Summary Table: compact style and blue badges */
         .adhd-summary-table {
-            font-size: 10px !important;
-            width: 100%;
-            margin-top: 0.5rem;
-            border-collapse: collapse;
+          font-size: 10px !important;
+          width: 100%;
+          margin-top: 0.5rem;
+          border-collapse: collapse;
         }
         .adhd-summary-table th, .adhd-summary-table td {
-            padding: 0.2rem 0.4rem !important;
-            line-height: 1.1 !important;
-            vertical-align: middle !important;
-            border: 1px solid #e5e7eb !important;
+          padding: 0.2rem 0.4rem !important;
+          line-height: 1.1 !important;
+          vertical-align: middle !important;
+          border: 1px solid #e5e7eb !important;
         }
         .adhd-summary-table .badge-met {
-            background-color: #dbeafe !important; /* blue-100 */
-            color: #2563eb !important; /* blue-600 */
-            font-weight: 700;
-            border-radius: 0.375rem;
-            padding: 0.1em 0.55em;
-            font-size: 0.85em;
+          background-color: #dbeafe !important; /* blue-100 */
+          color: #2563eb !important; /* blue-600 */
+          font-weight: 700;
+          border-radius: 0.375rem;
+          padding: 0.1em 0.55em;
+          font-size: 0.85em;
         }
         .adhd-summary-table .badge-not-met {
-            background-color: #fee2e2 !important;
-            color: #991b1b !important;
-            font-weight: 700;
-            border-radius: 0.375rem;
-            padding: 0.1em 0.55em;
-            font-size: 0.85em;
+          background-color: #fee2e2 !important;
+          color: #991b1b !important;
+          font-weight: 700;
+          border-radius: 0.375rem;
+          padding: 0.1em 0.55em;
+          font-size: 0.85em;
         }
         /* ADHD summary compact */
         #adhd-diagnosis-summary { page-break-inside: avoid !important; font-size:0.75rem !important; line-height:1 !important; margin:0 !important; padding:0 !important; }
@@ -285,6 +287,20 @@
         /* Tighten ASRS section heading spacing */
         .report-card[aria-labelledby="asrs-dsm-heading"] h2 {
           margin-bottom: 0.25rem !important;
+        }
+        /* Increase prominence and reduce margin for ASRS/DSM headings (h3) */
+        .report-card[aria-labelledby="asrs-dsm-heading"] h3 {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+          padding: 0 !important;
+          font-size: 1rem !important;
+        }
+        /* Reduce padding and font size in ASRS/DSM tables (th, td) */
+        .report-card[aria-labelledby="asrs-dsm-heading"] table.dsm-mapping-table th,
+        .report-card[aria-labelledby="asrs-dsm-heading"] table.dsm-mapping-table td {
+          padding: 0.1rem 0.2rem !important;
+          font-size: 0.65rem !important;
+          line-height: 1 !important;
         }
     </style>
     <!-- NPQ summary sizing adjustments -->
@@ -391,6 +407,12 @@
       }
       .npq-section #npq-scores-table tr {
         height: auto !important;
+      }
+    </style>
+    <!-- Remove space below ASRS/DSM section -->
+    <style>
+      section[aria-labelledby="asrs-dsm-heading"] {
+        padding-bottom: 0 !important;
       }
     </style>
 </head>
@@ -501,17 +523,17 @@
             </div>
         </section>
 
-        <section class="report-card" aria-labelledby="asrs-dsm-heading">
+        <section class="report-card" aria-labelledby="asrs-dsm-heading" style="page-break-inside: avoid;">
             <h2 id="asrs-dsm-heading" class="text-xl font-semibold text-gray-700 mb-4">ASRS to DSM-5 Mapping</h2>
-            <h3 class="text-lg font-medium text-gray-600 mb-2">Criterion A: Inattention</h3>
+            <h3 class="text-xl font-semibold text-gray-600 mb-1">Criterion A: Inattention</h3>
             <div class="overflow-x-auto mb-4">
                 <table class="min-w-full divide-y divide-gray-200 dsm-mapping-table">
                     <thead class="bg-gray-50">
                         <tr>
-                            <th scope="col">DSM-5 Criterion</th>
-                            <th scope="col">ASRS Question</th>
-                            <th scope="col">Response</th>
-                            <th scope="col">Met</th>
+                            <th scope="col" class="py-1 px-3">DSM-5 Criterion</th>
+                            <th scope="col" class="py-1 px-3">ASRS Question</th>
+                            <th scope="col" class="py-1 px-3">Response</th>
+                            <th scope="col" class="py-1 px-3">Met</th>
                         </tr>
                     </thead>
                     <tbody id="asrs-inattention-table" class="bg-white divide-y divide-gray-200">
@@ -519,24 +541,21 @@
                     </tbody>
                 </table>
             </div>
-            <h3 class="text-lg font-medium text-gray-600 mb-2">Criterion B: Hyperactivity/Impulsivity</h3>
-             <div class="overflow-x-auto mb-4">
-                <table class="min-w-full divide-y divide-gray-200 dsm-mapping-table">
+            <h3 class="text-xl font-semibold text-gray-600 mb-0">Criterion B: Hyperactivity/Impulsivity</h3>
+             <div class="overflow-x-auto mb-0" style="margin-bottom: 0 !important; padding-bottom: 0 !important;">
+                <table class="min-w-full divide-y divide-gray-200 dsm-mapping-table" style="margin-bottom: 0 !important; padding-bottom: 0 !important;">
                     <thead class="bg-gray-50">
                         <tr>
-                            <th scope="col">DSM-5 Criterion</th>
-                            <th scope="col">ASRS Question</th>
-                            <th scope="col">Response</th>
-                            <th scope="col">Met</th>
+                            <th scope="col" class="py-1 px-3">DSM-5 Criterion</th>
+                            <th scope="col" class="py-1 px-3">ASRS Question</th>
+                            <th scope="col" class="py-1 px-3">Response</th>
+                            <th scope="col" class="py-1 px-3">Met</th>
                         </tr>
                     </thead>
                     <tbody id="asrs-hyperactivity-table" class="bg-white divide-y divide-gray-200">
                         <tr><td colspan="4" class="text-center text-gray-500 py-4">Loading data...</td></tr>
                     </tbody>
                 </table>
-            </div>
-            <div id="adhd-diagnosis-summary" class="text-sm space-y-1">
-                <p>Loading summary...</p>
             </div>
         </section>
 
@@ -558,16 +577,16 @@
             <div id="epworth-summary" style="display:none;"></div>
         </section>
 
-        <section class="report-card npq-section" aria-labelledby="npq-summary-heading" style="font-size:10px;padding:0.5rem 0.15rem;">
+        <section class="report-card npq-section" aria-labelledby="npq-summary-heading" style="padding:0.5rem 0.15rem;">
             <h2 id="npq-summary-heading" class="text-xl font-semibold text-gray-700 mb-2">NPQ LF-207 Diagnostic Screen Summary</h2>
             <p class="text-xs text-gray-500 mb-4 italic">Note: The NPQ is a clinical screening tool. Scores suggest potential symptom burden and are not diagnostic. Results should be used as a basis for clinical enquiry rather than diagnosis.</p>
             <div class="overflow-x-auto">
                 <table class="npq-table min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
-                            <th scope="col">Domain</th>
-                            <th scope="col">Score</th>
-                            <th scope="col">Severity</th>
+                            <th style="font-size: 16px !important; padding: 6px 8px !important; text-align: left; font-weight: 600; color: #4A5568; letter-spacing: 0.05em;">Domain</th>
+                            <th style="font-size: 16px !important; padding: 6px 8px !important; text-align: center; font-weight: 600; color: #4A5568; letter-spacing: 0.05em;">Score</th>
+                            <th style="font-size: 16px !important; padding: 6px 8px !important; text-align: center; font-weight: 600; color: #4A5568; letter-spacing: 0.05em;">Severity</th>
                         </tr>
                     </thead>
                     <tbody id="npq-scores-table" class="bg-white divide-y divide-gray-200">
@@ -938,46 +957,21 @@
                         const asrsItem = asrsResponses.find(q => q.question_text && q.question_text.startsWith(asrsQNum + ':'));
                         if (asrsItem) { asrsQuestionText = asrsItem.question_text; asrsResponse = asrsItem.response; }
                     }
-                    const row = `<tr><td class="py-2 px-3">${item.dsm_criterion || 'N/A'}</td><td class="py-2 px-3 text-xs">${asrsQuestionText}</td><td class="py-2 px-3">${asrsResponse}</td><td class="py-2 px-3 text-center"><span class="badge ${metClass}">${metText}</span></td></tr>`;
+                    const row = `<tr><td class="py-1 px-3 text-xs">${item.dsm_criterion || 'N/A'}</td><td class="py-1 px-3 text-xs">${asrsQuestionText}</td><td class="py-1 px-3 text-xs">${asrsResponse}</td><td class="py-1 px-3 text-xs text-center"><span class="badge ${metClass}">${metText}</span></td></tr>`;
                     if (item.dsm_category === 'Inattention' && asrsInattentionTable) { asrsInattentionTable.innerHTML += row; if (isMet) inattentionMetCount++; }
                     else if (item.dsm_category === 'Hyperactivity/Impulsivity' && asrsHyperactivityTable) { asrsHyperactivityTable.innerHTML += row; if (isMet) hyperactivityMetCount++; }
                 });
-                const inattentionSummaryEl = document.getElementById('asrs-inattention-summary');
-                const hyperactivitySummaryEl = document.getElementById('asrs-hyperactivity-summary');
-                const diagnosisSummaryEl = document.getElementById('adhd-diagnosis-summary');
-                if(inattentionSummaryEl) inattentionSummaryEl.remove();
-                if(hyperactivitySummaryEl) hyperactivitySummaryEl.remove();
-
-                if (asrsInattentionTable) {
-                    const summaryRow = `<tr class="dsm-summary-row">
-                        <td colspan="4" class="text-center text-lg font-bold">Summary: ${inattentionMetCount}/9 criteria met (Need ≥5) - <span class="badge ${inattentionMetCount >= inattentionNeeded ? 'badge-met' : 'badge-not-met'}">${inattentionMetCount >= inattentionNeeded ? 'Met' : 'Not Met'}</span></td>
-                    </tr>`;
-                    asrsInattentionTable.innerHTML += summaryRow;
-                }
-                if (asrsHyperactivityTable) {
-                    const summaryRow = `<tr class="dsm-summary-row">
-                        <td colspan="4" class="text-center text-lg font-bold">Summary: ${hyperactivityMetCount}/9 criteria met (Need ≥5) - <span class="badge ${hyperactivityMetCount >= hyperactivityNeeded ? 'badge-met' : 'badge-not-met'}">${hyperactivityMetCount >= hyperactivityNeeded ? 'Met' : 'Not Met'}</span></td>
-                    </tr>`;
-                    asrsHyperactivityTable.innerHTML += summaryRow;
-                }
-                if(diagnosisSummaryEl) { diagnosisSummaryEl.innerHTML = `
-                    <table class="adhd-summary-table min-w-full border border-gray-300 rounded-md text-sm" style="margin-top:0.5rem;">
-                        <tbody>
-                            <tr class="bg-white">
-                                <td class="px-2 py-1 font-bold">Inattention Criteria</td>
-                                <td class="px-2 py-1"><span class="badge ${inattentionMetCount >= inattentionNeeded ? 'badge-met' : 'badge-not-met'}">${inattentionMetCount >= inattentionNeeded ? 'Met' : 'Not Met'}</span></td>
-                            </tr>
-                            <tr class="bg-blue-50">
-                                <td class="px-2 py-1 font-bold">Hyperactivity/Impulsivity Criteria</td>
-                                <td class="px-2 py-1"><span class="badge ${hyperactivityMetCount >= hyperactivityNeeded ? 'badge-met' : 'badge-not-met'}">${hyperactivityMetCount >= hyperactivityNeeded ? 'Met' : 'Not Met'}</span></td>
-                            </tr>
-                            <tr class="bg-white">
-                                <td class="px-2 py-1 font-bold">Overall Diagnosis</td>
-                                <td class="px-2 py-1"><span class="font-bold text-blue-700 text-base">${reportData.dass_summary?.[0]?.diagnosis || 'N/A'}</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                `; }
+                const summaryRow = `<tr class="dsm-summary-row">
+                    <td colspan="4" class="text-center text-lg font-bold">Summary: ${hyperactivityMetCount}/9 criteria met (Need ≥5) - <span class="badge ${hyperactivityMetCount >= hyperactivityNeeded ? 'badge-met' : 'badge-not-met'}">${hyperactivityMetCount >= hyperactivityNeeded ? 'Met' : 'Not Met'}</span></td>
+                </tr>`;
+                if (asrsHyperactivityTable) asrsHyperactivityTable.innerHTML += summaryRow;
+                const overallDiagnosisRow = `
+                    <tr class="bg-white overall-diagnosis-row">
+                        <td class="px-2 py-1 font-bold">Overall Diagnosis</td>
+                        <td colspan="3" class="px-2 py-1"><span class="font-bold text-blue-700 text-base">${reportData.dass_summary?.[0]?.diagnosis || 'N/A'}</span></td>
+                    </tr>
+                `;
+                if (asrsHyperactivityTable) asrsHyperactivityTable.innerHTML += overallDiagnosisRow;
             }
 
             // Populate Epworth Scale
@@ -1008,7 +1002,16 @@
                 else {
                     const domainOrder = [ "ADHD", "Attention", "Impulsive", "Learning", "Memory", "Anxiety", "Panic", "Agoraphobia", "Obsessions & Compulsions", "Social Anxiety", "PTSD", "Depression", "Bipolar", "Mood Stability", "Mania", "Aggression", "Autism", "Asperger's", "Psychotic", "Somatic", "Fatigue", "Sleep", "Suicide", "Pain", "Substance Abuse", "MCI", "Concussion", "Anxiety/Depression" ];
                     const sortedScores = reportData.npq_scores.filter(score => score.domain !== "Average Symptom Score").sort((a, b) => { const indexA = domainOrder.indexOf(a.domain); const indexB = domainOrder.indexOf(b.domain); if (indexA !== -1 && indexB !== -1) return indexA - indexB; if (indexA !== -1) return -1; if (indexB !== -1) return 1; return a.domain.localeCompare(b.domain); });
-                    sortedScores.forEach(score => { const severityClass = getSeverityClass(score.severity); npqTableBody.innerHTML += `<tr><td class="py-2 px-3">${score.domain || 'N/A'}</td><td class="py-2 px-3 text-center">${score.score !== null ? score.score : 'N/A'}</td><td class="py-2 px-3 text-center"><span class="badge ${severityClass}">${score.severity || 'N/A'}</span></td></tr>`; });
+                    sortedScores.forEach(score => { 
+                        const severityClass = getSeverityClass(score.severity); 
+                        npqTableBody.innerHTML += `
+                            <tr>
+                                <td style="font-size: 14px !important; padding: 6px 8px !important;">${score.domain || 'N/A'}</td>
+                                <td style="font-size: 14px !important; padding: 6px 8px !important; text-align: center;">${score.score !== null ? score.score : 'N/A'}</td>
+                                <td style="font-size: 14px !important; padding: 6px 8px !important; text-align: center;"><span class="badge ${severityClass}">${score.severity || 'N/A'}</span></td>
+                            </tr>
+                        `; 
+                    });
                 }
             } else if (npqTableBody) { npqTableBody.innerHTML = '<tr><td colspan="3" class="text-center text-gray-500 py-4">NPQ score data missing or invalid.</td></tr>'; }
 
@@ -1031,38 +1034,6 @@
                     });
                 }
             } else if (npqDetailsContainer) { npqDetailsContainer.innerHTML = '<p class="text-center text-gray-500 py-4">Detailed NPQ response data missing or invalid.</p>'; }
-
-            // --- Render Integrative Diagnosis Table ---
-            function renderDiagnosisSummaryTable(inattentionMet, hyperactivityMet, diagnosisText, inattentionCount, hyperactivityCount) {
-                return `
-                    <table class="adhd-summary-table min-w-full border border-gray-300 rounded-md text-sm" style="margin-top:0.5rem;">
-                        <tbody>
-                            <tr class="bg-white">
-                                <td class="px-2 py-1 font-bold">Inattention Criteria</td>
-                                <td class="px-2 py-1"><span class="badge ${inattentionMet ? 'badge-met' : 'badge-not-met'}">${inattentionMet ? 'Met' : 'Not Met'}</span> <span class="text-xs text-gray-500">(${inattentionCount}/9 criteria met)</span></td>
-                            </tr>
-                            <tr class="bg-blue-50">
-                                <td class="px-2 py-1 font-bold">Hyperactivity/Impulsivity Criteria</td>
-                                <td class="px-2 py-1"><span class="badge ${hyperactivityMet ? 'badge-met' : 'badge-not-met'}">${hyperactivityMet ? 'Met' : 'Not Met'}</span> <span class="text-xs text-gray-500">(${hyperactivityCount}/9 criteria met)</span></td>
-                            </tr>
-                            <tr class="bg-white">
-                                <td class="px-2 py-1 font-bold">Overall Diagnosis</td>
-                                <td class="px-2 py-1"><span class="font-bold text-blue-700 text-base">${diagnosisText}</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                `;
-            }
-            const diagnosisSummaryTableContainer = document.getElementById('adhd-diagnosis-summary-table-container');
-            if(diagnosisSummaryTableContainer) {
-                diagnosisSummaryTableContainer.innerHTML = renderDiagnosisSummaryTable(
-                    inattentionMetCount >= inattentionNeeded,
-                    hyperactivityMetCount >= hyperactivityNeeded,
-                    reportData.dass_summary?.[0]?.diagnosis || 'N/A',
-                    inattentionMetCount,
-                    hyperactivityMetCount
-                );
-            }
 
             // --- Validity Warnings Section ---
             const warnings = [];
