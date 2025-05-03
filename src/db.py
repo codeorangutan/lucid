@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, DateTime, Boolean, Float
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, Boolean, Float, and_, text
 from sqlalchemy.orm import declarative_base, sessionmaker
 import os
 from datetime import datetime
@@ -54,6 +54,7 @@ class CognitiveScore(Base):
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
     patient_id = Column(String)  # Unique patient identifier from PDF
+    patient_fk_id = Column(Integer)  # Normalized patient FK (system_patient_id)
     domain = Column(String, nullable=False)
     patient_score = Column(String)
     standard_score = Column(String)
@@ -66,6 +67,7 @@ class SubtestResult(Base):
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
     patient_id = Column(String)  # Unique patient identifier from PDF
+    patient_fk_id = Column(Integer)  # Normalized patient FK (system_patient_id)
     subtest_name = Column(String, nullable=False)
     metric = Column(String, nullable=False)
     score = Column(Float)
@@ -79,6 +81,7 @@ class ASRSResponse(Base):
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
     patient_id = Column(String)  # Unique patient identifier from PDF
+    patient_fk_id = Column(Integer)  # Normalized patient FK (system_patient_id)
     question_number = Column(Integer, nullable=False)
     part = Column(String, nullable=True)
     response = Column(String, nullable=False)
@@ -90,6 +93,7 @@ class DSMDiagnosis(Base):
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
     patient_id = Column(String)  # Unique patient identifier from PDF
+    patient_fk_id = Column(Integer)  # Normalized patient FK (system_patient_id)
     diagnosis = Column(String, nullable=False)
     code = Column(String, nullable=True)
     severity = Column(String, nullable=True)
@@ -101,6 +105,7 @@ class DSMCriteriaMet(Base):
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
     patient_id = Column(String)  # Unique patient identifier from PDF
+    patient_fk_id = Column(Integer)  # Normalized patient FK (system_patient_id)
     dsm_criterion = Column(String, nullable=False)
     dsm_category = Column(String, nullable=False)
     is_met = Column(Boolean, nullable=False)
@@ -111,6 +116,7 @@ class EpworthResponse(Base):
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
     patient_id = Column(String)  # Unique patient identifier from PDF
+    patient_fk_id = Column(Integer)  # Normalized patient FK (system_patient_id)
     situation = Column(String, nullable=False)
     score = Column(Integer, nullable=False)
 
@@ -120,6 +126,7 @@ class EpworthSummary(Base):
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
     patient_id = Column(String)  # Unique patient identifier from PDF
+    patient_fk_id = Column(Integer)  # Normalized patient FK (system_patient_id)
     total_score = Column(Integer, nullable=False)
     interpretation = Column(String, nullable=True)
 
@@ -129,6 +136,7 @@ class NPQDomainScore(Base):
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
     patient_id = Column(String)  # Unique patient identifier from PDF
+    patient_fk_id = Column(Integer)  # Normalized patient FK (system_patient_id)
     domain = Column(String, nullable=False)
     score = Column(Integer, nullable=False)
     severity = Column(String, nullable=False)
@@ -139,6 +147,7 @@ class NPQResponse(Base):
     id = Column(Integer, primary_key=True)
     session_id = Column(Integer, nullable=False)
     patient_id = Column(String)  # Unique patient identifier from PDF
+    patient_fk_id = Column(Integer)  # Normalized patient FK (system_patient_id)
     domain = Column(String, nullable=False)
     question_number = Column(Integer, nullable=False)
     question_text = Column(String, nullable=False)
@@ -201,18 +210,18 @@ def safe_float(val):
         return None
 
 # --- Insert Cognitive Scores (with sanitization) ---
-def insert_cognitive_scores(session_id, scores):
+def insert_cognitive_scores(session_id, scores, patient_fk_id=None):
     """
-    Insert cognitive scores for a session. Passes values as-is (except for patient_score, standard_score, percentile: convert NA/empty to None, else string/number as-is).
+    Insert cognitive scores for a session. Supports both legacy patient_id and new patient_fk_id. Passes values as-is (except for patient_score, standard_score, percentile: convert NA/empty to None, else string/number as-is).
     Args:
         session_id (int): ID of the test session.
         scores (list of dict): Each dict should have keys: domain, patient_score, standard_score, percentile, validity_index.
+        patient_fk_id (int, optional): Normalized patient FK (system_patient_id)
     Returns:
         int: Number of records inserted.
     """
     with Session() as session:
         def clean(val):
-            # Only convert NA/empty to None, else pass as string or number as-is
             if val is None:
                 return None
             if isinstance(val, str) and val.strip().upper() in ("NA", "N/A", "--", ""):
@@ -221,7 +230,8 @@ def insert_cognitive_scores(session_id, scores):
         records = [
             CognitiveScore(
                 session_id=session_id,
-                patient_id=score.get('patient_id'),  # Add patient_id
+                patient_id=score.get('patient_id'),
+                patient_fk_id=patient_fk_id,
                 domain=score['domain'],
                 patient_score=clean(score.get('patient_score')),
                 standard_score=clean(score.get('standard_score')),
@@ -235,12 +245,13 @@ def insert_cognitive_scores(session_id, scores):
         return len(records)
 
 # --- Insert Subtest Results ---
-def insert_subtest_results(session_id, subtests):
+def insert_subtest_results(session_id, subtests, patient_fk_id=None):
     """
-    Insert subtest results for a session.
+    Insert subtest results for a session. Supports both legacy patient_id and new patient_fk_id.
     Args:
         session_id (int): ID of the test session.
         subtests (list of dict): Each dict should have keys: subtest_name, metric, score, standard_score, percentile, validity_flag (optional).
+        patient_fk_id (int, optional): Normalized patient FK (system_patient_id)
     Returns:
         int: Number of records inserted.
     """
@@ -248,7 +259,8 @@ def insert_subtest_results(session_id, subtests):
         records = [
             SubtestResult(
                 session_id=session_id,
-                patient_id=s['patient_id'],  # Add patient_id
+                patient_id=s['patient_id'],
+                patient_fk_id=patient_fk_id,
                 subtest_name=s['subtest_name'],
                 metric=s['metric'],
                 score=s.get('score'),
@@ -263,12 +275,13 @@ def insert_subtest_results(session_id, subtests):
         return len(records)
 
 # --- Insert ASRS Responses ---
-def insert_asrs_responses(session_id, responses):
+def insert_asrs_responses(session_id, responses, patient_fk_id=None):
     """
-    Insert ASRS responses for a session.
+    Insert ASRS responses for a session. Supports both legacy patient_id and new patient_fk_id.
     Args:
         session_id (int): ID of the test session.
         responses (list of dict): Each dict should have keys: question_number, part, response, question_text.
+        patient_fk_id (int, optional): Normalized patient FK (system_patient_id)
     Returns:
         int: Number of records inserted.
     """
@@ -276,7 +289,8 @@ def insert_asrs_responses(session_id, responses):
         records = [
             ASRSResponse(
                 session_id=session_id,
-                patient_id=resp.get('patient_id'),  # Add patient_id
+                patient_id=resp.get('patient_id'),
+                patient_fk_id=patient_fk_id,
                 question_number=resp['question_number'],
                 part=resp.get('part'),
                 response=resp['response'],
@@ -289,12 +303,13 @@ def insert_asrs_responses(session_id, responses):
         return len(records)
 
 # --- Insert DSM Diagnoses ---
-def insert_dsm_diagnosis(session_id, diagnoses):
+def insert_dsm_diagnosis(session_id, diagnoses, patient_fk_id=None):
     """
-    Insert DSM diagnoses for a session.
+    Insert DSM diagnoses for a session. Supports both legacy patient_id and new patient_fk_id.
     Args:
         session_id (int): ID of the test session.
         diagnoses (list of dict): Each dict should have keys: diagnosis, code (optional), severity (optional), notes (optional).
+        patient_fk_id (int, optional): Normalized patient FK (system_patient_id)
     Returns:
         int: Number of records inserted.
     """
@@ -302,7 +317,8 @@ def insert_dsm_diagnosis(session_id, diagnoses):
         records = [
             DSMDiagnosis(
                 session_id=session_id,
-                patient_id=diag.get('patient_id'),  # Add patient_id
+                patient_id=diag.get('patient_id'),
+                patient_fk_id=patient_fk_id,
                 diagnosis=diag['diagnosis'],
                 code=diag.get('code'),
                 severity=diag.get('severity'),
@@ -315,12 +331,13 @@ def insert_dsm_diagnosis(session_id, diagnoses):
         return len(records)
 
 # --- Insert DSM Criteria Met ---
-def insert_dsm_criteria_met(session_id, criteria_data):
+def insert_dsm_criteria_met(session_id, criteria_data, patient_fk_id=None):
     """
-    Insert DSM criteria met for a session.
+    Insert DSM criteria met for a session. Supports both legacy patient_id and new patient_fk_id.
     Args:
         session_id (int): ID of the test session.
         criteria_data (list of dict): Each dict should have keys: dsm_criterion, dsm_category, is_met (bool).
+        patient_fk_id (int, optional): Normalized patient FK (system_patient_id)
     Returns:
         int: Number of records inserted.
     """
@@ -328,7 +345,8 @@ def insert_dsm_criteria_met(session_id, criteria_data):
         records = [
             DSMCriteriaMet(
                 session_id=session_id,
-                patient_id=item.get('patient_id'),  # Add patient_id
+                patient_id=item.get('patient_id'),
+                patient_fk_id=patient_fk_id,
                 dsm_criterion=item['dsm_criterion'],
                 dsm_category=item['dsm_category'],
                 is_met=bool(item['is_met']),
@@ -340,12 +358,13 @@ def insert_dsm_criteria_met(session_id, criteria_data):
         return len(records)
 
 # --- Insert Epworth Responses ---
-def insert_epworth_responses(session_id, responses):
+def insert_epworth_responses(session_id, responses, patient_fk_id=None):
     """
-    Insert Epworth responses for a session.
+    Insert Epworth responses for a session. Supports both legacy patient_id and new patient_fk_id.
     Args:
         session_id (int): ID of the test session.
         responses (list of dict): Each dict should have keys: situation, score.
+        patient_fk_id (int, optional): Normalized patient FK (system_patient_id)
     Returns:
         int: Number of records inserted.
     """
@@ -353,7 +372,8 @@ def insert_epworth_responses(session_id, responses):
         records = [
             EpworthResponse(
                 session_id=session_id,
-                patient_id=resp.get('patient_id'),  # Add patient_id
+                patient_id=resp.get('patient_id'),
+                patient_fk_id=patient_fk_id,
                 situation=resp['situation'],
                 score=resp['score'],
             )
@@ -364,19 +384,21 @@ def insert_epworth_responses(session_id, responses):
         return len(records)
 
 # --- Insert Epworth Summary ---
-def insert_epworth_summary(session_id, summary):
+def insert_epworth_summary(session_id, summary, patient_fk_id=None):
     """
-    Insert Epworth summary for a session.
+    Insert Epworth summary for a session. Supports both legacy patient_id and new patient_fk_id.
     Args:
         session_id (int): ID of the test session.
         summary (dict): Should have keys: total_score (int), interpretation (str, optional).
+        patient_fk_id (int, optional): Normalized patient FK (system_patient_id)
     Returns:
         int: 1 if inserted successfully.
     """
     with Session() as session:
         record = EpworthSummary(
             session_id=session_id,
-            patient_id=summary.get('patient_id'),  # Add patient_id
+            patient_id=summary.get('patient_id'),
+            patient_fk_id=patient_fk_id,
             total_score=summary['total_score'],
             interpretation=summary.get('interpretation'),
         )
@@ -385,12 +407,13 @@ def insert_epworth_summary(session_id, summary):
         return 1
 
 # --- Insert NPQ Domain Scores ---
-def insert_npq_domain_scores(session_id, scores):
+def insert_npq_domain_scores(session_id, scores, patient_fk_id=None):
     """
-    Insert NPQ domain scores for a session.
+    Insert NPQ domain scores for a session. Supports both legacy patient_id and new patient_fk_id.
     Args:
         session_id (int): ID of the test session.
         scores (list of dict): Each dict should have keys: domain, score, severity.
+        patient_fk_id (int, optional): Normalized patient FK (system_patient_id)
     Returns:
         int: Number of records inserted.
     """
@@ -398,7 +421,8 @@ def insert_npq_domain_scores(session_id, scores):
         records = [
             NPQDomainScore(
                 session_id=session_id,
-                patient_id=score.get('patient_id'),  # Add patient_id
+                patient_id=score.get('patient_id'),
+                patient_fk_id=patient_fk_id,
                 domain=score['domain'],
                 score=score['score'],
                 severity=score['severity'],
@@ -410,12 +434,13 @@ def insert_npq_domain_scores(session_id, scores):
         return len(records)
 
 # --- Insert NPQ Responses ---
-def insert_npq_responses(session_id, responses):
+def insert_npq_responses(session_id, responses, patient_fk_id=None):
     """
-    Insert NPQ responses for a session.
+    Insert NPQ responses for a session. Supports both legacy patient_id and new patient_fk_id.
     Args:
         session_id (int): ID of the test session.
         responses (list of dict): Each dict should have keys: domain, question_number, question_text, score, severity.
+        patient_fk_id (int, optional): Normalized patient FK (system_patient_id)
     Returns:
         int: Number of records inserted.
     """
@@ -423,7 +448,8 @@ def insert_npq_responses(session_id, responses):
         records = [
             NPQResponse(
                 session_id=session_id,
-                patient_id=resp.get('patient_id'),  # Add patient_id
+                patient_id=resp.get('patient_id'),
+                patient_fk_id=patient_fk_id,
                 domain=resp['domain'],
                 question_number=resp['question_number'],
                 question_text=resp['question_text'],
@@ -435,3 +461,40 @@ def insert_npq_responses(session_id, responses):
         session.add_all(records)
         session.commit()
         return len(records)
+
+# --- Patient Matching and Creation Logic ---
+def get_or_create_patient(system_session, extracted_patient_id, yob, referral_id=None, patient_name=None):
+    """
+    Find or create a patient in the patients table.
+    Args:
+        system_session: SQLAlchemy session
+        extracted_patient_id (str): Patient ID as extracted from PDF
+        yob (int): Year of birth
+        referral_id (int or None): Referrer ID if available
+        patient_name (str or None): Patient name if available
+    Returns:
+        int: system_patient_id (primary key of patients table)
+    """
+    from sqlalchemy import and_
+    Patients = system_session.execute(text("SELECT name FROM sqlite_master WHERE type='table' AND name='patients'")).fetchone()
+    if not Patients:
+        raise Exception("patients table does not exist. Run migration first.")
+    q = system_session.execute(
+        text("SELECT system_patient_id FROM patients WHERE extracted_patient_id = :extracted_patient_id AND yob = :yob AND (referral_id IS :referral_id OR referral_id = :referral_id) LIMIT 1"),
+        {"extracted_patient_id": extracted_patient_id, "yob": yob, "referral_id": referral_id}
+    ).fetchone()
+    if q:
+        return q[0]
+    # Insert new patient
+    now = datetime.now().isoformat(sep=' ', timespec='seconds')
+    system_session.execute(
+        text("INSERT INTO patients (extracted_patient_id, yob, referral_id, patient_name, first_seen_date, last_seen_date) VALUES (:extracted_patient_id, :yob, :referral_id, :patient_name, :first_seen_date, :last_seen_date)"),
+        {"extracted_patient_id": extracted_patient_id, "yob": yob, "referral_id": referral_id, "patient_name": patient_name, "first_seen_date": now, "last_seen_date": now}
+    )
+    system_session.commit()
+    # Retrieve the new ID
+    q2 = system_session.execute(
+        text("SELECT system_patient_id FROM patients WHERE extracted_patient_id = :extracted_patient_id AND yob = :yob AND (referral_id IS :referral_id OR referral_id = :referral_id) ORDER BY system_patient_id DESC LIMIT 1"),
+        {"extracted_patient_id": extracted_patient_id, "yob": yob, "referral_id": referral_id}
+    ).fetchone()
+    return q2[0]
