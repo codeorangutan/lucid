@@ -498,3 +498,30 @@ def get_or_create_patient(system_session, extracted_patient_id, yob, referral_id
         {"extracted_patient_id": extracted_patient_id, "yob": yob, "referral_id": referral_id}
     ).fetchone()
     return q2[0]
+
+def get_referrer_email_by_patient_id_yob(patient_id: str, yob: int) -> str:
+    """
+    Look up the referrer_email in the referrals table by id_number and yob (4-digit year).
+    Args:
+        patient_id (str): The patient's id_number.
+        yob (int): The patient's year of birth (4 digits).
+    Returns:
+        str: The referrer's email address.
+    Raises:
+        ValueError: If no matching referral is found or email is missing.
+    """
+    with Session() as session:
+        # Match on id_number and yob (as 4-digit string) in dob or yob field
+        # Prefer exact yob column if present, fallback to extracting from dob string
+        query = session.query(Referral).filter(Referral.id_number == patient_id)
+        # Try to match on yob (if column exists)
+        if hasattr(Referral, 'yob'):
+            query = query.filter(Referral.yob == str(yob))
+        else:
+            # Fallback: extract year from dob string if possible
+            from sqlalchemy import func
+            query = query.filter(func.substr(Referral.dob, 1, 4) == str(yob))
+        referral = query.first()
+        if not referral or not referral.referrer_email:
+            raise ValueError(f"No referrer email found for patient_id={patient_id}, yob={yob}")
+        return referral.referrer_email
