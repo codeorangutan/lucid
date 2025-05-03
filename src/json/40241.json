@@ -13,8 +13,8 @@
   },
   "cognitive_scores": [
     {
-      "id": 217,
-      "session_id": 16,
+      "id": 397,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Neurocognition Index (NCI)",
       "standard_score": "84.0",
@@ -22,8 +22,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 218,
-      "session_id": 16,
+      "id": 398,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Composite Memory",
       "patient_score": "85.0",
@@ -32,8 +32,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 219,
-      "session_id": 16,
+      "id": 399,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Verbal Memory",
       "patient_score": "45.0",
@@ -42,8 +42,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 220,
-      "session_id": 16,
+      "id": 400,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Visual Memory",
       "patient_score": "40.0",
@@ -52,8 +52,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 221,
-      "session_id": 16,
+      "id": 401,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychomotor Speed",
       "patient_score": "162.0",
@@ -62,8 +62,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 222,
-      "session_id": 16,
+      "id": 402,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Reaction Time*",
       "patient_score": "762.0",
@@ -72,8 +72,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 223,
-      "session_id": 16,
+      "id": 403,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Complex Attention*",
       "patient_score": "7.0",
@@ -82,8 +82,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 224,
-      "session_id": 16,
+      "id": 404,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Cognitive Flexibility",
       "patient_score": "42.0",
@@ -92,8 +92,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 225,
-      "session_id": 16,
+      "id": 405,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Processing Speed",
       "patient_score": "50.0",
@@ -102,8 +102,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 226,
-      "session_id": 16,
+      "id": 406,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Executive Function",
       "patient_score": "42.0",
@@ -112,8 +112,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 227,
-      "session_id": 16,
+      "id": 407,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Reasoning",
       "patient_score": "4.0",
@@ -122,8 +122,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 228,
-      "session_id": 16,
+      "id": 408,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Working Memory",
       "patient_score": "11.0",
@@ -132,8 +132,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 229,
-      "session_id": 16,
+      "id": 409,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Sustained Attention",
       "patient_score": "33.0",
@@ -142,8 +142,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 230,
-      "session_id": 16,
+      "id": 410,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Simple Attention",
       "patient_score": "36.0",
@@ -152,8 +152,8 @@
       "validity_index": "Yes"
     },
     {
-      "id": 231,
-      "session_id": 16,
+      "id": 411,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Motor Speed",
       "patient_score": "112.0",
@@ -164,8 +164,8 @@
   ],
   "subtests": [
     {
-      "id": 646,
-      "session_id": 16,
+      "id": 1112,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Verbal Memory Test (VBM)",
       "metric": "Correct Hits - Immediate",
@@ -175,8 +175,8 @@
       "validity_flag": 1
     },
     {
-      "id": 647,
-      "session_id": 16,
+      "id": 1113,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Verbal Memory Test (VBM)",
       "metric": "Correct Passes - Immediate",
@@ -186,8 +186,8 @@
       "validity_flag": 1
     },
     {
-      "id": 648,
-      "session_id": 16,
+      "id": 1114,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Verbal Memory Test (VBM)",
       "metric": "Correct Hits - Delay",
@@ -197,8 +197,8 @@
       "validity_flag": 1
     },
     {
-      "id": 649,
-      "session_id": 16,
+      "id": 1115,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Verbal Memory Test (VBM)",
       "metric": "Correct Passes - Delay",
@@ -208,8 +208,8 @@
       "validity_flag": 1
     },
     {
-      "id": 650,
-      "session_id": 16,
+      "id": 1116,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Visual Memory Test (VSM)",
       "metric": "Correct Hits - Immediate",
@@ -219,8 +219,8 @@
       "validity_flag": 1
     },
     {
-      "id": 651,
-      "session_id": 16,
+      "id": 1117,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Visual Memory Test (VSM)",
       "metric": "Correct Passes - Immediate",
@@ -230,8 +230,8 @@
       "validity_flag": 1
     },
     {
-      "id": 652,
-      "session_id": 16,
+      "id": 1118,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Visual Memory Test (VSM)",
       "metric": "Correct Hits - Delay",
@@ -241,8 +241,8 @@
       "validity_flag": 1
     },
     {
-      "id": 653,
-      "session_id": 16,
+      "id": 1119,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Visual Memory Test (VSM)",
       "metric": "Correct Passes - Delay",
@@ -252,8 +252,8 @@
       "validity_flag": 1
     },
     {
-      "id": 654,
-      "session_id": 16,
+      "id": 1120,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Finger Tapping Test (FTT)",
       "metric": "Right Taps Average",
@@ -263,8 +263,8 @@
       "validity_flag": 1
     },
     {
-      "id": 655,
-      "session_id": 16,
+      "id": 1121,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Finger Tapping Test (FTT)",
       "metric": "Left Taps Average",
@@ -274,8 +274,8 @@
       "validity_flag": 1
     },
     {
-      "id": 656,
-      "session_id": 16,
+      "id": 1122,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Symbol Digit Coding (SDC)",
       "metric": "Correct Responses",
@@ -285,8 +285,8 @@
       "validity_flag": 1
     },
     {
-      "id": 657,
-      "session_id": 16,
+      "id": 1123,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Symbol Digit Coding (SDC)",
       "metric": "Errors*",
@@ -296,8 +296,8 @@
       "validity_flag": 1
     },
     {
-      "id": 658,
-      "session_id": 16,
+      "id": 1124,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Stroop Test (ST)",
       "metric": "Simple Reaction Time*",
@@ -307,8 +307,8 @@
       "validity_flag": 1
     },
     {
-      "id": 659,
-      "session_id": 16,
+      "id": 1125,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Stroop Test (ST)",
       "metric": "Complex Reaction Time Correct*",
@@ -318,8 +318,8 @@
       "validity_flag": 1
     },
     {
-      "id": 660,
-      "session_id": 16,
+      "id": 1126,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Stroop Test (ST)",
       "metric": "Stroop Reaction Time Correct*",
@@ -329,8 +329,8 @@
       "validity_flag": 1
     },
     {
-      "id": 661,
-      "session_id": 16,
+      "id": 1127,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Stroop Test (ST)",
       "metric": "Stroop Commission Errors*",
@@ -340,8 +340,8 @@
       "validity_flag": 1
     },
     {
-      "id": 662,
-      "session_id": 16,
+      "id": 1128,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Shifting Attention Test (SAT)",
       "metric": "Correct Responses",
@@ -351,8 +351,8 @@
       "validity_flag": 1
     },
     {
-      "id": 663,
-      "session_id": 16,
+      "id": 1129,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Shifting Attention Test (SAT)",
       "metric": "Errors*",
@@ -362,8 +362,8 @@
       "validity_flag": 1
     },
     {
-      "id": 664,
-      "session_id": 16,
+      "id": 1130,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Shifting Attention Test (SAT)",
       "metric": "Correct Reaction Time*",
@@ -373,8 +373,8 @@
       "validity_flag": 1
     },
     {
-      "id": 665,
-      "session_id": 16,
+      "id": 1131,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Continuous Performance Test (CPT)",
       "metric": "Correct Responses",
@@ -384,8 +384,8 @@
       "validity_flag": 1
     },
     {
-      "id": 666,
-      "session_id": 16,
+      "id": 1132,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Continuous Performance Test (CPT)",
       "metric": "Omission Errors*",
@@ -395,8 +395,8 @@
       "validity_flag": 1
     },
     {
-      "id": 667,
-      "session_id": 16,
+      "id": 1133,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Continuous Performance Test (CPT)",
       "metric": "Commission Errors*",
@@ -406,8 +406,8 @@
       "validity_flag": 1
     },
     {
-      "id": 668,
-      "session_id": 16,
+      "id": 1134,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Continuous Performance Test (CPT)",
       "metric": "Choice Reaction Time Correct*",
@@ -417,8 +417,8 @@
       "validity_flag": 1
     },
     {
-      "id": 669,
-      "session_id": 16,
+      "id": 1135,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Reasoning Test (RT)",
       "metric": "Correct Responses",
@@ -428,8 +428,8 @@
       "validity_flag": 1
     },
     {
-      "id": 670,
-      "session_id": 16,
+      "id": 1136,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Reasoning Test (RT)",
       "metric": "Average Correct Reaction Time*",
@@ -439,8 +439,8 @@
       "validity_flag": 1
     },
     {
-      "id": 671,
-      "session_id": 16,
+      "id": 1137,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Reasoning Test (RT)",
       "metric": "Commission Errors*",
@@ -450,8 +450,8 @@
       "validity_flag": 1
     },
     {
-      "id": 672,
-      "session_id": 16,
+      "id": 1138,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Reasoning Test (RT)",
       "metric": "Omission Errors*",
@@ -461,170 +461,170 @@
       "validity_flag": 1
     },
     {
-      "id": 673,
-      "session_id": 16,
+      "id": 1139,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Average Correct Reaction Time*",
+      "metric": "Average Correct Reaction Time* Part 1",
       "score": 386.0,
       "standard_score": 92.0,
       "percentile": 30.0,
       "validity_flag": 1
     },
     {
-      "id": 674,
-      "session_id": 16,
+      "id": 1140,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Correct Responses",
+      "metric": "Correct Responses Part 2",
       "score": 6.0,
       "standard_score": 102.0,
       "percentile": 55.0,
       "validity_flag": 1
     },
     {
-      "id": 675,
-      "session_id": 16,
+      "id": 1141,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Average Correct Reaction Time*",
+      "metric": "Average Correct Reaction Time* Part 2",
       "score": 406.0,
       "standard_score": 92.0,
       "percentile": 30.0,
       "validity_flag": 1
     },
     {
-      "id": 676,
-      "session_id": 16,
+      "id": 1142,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Incorrect Responses*",
+      "metric": "Incorrect Responses* Part 2",
       "score": 0.0,
       "standard_score": 104.0,
       "percentile": 61.0,
       "validity_flag": 1
     },
     {
-      "id": 677,
-      "session_id": 16,
+      "id": 1143,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Average Incorrect Reaction Time*",
+      "metric": "Average Incorrect Reaction Time* Part 2",
       "score": 0.0,
       "validity_flag": 1
     },
     {
-      "id": 678,
-      "session_id": 16,
+      "id": 1144,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Omission Errors*",
+      "metric": "Omission Errors* Part 2",
       "score": 0.0,
       "standard_score": 102.0,
       "percentile": 55.0,
       "validity_flag": 1
     },
     {
-      "id": 679,
-      "session_id": 16,
+      "id": 1145,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Correct Responses",
+      "metric": "Correct Responses Part 3",
       "score": 16.0,
       "standard_score": 114.0,
       "percentile": 82.0,
       "validity_flag": 1
     },
     {
-      "id": 680,
-      "session_id": 16,
+      "id": 1146,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Average Correct Reaction Time*",
+      "metric": "Average Correct Reaction Time* Part 3",
       "score": 708.0,
       "standard_score": 81.0,
       "percentile": 10.0,
       "validity_flag": 1
     },
     {
-      "id": 681,
-      "session_id": 16,
+      "id": 1147,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Incorrect Responses*",
+      "metric": "Incorrect Responses* Part 3",
       "score": 0.0,
       "standard_score": 103.0,
       "percentile": 58.0,
       "validity_flag": 1
     },
     {
-      "id": 682,
-      "session_id": 16,
+      "id": 1148,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Average Incorrect Reaction Time*",
+      "metric": "Average Incorrect Reaction Time* Part 3",
       "score": 0.0,
       "validity_flag": 1
     },
     {
-      "id": 683,
-      "session_id": 16,
+      "id": 1149,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Omission Errors*",
+      "metric": "Omission Errors* Part 3",
       "score": 0.0,
       "standard_score": 114.0,
       "percentile": 82.0,
       "validity_flag": 1
     },
     {
-      "id": 684,
-      "session_id": 16,
+      "id": 1150,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Correct Responses",
+      "metric": "Correct Responses Part 4",
       "score": 11.0,
       "standard_score": 100.0,
       "percentile": 50.0,
       "validity_flag": 1
     },
     {
-      "id": 685,
-      "session_id": 16,
+      "id": 1151,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Average Correct Reaction Time*",
+      "metric": "Average Correct Reaction Time* Part 4",
       "score": 1007.0,
       "standard_score": 74.0,
       "percentile": 4.0,
       "validity_flag": 1
     },
     {
-      "id": 686,
-      "session_id": 16,
+      "id": 1152,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Incorrect Responses*",
+      "metric": "Incorrect Responses* Part 4",
       "score": 0.0,
       "standard_score": 109.0,
       "percentile": 73.0,
       "validity_flag": 1
     },
     {
-      "id": 687,
-      "session_id": 16,
+      "id": 1153,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Average Incorrect Reaction Time*",
+      "metric": "Average Incorrect Reaction Time* Part 4",
       "score": 0.0,
       "validity_flag": 1
     },
     {
-      "id": 688,
-      "session_id": 16,
+      "id": 1154,
+      "session_id": 34,
       "patient_id": "40241",
       "subtest_name": "Four Part Continuous Performance Test",
-      "metric": "Omission Errors*",
+      "metric": "Omission Errors* Part 4",
       "score": 5.0,
       "standard_score": 100.0,
       "percentile": 50.0,
@@ -633,8 +633,8 @@
   ],
   "asrs": [
     {
-      "id": 271,
-      "session_id": 16,
+      "id": 487,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 1,
       "part": "A",
@@ -642,8 +642,8 @@
       "question_text": "Q1: How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?"
     },
     {
-      "id": 272,
-      "session_id": 16,
+      "id": 488,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 2,
       "part": "A",
@@ -651,8 +651,8 @@
       "question_text": "Q2: How often do you have difficulty getting things in order when you have to do a task that requires organization?"
     },
     {
-      "id": 273,
-      "session_id": 16,
+      "id": 489,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 3,
       "part": "A",
@@ -660,8 +660,8 @@
       "question_text": "Q3: How often do you have problems remembering appointments or obligations?"
     },
     {
-      "id": 274,
-      "session_id": 16,
+      "id": 490,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 4,
       "part": "A",
@@ -669,8 +669,8 @@
       "question_text": "Q4: When you have a task that requires a lot of thought, how often do you avoid or delay getting started?"
     },
     {
-      "id": 275,
-      "session_id": 16,
+      "id": 491,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 5,
       "part": "A",
@@ -678,8 +678,8 @@
       "question_text": "Q5: How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?"
     },
     {
-      "id": 276,
-      "session_id": 16,
+      "id": 492,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 6,
       "part": "A",
@@ -687,8 +687,8 @@
       "question_text": "Q6: How often do you feel overly active and compelled to do things, like you were driven by a motor?"
     },
     {
-      "id": 277,
-      "session_id": 16,
+      "id": 493,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 7,
       "part": "B",
@@ -696,8 +696,8 @@
       "question_text": "Q7: How often do you make careless mistakes when you have to work on a boring or difficult project?"
     },
     {
-      "id": 278,
-      "session_id": 16,
+      "id": 494,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 8,
       "part": "B",
@@ -705,8 +705,8 @@
       "question_text": "Q8: How often do you have difficulty keeping your attention when you are doing boring or repetitive work?"
     },
     {
-      "id": 279,
-      "session_id": 16,
+      "id": 495,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 9,
       "part": "B",
@@ -714,8 +714,8 @@
       "question_text": "Q9: How often do you have difficulty concentrating on what people say to you, even when they are speaking to you directly?"
     },
     {
-      "id": 280,
-      "session_id": 16,
+      "id": 496,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 10,
       "part": "B",
@@ -723,8 +723,8 @@
       "question_text": "Q10: How often do you misplace or have difficulty finding things at home or at work?"
     },
     {
-      "id": 281,
-      "session_id": 16,
+      "id": 497,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 11,
       "part": "B",
@@ -732,8 +732,8 @@
       "question_text": "Q11: How often are you distracted by activity or noise around you?"
     },
     {
-      "id": 282,
-      "session_id": 16,
+      "id": 498,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 12,
       "part": "B",
@@ -741,8 +741,8 @@
       "question_text": "Q12: How often do you leave your seat in meetings or other situations in which you are expected to remain seated?"
     },
     {
-      "id": 283,
-      "session_id": 16,
+      "id": 499,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 13,
       "part": "B",
@@ -750,8 +750,8 @@
       "question_text": "Q13: How often do you feel restless or fidgety?"
     },
     {
-      "id": 284,
-      "session_id": 16,
+      "id": 500,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 14,
       "part": "B",
@@ -759,8 +759,8 @@
       "question_text": "Q14: How often do you have difficulty unwinding and relaxing when you have time to yourself?"
     },
     {
-      "id": 285,
-      "session_id": 16,
+      "id": 501,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 15,
       "part": "B",
@@ -768,8 +768,8 @@
       "question_text": "Q15: How often do you find yourself talking too much when you are in social situations?"
     },
     {
-      "id": 286,
-      "session_id": 16,
+      "id": 502,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 16,
       "part": "B",
@@ -777,8 +777,8 @@
       "question_text": "Q16: When you're in a conversation, how often do you find yourself finishing the sentences of the people you are talking to, before they can finish them themselves?"
     },
     {
-      "id": 287,
-      "session_id": 16,
+      "id": 503,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 17,
       "part": "B",
@@ -786,8 +786,8 @@
       "question_text": "Q17: How often do you have difficulty waiting your turn in situations when turn taking is required?"
     },
     {
-      "id": 288,
-      "session_id": 16,
+      "id": 504,
+      "session_id": 34,
       "patient_id": "40241",
       "question_number": 18,
       "part": "B",
@@ -797,152 +797,152 @@
   ],
   "dass_summary": [
     {
-      "id": 16,
-      "session_id": 16,
+      "id": 28,
+      "session_id": 34,
       "patient_id": "40241",
       "diagnosis": "Predominantly Inattentive Presentation"
     }
   ],
   "dass_items": [
     {
-      "id": 271,
-      "session_id": 16,
+      "id": 487,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "A1: Often fails to give close attention to details or makes careless mistakes",
       "dsm_category": "Inattention",
       "is_met": 1
     },
     {
-      "id": 272,
-      "session_id": 16,
+      "id": 488,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "A2: Often has difficulty sustaining attention in tasks or play activities",
       "dsm_category": "Inattention",
       "is_met": 1
     },
     {
-      "id": 273,
-      "session_id": 16,
+      "id": 489,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "A3: Often does not seem to listen when spoken to directly",
       "dsm_category": "Inattention",
       "is_met": 1
     },
     {
-      "id": 274,
-      "session_id": 16,
+      "id": 490,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "A4: Often does not follow through on instructions and fails to finish duties",
       "dsm_category": "Inattention",
       "is_met": 1
     },
     {
-      "id": 275,
-      "session_id": 16,
+      "id": 491,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "A5: Often has difficulty organizing tasks and activities",
       "dsm_category": "Inattention",
       "is_met": 1
     },
     {
-      "id": 276,
-      "session_id": 16,
+      "id": 492,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "A6: Often avoids or is reluctant to engage in tasks requiring sustained mental effort",
       "dsm_category": "Inattention",
       "is_met": 1
     },
     {
-      "id": 277,
-      "session_id": 16,
+      "id": 493,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "A7: Often loses things necessary for tasks or activities",
       "dsm_category": "Inattention",
       "is_met": 1
     },
     {
-      "id": 278,
-      "session_id": 16,
+      "id": 494,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "A8: Is often easily distracted by extraneous stimuli",
       "dsm_category": "Inattention",
       "is_met": 1
     },
     {
-      "id": 279,
-      "session_id": 16,
+      "id": 495,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "A9: Is often forgetful in daily activities",
       "dsm_category": "Inattention",
       "is_met": 1
     },
     {
-      "id": 280,
-      "session_id": 16,
+      "id": 496,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "B1: Often fidgets or squirms in seat",
       "dsm_category": "Hyperactivity/Impulsivity",
       "is_met": 1
     },
     {
-      "id": 281,
-      "session_id": 16,
+      "id": 497,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "B2: Often leaves seat in situations when remaining seated is expected",
       "dsm_category": "Hyperactivity/Impulsivity",
       "is_met": 0
     },
     {
-      "id": 282,
-      "session_id": 16,
+      "id": 498,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "B3: Often runs about or climbs in situations where it is inappropriate",
       "dsm_category": "Hyperactivity/Impulsivity",
       "is_met": 0
     },
     {
-      "id": 283,
-      "session_id": 16,
+      "id": 499,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "B4: Often unable to play or engage in leisure activities quietly",
       "dsm_category": "Hyperactivity/Impulsivity",
       "is_met": 0
     },
     {
-      "id": 284,
-      "session_id": 16,
+      "id": 500,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "B5: Is often 'on the go', acting as if 'driven by a motor'",
       "dsm_category": "Hyperactivity/Impulsivity",
       "is_met": 0
     },
     {
-      "id": 285,
-      "session_id": 16,
+      "id": 501,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "B6: Often talks excessively",
       "dsm_category": "Hyperactivity/Impulsivity",
       "is_met": 0
     },
     {
-      "id": 286,
-      "session_id": 16,
+      "id": 502,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "B7: Often blurts out an answer before a question has been completed",
       "dsm_category": "Hyperactivity/Impulsivity",
       "is_met": 1
     },
     {
-      "id": 287,
-      "session_id": 16,
+      "id": 503,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "B8: Often has difficulty waiting his or her turn",
       "dsm_category": "Hyperactivity/Impulsivity",
       "is_met": 0
     },
     {
-      "id": 288,
-      "session_id": 16,
+      "id": 504,
+      "session_id": 34,
       "patient_id": "40241",
       "dsm_criterion": "B9: Often interrupts or intrudes on others",
       "dsm_category": "Hyperactivity/Impulsivity",
@@ -952,57 +952,57 @@
   "epworth": {
     "responses": [
       {
-        "id": 121,
-        "session_id": 16,
+        "id": 217,
+        "session_id": 34,
         "patient_id": "40241",
         "situation": "Sitting and reading",
         "score": 1
       },
       {
-        "id": 122,
-        "session_id": 16,
+        "id": 218,
+        "session_id": 34,
         "patient_id": "40241",
         "situation": "Watching TV",
         "score": 1
       },
       {
-        "id": 123,
-        "session_id": 16,
+        "id": 219,
+        "session_id": 34,
         "patient_id": "40241",
         "situation": "Sitting inactive in a public place (e.g., a theater or a meeting)",
         "score": 0
       },
       {
-        "id": 124,
-        "session_id": 16,
+        "id": 220,
+        "session_id": 34,
         "patient_id": "40241",
         "situation": "As a passenger in a car for an hour without a break",
         "score": 1
       },
       {
-        "id": 125,
-        "session_id": 16,
+        "id": 221,
+        "session_id": 34,
         "patient_id": "40241",
         "situation": "Lying down to rest in the afternoon when circumstances permit",
         "score": 1
       },
       {
-        "id": 126,
-        "session_id": 16,
+        "id": 222,
+        "session_id": 34,
         "patient_id": "40241",
         "situation": "Sitting and talking to someone",
         "score": 0
       },
       {
-        "id": 127,
-        "session_id": 16,
+        "id": 223,
+        "session_id": 34,
         "patient_id": "40241",
         "situation": "Sitting quietly after a lunch without alcohol",
         "score": 0
       },
       {
-        "id": 128,
-        "session_id": 16,
+        "id": 224,
+        "session_id": 34,
         "patient_id": "40241",
         "situation": "In a car, while stopped for a few minutes in traffic",
         "score": 0
@@ -1010,8 +1010,8 @@
     ],
     "summary": [
       {
-        "id": 15,
-        "session_id": 16,
+        "id": 27,
+        "session_id": 34,
         "patient_id": "40241",
         "total_score": 4,
         "interpretation": "Low level of normal daytime sleepiness."
@@ -1020,232 +1020,232 @@
   },
   "npq_scores": [
     {
-      "id": 407,
-      "session_id": 16,
+      "id": 523,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "score": 164,
       "severity": "Moderate"
     },
     {
-      "id": 408,
-      "session_id": 16,
+      "id": 524,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Impulsive",
       "score": 117,
       "severity": "Mild"
     },
     {
-      "id": 409,
-      "session_id": 16,
+      "id": 525,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "score": 154,
       "severity": "Moderate"
     },
     {
-      "id": 410,
-      "session_id": 16,
+      "id": 526,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "score": 123,
       "severity": "Mild"
     },
     {
-      "id": 411,
-      "session_id": 16,
+      "id": 527,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety",
       "score": 160,
       "severity": "Moderate"
     },
     {
-      "id": 412,
-      "session_id": 16,
+      "id": 528,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Panic",
       "score": 0,
       "severity": "Not a problem"
     },
     {
-      "id": 413,
-      "session_id": 16,
+      "id": 529,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Agoraphobia",
       "score": 100,
       "severity": "Mild"
     },
     {
-      "id": 414,
-      "session_id": 16,
+      "id": 530,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "score": 89,
       "severity": "Mild"
     },
     {
-      "id": 415,
-      "session_id": 16,
+      "id": 531,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Social Anxiety",
       "score": 225,
       "severity": "Severe"
     },
     {
-      "id": 416,
-      "session_id": 16,
+      "id": 532,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "score": 171,
       "severity": "Moderate"
     },
     {
-      "id": 417,
-      "session_id": 16,
+      "id": 533,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "score": 77,
       "severity": "Mild"
     },
     {
-      "id": 418,
-      "session_id": 16,
+      "id": 534,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mania",
       "score": 50,
       "severity": "Not a problem"
     },
     {
-      "id": 419,
-      "session_id": 16,
+      "id": 535,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Aggression",
       "score": 40,
       "severity": "Not a problem"
     },
     {
-      "id": 420,
-      "session_id": 16,
+      "id": 536,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "score": 86,
       "severity": "Mild"
     },
     {
-      "id": 421,
-      "session_id": 16,
+      "id": 537,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Somatic",
       "score": 44,
       "severity": "Not a problem"
     },
     {
-      "id": 422,
-      "session_id": 16,
+      "id": 538,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Fatigue",
       "score": 133,
       "severity": "Mild"
     },
     {
-      "id": 423,
-      "session_id": 16,
+      "id": 539,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Sleep",
       "score": 0,
       "severity": "Not a problem"
     },
     {
-      "id": 424,
-      "session_id": 16,
+      "id": 540,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Suicide",
       "score": 17,
       "severity": "Not a problem"
     },
     {
-      "id": 425,
-      "session_id": 16,
+      "id": 541,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Pain",
       "score": 63,
       "severity": "Not a problem"
     },
     {
-      "id": 426,
-      "session_id": 16,
+      "id": 542,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Substance Abuse",
       "score": 67,
       "severity": "Not a problem"
     },
     {
-      "id": 427,
-      "session_id": 16,
+      "id": 543,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Average Symptom Score",
       "score": 94,
       "severity": "Mild"
     },
     {
-      "id": 428,
-      "session_id": 16,
+      "id": 544,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "score": 139,
       "severity": "Mild"
     },
     {
-      "id": 429,
-      "session_id": 16,
+      "id": 545,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "score": 86,
       "severity": "Mild"
     },
     {
-      "id": 430,
-      "session_id": 16,
+      "id": 546,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "score": 67,
       "severity": "Not a problem"
     },
     {
-      "id": 431,
-      "session_id": 16,
+      "id": 547,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "score": 113,
       "severity": "Mild"
     },
     {
-      "id": 432,
-      "session_id": 16,
+      "id": 548,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "score": 153,
       "severity": "Moderate"
     },
     {
-      "id": 433,
-      "session_id": 16,
+      "id": 549,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "score": 133,
       "severity": "Mild"
     },
     {
-      "id": 434,
-      "session_id": 16,
+      "id": 550,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "score": 161,
       "severity": "Moderate"
     },
     {
-      "id": 435,
-      "session_id": 16,
+      "id": 551,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "score": 154,
@@ -1254,8 +1254,8 @@
   ],
   "npq_questions": [
     {
-      "id": 5111,
-      "session_id": 16,
+      "id": 6571,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "question_number": 1,
@@ -1264,8 +1264,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5112,
-      "session_id": 16,
+      "id": 6572,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "question_number": 2,
@@ -1274,8 +1274,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5113,
-      "session_id": 16,
+      "id": 6573,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "question_number": 3,
@@ -1284,8 +1284,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5114,
-      "session_id": 16,
+      "id": 6574,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "question_number": 4,
@@ -1294,8 +1294,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5115,
-      "session_id": 16,
+      "id": 6575,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "question_number": 5,
@@ -1304,8 +1304,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5116,
-      "session_id": 16,
+      "id": 6576,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "question_number": 6,
@@ -1314,8 +1314,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5117,
-      "session_id": 16,
+      "id": 6577,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "question_number": 7,
@@ -1324,8 +1324,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5118,
-      "session_id": 16,
+      "id": 6578,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "question_number": 8,
@@ -1334,8 +1334,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5119,
-      "session_id": 16,
+      "id": 6579,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "question_number": 9,
@@ -1344,8 +1344,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5120,
-      "session_id": 16,
+      "id": 6580,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "question_number": 10,
@@ -1354,8 +1354,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5121,
-      "session_id": 16,
+      "id": 6581,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Attention",
       "question_number": 11,
@@ -1364,8 +1364,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5122,
-      "session_id": 16,
+      "id": 6582,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Impulsive",
       "question_number": 1,
@@ -1374,8 +1374,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5123,
-      "session_id": 16,
+      "id": 6583,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Impulsive",
       "question_number": 2,
@@ -1384,8 +1384,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5124,
-      "session_id": 16,
+      "id": 6584,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Impulsive",
       "question_number": 3,
@@ -1394,8 +1394,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5125,
-      "session_id": 16,
+      "id": 6585,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Impulsive",
       "question_number": 4,
@@ -1404,8 +1404,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5126,
-      "session_id": 16,
+      "id": 6586,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Impulsive",
       "question_number": 5,
@@ -1414,8 +1414,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5127,
-      "session_id": 16,
+      "id": 6587,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Impulsive",
       "question_number": 6,
@@ -1424,8 +1424,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5128,
-      "session_id": 16,
+      "id": 6588,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 1,
@@ -1434,8 +1434,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5129,
-      "session_id": 16,
+      "id": 6589,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 2,
@@ -1444,8 +1444,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5130,
-      "session_id": 16,
+      "id": 6590,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 3,
@@ -1454,8 +1454,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5131,
-      "session_id": 16,
+      "id": 6591,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 4,
@@ -1464,8 +1464,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5132,
-      "session_id": 16,
+      "id": 6592,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 5,
@@ -1474,8 +1474,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5133,
-      "session_id": 16,
+      "id": 6593,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 6,
@@ -1484,8 +1484,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5134,
-      "session_id": 16,
+      "id": 6594,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 7,
@@ -1494,8 +1494,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5135,
-      "session_id": 16,
+      "id": 6595,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 8,
@@ -1504,8 +1504,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5136,
-      "session_id": 16,
+      "id": 6596,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 9,
@@ -1514,8 +1514,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5137,
-      "session_id": 16,
+      "id": 6597,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 10,
@@ -1524,8 +1524,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5138,
-      "session_id": 16,
+      "id": 6598,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 11,
@@ -1534,8 +1534,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5139,
-      "session_id": 16,
+      "id": 6599,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 12,
@@ -1544,8 +1544,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5140,
-      "session_id": 16,
+      "id": 6600,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Learning",
       "question_number": 13,
@@ -1554,8 +1554,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5141,
-      "session_id": 16,
+      "id": 6601,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 1,
@@ -1564,8 +1564,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5142,
-      "session_id": 16,
+      "id": 6602,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 2,
@@ -1574,8 +1574,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5143,
-      "session_id": 16,
+      "id": 6603,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 3,
@@ -1584,8 +1584,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5144,
-      "session_id": 16,
+      "id": 6604,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 4,
@@ -1594,8 +1594,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5145,
-      "session_id": 16,
+      "id": 6605,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 5,
@@ -1604,8 +1604,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5146,
-      "session_id": 16,
+      "id": 6606,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 6,
@@ -1614,8 +1614,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5147,
-      "session_id": 16,
+      "id": 6607,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 7,
@@ -1624,8 +1624,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5148,
-      "session_id": 16,
+      "id": 6608,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 8,
@@ -1634,8 +1634,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5149,
-      "session_id": 16,
+      "id": 6609,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 9,
@@ -1644,8 +1644,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5150,
-      "session_id": 16,
+      "id": 6610,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 10,
@@ -1654,8 +1654,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5151,
-      "session_id": 16,
+      "id": 6611,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 11,
@@ -1664,8 +1664,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5152,
-      "session_id": 16,
+      "id": 6612,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 12,
@@ -1674,8 +1674,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5153,
-      "session_id": 16,
+      "id": 6613,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 13,
@@ -1684,8 +1684,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5154,
-      "session_id": 16,
+      "id": 6614,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 14,
@@ -1694,8 +1694,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5155,
-      "session_id": 16,
+      "id": 6615,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 15,
@@ -1704,8 +1704,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5156,
-      "session_id": 16,
+      "id": 6616,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 16,
@@ -1714,8 +1714,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5157,
-      "session_id": 16,
+      "id": 6617,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 17,
@@ -1724,8 +1724,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5158,
-      "session_id": 16,
+      "id": 6618,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 18,
@@ -1734,8 +1734,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5159,
-      "session_id": 16,
+      "id": 6619,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 19,
@@ -1744,8 +1744,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5160,
-      "session_id": 16,
+      "id": 6620,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 20,
@@ -1754,8 +1754,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5161,
-      "session_id": 16,
+      "id": 6621,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 21,
@@ -1764,8 +1764,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5162,
-      "session_id": 16,
+      "id": 6622,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Memory",
       "question_number": 22,
@@ -1774,8 +1774,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5163,
-      "session_id": 16,
+      "id": 6623,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety",
       "question_number": 1,
@@ -1784,8 +1784,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5164,
-      "session_id": 16,
+      "id": 6624,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety",
       "question_number": 2,
@@ -1794,8 +1794,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5165,
-      "session_id": 16,
+      "id": 6625,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety",
       "question_number": 3,
@@ -1804,8 +1804,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5166,
-      "session_id": 16,
+      "id": 6626,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety",
       "question_number": 4,
@@ -1814,8 +1814,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5167,
-      "session_id": 16,
+      "id": 6627,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety",
       "question_number": 5,
@@ -1824,8 +1824,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5168,
-      "session_id": 16,
+      "id": 6628,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety",
       "question_number": 6,
@@ -1834,8 +1834,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5169,
-      "session_id": 16,
+      "id": 6629,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety",
       "question_number": 7,
@@ -1844,8 +1844,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5170,
-      "session_id": 16,
+      "id": 6630,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety",
       "question_number": 8,
@@ -1854,8 +1854,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5171,
-      "session_id": 16,
+      "id": 6631,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety",
       "question_number": 9,
@@ -1864,8 +1864,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5172,
-      "session_id": 16,
+      "id": 6632,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety",
       "question_number": 10,
@@ -1874,8 +1874,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5173,
-      "session_id": 16,
+      "id": 6633,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Panic",
       "question_number": 1,
@@ -1884,8 +1884,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5174,
-      "session_id": 16,
+      "id": 6634,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Panic",
       "question_number": 2,
@@ -1894,8 +1894,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5175,
-      "session_id": 16,
+      "id": 6635,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Panic",
       "question_number": 3,
@@ -1904,8 +1904,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5176,
-      "session_id": 16,
+      "id": 6636,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Panic",
       "question_number": 4,
@@ -1914,8 +1914,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5177,
-      "session_id": 16,
+      "id": 6637,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Panic",
       "question_number": 5,
@@ -1924,8 +1924,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5178,
-      "session_id": 16,
+      "id": 6638,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Panic",
       "question_number": 6,
@@ -1934,8 +1934,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5179,
-      "session_id": 16,
+      "id": 6639,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Agoraphobia",
       "question_number": 1,
@@ -1944,8 +1944,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5180,
-      "session_id": 16,
+      "id": 6640,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Agoraphobia",
       "question_number": 2,
@@ -1954,8 +1954,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5181,
-      "session_id": 16,
+      "id": 6641,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Agoraphobia",
       "question_number": 3,
@@ -1964,8 +1964,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5182,
-      "session_id": 16,
+      "id": 6642,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Agoraphobia",
       "question_number": 4,
@@ -1974,8 +1974,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5183,
-      "session_id": 16,
+      "id": 6643,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Agoraphobia",
       "question_number": 5,
@@ -1984,8 +1984,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5184,
-      "session_id": 16,
+      "id": 6644,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Agoraphobia",
       "question_number": 6,
@@ -1994,8 +1994,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5185,
-      "session_id": 16,
+      "id": 6645,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 1,
@@ -2004,8 +2004,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5186,
-      "session_id": 16,
+      "id": 6646,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 2,
@@ -2014,8 +2014,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5187,
-      "session_id": 16,
+      "id": 6647,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 3,
@@ -2024,8 +2024,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5188,
-      "session_id": 16,
+      "id": 6648,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 4,
@@ -2034,8 +2034,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5189,
-      "session_id": 16,
+      "id": 6649,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 5,
@@ -2044,8 +2044,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5190,
-      "session_id": 16,
+      "id": 6650,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 6,
@@ -2054,8 +2054,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5191,
-      "session_id": 16,
+      "id": 6651,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 7,
@@ -2064,8 +2064,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5192,
-      "session_id": 16,
+      "id": 6652,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 8,
@@ -2074,8 +2074,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5193,
-      "session_id": 16,
+      "id": 6653,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 9,
@@ -2084,8 +2084,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5194,
-      "session_id": 16,
+      "id": 6654,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 10,
@@ -2094,8 +2094,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5195,
-      "session_id": 16,
+      "id": 6655,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 11,
@@ -2104,8 +2104,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5196,
-      "session_id": 16,
+      "id": 6656,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 12,
@@ -2114,8 +2114,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5197,
-      "session_id": 16,
+      "id": 6657,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 13,
@@ -2124,8 +2124,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5198,
-      "session_id": 16,
+      "id": 6658,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 14,
@@ -2134,8 +2134,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5199,
-      "session_id": 16,
+      "id": 6659,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 15,
@@ -2144,8 +2144,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5200,
-      "session_id": 16,
+      "id": 6660,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 16,
@@ -2154,8 +2154,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5201,
-      "session_id": 16,
+      "id": 6661,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 17,
@@ -2164,8 +2164,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5202,
-      "session_id": 16,
+      "id": 6662,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 18,
@@ -2174,8 +2174,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5203,
-      "session_id": 16,
+      "id": 6663,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Obsessions & Compulsions",
       "question_number": 19,
@@ -2184,8 +2184,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5204,
-      "session_id": 16,
+      "id": 6664,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Social Anxiety",
       "question_number": 1,
@@ -2194,8 +2194,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5205,
-      "session_id": 16,
+      "id": 6665,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Social Anxiety",
       "question_number": 2,
@@ -2204,8 +2204,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5206,
-      "session_id": 16,
+      "id": 6666,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Social Anxiety",
       "question_number": 3,
@@ -2214,8 +2214,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5207,
-      "session_id": 16,
+      "id": 6667,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Social Anxiety",
       "question_number": 4,
@@ -2224,8 +2224,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5208,
-      "session_id": 16,
+      "id": 6668,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Social Anxiety",
       "question_number": 5,
@@ -2234,8 +2234,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5209,
-      "session_id": 16,
+      "id": 6669,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Social Anxiety",
       "question_number": 6,
@@ -2244,8 +2244,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5210,
-      "session_id": 16,
+      "id": 6670,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Social Anxiety",
       "question_number": 7,
@@ -2254,8 +2254,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5211,
-      "session_id": 16,
+      "id": 6671,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Social Anxiety",
       "question_number": 8,
@@ -2264,8 +2264,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5212,
-      "session_id": 16,
+      "id": 6672,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 1,
@@ -2274,8 +2274,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5213,
-      "session_id": 16,
+      "id": 6673,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 2,
@@ -2284,8 +2284,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5214,
-      "session_id": 16,
+      "id": 6674,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 3,
@@ -2294,8 +2294,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5215,
-      "session_id": 16,
+      "id": 6675,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 4,
@@ -2304,8 +2304,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5216,
-      "session_id": 16,
+      "id": 6676,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 5,
@@ -2314,8 +2314,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5217,
-      "session_id": 16,
+      "id": 6677,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 6,
@@ -2324,8 +2324,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5218,
-      "session_id": 16,
+      "id": 6678,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 7,
@@ -2334,8 +2334,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5219,
-      "session_id": 16,
+      "id": 6679,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 8,
@@ -2344,8 +2344,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5220,
-      "session_id": 16,
+      "id": 6680,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 9,
@@ -2354,8 +2354,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5221,
-      "session_id": 16,
+      "id": 6681,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 10,
@@ -2364,8 +2364,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5222,
-      "session_id": 16,
+      "id": 6682,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 11,
@@ -2374,8 +2374,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5223,
-      "session_id": 16,
+      "id": 6683,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 12,
@@ -2384,8 +2384,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5224,
-      "session_id": 16,
+      "id": 6684,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 13,
@@ -2394,8 +2394,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5225,
-      "session_id": 16,
+      "id": 6685,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 14,
@@ -2404,8 +2404,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5226,
-      "session_id": 16,
+      "id": 6686,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 15,
@@ -2414,8 +2414,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5227,
-      "session_id": 16,
+      "id": 6687,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 16,
@@ -2424,8 +2424,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5228,
-      "session_id": 16,
+      "id": 6688,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Depression",
       "question_number": 17,
@@ -2434,8 +2434,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5229,
-      "session_id": 16,
+      "id": 6689,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 1,
@@ -2444,8 +2444,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5230,
-      "session_id": 16,
+      "id": 6690,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 2,
@@ -2454,8 +2454,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5231,
-      "session_id": 16,
+      "id": 6691,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 3,
@@ -2464,8 +2464,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5232,
-      "session_id": 16,
+      "id": 6692,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 4,
@@ -2474,8 +2474,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5233,
-      "session_id": 16,
+      "id": 6693,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 5,
@@ -2484,8 +2484,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5234,
-      "session_id": 16,
+      "id": 6694,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 6,
@@ -2494,8 +2494,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5235,
-      "session_id": 16,
+      "id": 6695,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 7,
@@ -2504,8 +2504,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5236,
-      "session_id": 16,
+      "id": 6696,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 8,
@@ -2514,8 +2514,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5237,
-      "session_id": 16,
+      "id": 6697,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 9,
@@ -2524,8 +2524,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5238,
-      "session_id": 16,
+      "id": 6698,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 10,
@@ -2534,8 +2534,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5239,
-      "session_id": 16,
+      "id": 6699,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 11,
@@ -2544,8 +2544,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5240,
-      "session_id": 16,
+      "id": 6700,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 12,
@@ -2554,8 +2554,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5241,
-      "session_id": 16,
+      "id": 6701,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mood Stability",
       "question_number": 13,
@@ -2564,8 +2564,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5242,
-      "session_id": 16,
+      "id": 6702,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mania",
       "question_number": 1,
@@ -2574,8 +2574,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5243,
-      "session_id": 16,
+      "id": 6703,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mania",
       "question_number": 2,
@@ -2584,8 +2584,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5244,
-      "session_id": 16,
+      "id": 6704,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mania",
       "question_number": 3,
@@ -2594,8 +2594,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5245,
-      "session_id": 16,
+      "id": 6705,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mania",
       "question_number": 4,
@@ -2604,8 +2604,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5246,
-      "session_id": 16,
+      "id": 6706,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mania",
       "question_number": 5,
@@ -2614,8 +2614,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5247,
-      "session_id": 16,
+      "id": 6707,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mania",
       "question_number": 6,
@@ -2624,8 +2624,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5248,
-      "session_id": 16,
+      "id": 6708,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mania",
       "question_number": 7,
@@ -2634,8 +2634,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5249,
-      "session_id": 16,
+      "id": 6709,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Mania",
       "question_number": 8,
@@ -2644,8 +2644,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5250,
-      "session_id": 16,
+      "id": 6710,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Aggression",
       "question_number": 1,
@@ -2654,8 +2654,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5251,
-      "session_id": 16,
+      "id": 6711,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Aggression",
       "question_number": 2,
@@ -2664,8 +2664,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5252,
-      "session_id": 16,
+      "id": 6712,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Aggression",
       "question_number": 3,
@@ -2674,8 +2674,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5253,
-      "session_id": 16,
+      "id": 6713,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Aggression",
       "question_number": 4,
@@ -2684,8 +2684,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5254,
-      "session_id": 16,
+      "id": 6714,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Aggression",
       "question_number": 5,
@@ -2694,8 +2694,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5255,
-      "session_id": 16,
+      "id": 6715,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Aggression",
       "question_number": 6,
@@ -2704,8 +2704,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5256,
-      "session_id": 16,
+      "id": 6716,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Aggression",
       "question_number": 7,
@@ -2714,8 +2714,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5257,
-      "session_id": 16,
+      "id": 6717,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Aggression",
       "question_number": 8,
@@ -2724,8 +2724,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5258,
-      "session_id": 16,
+      "id": 6718,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Aggression",
       "question_number": 9,
@@ -2734,8 +2734,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5259,
-      "session_id": 16,
+      "id": 6719,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Aggression",
       "question_number": 10,
@@ -2744,8 +2744,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5260,
-      "session_id": 16,
+      "id": 6720,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 1,
@@ -2754,8 +2754,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5261,
-      "session_id": 16,
+      "id": 6721,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 2,
@@ -2764,8 +2764,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5262,
-      "session_id": 16,
+      "id": 6722,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 3,
@@ -2774,8 +2774,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5263,
-      "session_id": 16,
+      "id": 6723,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 4,
@@ -2784,8 +2784,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5264,
-      "session_id": 16,
+      "id": 6724,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 5,
@@ -2794,8 +2794,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5265,
-      "session_id": 16,
+      "id": 6725,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 6,
@@ -2804,8 +2804,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5266,
-      "session_id": 16,
+      "id": 6726,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 7,
@@ -2814,8 +2814,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5267,
-      "session_id": 16,
+      "id": 6727,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 8,
@@ -2824,8 +2824,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5268,
-      "session_id": 16,
+      "id": 6728,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 9,
@@ -2834,8 +2834,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5269,
-      "session_id": 16,
+      "id": 6729,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 10,
@@ -2844,8 +2844,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5270,
-      "session_id": 16,
+      "id": 6730,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 11,
@@ -2854,8 +2854,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5271,
-      "session_id": 16,
+      "id": 6731,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 12,
@@ -2864,8 +2864,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5272,
-      "session_id": 16,
+      "id": 6732,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 13,
@@ -2874,8 +2874,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5273,
-      "session_id": 16,
+      "id": 6733,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Psychotic",
       "question_number": 14,
@@ -2884,8 +2884,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5274,
-      "session_id": 16,
+      "id": 6734,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Somatic",
       "question_number": 1,
@@ -2894,8 +2894,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5275,
-      "session_id": 16,
+      "id": 6735,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Somatic",
       "question_number": 2,
@@ -2904,8 +2904,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5276,
-      "session_id": 16,
+      "id": 6736,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Somatic",
       "question_number": 3,
@@ -2914,8 +2914,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5277,
-      "session_id": 16,
+      "id": 6737,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Somatic",
       "question_number": 4,
@@ -2924,8 +2924,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5278,
-      "session_id": 16,
+      "id": 6738,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Somatic",
       "question_number": 5,
@@ -2934,8 +2934,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5279,
-      "session_id": 16,
+      "id": 6739,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Somatic",
       "question_number": 6,
@@ -2944,8 +2944,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5280,
-      "session_id": 16,
+      "id": 6740,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Somatic",
       "question_number": 7,
@@ -2954,8 +2954,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5281,
-      "session_id": 16,
+      "id": 6741,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Somatic",
       "question_number": 8,
@@ -2964,8 +2964,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5282,
-      "session_id": 16,
+      "id": 6742,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Somatic",
       "question_number": 9,
@@ -2974,8 +2974,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5283,
-      "session_id": 16,
+      "id": 6743,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Fatigue",
       "question_number": 1,
@@ -2984,8 +2984,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5284,
-      "session_id": 16,
+      "id": 6744,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Fatigue",
       "question_number": 2,
@@ -2994,8 +2994,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5285,
-      "session_id": 16,
+      "id": 6745,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Fatigue",
       "question_number": 3,
@@ -3004,8 +3004,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5286,
-      "session_id": 16,
+      "id": 6746,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Fatigue",
       "question_number": 4,
@@ -3014,8 +3014,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5287,
-      "session_id": 16,
+      "id": 6747,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Fatigue",
       "question_number": 5,
@@ -3024,8 +3024,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5288,
-      "session_id": 16,
+      "id": 6748,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Fatigue",
       "question_number": 6,
@@ -3034,8 +3034,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5289,
-      "session_id": 16,
+      "id": 6749,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Sleep",
       "question_number": 1,
@@ -3044,8 +3044,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5290,
-      "session_id": 16,
+      "id": 6750,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Sleep",
       "question_number": 2,
@@ -3054,8 +3054,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5291,
-      "session_id": 16,
+      "id": 6751,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Sleep",
       "question_number": 3,
@@ -3064,8 +3064,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5292,
-      "session_id": 16,
+      "id": 6752,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Sleep",
       "question_number": 4,
@@ -3074,8 +3074,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5293,
-      "session_id": 16,
+      "id": 6753,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Suicide",
       "question_number": 1,
@@ -3084,8 +3084,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5294,
-      "session_id": 16,
+      "id": 6754,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Suicide",
       "question_number": 2,
@@ -3094,8 +3094,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5295,
-      "session_id": 16,
+      "id": 6755,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Suicide",
       "question_number": 3,
@@ -3104,8 +3104,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5296,
-      "session_id": 16,
+      "id": 6756,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Suicide",
       "question_number": 4,
@@ -3114,8 +3114,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5297,
-      "session_id": 16,
+      "id": 6757,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Suicide",
       "question_number": 5,
@@ -3124,8 +3124,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5298,
-      "session_id": 16,
+      "id": 6758,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Suicide",
       "question_number": 6,
@@ -3134,8 +3134,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5299,
-      "session_id": 16,
+      "id": 6759,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Pain",
       "question_number": 1,
@@ -3144,8 +3144,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5300,
-      "session_id": 16,
+      "id": 6760,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Pain",
       "question_number": 2,
@@ -3154,8 +3154,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5301,
-      "session_id": 16,
+      "id": 6761,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Pain",
       "question_number": 3,
@@ -3164,8 +3164,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5302,
-      "session_id": 16,
+      "id": 6762,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Pain",
       "question_number": 4,
@@ -3174,8 +3174,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5303,
-      "session_id": 16,
+      "id": 6763,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Pain",
       "question_number": 5,
@@ -3184,8 +3184,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5304,
-      "session_id": 16,
+      "id": 6764,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Pain",
       "question_number": 6,
@@ -3194,8 +3194,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5305,
-      "session_id": 16,
+      "id": 6765,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Pain",
       "question_number": 7,
@@ -3204,8 +3204,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5306,
-      "session_id": 16,
+      "id": 6766,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Pain",
       "question_number": 8,
@@ -3214,8 +3214,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5307,
-      "session_id": 16,
+      "id": 6767,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Substance Abuse",
       "question_number": 1,
@@ -3224,8 +3224,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5308,
-      "session_id": 16,
+      "id": 6768,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Substance Abuse",
       "question_number": 2,
@@ -3234,8 +3234,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5309,
-      "session_id": 16,
+      "id": 6769,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Substance Abuse",
       "question_number": 3,
@@ -3244,8 +3244,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5310,
-      "session_id": 16,
+      "id": 6770,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 1,
@@ -3254,8 +3254,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5311,
-      "session_id": 16,
+      "id": 6771,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 2,
@@ -3264,8 +3264,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5312,
-      "session_id": 16,
+      "id": 6772,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 3,
@@ -3274,8 +3274,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5313,
-      "session_id": 16,
+      "id": 6773,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 4,
@@ -3284,8 +3284,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5314,
-      "session_id": 16,
+      "id": 6774,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 5,
@@ -3294,8 +3294,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5315,
-      "session_id": 16,
+      "id": 6775,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 6,
@@ -3304,8 +3304,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5316,
-      "session_id": 16,
+      "id": 6776,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 7,
@@ -3314,8 +3314,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5317,
-      "session_id": 16,
+      "id": 6777,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 8,
@@ -3324,8 +3324,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5318,
-      "session_id": 16,
+      "id": 6778,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 9,
@@ -3334,8 +3334,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5319,
-      "session_id": 16,
+      "id": 6779,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 10,
@@ -3344,8 +3344,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5320,
-      "session_id": 16,
+      "id": 6780,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 11,
@@ -3354,8 +3354,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5321,
-      "session_id": 16,
+      "id": 6781,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 12,
@@ -3364,8 +3364,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5322,
-      "session_id": 16,
+      "id": 6782,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 13,
@@ -3374,8 +3374,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5323,
-      "session_id": 16,
+      "id": 6783,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 14,
@@ -3384,8 +3384,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5324,
-      "session_id": 16,
+      "id": 6784,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 15,
@@ -3394,8 +3394,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5325,
-      "session_id": 16,
+      "id": 6785,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 16,
@@ -3404,8 +3404,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5326,
-      "session_id": 16,
+      "id": 6786,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 17,
@@ -3414,8 +3414,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5327,
-      "session_id": 16,
+      "id": 6787,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "PTSD",
       "question_number": 18,
@@ -3424,8 +3424,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5328,
-      "session_id": 16,
+      "id": 6788,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 1,
@@ -3434,8 +3434,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5329,
-      "session_id": 16,
+      "id": 6789,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 2,
@@ -3444,8 +3444,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5330,
-      "session_id": 16,
+      "id": 6790,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 3,
@@ -3454,8 +3454,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5331,
-      "session_id": 16,
+      "id": 6791,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 4,
@@ -3464,8 +3464,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5332,
-      "session_id": 16,
+      "id": 6792,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 5,
@@ -3474,8 +3474,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5333,
-      "session_id": 16,
+      "id": 6793,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 6,
@@ -3484,8 +3484,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5334,
-      "session_id": 16,
+      "id": 6794,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 7,
@@ -3494,8 +3494,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5335,
-      "session_id": 16,
+      "id": 6795,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 8,
@@ -3504,8 +3504,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5336,
-      "session_id": 16,
+      "id": 6796,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 9,
@@ -3514,8 +3514,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5337,
-      "session_id": 16,
+      "id": 6797,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 10,
@@ -3524,8 +3524,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5338,
-      "session_id": 16,
+      "id": 6798,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 11,
@@ -3534,8 +3534,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5339,
-      "session_id": 16,
+      "id": 6799,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 12,
@@ -3544,8 +3544,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5340,
-      "session_id": 16,
+      "id": 6800,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 13,
@@ -3554,8 +3554,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5341,
-      "session_id": 16,
+      "id": 6801,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 14,
@@ -3564,8 +3564,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5342,
-      "session_id": 16,
+      "id": 6802,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 15,
@@ -3574,8 +3574,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5343,
-      "session_id": 16,
+      "id": 6803,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 16,
@@ -3584,8 +3584,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5344,
-      "session_id": 16,
+      "id": 6804,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 17,
@@ -3594,8 +3594,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5345,
-      "session_id": 16,
+      "id": 6805,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 18,
@@ -3604,8 +3604,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5346,
-      "session_id": 16,
+      "id": 6806,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 19,
@@ -3614,8 +3614,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5347,
-      "session_id": 16,
+      "id": 6807,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 20,
@@ -3624,8 +3624,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5348,
-      "session_id": 16,
+      "id": 6808,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 21,
@@ -3634,8 +3634,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5349,
-      "session_id": 16,
+      "id": 6809,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 22,
@@ -3644,8 +3644,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5350,
-      "session_id": 16,
+      "id": 6810,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 23,
@@ -3654,8 +3654,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5351,
-      "session_id": 16,
+      "id": 6811,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 24,
@@ -3664,8 +3664,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5352,
-      "session_id": 16,
+      "id": 6812,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 25,
@@ -3674,8 +3674,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5353,
-      "session_id": 16,
+      "id": 6813,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 26,
@@ -3684,8 +3684,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5354,
-      "session_id": 16,
+      "id": 6814,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 27,
@@ -3694,8 +3694,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5355,
-      "session_id": 16,
+      "id": 6815,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 28,
@@ -3704,8 +3704,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5356,
-      "session_id": 16,
+      "id": 6816,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Bipolar",
       "question_number": 29,
@@ -3714,8 +3714,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5357,
-      "session_id": 16,
+      "id": 6817,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 1,
@@ -3724,8 +3724,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5358,
-      "session_id": 16,
+      "id": 6818,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 2,
@@ -3734,8 +3734,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5359,
-      "session_id": 16,
+      "id": 6819,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 3,
@@ -3744,8 +3744,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5360,
-      "session_id": 16,
+      "id": 6820,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 4,
@@ -3754,8 +3754,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5361,
-      "session_id": 16,
+      "id": 6821,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 5,
@@ -3764,8 +3764,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5362,
-      "session_id": 16,
+      "id": 6822,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 6,
@@ -3774,8 +3774,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5363,
-      "session_id": 16,
+      "id": 6823,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 7,
@@ -3784,8 +3784,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5364,
-      "session_id": 16,
+      "id": 6824,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 8,
@@ -3794,8 +3794,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5365,
-      "session_id": 16,
+      "id": 6825,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 9,
@@ -3804,8 +3804,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5366,
-      "session_id": 16,
+      "id": 6826,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 10,
@@ -3814,8 +3814,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5367,
-      "session_id": 16,
+      "id": 6827,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 11,
@@ -3824,8 +3824,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5368,
-      "session_id": 16,
+      "id": 6828,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Autism",
       "question_number": 12,
@@ -3834,8 +3834,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5369,
-      "session_id": 16,
+      "id": 6829,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 1,
@@ -3844,8 +3844,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5370,
-      "session_id": 16,
+      "id": 6830,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 2,
@@ -3854,8 +3854,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5371,
-      "session_id": 16,
+      "id": 6831,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 3,
@@ -3864,8 +3864,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5372,
-      "session_id": 16,
+      "id": 6832,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 4,
@@ -3874,8 +3874,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5373,
-      "session_id": 16,
+      "id": 6833,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 5,
@@ -3884,8 +3884,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5374,
-      "session_id": 16,
+      "id": 6834,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 6,
@@ -3894,8 +3894,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5375,
-      "session_id": 16,
+      "id": 6835,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 7,
@@ -3904,8 +3904,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5376,
-      "session_id": 16,
+      "id": 6836,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 8,
@@ -3914,8 +3914,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5377,
-      "session_id": 16,
+      "id": 6837,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 9,
@@ -3924,8 +3924,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5378,
-      "session_id": 16,
+      "id": 6838,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 10,
@@ -3934,8 +3934,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5379,
-      "session_id": 16,
+      "id": 6839,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 11,
@@ -3944,8 +3944,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5380,
-      "session_id": 16,
+      "id": 6840,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 12,
@@ -3954,8 +3954,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5381,
-      "session_id": 16,
+      "id": 6841,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 13,
@@ -3964,8 +3964,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5382,
-      "session_id": 16,
+      "id": 6842,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 14,
@@ -3974,8 +3974,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5383,
-      "session_id": 16,
+      "id": 6843,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Asperger's",
       "question_number": 15,
@@ -3984,8 +3984,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5384,
-      "session_id": 16,
+      "id": 6844,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 1,
@@ -3994,8 +3994,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5385,
-      "session_id": 16,
+      "id": 6845,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 2,
@@ -4004,8 +4004,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5386,
-      "session_id": 16,
+      "id": 6846,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 3,
@@ -4014,8 +4014,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5387,
-      "session_id": 16,
+      "id": 6847,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 4,
@@ -4024,8 +4024,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5388,
-      "session_id": 16,
+      "id": 6848,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 5,
@@ -4034,8 +4034,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5389,
-      "session_id": 16,
+      "id": 6849,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 6,
@@ -4044,8 +4044,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5390,
-      "session_id": 16,
+      "id": 6850,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 7,
@@ -4054,8 +4054,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5391,
-      "session_id": 16,
+      "id": 6851,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 8,
@@ -4064,8 +4064,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5392,
-      "session_id": 16,
+      "id": 6852,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 9,
@@ -4074,8 +4074,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5393,
-      "session_id": 16,
+      "id": 6853,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 10,
@@ -4084,8 +4084,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5394,
-      "session_id": 16,
+      "id": 6854,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 11,
@@ -4094,8 +4094,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5395,
-      "session_id": 16,
+      "id": 6855,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 12,
@@ -4104,8 +4104,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5396,
-      "session_id": 16,
+      "id": 6856,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 13,
@@ -4114,8 +4114,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5397,
-      "session_id": 16,
+      "id": 6857,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 14,
@@ -4124,8 +4124,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5398,
-      "session_id": 16,
+      "id": 6858,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "ADHD",
       "question_number": 15,
@@ -4134,8 +4134,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5399,
-      "session_id": 16,
+      "id": 6859,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 1,
@@ -4144,8 +4144,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5400,
-      "session_id": 16,
+      "id": 6860,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 2,
@@ -4154,8 +4154,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5401,
-      "session_id": 16,
+      "id": 6861,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 3,
@@ -4164,8 +4164,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5402,
-      "session_id": 16,
+      "id": 6862,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 4,
@@ -4174,8 +4174,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5403,
-      "session_id": 16,
+      "id": 6863,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 5,
@@ -4184,8 +4184,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5404,
-      "session_id": 16,
+      "id": 6864,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 6,
@@ -4194,8 +4194,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5405,
-      "session_id": 16,
+      "id": 6865,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 7,
@@ -4204,8 +4204,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5406,
-      "session_id": 16,
+      "id": 6866,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 8,
@@ -4214,8 +4214,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5407,
-      "session_id": 16,
+      "id": 6867,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 9,
@@ -4224,8 +4224,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5408,
-      "session_id": 16,
+      "id": 6868,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 10,
@@ -4234,8 +4234,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5409,
-      "session_id": 16,
+      "id": 6869,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 11,
@@ -4244,8 +4244,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5410,
-      "session_id": 16,
+      "id": 6870,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 12,
@@ -4254,8 +4254,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5411,
-      "session_id": 16,
+      "id": 6871,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 13,
@@ -4264,8 +4264,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5412,
-      "session_id": 16,
+      "id": 6872,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 14,
@@ -4274,8 +4274,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5413,
-      "session_id": 16,
+      "id": 6873,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 15,
@@ -4284,8 +4284,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5414,
-      "session_id": 16,
+      "id": 6874,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 16,
@@ -4294,8 +4294,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5415,
-      "session_id": 16,
+      "id": 6875,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 17,
@@ -4304,8 +4304,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5416,
-      "session_id": 16,
+      "id": 6876,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 18,
@@ -4314,8 +4314,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5417,
-      "session_id": 16,
+      "id": 6877,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 19,
@@ -4324,8 +4324,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5418,
-      "session_id": 16,
+      "id": 6878,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 20,
@@ -4334,8 +4334,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5419,
-      "session_id": 16,
+      "id": 6879,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 21,
@@ -4344,8 +4344,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5420,
-      "session_id": 16,
+      "id": 6880,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 22,
@@ -4354,8 +4354,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5421,
-      "session_id": 16,
+      "id": 6881,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 23,
@@ -4364,8 +4364,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5422,
-      "session_id": 16,
+      "id": 6882,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "MCI",
       "question_number": 24,
@@ -4374,8 +4374,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5423,
-      "session_id": 16,
+      "id": 6883,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 1,
@@ -4384,8 +4384,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5424,
-      "session_id": 16,
+      "id": 6884,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 2,
@@ -4394,8 +4394,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5425,
-      "session_id": 16,
+      "id": 6885,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 3,
@@ -4404,8 +4404,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5426,
-      "session_id": 16,
+      "id": 6886,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 4,
@@ -4414,8 +4414,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5427,
-      "session_id": 16,
+      "id": 6887,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 5,
@@ -4424,8 +4424,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5428,
-      "session_id": 16,
+      "id": 6888,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 6,
@@ -4434,8 +4434,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5429,
-      "session_id": 16,
+      "id": 6889,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 7,
@@ -4444,8 +4444,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5430,
-      "session_id": 16,
+      "id": 6890,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 8,
@@ -4454,8 +4454,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5431,
-      "session_id": 16,
+      "id": 6891,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 9,
@@ -4464,8 +4464,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5432,
-      "session_id": 16,
+      "id": 6892,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 10,
@@ -4474,8 +4474,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5433,
-      "session_id": 16,
+      "id": 6893,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 11,
@@ -4484,8 +4484,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5434,
-      "session_id": 16,
+      "id": 6894,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 12,
@@ -4494,8 +4494,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5435,
-      "session_id": 16,
+      "id": 6895,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 13,
@@ -4504,8 +4504,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5436,
-      "session_id": 16,
+      "id": 6896,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 14,
@@ -4514,8 +4514,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5437,
-      "session_id": 16,
+      "id": 6897,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 15,
@@ -4524,8 +4524,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5438,
-      "session_id": 16,
+      "id": 6898,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 16,
@@ -4534,8 +4534,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5439,
-      "session_id": 16,
+      "id": 6899,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 17,
@@ -4544,8 +4544,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5440,
-      "session_id": 16,
+      "id": 6900,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Concussion",
       "question_number": 18,
@@ -4554,8 +4554,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5441,
-      "session_id": 16,
+      "id": 6901,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 1,
@@ -4564,8 +4564,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5442,
-      "session_id": 16,
+      "id": 6902,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 2,
@@ -4574,8 +4574,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5443,
-      "session_id": 16,
+      "id": 6903,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 3,
@@ -4584,8 +4584,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5444,
-      "session_id": 16,
+      "id": 6904,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 4,
@@ -4594,8 +4594,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5445,
-      "session_id": 16,
+      "id": 6905,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 5,
@@ -4604,8 +4604,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5446,
-      "session_id": 16,
+      "id": 6906,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 6,
@@ -4614,8 +4614,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5447,
-      "session_id": 16,
+      "id": 6907,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 7,
@@ -4624,8 +4624,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5448,
-      "session_id": 16,
+      "id": 6908,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 8,
@@ -4634,8 +4634,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5449,
-      "session_id": 16,
+      "id": 6909,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 9,
@@ -4644,8 +4644,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5450,
-      "session_id": 16,
+      "id": 6910,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 10,
@@ -4654,8 +4654,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5451,
-      "session_id": 16,
+      "id": 6911,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 11,
@@ -4664,8 +4664,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5452,
-      "session_id": 16,
+      "id": 6912,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 12,
@@ -4674,8 +4674,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5453,
-      "session_id": 16,
+      "id": 6913,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 13,
@@ -4684,8 +4684,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5454,
-      "session_id": 16,
+      "id": 6914,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 14,
@@ -4694,8 +4694,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5455,
-      "session_id": 16,
+      "id": 6915,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 15,
@@ -4704,8 +4704,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5456,
-      "session_id": 16,
+      "id": 6916,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 16,
@@ -4714,8 +4714,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5457,
-      "session_id": 16,
+      "id": 6917,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 17,
@@ -4724,8 +4724,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5458,
-      "session_id": 16,
+      "id": 6918,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 18,
@@ -4734,8 +4734,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5459,
-      "session_id": 16,
+      "id": 6919,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 19,
@@ -4744,8 +4744,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5460,
-      "session_id": 16,
+      "id": 6920,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 20,
@@ -4754,8 +4754,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5461,
-      "session_id": 16,
+      "id": 6921,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 21,
@@ -4764,8 +4764,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5462,
-      "session_id": 16,
+      "id": 6922,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 22,
@@ -4774,8 +4774,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5463,
-      "session_id": 16,
+      "id": 6923,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 23,
@@ -4784,8 +4784,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5464,
-      "session_id": 16,
+      "id": 6924,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 24,
@@ -4794,8 +4794,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5465,
-      "session_id": 16,
+      "id": 6925,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 25,
@@ -4804,8 +4804,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5466,
-      "session_id": 16,
+      "id": 6926,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 26,
@@ -4814,8 +4814,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5467,
-      "session_id": 16,
+      "id": 6927,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 27,
@@ -4824,8 +4824,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5468,
-      "session_id": 16,
+      "id": 6928,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 28,
@@ -4834,8 +4834,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5469,
-      "session_id": 16,
+      "id": 6929,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 29,
@@ -4844,8 +4844,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5470,
-      "session_id": 16,
+      "id": 6930,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 30,
@@ -4854,8 +4854,8 @@
       "severity": "A severe problem"
     },
     {
-      "id": 5471,
-      "session_id": 16,
+      "id": 6931,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 31,
@@ -4864,8 +4864,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5472,
-      "session_id": 16,
+      "id": 6932,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 32,
@@ -4874,8 +4874,8 @@
       "severity": "Not a problem"
     },
     {
-      "id": 5473,
-      "session_id": 16,
+      "id": 6933,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 33,
@@ -4884,8 +4884,8 @@
       "severity": "A mild problem"
     },
     {
-      "id": 5474,
-      "session_id": 16,
+      "id": 6934,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 34,
@@ -4894,8 +4894,8 @@
       "severity": "A moderate problem"
     },
     {
-      "id": 5475,
-      "session_id": 16,
+      "id": 6935,
+      "session_id": 34,
       "patient_id": "40241",
       "domain": "Anxiety/Depression",
       "question_number": 35,

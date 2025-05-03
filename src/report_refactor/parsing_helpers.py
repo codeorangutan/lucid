@@ -1082,29 +1082,50 @@ def extract_subtest_data(table, debug=False):
         "Reasoning Test (RT)",
         "Four Part Continuous Performance Test"
     ]
+    
+    # Check if this is a Four Part CPT table
+    is_four_part_cpt = False
+    if table and len(table) > 0 and table[0] and len(table[0]) > 0 and table[0][0]:
+        first_cell = str(table[0][0]).strip()
+        is_four_part_cpt = "Four Part Continuous Performance Test" in first_cell
+    
     current_test_name = None
+    current_part = None  # Track the current part for Four Part CPT
+    
     for row in table[1:]:
         if not row or all(cell is None or str(cell).strip() == '' for cell in row):
             if debug:
                 logger.debug(f"Skipping empty or all-None row: {row}")
             continue
+        
         first_cell = str(row[0]).strip() if row[0] is not None else ""
+        
         # Skip if row is a column header row
         if all(str(cell).strip().lower() in known_headers for cell in row if cell is not None and str(cell).strip() != ""):
             if debug:
                 logger.debug(f"Skipping full header row: {row}")
             continue
+        
         # Update current_test_name if this row is a test name row
         if any(first_cell.startswith(test) for test in known_tests):
             current_test_name = first_cell
             if debug:
                 logger.debug(f"Test name updated: {current_test_name}")
             continue  # Do not treat this as data
+        
+        # For Four Part CPT, track the part headers (Part 1, Part 2, etc.)
+        if is_four_part_cpt and first_cell.lower().startswith("part "):
+            current_part = first_cell
+            if debug:
+                logger.debug(f"Found Part marker in Four Part CPT: {current_part}")
+            continue  # Skip part header row
+        
         # Skip if first cell is a known header or section
         if first_cell.lower() in known_headers or any(first_cell.lower().startswith(prefix) for prefix in known_section_prefixes):
             if debug:
                 logger.debug(f"Skipping header/section row: {row}")
             continue
+        
         try:
             if '\n' in first_cell:
                 metrics = [m.strip() for m in first_cell.split('\n') if m.strip()]
@@ -1116,22 +1137,32 @@ def extract_subtest_data(table, debug=False):
                 scores = [str(row[1]).strip() if row[1] is not None else ""]
                 standards = [str(row[2]).strip() if row[2] is not None else ""]
                 percentiles = [str(row[3]).strip() if row[3] is not None else ""]
+            
             for i in range(len(metrics)):
                 metric = metrics[i]
                 try:
                     score = float(scores[i]) if scores[i] else None
                     std = int(standards[i]) if standards[i] else None
                     perc = int(percentiles[i]) if percentiles[i] else None
-                    subtests.append((current_test_name, metric, score, std, perc))
+                    
+                    # For Four Part CPT, append the part to the metric if available
+                    if is_four_part_cpt and current_part and not metric.endswith(current_part):
+                        metric = f"{metric} {current_part}"
+                        if debug:
+                            logger.debug(f"Enhanced metric with part: '{metric}'")
+                    
+                    if current_test_name:
+                        subtests.append((current_test_name, metric, score, std, perc))
+                    else:
+                        subtests.append((metric, score, std, perc))
                 except Exception as e:
                     if debug:
                         logger.debug(f"Skipping metric row due to conversion error: metric={metric}, score={scores[i]}, std={standards[i]}, perc={percentiles[i]} | {e}")
                     continue
         except Exception as e:
             logger.warning(f"[WARN] Failed row parse: {row} 0b6 {e}")
+    
     return subtests
-
-# Update parse_all_subtests to pass debug flag
 
 def parse_all_subtests(pdf_path, patient_id, debug=False):
     known_tests = [

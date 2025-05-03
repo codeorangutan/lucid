@@ -90,6 +90,34 @@ async def generate_pdf(html_path, json_path, output_pdf):
         line-height: 1.6;
         color: #dc2626 !important;
     }
+    .executive-summary ul,
+    .executive-summary ol {
+        list-style-position: inside;
+    }
+    .executive-summary li {
+        text-indent: -1.2em;
+        padding-left: 1.2em;
+    }
+    .npq-severe-domain {
+        background: #fee2e2;
+        color: #dc2626;
+        border: 1.5px solid #dc2626;
+        border-radius: 6px;
+        padding: 2px 10px;
+        margin-right: 0.3em;
+        font-weight: 600;
+        display: inline-block;
+    }
+    .npq-moderate-domain {
+        background: #fff7ed;
+        color: #b45309;
+        border: 1.5px solid #f59e42;
+        border-radius: 6px;
+        padding: 2px 10px;
+        margin-right: 0.3em;
+        font-weight: 600;
+        display: inline-block;
+    }
     </style>'''
 
     async with async_playwright() as p:
@@ -159,6 +187,8 @@ async def generate_pdf(html_path, json_path, output_pdf):
 }
 .executive-summary li {
     margin-bottom: 0.4em !important;
+    text-indent: -1.2em !important;
+    padding-left: 1.2em !important;
 }
 /* Left border accent */
 .executive-summary {

@@ -118,7 +118,7 @@ def generate_adhd_summary(data):
     epworth = data.get('epworth', {}).get('summary', [])
     # Initialize HTML list and disclaimer
     html = []
-    html.append('<div class="executive-summary">')
+    html.append('<div class="executive-summary text-base">')
     html.append('<div class="disclaimer" style="font-size:10px;color:#dc2626;margin-bottom:0.8em;">')
     html.append('<span class="executive-summary-disclaimer" style="font-size:0.93em;font-style:italic;color:#dc2626;display:block;line-height:1.6;">')
     html.append('This automatically generated report is not a substitute for <br>')
@@ -143,10 +143,13 @@ def generate_adhd_summary(data):
     html.append('<ul>')
     met_inattention_dsm = get_met_dsm_criteria(dass_items, 'Inattention')
     if met_inattention_dsm:
-        joined = ', '.join(met_inattention_dsm)
-        html.append(f'<li><b>DSM:</b> Meets all {len(met_inattention_dsm)} criteria for Inattention (e.g., {joined}).</li>')
+        html.append('<li>DSM (Inattention): Endorses criteria:')
+        html.append('<ul style="list-style-type: disc; margin-left: 20px;">') # Add nested list
+        for criterion in met_inattention_dsm:
+            html.append(f'<li>{criterion}</li>')
+        html.append('</ul></li>') # Close nested list and outer list item
     else:
-        html.append('<li><b>DSM:</b> No Inattention criteria met.</li>')
+        html.append('<li>DSM (Inattention): No significant criteria endorsed.</li>')
     npq_attention_mod_sev = get_npq_symptoms(npq_questions, 'Attention', min_severity_score=2)
     npq_attention_severe = get_npq_symptoms(npq_questions, 'Attention', min_severity_score=3)
     if npq_attention_mod_sev:
@@ -293,14 +296,17 @@ def generate_adhd_summary(data):
     html.append('<ul>')
     met_hyperactive_dsm = get_met_dsm_criteria(dass_items, 'Hyperactivity/Impulsivity')
     if met_hyperactive_dsm:
-        joined = ', '.join(met_hyperactive_dsm)
-        html.append(f'<li>DSM: Meets all {len(met_hyperactive_dsm)} criteria for Hyperactivity/Impulsivity (e.g., {joined}).</li>')
+        html.append('<li>DSM (Hyperactivity/Impulsivity): Endorses criteria:')
+        html.append('<ul style="list-style-type: disc; margin-left: 20px;">') # Add nested list
+        for criterion in met_hyperactive_dsm:
+            html.append(f'<li>{criterion}</li>')
+        html.append('</ul></li>') # Close nested list and outer list item
     else:
         # Calculate how many were NOT met
         total_hyper_criteria = 9 # Assuming 9 total criteria for Hyperactivity/Impulsivity
         not_met_count = total_hyper_criteria - len(met_hyperactive_dsm)
         joined = f'{not_met_count} criteria' # Simple count for now
-        html.append(f'<li>DSM: Does not endorse {joined}.</li>')
+        html.append(f'<li>DSM (Hyperactivity/Impulsivity): Does not endorse {joined}.</li>')
     npq_imp_domain = get_npq_domain_severity(npq_scores, "Impulsive")
     npq_hyper_mod = get_npq_symptoms(npq_questions, 'Impulsive', 2)
     html.append(f'<li>NPQ: Impulsive domain (hyperactivity items) rated "{npq_imp_domain}"; Moderate: {", ".join(npq_hyper_mod)}.</li>')

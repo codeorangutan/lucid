@@ -89,6 +89,12 @@ def generate_report_pdf(patient_id, json_path, report_script, html_template, out
 # --- Main Pipeline ---
 def main():
     args = parse_args()
+
+    # --- PRE-FLIGHT CHECK: Ensure input PDF exists ---
+    if not os.path.isfile(args.pdf):
+        logger.error(f"Input PDF file not found: {args.pdf}")
+        sys.exit(1) # Exit with error code
+
     if args.dry_run:
         logger.info("[DRY RUN] Would parse PDF, generate JSON, and create report PDF.")
         return
@@ -96,8 +102,8 @@ def main():
     if not imported:
         logger.info(f"Skipping downstream steps for patient {args.patient_id} (already exists in DB). Pipeline halted.")
         return
-    # Generate JSON path relative to project root
-    json_path = os.path.join('json', f'{args.patient_id}.json')
+    # Generate JSON path relative to project root (FIX: use src/json as canonical location)
+    json_path = os.path.join('src', 'json', f'{args.patient_id}.json')
     generate_json(args.patient_id, args.json_script, args.json_dir)
     html_template = os.path.join('templates', 'report_template_sum_valid.html')
     output_pdf = os.path.join('output', f'report_{args.patient_id}_sum_valid.pdf')
