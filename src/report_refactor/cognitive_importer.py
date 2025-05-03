@@ -37,7 +37,7 @@ from .parsing_helpers import (
 from db import (
     create_test_session, insert_cognitive_scores, insert_subtest_results, insert_asrs_responses,
     insert_dsm_diagnosis, insert_epworth_responses, insert_npq_domain_scores, insert_npq_responses,
-    insert_dsm_criteria_met, insert_epworth_summary
+    insert_dsm_criteria_met, insert_epworth_summary, get_or_create_patient, get_session
 )
 from .asrs_dsm_mapper import DSM5_ASRS_MAPPING
 from config_utils import get_lucid_data_db
@@ -135,6 +135,15 @@ def import_pdf_to_db(pdf_path):
         'language': language
     }
 
+    # --- Stage 2.5: Get or create normalized patient and get patient_fk_id ---
+    try:
+        with get_session() as session:
+            patient_fk_id = get_or_create_patient(session, str(patient_id), int(age) if age else None, None, None)
+    except Exception as e:
+        logger.error(f"Failed to get or create patient in normalized model: {e}")
+        return False
+    logger.info(f"Using patient_fk_id (system_patient_id): {patient_fk_id}")
+
     # --- Stage 3: Referral/Session Setup (unchanged) ---
     referral_id = patient_info.get('referral_id')
     if not referral_id:
@@ -183,18 +192,19 @@ def import_pdf_to_db(pdf_path):
             'standard_score': safe_float(t[3]),
             'percentile': safe_float(t[4]),
             'validity_index': t[5] if len(t) > 5 else None,
-            'patient_id': patient_id
+            'patient_id': patient_id,
+            'patient_fk_id': patient_fk_id
         }
         for t in raw_score_tuples
     ]
-    insert_cognitive_scores(session_id, raw_score_dicts)
+    insert_cognitive_scores(session_id, raw_score_dicts, patient_fk_id=patient_fk_id)
 
     # Epworth
     epworth_total, epworth_responses = parse_epworth(raw_text, patient_id)
     epworth_response_dicts = [
-        {'situation': t[2], 'score': t[3], 'patient_id': patient_id} for t in epworth_responses
+        {'situation': t[2], 'score': t[3], 'patient_id': patient_id, 'patient_fk_id': patient_fk_id} for t in epworth_responses
     ]
-    insert_epworth_responses(session_id, epworth_response_dicts)
+    insert_epworth_responses(session_id, epworth_response_dicts, patient_fk_id=patient_fk_id)
     # Robust: Always sum scores from parsed responses for total
     calculated_total = sum(int(resp['score']) for resp in epworth_response_dicts if resp['score'] is not None)
     # Determine interpretation comment (was previously called severity)
@@ -211,7 +221,7 @@ def import_pdf_to_db(pdf_path):
     else:
         interpretation = "Invalid/unknown Epworth score."
     if calculated_total > 0:
-        insert_epworth_summary(session_id, {'total_score': calculated_total, 'interpretation': interpretation, 'patient_id': patient_id})
+        insert_epworth_summary(session_id, {'total_score': calculated_total, 'interpretation': interpretation, 'patient_id': patient_id, 'patient_fk_id': patient_fk_id}, patient_fk_id=patient_fk_id)
         logger.info(f"Inserted Epworth summary with interpretation: {interpretation}")
     else:
         logger.warning(f"Epworth summary not inserted: no valid scores found for patient {patient_id}, session {session_id}")
@@ -227,15 +237,15 @@ def import_pdf_to_db(pdf_path):
             'standard_score': t[4],
             'percentile': t[5],
             'validity_flag': t[6] if len(t) > 6 else True,
-            'patient_id': patient_id
+            'patient_id': patient_id,
+            'patient_fk_id': patient_fk_id
         }
         for t in subtest_tuples
     ]
-    insert_subtest_results(session_id, subtest_dicts)
+    insert_subtest_results(session_id, subtest_dicts, patient_fk_id=patient_fk_id)
 
     # ASRS
     asrs_tuples = parse_asrs_with_bounding_boxes(pdf_path, patient_id)
-    # Build a mapping from question_number to question_text using DSM5_ASRS_MAPPING
     question_number_to_text = {int(q_num): asrs_text for (_, asrs_text, q_num) in DSM5_ASRS_MAPPING}
     logger.info(f"ASRS question_number_to_text mapping: {question_number_to_text}")
     asrs_dicts = [
@@ -244,12 +254,13 @@ def import_pdf_to_db(pdf_path):
             'part': t[2],
             'response': t[3],
             'question_text': question_number_to_text.get(int(t[1]), None),
-            'patient_id': patient_id
+            'patient_id': patient_id,
+            'patient_fk_id': patient_fk_id
         }
         for t in asrs_tuples
     ]
     logger.info(f"ASRS dicts to insert: {asrs_dicts}")
-    insert_asrs_responses(session_id, asrs_dicts)
+    insert_asrs_responses(session_id, asrs_dicts, patient_fk_id=patient_fk_id)
 
     # NPQ
     npq_pages = find_npq_pages(pdf_path)
@@ -264,7 +275,8 @@ def import_pdf_to_db(pdf_path):
                 'score': t[2],
                 'severity': t[3],
                 'domain': t[4] if len(t) > 4 else None,
-                'patient_id': patient_id
+                'patient_id': patient_id,
+                'patient_fk_id': patient_fk_id
             }
             for t in npq_questions
         ]
@@ -274,12 +286,13 @@ def import_pdf_to_db(pdf_path):
                 'domain': t[0],
                 'score': t[1],
                 'severity': t[2],
-                'patient_id': patient_id
+                'patient_id': patient_id,
+                'patient_fk_id': patient_fk_id
             }
             for t in npq_domain_scores
         ]
-    insert_npq_responses(session_id, npq_questions)
-    insert_npq_domain_scores(session_id, npq_domain_scores)
+    insert_npq_responses(session_id, npq_questions, patient_fk_id=patient_fk_id)
+    insert_npq_domain_scores(session_id, npq_domain_scores, patient_fk_id=patient_fk_id)
 
     # DSM
     logger.info(f"ASRS dicts for DSM extraction: {asrs_dicts}")
@@ -291,9 +304,10 @@ def import_pdf_to_db(pdf_path):
             'inattentive_criteria_met': dsm_result['inattentive_criteria_met'],
             'hyperactive_criteria_met': dsm_result['hyperactive_criteria_met'],
             'diagnosis': dsm_result['diagnosis'],
-            'patient_id': patient_id
+            'patient_id': patient_id,
+            'patient_fk_id': patient_fk_id
         }
-        insert_dsm_diagnosis(session_id, [dsm_diag])
+        insert_dsm_diagnosis(session_id, [dsm_diag], patient_fk_id=patient_fk_id)
         # Insert DSM criteria met
         criteria_data = []
         for crit_name, domain, met in dsm_result['dsm_criteria_data']:
@@ -301,10 +315,11 @@ def import_pdf_to_db(pdf_path):
                 'dsm_criterion': crit_name,
                 'dsm_category': domain,
                 'is_met': met,
-                'patient_id': patient_id
+                'patient_id': patient_id,
+                'patient_fk_id': patient_fk_id
             })
         if criteria_data:
-            insert_dsm_criteria_met(session_id, criteria_data)
+            insert_dsm_criteria_met(session_id, criteria_data, patient_fk_id=patient_fk_id)
         logger.info(f"Inserted DSM diagnosis and {len(criteria_data)} criteria met records.")
     else:
         logger.warning(f"No DSM diagnosis extracted for patient {patient_id}.")
