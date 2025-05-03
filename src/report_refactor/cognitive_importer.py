@@ -136,13 +136,32 @@ def import_pdf_to_db(pdf_path):
     }
 
     # --- Stage 2.5: Get or create normalized patient and get patient_fk_id ---
+    # Calculate yob from dob if present, else from age and current year
+    yob = None
+    dob = patient_info.get('dob') if 'dob' in patient_info else None
+    if dob:
+        try:
+            yob = int(str(dob)[:4])  # Assume dob is YYYY-MM-DD or similar
+            logger.info(f"Calculated yob from dob: {yob}")
+        except Exception as e:
+            logger.warning(f"Could not parse yob from dob '{dob}': {e}")
+    if yob is None and age:
+        try:
+            from datetime import datetime
+            current_year = datetime.now().year
+            yob = current_year - int(age)
+            logger.info(f"Calculated yob from age {age} and year {current_year}: {yob}")
+        except Exception as e:
+            logger.warning(f"Could not calculate yob from age '{age}': {e}")
+    if yob is None:
+        logger.warning("No DOB or age available to calculate yob; using None.")
     try:
         with get_session() as session:
-            patient_fk_id = get_or_create_patient(session, str(patient_id), int(age) if age else None, None, None)
+            patient_fk_id = get_or_create_patient(session, str(patient_id), yob, None, None)
     except Exception as e:
         logger.error(f"Failed to get or create patient in normalized model: {e}")
         return False
-    logger.info(f"Using patient_fk_id (system_patient_id): {patient_fk_id}")
+    logger.info(f"Using patient_fk_id (system_patient_id): {patient_fk_id}, yob: {yob}")
 
     # --- Stage 3: Referral/Session Setup (unchanged) ---
     referral_id = patient_info.get('referral_id')
